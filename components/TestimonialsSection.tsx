@@ -76,7 +76,7 @@ export function TestimonialsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
           >
-            Real Customers · Real Reviews
+            Real Feedback · Real Reviews
           </motion.p>
           <motion.h2
             className="text-white text-4xl md:text-5xl font-extrabold tracking-tight leading-none mb-5"
@@ -85,7 +85,7 @@ export function TestimonialsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
-            What Travellers Say
+            We let our guests do the talking.
           </motion.h2>
           <motion.p
             className="text-white/70 font-light max-w-lg mx-auto leading-relaxed"
@@ -94,8 +94,7 @@ export function TestimonialsSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
           >
-            Over 2,000 five-star reviews on Google. Verified travellers sharing
-            their real Uttarakhand journeys with us.
+            See what verified travellers are saying on Google about their Uttarakhand journeys with us.
           </motion.p>
         </motion.div>
 
