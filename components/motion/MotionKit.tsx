@@ -34,8 +34,8 @@ type Direction = 'up' | 'down' | 'left' | 'right' | 'none';
 const offset: Record<Direction, { x: number; y: number }> = {
   up: { x: 0, y: 40 },
   down: { x: 0, y: -40 },
-  left: { x: 40, y: 0 },
-  right: { x: -40, y: 0 },
+  left: { x: 24, y: 0 },
+  right: { x: -24, y: 0 },
   none: { x: 0, y: 0 },
 };
 
@@ -70,6 +70,7 @@ export function Reveal({
   return (
     <motion.div
       className={className}
+      style={{ maxWidth: '100%' }}
       initial={{ opacity: 0, x: o.x, y: o.y }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once, amount: 0.05, margin: '0px 0px -10% 0px' }}
@@ -272,6 +273,9 @@ export function MagneticButton({
       onMouseMove={handleMove}
       onMouseLeave={reset}
       style={{ x: sx, y: sy, display: 'inline-block' }}
+      whileHover={reduce ? undefined : { scale: 1.04 }}
+      whileTap={reduce ? undefined : { scale: 0.97 }}
+      transition={{ type: 'spring', stiffness: 400, damping: 17 }}
     >
       {as === 'a' ? (
         <a href={href} target={target} rel={rel} className={className} onClick={onClick}>
@@ -370,4 +374,108 @@ export function Float({
 }) {
   // CSS-based float (compositor thread) — no main-thread JS loop.
   return <div className={`motion-safe:animate-float ${className}`}>{children}</div>;
+}
+
+/* ─────────────────────────────────────────────
+   8. WORD REVEAL — hero text animates word-by-word
+   ───────────────────────────────────────────── */
+export function WordReveal({
+  text,
+  className = '',
+  delay = 0,
+  highlightWords = [],
+  highlightClassName = '',
+}: {
+  text: string;
+  className?: string;
+  delay?: number;
+  /** words (case-insensitive) to wrap in highlightClassName */
+  highlightWords?: string[];
+  highlightClassName?: string;
+}) {
+  const reduce = useReducedMotion();
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const words = text.split(' ');
+  const highlightSet = new Set(highlightWords.map((w) => w.toLowerCase()));
+
+  // SSR + reduced-motion: render plain text so it's always visible/crawlable.
+  if (!mounted || reduce) {
+    return (
+      <span className={className}>
+        {words.map((w, i) => {
+          const hl = highlightSet.has(w.toLowerCase());
+          return (
+            <span key={i} className={hl ? highlightClassName : undefined}>
+              {w}{i < words.length - 1 ? ' ' : ''}
+            </span>
+          );
+        })}
+      </span>
+    );
+  }
+
+  return (
+    <motion.span
+      className={className}
+      initial="hidden"
+      animate="show"
+      variants={{
+        hidden: {},
+        show: { transition: { staggerChildren: 0.08, delayChildren: delay } },
+      }}
+      style={{ display: 'inline' }}
+    >
+      {words.map((w, i) => {
+        const hl = highlightSet.has(w.toLowerCase());
+        return (
+          <motion.span
+            key={i}
+            className={hl ? highlightClassName : undefined}
+            style={{ display: 'inline-block', willChange: 'transform' }}
+            variants={{
+              hidden: { opacity: 0, y: '0.4em', filter: 'blur(6px)' },
+              show: {
+                opacity: 1,
+                y: '0em',
+                filter: 'blur(0px)',
+                transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] },
+              },
+            }}
+          >
+            {w}{i < words.length - 1 ? '\u00A0' : ''}
+          </motion.span>
+        );
+      })}
+    </motion.span>
+  );
+}
+
+/* ─────────────────────────────────────────────
+   9. PRESSABLE — adds hover-lift + tap-press to any block
+   (wrap cards, chips, list items — no layout change)
+   ───────────────────────────────────────────── */
+export function Pressable({
+  children,
+  className = '',
+  lift = 4,
+}: {
+  children: ReactNode;
+  className?: string;
+  /** px to lift on hover */
+  lift?: number;
+}) {
+  const reduce = useReducedMotion();
+  return (
+    <motion.div
+      className={className}
+      whileHover={reduce ? undefined : { y: -lift }}
+      whileTap={reduce ? undefined : { scale: 0.98 }}
+      transition={{ type: 'spring', stiffness: 350, damping: 22 }}
+      style={{ willChange: 'transform' }}
+    >
+      {children}
+    </motion.div>
+  );
 }
