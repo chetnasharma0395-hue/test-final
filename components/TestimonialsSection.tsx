@@ -1,213 +1,145 @@
 'use client';
 
-import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion, useReducedMotion } from 'framer-motion';
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { Star } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ReviewsCarousel, type Review } from './ReviewsCarousel';
 
-/**
- * ReviewsCarousel — slot-based "coverflow" testimonial carousel.
- *
- * Every review is rendered once and positioned by its offset from the active
- * index. When active changes, each card animates from its old slot to its new
- * slot (center / side-peek / off-stage) — so the outgoing card smoothly
- * becomes the previous-peek and the next-peek slides into center. No overlap.
- */
+const reviews: Review[] = [
+  {
+    name: 'Rahul Sharma',
+    location: 'Delhi',
+    rating: 5,
+    date: 'March 2025',
+    text: 'Booked for our Char Dham Yatra — driver Suresh ji was exceptional. Knew every route through Kedarnath and Badrinath perfectly, even in bad weather. Fixed fare, no surprises. Will book again for next year.',
+    trip: 'Char Dham Yatra',
+  },
+  {
+    name: 'Priya Mehta',
+    location: 'Mumbai',
+    rating: 5,
+    date: 'February 2025',
+    text: 'Used Uttarakhand Cab 24/7 for Jolly Grant Airport pickup and then a full day trip to Mussoorie. Cab was clean, driver was on time and very professional. Transparent pricing — exactly what was quoted.',
+    trip: 'Airport + Mussoorie',
+  },
+  {
+    name: 'Amit Verma',
+    location: 'Noida',
+    rating: 5,
+    date: 'January 2025',
+    text: 'Family trip to Rishikesh and Haridwar. The driver knew all the ghats and ashrams perfectly. Very safe driving on mountain roads. Kids were comfortable throughout. Highly recommended for family travel.',
+    trip: 'Rishikesh & Haridwar',
+  },
+  {
+    name: 'Sunita Gupta',
+    location: 'Chandigarh',
+    rating: 5,
+    date: 'December 2024',
+    text: 'Went for Kedarnath yatra during winter. Roads were tricky but our driver handled it brilliantly. He waited patiently at Gaurikund during our trek. Very reasonable rates for such a long trip.',
+    trip: 'Kedarnath Yatra',
+  },
+  {
+    name: 'Vikram Singh',
+    location: 'Dehradun',
+    rating: 5,
+    date: 'November 2024',
+    text: 'Regular customer for corporate travel between Dehradun and Delhi. Always on time, clean SUV, experienced drivers. The WhatsApp booking is very convenient. Best cab service in Uttarakhand.',
+    trip: 'Dehradun to Delhi',
+  },
+  {
+    name: 'Anjali Rawat',
+    location: 'Haridwar',
+    rating: 5,
+    date: 'October 2024',
+    text: 'Booked for Nainital trip with my parents. The driver was patient with elderly passengers and knew shortcuts to avoid traffic near Kathgodam. Excellent service throughout the journey.',
+    trip: 'Haridwar to Nainital',
+  },
+];
 
-export type Review = {
-  name: string;
-  location: string;
-  rating: number;
-  date: string;
-  text: string;
-  trip: string;
-};
-
-const AUTOPLAY_MS = 4500;
-const SPRING = { type: 'spring' as const, stiffness: 220, damping: 28, mass: 0.9 };
-
-export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
-  const reduce = useReducedMotion();
-  const [active, setActive] = useState(0);
-  const [paused, setPaused] = useState(false);
-  const n = reviews.length;
-
-  const go = useCallback((dir: number) => {
-    setActive((prev) => (prev + dir + n) % n);
-  }, [n]);
-
-  const jumpTo = (i: number) => setActive(i);
-
-  useEffect(() => {
-    if (reduce || paused) return;
-    const id = setInterval(() => go(1), AUTOPLAY_MS);
-    return () => clearInterval(id);
-  }, [reduce, paused, go]);
-
-  const touchX = useRef<number | null>(null);
-  const onTouchStart = (e: React.TouchEvent) => { touchX.current = e.touches[0].clientX; };
-  const onTouchEnd = (e: React.TouchEvent) => {
-    if (touchX.current === null) return;
-    const dx = e.changedTouches[0].clientX - touchX.current;
-    if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1);
-    touchX.current = null;
-  };
-
-  // Signed shortest offset of card i from active (wrap-around aware).
-  const offsetOf = (i: number) => {
-    let d = i - active;
-    if (d > n / 2) d -= n;
-    if (d < -n / 2) d += n;
-    return d;
-  };
-
-  const slotStyle = (offset: number) => {
-    const sidePx = 300;
-    if (offset === 0)  return { x: 0,         scale: 1,    rotate: 0,  opacity: 1,   blur: 0, zIndex: 30 };
-    if (offset === -1) return { x: -sidePx,   scale: 0.82, rotate: -3, opacity: 0.4, blur: 2, zIndex: 20 };
-    if (offset === 1)  return { x: sidePx,    scale: 0.82, rotate: 3,  opacity: 0.4, blur: 2, zIndex: 20 };
-    const dir = offset < 0 ? -1 : 1;
-    return { x: dir * (sidePx + 120), scale: 0.7, rotate: dir * 5, opacity: 0, blur: 3, zIndex: 10 };
-  };
-
+export function TestimonialsSection() {
   return (
-    <div
-      className="relative w-full flex flex-col items-center"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      onTouchStart={(e) => { setPaused(true); onTouchStart(e); }}
-      onTouchEnd={(e) => { onTouchEnd(e); setTimeout(() => setPaused(false), 600); }}
-    >
-      {/* Stage */}
-      <div className="relative w-full h-[360px] sm:h-[340px] flex items-center justify-center [perspective:1400px] overflow-hidden">
-        {reviews.map((review, i) => {
-          const offset = offsetOf(i);
-          const s = slotStyle(offset);
-          const isCenter = offset === 0;
-          const hideOnMobile = offset !== 0;
+    <section className="py-24 md:py-32 bg-[#1A1A1A] overflow-hidden">
+      <div className="max-w-page mx-auto px-6 sm:px-8 lg:px-10">
 
-          return (
-            <motion.div
-              key={i}
-              className={`absolute w-[88vw] max-w-[400px] ${hideOnMobile ? 'hidden md:block' : ''}`}
-              style={{ zIndex: s.zIndex, willChange: 'transform, opacity', filter: `blur(${s.blur}px)` }}
-              animate={reduce
-                ? { opacity: isCenter ? 1 : 0 }
-                : { x: s.x, scale: s.scale, rotate: s.rotate, opacity: s.opacity }}
-              transition={reduce ? { duration: 0.2 } : SPRING}
-              aria-hidden={!isCenter}
-            >
-              <motion.div
-                animate={!reduce && isCenter ? { scale: [1, 1.025, 1] } : { scale: 1 }}
-                transition={!reduce && isCenter
-                  ? { duration: AUTOPLAY_MS / 1000, ease: 'easeInOut', times: [0, 0.5, 1] }
-                  : { duration: 0.3 }}
-              >
-                <ReviewCard review={review} reduce={!!reduce} dim={!isCenter} animateStars={isCenter} />
-              </motion.div>
-            </motion.div>
-          );
-        })}
-      </div>
-
-      {/* Controls */}
-      <div className="flex items-center gap-5 mt-8">
-        <button
-          onClick={() => go(-1)}
-          aria-label="Previous review"
-          className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white/70 hover:text-white hover:border-[#F7941D]/50 hover:bg-white/5 transition-all"
+        {/* ── Heading (reveal on scroll) ───────────────────────────── */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0.4 }}
+          transition={{ staggerChildren: 0.12 }}
         >
-          <ChevronLeft className="w-5 h-5" />
-        </button>
+          <motion.p
+            className="text-[#F7941D] text-xs font-semibold uppercase tracking-widest mb-4"
+            variants={{ hidden: { opacity: 0, y: 14 }, show: { opacity: 1, y: 0 } }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+          >
+            Real Customers · Real Reviews
+          </motion.p>
+          <motion.h2
+            className="text-white text-4xl md:text-5xl font-extrabold tracking-tight leading-none mb-5"
+            initial={{ opacity: 0, y: 20, filter: 'blur(8px)' }}
+            whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          >
+            What Travellers Say
+          </motion.h2>
+          <motion.p
+            className="text-white/70 font-light max-w-lg mx-auto leading-relaxed"
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
+          >
+            Over 2,000 five-star reviews on Google. Verified travellers sharing
+            their real Uttarakhand journeys with us.
+          </motion.p>
+        </motion.div>
 
-        <div className="flex items-center gap-2">
-          {reviews.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => jumpTo(i)}
-              aria-label={`Go to review ${i + 1}`}
-              className="h-2 rounded-full transition-all duration-300"
-              style={{
-                width: i === active ? 26 : 8,
-                backgroundColor: i === active ? '#F7941D' : 'rgba(255,255,255,0.2)',
-              }}
-            />
-          ))}
+        {/* ── Premium "card throw" carousel ────────────────────────── */}
+        <div className="mb-16">
+          <ReviewsCarousel reviews={reviews} />
         </div>
 
-        <button
-          onClick={() => go(1)}
-          aria-label="Next review"
-          className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-white/70 hover:text-white hover:border-[#F7941D]/50 hover:bg-white/5 transition-all"
-        >
-          <ChevronRight className="w-5 h-5" />
-        </button>
-      </div>
-    </div>
-  );
-}
+        {/* ── Aggregate + Google CTA ───────────────────────────────── */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+          <div className="flex flex-col items-center gap-1.5">
+            <div className="flex gap-1">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <Star key={i} className="w-5 h-5 fill-[#F7941D] text-[#F7941D]" />
+              ))}
+            </div>
+            <span className="font-extrabold text-white text-lg tracking-tight">4.9 out of 5</span>
+            <span className="text-white/70 text-xs font-light">Based on 2,000+ Google reviews</span>
+          </div>
 
-/* ── Single review card ──────────────────────────────────────────── */
-function ReviewCard({
-  review,
-  reduce,
-  dim = false,
-  animateStars = true,
-}: {
-  review: Review;
-  reduce: boolean;
-  dim?: boolean;
-  animateStars?: boolean;
-}) {
-  return (
-    <div
-      className="bg-[#1A1A1A] rounded-[2rem] p-6 sm:p-7 flex flex-col gap-4 border border-[#F7941D]/25"
-      style={{ boxShadow: dim ? 'none' : '0 28px 70px rgba(0,0,0,0.5), 0 0 0 1px rgba(247,148,29,0.10)' }}
-    >
-      <div className="flex items-center justify-between">
-        <div className="flex gap-0.5">
-          {Array.from({ length: review.rating }).map((_, j) => (
-            <motion.span
-              key={j}
-              initial={reduce || !animateStars ? false : { opacity: 0, scale: 0.4, rotate: -30 }}
-              animate={reduce || !animateStars ? undefined : { opacity: 1, scale: 1, rotate: 0 }}
-              transition={{ delay: 0.25 + j * 0.08, type: 'spring', stiffness: 400, damping: 18 }}
-            >
-              <Star className="w-4 h-4 fill-[#F7941D] text-[#F7941D]" />
-            </motion.span>
-          ))}
+          <div className="hidden sm:block w-px h-12 bg-[#121212]/10" />
+
+          <a
+            href="https://share.google/kRQ3R4zpQ5KVC6Zq8"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="
+              inline-flex items-center gap-2.5 bg-[#121212] text-white
+              text-xs font-semibold uppercase tracking-widest px-6 py-3.5 rounded-full
+              transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]
+              hover:bg-[#F7941D] hover:-translate-y-0.5 hover:shadow-sm
+            "
+          >
+            <svg className="w-4 h-4 shrink-0" viewBox="0 0 24 24">
+              <path fill="#fff" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+              <path fill="#fff" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+              <path fill="#fff" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+              <path fill="#fff" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+            </svg>
+            See All Google Reviews
+          </a>
         </div>
-        <Quote className="w-6 h-6 text-[#F7941D] opacity-25" />
+
       </div>
-
-      <p
-        className="text-white/75 text-sm leading-relaxed"
-        style={{
-          display: '-webkit-box',
-          WebkitLineClamp: 5,
-          WebkitBoxOrient: 'vertical',
-          overflow: 'hidden',
-          minHeight: '6.5em',
-        }}
-      >
-        &ldquo;{review.text}&rdquo;
-      </p>
-
-      <span className="inline-flex w-fit items-center bg-[#1A1209] text-[#F7941D] text-[9px] font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full">
-        {review.trip}
-      </span>
-
-      <div className="flex items-center justify-between pt-4 border-t border-white/10">
-        <div>
-          <p className="font-extrabold text-white text-sm tracking-tight">{review.name}</p>
-          <p className="text-white/60 text-xs font-light mt-0.5">{review.location} · {review.date}</p>
-        </div>
-        <svg className="w-5 h-5 shrink-0" viewBox="0 0 24 24" aria-label="Google review">
-          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
-          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
-        </svg>
-      </div>
-    </div>
+    </section>
   );
 }
