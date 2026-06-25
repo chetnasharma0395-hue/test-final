@@ -1,8 +1,7 @@
 import Link from 'next/link';
-import Image from 'next/image';
-import { ArrowRight, Clock, MapPin, Car } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { PRICING_DATA, formatPrice } from '@/lib/priceData';
-import { Stagger, StaggerItem } from './motion';
+import { PopularRoutesCarousel } from './PopularRoutesCarousel';
 
 /**
  * PopularRoutesSection
@@ -115,74 +114,8 @@ export function PopularRoutesSection() {
           </div>
         </div>
 
-        {/* Route Grid */}
-        <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {routes.map((route) => (
-            <StaggerItem key={`${route.from}-${route.to}`}>
-            <div
-              className="group bg-[#1A1A1A] rounded-[2rem] overflow-hidden border border-white/8 hover:border-[#F7941D]/25 hover:shadow-[0_20px_50px_rgba(247,148,29,0.08)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 h-full"
-            >
-              {/* Image */}
-              <div className="relative h-44 overflow-hidden">
-                <Image
-                  src={route.image}
-                  alt={`${route.from} to ${route.to} taxi`}
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  quality={82}
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                <span className={`absolute top-4 left-4 ${route.tagColor} text-white text-[9px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full`}>
-                  {route.tag}
-                </span>
-              </div>
-
-              {/* Card Body */}
-              <div className="p-6">
-                {/* Route */}
-                <div className="flex items-center gap-2 mb-5">
-                  <span className="font-black text-white text-base">{route.from}</span>
-                  <ArrowRight className="w-4 h-4 text-[#F7941D] shrink-0 transition-transform duration-300 group-hover:translate-x-1" />
-                  <span className="font-black text-white text-base">{route.to}</span>
-                </div>
-
-                {/* Meta chips */}
-                <div className="flex gap-3 mb-6">
-                  <span className="flex items-center gap-1.5 bg-[#1A1A1A] border border-white/8 rounded-full px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-white/70">
-                    <MapPin className="w-3 h-3" /> {route.distance}
-                  </span>
-                  <span className="flex items-center gap-1.5 bg-[#1A1A1A] border border-white/8 rounded-full px-3 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-white/70">
-                    <Clock className="w-3 h-3" /> {route.duration}
-                  </span>
-                </div>
-
-                {/* Fares */}
-                <div className="grid grid-cols-2 gap-3 mb-6">
-                  <div className="bg-[#1A1A1A] rounded-xl p-3 text-center">
-                    <p className="text-[9px] font-black uppercase tracking-widest text-white/70 mb-1">Sedan</p>
-                    <p className="text-xl font-black text-white">{route.sedanFare}</p>
-                  </div>
-                  <div className="bg-[#1A1209] rounded-xl p-3 text-center border border-[#F7941D]/20">
-                    <p className="text-[9px] font-black uppercase tracking-widest text-[#F7941D] mb-1">SUV</p>
-                    <p className="text-xl font-black text-[#F7941D]">{route.suvFare}</p>
-                  </div>
-                </div>
-
-                {/* CTA */}
-                <a
-                  href={`https://wa.me/919258912169?text=${encodeURIComponent(route.waText)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 w-full py-3 bg-[#25D366] text-white font-black text-[10px] uppercase tracking-widest rounded-xl hover:bg-[#128C7E] transition-colors"
-                >
-                  <Car className="w-3.5 h-3.5" /> Book This Route
-                </a>
-              </div>
-            </div>
-            </StaggerItem>
-          ))}
-        </Stagger>
+        {/* Route Carousel */}
+        <PopularRoutesCarousel routes={routes} />
 
         {/* View All */}
         <div className="mt-12 text-center">
