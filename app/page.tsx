@@ -162,14 +162,14 @@ export default function Home() {
             </div>
 
             {/* Main heading — matches screenshot exactly */}
-            <h1 className="font-heading font-black uppercase leading-[0.9] tracking-tighter mb-8">
-              <span className="block text-white text-5xl sm:text-6xl md:text-7xl xl:text-8xl">
+            <h1 className="font-heading font-black uppercase leading-[0.92] tracking-tight mb-8 break-words">
+              <span className="block text-white text-[2.5rem] sm:text-6xl md:text-7xl xl:text-8xl">
                 Uttarakhand&apos;s
               </span>
-              <span className="block text-[#F7941D] text-5xl sm:text-6xl md:text-7xl xl:text-8xl">
+              <span className="block text-[#F7941D] text-[2.5rem] sm:text-6xl md:text-7xl xl:text-8xl">
                 Most Trusted
               </span>
-              <span className="block text-white text-5xl sm:text-6xl md:text-7xl xl:text-8xl">
+              <span className="block text-white text-[2.5rem] sm:text-6xl md:text-7xl xl:text-8xl">
                 Cab Service
               </span>
             </h1>
