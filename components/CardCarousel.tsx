@@ -49,11 +49,30 @@ export function CardCarousel<T>({
   initialIndex?: number;
   ariaLabel?: string;
 }) {
-  const CARD_STRIDE = cardWidth + cardGap;
+  const CARD_STRIDE = responsiveWidth + cardGap;
   const [active, setActive] = useState(initialIndex ?? Math.floor(items.length / 2));
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [isSnapping, setIsSnapping] = useState(false);
+
+  // Responsive card width — on small screens, cap card to viewport minus
+  // padding so the active card never touches the screen edges. Falls back
+  // to the provided cardWidth on larger screens.
+  const [responsiveWidth, setResponsiveWidth] = useState(cardWidth);
+  useEffect(() => {
+    const computeWidth = () => {
+      const vw = window.innerWidth;
+      if (vw < 640) {
+        // leave 48px total breathing room (24px each side)
+        setResponsiveWidth(Math.min(cardWidth, vw - 48));
+      } else {
+        setResponsiveWidth(cardWidth);
+      }
+    };
+    computeWidth();
+    window.addEventListener('resize', computeWidth);
+    return () => window.removeEventListener('resize', computeWidth);
+  }, [cardWidth]);
 
   const activeRef = useRef(active);
   const touchStartX = useRef<number | null>(null);
@@ -210,10 +229,10 @@ export function CardCarousel<T>({
       className="w-full select-none outline-none"
     >
       <div className="relative overflow-hidden w-full" style={{ paddingBottom: 8 }}>
-        <div className="absolute left-0 top-0 bottom-0 pointer-events-none z-10"
-          style={{ width: 88, background: `linear-gradient(to right, ${edgeFadeBg}, transparent)` }} />
-        <div className="absolute right-0 top-0 bottom-0 pointer-events-none z-10"
-          style={{ width: 88, background: `linear-gradient(to left, ${edgeFadeBg}, transparent)` }} />
+        <div className="absolute left-0 top-0 bottom-0 pointer-events-none z-10 w-6 sm:w-[88px]"
+          style={{ background: `linear-gradient(to right, ${edgeFadeBg}, transparent)` }} />
+        <div className="absolute right-0 top-0 bottom-0 pointer-events-none z-10 w-6 sm:w-[88px]"
+          style={{ background: `linear-gradient(to left, ${edgeFadeBg}, transparent)` }} />
 
         <div
           style={{ cursor: isDragging ? 'grabbing' : 'grab', touchAction: 'pan-y' }}
@@ -233,7 +252,7 @@ export function CardCarousel<T>({
               paddingTop: 12,
               paddingBottom: 28,
               willChange: 'transform',
-              transform: `translateX(calc(50% - ${cardWidth / 2}px + ${totalOffset}px))`,
+              transform: `translateX(calc(50% - ${responsiveWidth / 2}px + ${totalOffset}px))`,
               transition: trackTransition,
             }}
           >
@@ -251,7 +270,7 @@ export function CardCarousel<T>({
                   key={getKey(item, i)}
                   onClick={() => { if (!isDragging && Math.abs(dragOffset) < 6) snapTo(i); }}
                   style={{
-                    width: cardWidth,
+                    width: responsiveWidth,
                     flexShrink: 0,
                     cursor: isActiveCard ? 'default' : 'pointer',
                     transform: `scale(${scale}) translateY(${cardY}px)`,
