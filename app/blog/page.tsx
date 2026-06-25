@@ -69,11 +69,11 @@ export default function BlogPage() {
       
       {/* Header */}
       <div className="mb-14 text-left">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 tracking-tight">
+        <h1 className="text-4xl md:text-5xl font-bold mb-6 text-white tracking-tight">
           Travel Blogs & Guides
         </h1>
         
-        <p className="text-gray-600 text-lg md:text-xl max-w-2xl leading-relaxed">
+        <p className="text-white/60 text-lg md:text-xl max-w-2xl leading-relaxed">
           Sahi safar sahi service aur vo safar hamari zimmedaari. Read our latest guides, fare updates, and travel tips.
         </p>
       </div>
@@ -99,20 +99,20 @@ export default function BlogPage() {
               {/* Content */}
               <div className="p-6 flex-grow flex flex-col text-left">
                 
-                <span className="text-sm text-orange-600 font-bold tracking-wide uppercase mb-3 block">
+                <span className="text-sm text-[#F7941D] font-bold tracking-wide uppercase mb-3 block">
                   {post.category}
                 </span>
                 
-                <h2 className="font-bold text-xl mb-3 text-gray-900 transition-colors line-clamp-2 group-hover:text-orange-600">
+                <h2 className="font-bold text-xl mb-3 text-white transition-colors line-clamp-2 group-hover:text-[#F7941D]">
                   {post.title}
                 </h2>
                 
-                <p className="text-gray-600 mb-6 flex-grow line-clamp-3">
+                <p className="text-white/60 mb-6 flex-grow line-clamp-3">
                   {post.excerpt}
                 </p>
                 
                 {/* Footer */}
-                <div className="flex justify-between items-center text-sm text-gray-500 mt-auto pt-4 border-t border-white/10">
+                <div className="flex justify-between items-center text-sm text-white/50 mt-auto pt-4 border-t border-white/10">
                   <span className="font-medium">{post.date}</span>
                   <span>{post.readTime}</span>
                 </div>
