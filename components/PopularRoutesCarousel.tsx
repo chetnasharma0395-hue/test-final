@@ -39,6 +39,20 @@ export function PopularRoutesCarousel({ routes }: { routes: RouteCardData[] }) {
   const [isDragging, setIsDragging] = useState(false);
   const [isSnapping, setIsSnapping] = useState(false);
 
+  // Responsive card width — cap to viewport on small screens so the card
+  // never touches the screen edges. Falls back to CARD_WIDTH on desktop.
+  const [cardW, setCardW] = useState(CARD_WIDTH);
+  useEffect(() => {
+    const compute = () => {
+      const vw = window.innerWidth;
+      setCardW(vw < 640 ? Math.min(CARD_WIDTH, vw - 48) : CARD_WIDTH);
+    };
+    compute();
+    window.addEventListener('resize', compute);
+    return () => window.removeEventListener('resize', compute);
+  }, []);
+  const STRIDE = cardW + CARD_GAP;
+
   const activeRef = useRef(active);
   const touchStartX = useRef<number | null>(null);
   const touchStartY = useRef<number | null>(null);
@@ -180,7 +194,7 @@ export function PopularRoutesCarousel({ routes }: { routes: RouteCardData[] }) {
     const cur = activeRef.current;
     let target = cur;
     const isFlick = Math.abs(velocity) > FLICK_VELOCITY;
-    const isFarEnough = Math.abs(dx) > CARD_STRIDE * SNAP_DISTANCE_RATIO;
+    const isFarEnough = Math.abs(dx) > STRIDE * SNAP_DISTANCE_RATIO;
     if (isFlick || isFarEnough) {
       if (velocity < 0 || dx < 0) target = cur + 1;
       else target = cur - 1;
@@ -188,7 +202,7 @@ export function PopularRoutesCarousel({ routes }: { routes: RouteCardData[] }) {
     snapTo(target);
   }
 
-  const snapOffset = -(active * CARD_STRIDE);
+  const snapOffset = -(active * STRIDE);
   const totalOffset = snapOffset + dragOffset;
 
   const trackTransition = isDragging
@@ -207,10 +221,12 @@ export function PopularRoutesCarousel({ routes }: { routes: RouteCardData[] }) {
     >
       <div className="relative overflow-hidden w-full" style={{ paddingBottom: 8 }}>
         {/* Edge fade masks */}
-        <div className="absolute left-0 top-0 bottom-0 pointer-events-none z-10"
-          style={{ width: 88, background: 'linear-gradient(to right, #1A1A1A, transparent)' }} />
-        <div className="absolute right-0 top-0 bottom-0 pointer-events-none z-10"
-          style={{ width: 88, background: 'linear-gradient(to left, #1A1A1A, transparent)' }} />
+        <div
+          className="absolute left-0 top-0 bottom-0 pointer-events-none z-10 w-6 sm:w-[88px]"
+          style={{ background: 'linear-gradient(to right, #1A1A1A, transparent)' }} />
+        <div
+          className="absolute right-0 top-0 bottom-0 pointer-events-none z-10 w-6 sm:w-[88px]"
+          style={{ background: 'linear-gradient(to left, #1A1A1A, transparent)' }} />
 
         <div
           style={{ cursor: isDragging ? 'grabbing' : 'grab', touchAction: 'pan-y' }}
@@ -230,7 +246,7 @@ export function PopularRoutesCarousel({ routes }: { routes: RouteCardData[] }) {
               paddingTop: 12,
               paddingBottom: 28,
               willChange: 'transform',
-              transform: `translateX(calc(50% - ${CARD_WIDTH / 2}px + ${totalOffset}px))`,
+              transform: `translateX(calc(50% - ${cardW / 2}px + ${totalOffset}px))`,
               transition: trackTransition,
             }}
           >
@@ -250,7 +266,7 @@ export function PopularRoutesCarousel({ routes }: { routes: RouteCardData[] }) {
                   onClick={() => { if (!isDragging && Math.abs(dragOffset) < 6) snapTo(i); }}
                   className="group bg-[#1A1A1A] rounded-[2rem] overflow-hidden border border-white/8"
                   style={{
-                    width: CARD_WIDTH,
+                    width: cardW,
                     flexShrink: 0,
                     cursor: isActiveCard ? 'default' : 'pointer',
                     transform: `scale(${scale}) translateY(${cardY}px)`,
