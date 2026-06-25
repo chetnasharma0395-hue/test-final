@@ -138,77 +138,67 @@ export default function Home() {
 
     <div className="bg-[#1A1A1A]">
 
-      {/* ── 1. HERO (FIXED OVERLAP ISSUE) ───────────────────────── */}
-      <section className="relative min-h-screen w-full overflow-hidden flex items-center xl:items-start bg-[#121212]">
-        <Image
-          src="/assets/images/hero-mountain-road.jpg"
-          alt="Uttarakhand mountain road taxi service"
-          fill
-          priority
-          fetchPriority="high"
-          quality={70}
-          sizes="(max-width: 768px) 100vw, 60vw"
-          className="object-cover"
-        />
-        {/* Ambient aurora depth glow */}
-        <AuroraGlow className="z-[1] opacity-70" />
-        {/* Layered gradient: strong left, fades to right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/98 via-[#0a0a0a]/80 to-[#0a0a0a]/10" />
-        {/* Top vignette */}
-        <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#0a0a0a]/40 to-transparent" />
+      {/* ── 1. HERO ──────────────────────────────────────────────── */}
+      <section className="relative min-h-screen w-full overflow-hidden flex items-center bg-[#0a0a0a]">
 
-        {/* Outer grid padding updated (xl:pt-36 xl:pb-20) to push both text & widget cleanly beneath the nav */}
-        <div className="relative z-10 max-w-page mx-auto px-6 sm:px-8 lg:px-10 w-full flex flex-col xl:grid xl:grid-cols-[1fr_minmax(0,420px)] items-center gap-8 pt-28 pb-16 xl:pt-36 xl:pb-20">
+        {/* Orange ambient glow — top right, matches screenshot */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#F7941D] opacity-[0.12] blur-[120px] pointer-events-none rounded-full" />
+        <div className="absolute top-[-100px] right-[-100px] w-[400px] h-[400px] bg-[#F7941D] opacity-[0.07] blur-[80px] pointer-events-none rounded-full" />
+
+        {/* Subtle dot grid texture */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
+
+        <div className="relative z-10 max-w-page mx-auto px-6 sm:px-8 lg:px-10 w-full flex flex-col xl:grid xl:grid-cols-[1fr_minmax(0,460px)] items-center gap-12 pt-28 pb-16 xl:pt-36 xl:pb-20">
 
           {/* Left — Copy */}
           <div className="min-w-0 text-left">
+
             {/* Trust pill */}
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 px-4 py-2 rounded-full mb-8 max-w-full">
-              <Star className="w-3.5 h-3.5 fill-[#FBBC05] text-[#FBBC05] shrink-0" />
-              <p className="text-[10px] font-black uppercase tracking-widest text-white">
-                <span className="sm:hidden">4.9★ · 20,000+ Happy Customers</span>
-                <span className="hidden sm:inline">4.9 / 5 · 20,000+ Happy Customers Across Uttarakhand</span>
+            <div className="inline-flex items-center gap-2 bg-white/8 border border-white/12 px-4 py-2 rounded-full mb-8">
+              <span className="text-[#F7941D] text-xs font-black">+</span>
+              <p className="text-[10px] font-black uppercase tracking-widest text-white/80">
+                Trusted Since 2012 · 20,000+ Rides
               </p>
             </div>
 
-            <h1 className="font-heading font-black text-5xl md:text-7xl uppercase text-white leading-[0.88] mb-8 tracking-tighter">
-              Safe &amp; Trusted <br />
-              <span className="text-[#F7941D]">Uttarakhand</span> <br />
-              Taxi Service
+            {/* Main heading — matches screenshot exactly */}
+            <h1 className="font-heading font-black uppercase leading-[0.9] tracking-tighter mb-8">
+              <span className="block text-white text-5xl sm:text-6xl md:text-7xl xl:text-8xl">
+                Uttarakhand&apos;s
+              </span>
+              <span className="block text-[#F7941D] text-5xl sm:text-6xl md:text-7xl xl:text-8xl">
+                Most Trusted
+              </span>
+              <span className="block text-white text-5xl sm:text-6xl md:text-7xl xl:text-8xl">
+                Cab Service
+              </span>
             </h1>
 
-            <p className="text-white/75 text-base md:text-lg max-w-md mb-10 font-light leading-relaxed">
-              From Jolly Grant Airport pickups to Char Dham Yatra circuits —
-              local expert drivers, fixed transparent fares, 24 / 7.
+            <p className="text-white/65 text-base md:text-lg max-w-lg mb-10 font-light leading-relaxed">
+              Fixed fares. Local drivers. 24/7 availability across
+              Uttarakhand — from Dehradun to Kedarnath, Char Dham,
+              Mussoorie &amp; beyond.
             </p>
 
-            {/* Trust chips — horizontal scroll on mobile */}
-            <div className="flex flex-wrap gap-3 mb-10">
-              {['Fixed Fares', 'No Hidden Charges', 'Char Dham Specialists', 'WhatsApp Booking'].map((tag) => (
-                <span key={tag} className="flex items-center gap-1.5 bg-white/10 border border-white/15 text-white/80 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full whitespace-nowrap shrink-0">
-                  <CheckCircle2 className="w-3 h-3 text-[#F7941D]" /> {tag}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/taxi"
-                className="px-10 py-4 bg-[#F7941D] text-white font-black rounded-xl uppercase text-sm tracking-widest hover:bg-[#D97E10] hover:shadow-[0_0_30px_-5px_#F7941D] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5"
-              >
-                Request Quote
-              </Link>
-              <a
-                href="tel:+919258912169"
-                className="px-10 py-4 bg-white/10 backdrop-blur-md border border-white/20 text-white font-black rounded-xl uppercase text-sm tracking-widest hover:bg-white/20 transition-all flex items-center gap-2"
-              >
-                <Phone className="w-4 h-4" /> Call Now
-              </a>
+            {/* Trust badges row — matches screenshot */}
+            <div className="flex flex-wrap gap-3">
+              <span className="flex items-center gap-2 bg-white/6 border border-white/10 text-white text-[11px] font-bold px-4 py-2.5 rounded-full">
+                <Star className="w-3.5 h-3.5 fill-[#FBBC05] text-[#FBBC05]" />
+                4.9 / 5 Rating
+              </span>
+              <span className="flex items-center gap-2 bg-white/6 border border-white/10 text-white text-[11px] font-bold px-4 py-2.5 rounded-full">
+                <Shield className="w-3.5 h-3.5 text-[#F7941D]" />
+                Zero Hidden Fees
+              </span>
+              <span className="flex items-center gap-2 bg-white/6 border border-white/10 text-white text-[11px] font-bold px-4 py-2.5 rounded-full">
+                <Zap className="w-3.5 h-3.5 text-[#F7941D]" />
+                15-Min Confirmation
+              </span>
             </div>
           </div>
 
           {/* Right — Quote Widget */}
-          <div className="hidden xl:block w-full min-w-0 overflow-hidden">
+          <div className="w-full min-w-0 overflow-hidden">
             <QuoteWidget />
           </div>
         </div>
