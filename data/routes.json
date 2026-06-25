@@ -1,0 +1,663 @@
+[
+  {
+    "slug": "jolly-grant-airport-taxi-service",
+    "category": "Airport",
+    "title": "Reliable Jolly Grant Airport Taxi | Dehradun Airport Transfers",
+    "h1": "Dehradun Airport (Jolly Grant) Taxi Service",
+    "description": "Pre-book your taxi from Jolly Grant Airport to Dehradun, Rishikesh, or Mussoorie. Professional drivers with 'Meet & Greet' service.",
+    "distance": "25-30 km",
+    "price": "Starting from ₹900",
+    "uniquePoint": "Our drivers wait at the arrival gate with your name-board. No more searching for cabs in the parking lot."
+  },
+  {
+    "slug": "mussoorie-taxi-service",
+    "category": "Hill Station",
+    "title": "Dehradun to Mussoorie Taxi | Best Rates for Queen of Hills",
+    "h1": "Safe Taxi Service from Dehradun to Mussoorie",
+    "description": "Enjoy a scenic drive to Mussoorie. We provide reliable hatchbacks, sedans, and SUVs for the uphill climb.",
+    "distance": "35 km",
+    "price": "Starting from ₹1500",
+    "uniquePoint": "We stay updated on the Mall Road entry timings and barriers to ensure a smooth drop-off at your hotel."
+  },
+  {
+    "slug": "dehradun-to-delhi-taxi-service",
+    "category": "Intercity",
+    "title": "Dehradun to Delhi Taxi Service | Best Fares & Safe Highway Drops",
+    "h1": "Safe & Reliable Dehradun to Delhi Cab Service",
+    "description": "Pre-book your taxi from Dehradun to Delhi, Noida, or Gurugram. We specialize in safe highway driving, transparent tolls, and UP permitted vehicles.",
+    "distance": "300 km",
+    "basePrice": "3500"
+  },
+  {
+    "slug": "rishikesh-taxi-service",
+    "category": "Pilgrimage & Adventure",
+    "title": "Dehradun to Rishikesh Taxi | Safe Cabs & Airport Pickups",
+    "h1": "Dehradun to Rishikesh Cab Service",
+    "description": "Book a premium taxi from Dehradun or Jolly Grant Airport to Rishikesh. We specialize in safe navigation of the spiritual capital, ashram drops, and rafting base camps.",
+    "distance": "45 km",
+    "basePrice": "2300",
+    "uniquePoint": "We track the Char Dham yatra traffic and know the exact lanes for smooth drops near Ram Jhula and Triveni Ghat. Let us handle the congestion while you relax."
+  },
+  {
+    "slug": "nainital-taxi-service",
+    "category": "Intercity & Hill Station",
+    "title": "Dehradun to Nainital & Jim Corbett Taxi | Premium SUV Service",
+    "h1": "Dehradun to Nainital Cab Service",
+    "description": "Book a premium Innova Crysta from Dehradun to Nainital and Jim Corbett. We ensure safe hill driving, transparent UP border permits, and expert Kumaon route navigation.",
+    "distance": "320 km",
+    "basePrice": "4500",
+    "uniquePoint": "We manage the long UP highway stretches and the 35km Kathgodam hill climb with expert drivers, ensuring you reach Kumaon comfortably and safely."
+  },
+  {
+    "slug": "chandigarh-taxi-service",
+    "category": "Intercity",
+    "title": "Dehradun to Chandigarh Taxi | Safe Cabs & PGI Drops",
+    "h1": "Dehradun to Chandigarh Cab Service",
+    "description": "Book a safe, reliable taxi from Dehradun to Chandigarh, Mohali, or PGI Hospital. Our fleet is equipped with all necessary multi-state permits for a seamless journey.",
+    "distance": "180 km",
+    "basePrice": "3000",
+    "uniquePoint": "We specialize in PGI medical travel and ensure all HP & Haryana inter-state permits are pre-cleared to avoid border delays."
+  },
+  {
+    "slug": "delhi-to-kedarnath-taxi-service",
+    "category": "Premium Yatra",
+    "title": "Delhi to Kedarnath Taxi | Multi-Day Innova Yatra Packages",
+    "h1": "Delhi to Kedarnath Cab Service",
+    "description": "Book a premium, multi-day SUV package from Delhi to Kedarnath. We provide expert Char Dham drivers, transparent pricing, and complete guidance for Sonprayag and Gaurikund.",
+    "distance": "450 km",
+    "basePrice": "Enquire for Package",
+    "uniquePoint": "We do not rush the Yatra. We ensure mandatory night halts, assist with biometric registrations, and guide you through the strict Sonprayag vehicle rules."
+  },
+  {
+    "slug": "badrinath-taxi-service",
+    "category": "Pilgrimage",
+    "title": "Dehradun to Badrinath Taxi | Premium SUV Yatra Cabs",
+    "h1": "Dehradun to Badrinath Cab Service",
+    "description": "Book a safe SUV for your Badrinath Yatra from Dehradun. Our expert drivers navigate the Joshimath gate timings and high-altitude roads safely.",
+    "distance": "340 km",
+    "basePrice": "Package Starts ₹14,000",
+    "uniquePoint": "We manage the complex Joshimath traffic gate timings and include a complimentary drive to Mana, the last Indian village."
+  },
+  {
+    "slug": "kedarnath-chardham-yatra",
+    "category": "Yatra",
+    "title": "Kedarnath Yatra Taxi 2026 | Reliable Cab from Dehradun/Haridwar",
+    "h1": "Taxi Service for Kedarnath Dham Yatra",
+    "description": "Planning your spiritual journey to Kedarnath? We provide experienced hill-drivers and well-maintained SUVs.",
+    "distance": "220 km (to Sonprayag)",
+    "price": "Request a Quote",
+    "uniquePoint": "Our drivers assist you with the Biometric Registration process and guide you on the trek starting point at Gauri Kund."
+  },
+  {
+    "slug": "rafting-rishikesh",
+    "category": "Adventure",
+    "title": "Taxi for Rishikesh Rafting | Group Transport & Equipment Space",
+    "h1": "Cab Service for Rishikesh River Rafting Groups",
+    "description": "Going for adventure? Our large carriers and tempo travellers are perfect for rafting groups and gear.",
+    "distance": "Local Rishikesh",
+    "price": "Starting from ₹1200",
+    "uniquePoint": "We offer 'Wait & Return' packages. Leave your dry clothes in the cab safely while you hit the rapids."
+  },
+  {
+    "slug": "kedarnath-taxi-service",
+    "category": "Pilgrimage",
+    "title": "Dehradun to Kedarnath Taxi | Safe Yatra Cabs & Registration Help",
+    "h1": "Dehradun to Kedarnath Cab Service",
+    "description": "Book a safe SUV for your Kedarnath Yatra. We provide hill-certified drivers, registration assistance, and transparent 3/4-day packages.",
+    "distance": "255 km",
+    "basePrice": "Package Starts ₹12,000",
+    "uniquePoint": "Our drivers are mountain specialists who assist with your biometric registration and guide you at the Sonprayag bottleneck."
+  },
+  {
+    "slug": "dhanaulti-taxi-service",
+    "category": "Hill Station",
+    "title": "Dehradun to Mussoorie & Dhanaulti Taxi | Expert Hill Drivers",
+    "h1": "Dehradun to Dhanaulti Cab Service",
+    "description": "Book a premium SUV or Sedan from Dehradun to Mussoorie and Dhanaulti. We specialize in safe hill driving, transparent pricing, and expert local navigation.",
+    "distance": "60 km",
+    "basePrice": "2500",
+    "uniquePoint": "Our drivers are trained for the steep hairpins of Kolhukhet and the unpredictable fog of the Dhanaulti ridge. We prioritize safety over speed."
+  },
+  {
+    "slug": "delhi-to-kumaon-circuit-taxi",
+    "category": "Premium Tour Package",
+    "title": "Delhi to Nainital, Mukteshwar & Kausani | Kumaon Circuit Taxi",
+    "h1": "Delhi to Kumaon Circuit Cab Service",
+    "description": "Book a premium, multi-day SUV package from Delhi covering Nainital, Mukteshwar, Ranikhet, Almora, and Kausani. Expert hill drivers and transparent pricing.",
+    "distance": "540 km (Circuit)",
+    "basePrice": "Enquire for Multi-Day Package",
+    "uniquePoint": "We don't just drive you; we guide you. We know the 'secret' Mukteshwar roads, the strict Nainital parking rules, and the exact time to catch the Kausani sunrise."
+  },
+  {
+    "slug": "dehradun-to-mussoorie-taxi",
+    "title": "Dehradun to Mussoorie Taxi Service",
+    "distance": "35 km",
+    "duration": "1.5 hours",
+    "basePrice": "2000",
+    "vehicleTip": "For the hairpin bends of Mussoorie, we recommend an Innova Crysta for better suspension and comfort.",
+    "localSecrets": [
+      "Stop at Bhatta Falls for a quick 20-minute tea break; it's less crowded than Kempty.",
+      "Ask our driver to take the Old Mussoorie Road if you want a more scenic, quiet climb."
+    ],
+    "stops": [
+      "Malsi Zoo",
+      "Bhatta Falls",
+      "Mussoorie Lake"
+    ],
+    "faq": [
+      {
+        "q": "Is AC available on the hill climb?",
+        "a": "Yes, but we typically turn it off during steep sections to ensure engine power for safety."
+      }
+    ]
+  },
+  {
+    "slug": "jolly-grant-airport-to-rishikesh-taxi",
+    "title": "Jolly Grant Airport to Rishikesh Cab",
+    "distance": "21 km",
+    "duration": "45 mins",
+    "basePrice": "1200",
+    "localSecrets": [
+      "Avoid the bridge traffic by timing your arrival before the evening Ganga Aarti (6 PM).",
+      "We offer specialized 'Adventure Drop' for rafters with extra space for gear."
+    ],
+    "stops": [
+      "Lachhiwala Nature Park",
+      "Doiwala"
+    ],
+    "faq": [
+      {
+        "q": "Where is the pickup point at Dehradun Airport?",
+        "a": "Our driver will meet you right outside the Arrival Gate with a name board."
+      }
+    ]
+  },
+  {
+    "slug": "jolly-grant-airport-to-haridwar-taxi",
+    "category": "Airport Transfer",
+    "title": "Jolly Grant Airport to Haridwar Taxi | Flight-Tracked Pickups 2026",
+    "h1": "Jolly Grant Airport to Haridwar Cab Service",
+    "description": "Book a pre-paid taxi from Jolly Grant Airport (DED) to Haridwar. Fixed fare, meet-and-greet at the arrival gate, and 24/7 availability. No prepaid booth queues.",
+    "distance": "35 km",
+    "duration": "50 mins",
+    "basePrice": "1700",
+    "uniquePoint": "Haridwar is just 35 km from Jolly Grant Airport — the shortest major transfer from DED. Our drivers track your flight in real-time so there is zero waiting, even if your flight is delayed.",
+    "localSecrets": [
+      "Morning flights from Delhi arrive by 8 AM — perfect timing to reach Har Ki Pauri before the crowds.",
+      "Ask your driver for the Bhimgoda bypass to avoid Haridwar city traffic during evening Ganga Aarti."
+    ],
+    "faq": [
+      {
+        "q": "What is the taxi fare from Jolly Grant Airport to Haridwar?",
+        "a": "The fixed fare from Jolly Grant Airport to Haridwar is ₹1,700 for a Sedan and ₹2,300 for an SUV with Uttarakhand Cab 24/7. The 35 km journey takes approximately 50 minutes."
+      },
+      {
+        "q": "Does the driver wait if my flight is delayed?",
+        "a": "Yes. We track your flight and adjust pickup time automatically. There is no extra charge for flight delays up to 2 hours."
+      }
+    ]
+  },
+  {
+    "slug": "jolly-grant-airport-to-kedarnath-taxi",
+    "category": "Airport Transfer",
+    "title": "Jolly Grant Airport to Kedarnath Taxi | Direct Yatra Transfer 2026",
+    "h1": "Jolly Grant Airport to Kedarnath Cab Service",
+    "description": "Pre-book a direct taxi from Jolly Grant Airport (Dehradun) to Gaurikund for your Kedarnath Yatra. Expert Char Dham drivers, biometric registration assistance included.",
+    "distance": "260 km",
+    "duration": "9 hrs",
+    "basePrice": "9500",
+    "uniquePoint": "Land, and go straight to Kedarnath — no city hotel stop needed. We handle your bags and guide you through Sonprayag's strict vehicle rules on the same day.",
+    "faq": [
+      {
+        "q": "Can I go directly from Dehradun airport to Kedarnath?",
+        "a": "Yes. Our airport-to-Gaurikund taxi covers 260 km and takes approximately 9 hours. Sedan fare starts at ₹9,500. We recommend an early morning flight to ensure same-day arrival at Gaurikund."
+      }
+    ]
+  },
+  {
+    "slug": "jolly-grant-airport-to-dehradun-city-taxi",
+    "category": "Airport Transfer",
+    "title": "Jolly Grant Airport to Dehradun City Taxi | Fixed ₹1,500 Fare",
+    "h1": "Jolly Grant Airport to Dehradun City Cab Service",
+    "description": "Book a reliable taxi from Jolly Grant Airport (DED) to Dehradun city, railway station, or ISBT. Fixed fare ₹1,500 Sedan. Meet-and-greet available 24/7.",
+    "distance": "25 km",
+    "duration": "45 mins",
+    "basePrice": "1500",
+    "uniquePoint": "The quickest and most affordable transfer out of Jolly Grant Airport. Our driver holds your name-board at the arrival gate — no scrambling for a cab outside.",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Jolly Grant Airport to Dehradun?",
+        "a": "The fixed one-way fare from Jolly Grant Airport to Dehradun city is ₹1,500 for a Sedan and ₹2,300 for an SUV. The 25 km drive takes approximately 45 minutes."
+      }
+    ]
+  },
+  {
+    "slug": "haridwar-to-rishikesh-taxi",
+    "category": "Pilgrimage",
+    "title": "Haridwar to Rishikesh Taxi | Fixed ₹1,700 Fare | Ashram Drops",
+    "h1": "Haridwar to Rishikesh Cab Service",
+    "description": "Book a quick and reliable taxi from Haridwar to Rishikesh. Fixed fare ₹1,700 Sedan. Specialised drops to Ram Jhula, Laxman Jhula, Triveni Ghat, and ashrams.",
+    "distance": "25 km",
+    "duration": "45 mins",
+    "basePrice": "1700",
+    "uniquePoint": "We know exactly which lanes to use near Rishikesh's sacred ghats. Our drivers navigate the congestion near Triveni Ghat and Ram Jhula for a smooth drop every time.",
+    "localSecrets": [
+      "Leave Haridwar after the morning Aarti (7 AM) for the least traffic on the Rishikesh highway.",
+      "The Rishikesh bridge near Ram Jhula is pedestrian-only — our driver will drop you at the nearest vehicle point."
+    ],
+    "faq": [
+      {
+        "q": "What is the taxi fare from Haridwar to Rishikesh?",
+        "a": "The fixed one-way fare from Haridwar to Rishikesh is ₹1,700 for a Sedan and ₹2,300 for an SUV. The 25 km journey takes approximately 45 minutes."
+      },
+      {
+        "q": "Can you drop at specific ashrams in Rishikesh?",
+        "a": "Yes. We offer drops to Parmarth Niketan, Sivananda Ashram, Osho Ganga, Beatles Ashram (Chaurasi Kutia), and all ghats near Ram Jhula and Laxman Jhula."
+      }
+    ]
+  },
+  {
+    "slug": "haridwar-to-mussoorie-taxi",
+    "category": "Hill Station",
+    "title": "Haridwar to Mussoorie Taxi | Direct Hill Transfer 2026",
+    "h1": "Haridwar to Mussoorie Cab Service",
+    "description": "Book a direct taxi from Haridwar to Mussoorie. Fixed fare, hill-certified drivers, and no hidden charges. Covers 80 km via Dehradun in approximately 2.5 hours.",
+    "distance": "80 km",
+    "duration": "2.5 hrs",
+    "basePrice": "3500",
+    "uniquePoint": "Most tourists arrive at Haridwar by train and want to head straight to Mussoorie. We eliminate the Dehradun stopover — one cab, one fare, straight to the Queen of Hills.",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Haridwar to Mussoorie?",
+        "a": "The one-way fare from Haridwar to Mussoorie is ₹3,500 for a Sedan and ₹4,500 for an SUV. The 80 km route goes via Dehradun and takes approximately 2.5 hours."
+      }
+    ]
+  },
+  {
+    "slug": "haridwar-to-dehradun-taxi",
+    "category": "Intercity",
+    "title": "Haridwar to Dehradun Taxi | Fixed Fare ₹2,000 | 24/7 Cabs",
+    "h1": "Haridwar to Dehradun Cab Service",
+    "description": "Book a reliable taxi from Haridwar to Dehradun. Fixed fare ₹2,000 Sedan. Covers 55 km via NH334 in approximately 1.5 hours. Railway station and hotel pickups available.",
+    "distance": "55 km",
+    "duration": "1.5 hrs",
+    "basePrice": "2000",
+    "uniquePoint": "Haridwar Railway Station is one of the busiest in Uttarakhand. We offer pre-booked cabs that beat the auto and e-rickshaw queues outside the station every time.",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Haridwar to Dehradun?",
+        "a": "The fixed one-way fare from Haridwar to Dehradun is ₹2,000 for a Sedan and ₹3,000 for an SUV. The 55 km journey via NH334 takes approximately 1.5 hours."
+      }
+    ]
+  },
+  {
+    "slug": "haridwar-to-nainital-taxi",
+    "category": "Intercity",
+    "title": "Haridwar to Nainital Taxi | Kumaon Transfer | Hill Experts",
+    "h1": "Haridwar to Nainital Cab Service",
+    "description": "Book a comfortable taxi from Haridwar to Nainital. Covers 260 km via Najibabad in approximately 7 hours. AC sedans and SUVs, mountain-certified drivers, fixed fare.",
+    "distance": "260 km",
+    "duration": "7 hrs",
+    "basePrice": "7000",
+    "uniquePoint": "Pilgrims finishing their Haridwar visit and heading to Nainital avoid a costly detour through Dehradun. We route you directly via the Haridwar-Najibabad highway for the fastest inter-regional transfer.",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Haridwar to Nainital?",
+        "a": "The one-way fare from Haridwar to Nainital is ₹7,000 for a Sedan and ₹9,000 for an SUV. The 260 km journey via Najibabad takes approximately 7 hours."
+      }
+    ]
+  },
+  {
+    "slug": "haridwar-to-badrinath-taxi",
+    "category": "Pilgrimage",
+    "title": "Haridwar to Badrinath Taxi | Yatra Packages 2026 | Hill Drivers",
+    "h1": "Haridwar to Badrinath Cab Service",
+    "description": "Book a safe SUV taxi from Haridwar to Badrinath. Yatra-experienced drivers, Joshimath gate-timing management, and transparent 1-day or package rates.",
+    "distance": "320 km",
+    "duration": "10-11 hrs",
+    "basePrice": "10000",
+    "uniquePoint": "Haridwar to Badrinath in one day is a 10+ hour mountain drive. Our experienced Yatra drivers plan mandatory rest stops and manage the Joshimath barrier timings for a safe, timely arrival.",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Haridwar to Badrinath?",
+        "a": "The one-way fare from Haridwar to Badrinath is approximately ₹10,000 for a Sedan and ₹12,000 for an SUV. The 320 km journey takes 10–11 hours via Rishikesh and Joshimath."
+      }
+    ]
+  },
+  {
+    "slug": "rishikesh-to-mussoorie-taxi",
+    "category": "Hill Station",
+    "title": "Rishikesh to Mussoorie Taxi | Direct Hill Transfer 2026",
+    "h1": "Rishikesh to Mussoorie Cab Service",
+    "description": "Book a direct taxi from Rishikesh to Mussoorie. Covers 70 km in approximately 2 hours. Fixed fare, hill-certified drivers, hotel drop included.",
+    "distance": "70 km",
+    "duration": "2 hrs",
+    "basePrice": "3000",
+    "uniquePoint": "Rishikesh to Mussoorie is one of the most popular same-day transfers in Uttarakhand. We take the Dehradun bypass to avoid city traffic and deliver you to Mall Road efficiently.",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Rishikesh to Mussoorie?",
+        "a": "The one-way fare from Rishikesh to Mussoorie is ₹3,000 for a Sedan and ₹4,000 for an SUV. The 70 km journey via Dehradun takes approximately 2 hours."
+      }
+    ]
+  },
+  {
+    "slug": "rishikesh-to-haridwar-taxi",
+    "category": "Pilgrimage",
+    "title": "Rishikesh to Haridwar Taxi | Fixed ₹1,700 | Temple Drops",
+    "h1": "Rishikesh to Haridwar Cab Service",
+    "description": "Book a quick taxi from Rishikesh to Haridwar for Ganga Aarti, temple visits, or train connections. Fixed fare ₹1,700 Sedan. Hotel pickups available.",
+    "distance": "25 km",
+    "duration": "45 mins",
+    "basePrice": "1700",
+    "uniquePoint": "Evening Ganga Aarti at Har Ki Pauri is a must-see. We time your Rishikesh pickup to ensure you arrive at Haridwar well before the 6 PM ceremony.",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Rishikesh to Haridwar?",
+        "a": "The fixed one-way fare from Rishikesh to Haridwar is ₹1,700 for a Sedan and ₹2,300 for an SUV. The 25 km journey takes approximately 45 minutes."
+      }
+    ]
+  },
+  {
+    "slug": "rishikesh-to-dehradun-taxi",
+    "category": "Intercity",
+    "title": "Rishikesh to Dehradun Taxi | Fixed Fare | Airport Drops 2026",
+    "h1": "Rishikesh to Dehradun Cab Service",
+    "description": "Book a reliable taxi from Rishikesh to Dehradun city or Jolly Grant Airport. Fixed fare, 24/7 availability, and on-time airport drops guaranteed.",
+    "distance": "50 km",
+    "duration": "1.5 hrs",
+    "basePrice": "2300",
+    "uniquePoint": "Missing a flight from Jolly Grant because of Rishikesh traffic is a real risk. We pad your transfer time and take the fastest route via Doiwala to guarantee on-time airport arrivals.",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Rishikesh to Dehradun?",
+        "a": "The fixed one-way fare from Rishikesh to Dehradun is ₹2,300 for a Sedan and ₹3,300 for an SUV. The 50 km journey takes approximately 1.5 hours."
+      },
+      {
+        "q": "Can I get a taxi from Rishikesh to Jolly Grant Airport?",
+        "a": "Yes. We specialise in Rishikesh to Jolly Grant Airport transfers. The 21 km airport-specific route takes approximately 45 minutes and is priced at ₹1,200 for a Sedan."
+      }
+    ]
+  },
+  {
+    "slug": "rishikesh-to-badrinath-taxi",
+    "category": "Pilgrimage",
+    "title": "Rishikesh to Badrinath Taxi | Yatra Cabs 2026 | Safe Hill Drivers",
+    "h1": "Rishikesh to Badrinath Cab Service",
+    "description": "Book a premium SUV for your Badrinath Yatra from Rishikesh. Covers 295 km via Devprayag and Joshimath. Experienced Char Dham drivers, gate-timing expertise.",
+    "distance": "295 km",
+    "duration": "9-10 hrs",
+    "basePrice": "9000",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Rishikesh to Badrinath?",
+        "a": "The one-way fare from Rishikesh to Badrinath is approximately ₹9,000 for a Sedan and ₹11,000 for an SUV. The 295 km mountain drive via Joshimath takes 9–10 hours."
+      }
+    ]
+  },
+  {
+    "slug": "rishikesh-to-nainital-taxi",
+    "category": "Intercity",
+    "title": "Rishikesh to Nainital Taxi | Garhwal to Kumaon Transfer 2026",
+    "h1": "Rishikesh to Nainital Cab Service",
+    "description": "Book a comfortable taxi from Rishikesh to Nainital. Covers 250 km via Najibabad in approximately 6.5 hours. Expert long-distance drivers, AC vehicles, fixed fare.",
+    "distance": "250 km",
+    "duration": "6.5 hrs",
+    "basePrice": "7000",
+    "uniquePoint": "The Rishikesh to Nainital route crosses two distinct Himalayan regions. Our drivers know the Haridwar bypass and the Kathgodam hill climb — two sections where inexperienced drivers lose time.",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Rishikesh to Nainital?",
+        "a": "The one-way fare from Rishikesh to Nainital is ₹7,000 for a Sedan and ₹9,000 for an SUV. The 250 km route via Najibabad takes approximately 6.5 hours."
+      }
+    ]
+  },
+  {
+    "slug": "delhi-to-mussoorie-taxi",
+    "category": "Intercity",
+    "title": "Delhi to Mussoorie Taxi | Overnight & Same-Day Drops 2026",
+    "h1": "Delhi to Mussoorie Cab Service",
+    "description": "Book a reliable taxi from Delhi, Noida, or Gurugram to Mussoorie. Covers 300 km via Delhi-Dehradun Expressway in 5–6 hours. Fixed fare, AC vehicles, no hidden tolls.",
+    "distance": "300 km",
+    "duration": "5-6 hrs",
+    "basePrice": "5000",
+    "uniquePoint": "The new Delhi-Dehradun Expressway has cut this journey to under 5 hours from parts of North Delhi. We are one of the few operators with UP-and-Uttarakhand dual-state permits to take this route legally.",
+    "localSecrets": [
+      "Book a night departure from Delhi (9–10 PM) to reach Mussoorie by sunrise — the views from Camel's Back Road at dawn are unmatched.",
+      "Our drivers know the exact Expressway exits for Muzaffarnagar and Roorkee rest stops."
+    ],
+    "faq": [
+      {
+        "q": "What is the taxi fare from Delhi to Mussoorie?",
+        "a": "The one-way fare from Delhi to Mussoorie is approximately ₹5,000 for a Sedan and ₹6,500 for an SUV. The 300 km journey via the Expressway takes 5–6 hours."
+      },
+      {
+        "q": "Does the taxi go via the new Expressway?",
+        "a": "Yes. We use the Delhi-Dehradun Expressway for the fastest route. All tolls are included in the quoted fare — no surprises at the toll plazas."
+      }
+    ]
+  },
+  {
+    "slug": "delhi-to-rishikesh-taxi",
+    "category": "Pilgrimage & Adventure",
+    "title": "Delhi to Rishikesh Taxi | Rafting, Yoga & Ashram Drops 2026",
+    "h1": "Delhi to Rishikesh Cab Service",
+    "description": "Book a direct taxi from Delhi to Rishikesh for rafting, yoga retreats, or pilgrimage. Covers 240 km in 5–6 hours. UP-permitted vehicles, fixed fare, 24/7 service.",
+    "distance": "240 km",
+    "duration": "5-6 hrs",
+    "basePrice": "4000",
+    "uniquePoint": "Rishikesh sees huge weekend demand from Delhi travellers. We specialise in group transfers for rafting teams, yoga retreat check-ins, and ashram drops with exact bridge navigation.",
+    "localSecrets": [
+      "Leave Delhi by 5 AM on weekends to avoid the Muzaffarnagar bottleneck and arrive in Rishikesh before the heat.",
+      "We can arrange a stop at Haridwar for a quick Ganga darshan en route — adds only 30 minutes."
+    ],
+    "faq": [
+      {
+        "q": "What is the taxi fare from Delhi to Rishikesh?",
+        "a": "The one-way fare from Delhi to Rishikesh is ₹4,000 for a Sedan and ₹5,000 for an SUV. The 240 km journey takes approximately 5–6 hours."
+      },
+      {
+        "q": "Can you drop at specific rafting camps or ashrams?",
+        "a": "Yes. We drop at Shivpuri, Byasi, Club House (Marine Drive), Laxman Jhula, Ram Jhula, and all major ashrams including Parmarth Niketan and Beatles Ashram."
+      }
+    ]
+  },
+  {
+    "slug": "delhi-to-haridwar-taxi",
+    "category": "Pilgrimage",
+    "title": "Delhi to Haridwar Taxi | Fixed Fare | Kumbh & Ganga Aarti Drops",
+    "h1": "Delhi to Haridwar Cab Service",
+    "description": "Book a pre-paid taxi from Delhi to Haridwar for pilgrimages, Ganga Aarti, or train connections. Fixed fare, UP-permitted vehicles, and hotel/ghat drops.",
+    "distance": "220 km",
+    "duration": "4-5 hrs",
+    "basePrice": "3500",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Delhi to Haridwar?",
+        "a": "The one-way fare from Delhi to Haridwar is approximately ₹3,500 for a Sedan and ₹4,500 for an SUV. The 220 km journey takes 4–5 hours via NH334."
+      }
+    ]
+  },
+  {
+    "slug": "delhi-to-nainital-taxi",
+    "category": "Intercity",
+    "title": "Delhi to Nainital Taxi | Direct Kumaon Transfer 2026",
+    "h1": "Delhi to Nainital Cab Service",
+    "description": "Book a premium taxi from Delhi to Nainital. Covers 300 km via Moradabad and Kathgodam in 7–8 hours. Mountain-certified drivers, AC sedans and SUVs, fixed fare.",
+    "distance": "300 km",
+    "duration": "7-8 hrs",
+    "basePrice": "5500",
+    "uniquePoint": "Delhi to Nainital is a classic weekend escape route. We use the Expressway to Moradabad and then the plains highway to Kathgodam — the fastest route that avoids Haridwar city entirely.",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Delhi to Nainital?",
+        "a": "The one-way fare from Delhi to Nainital is approximately ₹5,500 for a Sedan and ₹7,000 for an SUV. The 300 km journey via Kathgodam takes 7–8 hours."
+      }
+    ]
+  },
+  {
+    "slug": "mussoorie-to-dehradun-taxi",
+    "category": "Hill Station",
+    "title": "Mussoorie to Dehradun Taxi | Fixed Fare | Airport & Railway Drops",
+    "h1": "Mussoorie to Dehradun Cab Service",
+    "description": "Book a taxi from Mussoorie to Dehradun city, Jolly Grant Airport, or Dehradun Railway Station. Fixed fare ₹2,000 Sedan. 24/7 hotel pickups from Mussoorie Mall Road.",
+    "distance": "35 km",
+    "duration": "1.5 hrs",
+    "basePrice": "2000",
+    "uniquePoint": "Mall Road vehicle entry restrictions mean your pickup timing matters. Our drivers know exactly when and where to reach your hotel for a smooth, on-time departure.",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Mussoorie to Dehradun?",
+        "a": "The fixed one-way fare from Mussoorie to Dehradun is ₹2,000 for a Sedan and ₹3,000 for an SUV. The 35 km downhill drive takes approximately 1.5 hours."
+      }
+    ]
+  },
+  {
+    "slug": "mussoorie-to-rishikesh-taxi",
+    "category": "Intercity",
+    "title": "Mussoorie to Rishikesh Taxi | Direct Transfer 2026",
+    "h1": "Mussoorie to Rishikesh Cab Service",
+    "description": "Book a taxi from Mussoorie to Rishikesh. Covers 70 km in approximately 2 hours via Dehradun. Rafting camp and ashram drops available.",
+    "distance": "70 km",
+    "duration": "2 hrs",
+    "basePrice": "3000",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Mussoorie to Rishikesh?",
+        "a": "The one-way fare from Mussoorie to Rishikesh is ₹3,000 for a Sedan and ₹4,000 for an SUV. The 70 km journey takes approximately 2 hours via Dehradun."
+      }
+    ]
+  },
+  {
+    "slug": "mussoorie-to-kedarnath-taxi",
+    "category": "Pilgrimage",
+    "title": "Mussoorie to Kedarnath Taxi | Direct Yatra Transfer 2026",
+    "h1": "Mussoorie to Kedarnath Cab Service",
+    "description": "Book a direct taxi from Mussoorie to Gaurikund (Kedarnath base). Covers 270 km in 9–10 hours. Char Dham certified drivers with Sonprayag expertise.",
+    "distance": "270 km",
+    "duration": "9-10 hrs",
+    "basePrice": "9000",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Mussoorie to Kedarnath?",
+        "a": "The one-way fare from Mussoorie to Gaurikund (Kedarnath base) is approximately ₹9,000 for a Sedan and ₹11,000 for an SUV. The 270 km journey takes 9–10 hours."
+      }
+    ]
+  },
+  {
+    "slug": "kathgodam-to-nainital-taxi",
+    "category": "Hill Station",
+    "title": "Kathgodam to Nainital Taxi | Train Station Pickups | Fixed Fare",
+    "h1": "Kathgodam to Nainital Cab Service",
+    "description": "Book a taxi from Kathgodam Railway Station to Nainital. Fixed fare ₹1,500 Sedan. 35 km hill climb, hotel drops on Mall Road and Naini Lake.",
+    "distance": "35 km",
+    "duration": "1.5 hrs",
+    "basePrice": "1500",
+    "uniquePoint": "Kathgodam is the last railhead before the Kumaon hills. Every train from Delhi ends here — our drivers are station-side with name-boards for every major arrival.",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Kathgodam to Nainital?",
+        "a": "The fixed one-way fare from Kathgodam to Nainital is ₹1,500 for a Sedan and ₹2,000 for an SUV. The 35 km hill drive takes approximately 1.5 hours."
+      }
+    ]
+  },
+  {
+    "slug": "nainital-to-jim-corbett-taxi",
+    "category": "Wildlife & Adventure",
+    "title": "Nainital to Jim Corbett Taxi | Wildlife Safari Transfer 2026",
+    "h1": "Nainital to Jim Corbett Cab Service",
+    "description": "Book a comfortable taxi from Nainital to Jim Corbett National Park (Ramnagar). Covers 65 km in approximately 2 hours. Forest zone drop, Dhikala and Bijrani gate transfers.",
+    "distance": "65 km",
+    "duration": "2 hrs",
+    "basePrice": "2500",
+    "uniquePoint": "Nainital to Corbett is a natural pairing for Kumaon travellers. We offer early morning departures timed for dawn safari slots and know which Ramnagar route avoids market congestion.",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Nainital to Jim Corbett?",
+        "a": "The one-way fare from Nainital to Jim Corbett (Ramnagar) is ₹2,500 for a Sedan and ₹3,500 for an SUV. The 65 km journey takes approximately 2 hours."
+      }
+    ]
+  },
+  {
+    "slug": "dehradun-to-chopta-taxi",
+    "category": "Trekking & Adventure",
+    "title": "Dehradun to Chopta Taxi | Tungnath Trek Base Camp 2026",
+    "h1": "Dehradun to Chopta Cab Service",
+    "description": "Book a taxi from Dehradun to Chopta, the base camp for Tungnath and Chandrashila treks. Covers 200 km in approximately 7 hours. Mountain-certified drivers for high-altitude roads.",
+    "distance": "200 km",
+    "duration": "7 hrs",
+    "basePrice": "6500",
+    "uniquePoint": "Chopta roads above Ukhimath are snow-covered from December to March. Our drivers carry snow chains and know which stretches require 4WD mode on the Innova Crysta.",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Dehradun to Chopta?",
+        "a": "The one-way fare from Dehradun to Chopta is ₹6,500 for a Sedan and ₹8,000 for an SUV. The 200 km journey via Ukhimath takes approximately 7 hours."
+      }
+    ]
+  },
+  {
+    "slug": "rishikesh-to-chopta-taxi",
+    "category": "Trekking & Adventure",
+    "title": "Rishikesh to Chopta Taxi | Tungnath Trek Transfer 2026",
+    "h1": "Rishikesh to Chopta Cab Service",
+    "description": "Book a taxi from Rishikesh to Chopta for the Tungnath and Chandrashila trek. Covers 195 km in approximately 6.5 hours via Rudraprayag.",
+    "distance": "195 km",
+    "duration": "6.5 hrs",
+    "basePrice": "6000",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Rishikesh to Chopta?",
+        "a": "The one-way fare from Rishikesh to Chopta is approximately ₹6,000 for a Sedan and ₹7,500 for an SUV. The 195 km journey via Rudraprayag takes approximately 6.5 hours."
+      }
+    ]
+  },
+  {
+    "slug": "dehradun-to-auli-taxi",
+    "category": "Ski & Adventure",
+    "title": "Dehradun to Auli Taxi | Ski Resort Transfer 2026",
+    "h1": "Dehradun to Auli Cab Service",
+    "description": "Book a premium taxi from Dehradun to Auli ski resort. Covers 295 km via Joshimath in approximately 10 hours. High-altitude certified drivers, winter tyres available.",
+    "distance": "295 km",
+    "duration": "10 hrs",
+    "basePrice": "9500",
+    "uniquePoint": "Auli road above Joshimath is one of the most technically demanding drives in Uttarakhand. Our drivers are trained specifically for the Joshimath-Auli ascent and monitor NDRF avalanche alerts.",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Dehradun to Auli?",
+        "a": "The one-way fare from Dehradun to Auli is approximately ₹9,500 for a Sedan and ₹12,000 for an SUV. The 295 km drive via Joshimath takes approximately 10 hours."
+      }
+    ]
+  },
+  {
+    "slug": "haridwar-to-govindghat-taxi",
+    "category": "Trekking & Adventure",
+    "title": "Haridwar to Govindghat Taxi | Valley of Flowers Base 2026",
+    "h1": "Haridwar to Govindghat Cab Service",
+    "description": "Book a taxi from Haridwar to Govindghat, the base for Valley of Flowers and Hemkund Sahib treks. Covers 275 km in 8–9 hours via Joshimath.",
+    "distance": "275 km",
+    "duration": "8-9 hrs",
+    "basePrice": "10000",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Haridwar to Govindghat?",
+        "a": "The one-way fare from Haridwar to Govindghat is ₹10,000 for a Sedan and ₹13,000 for an SUV. The 275 km route via Joshimath takes 8–9 hours."
+      }
+    ]
+  },
+  {
+    "slug": "rishikesh-to-govindghat-taxi",
+    "category": "Trekking & Adventure",
+    "title": "Rishikesh to Govindghat Taxi | Valley of Flowers Transfer 2026",
+    "h1": "Rishikesh to Govindghat Cab Service",
+    "description": "Book a taxi from Rishikesh to Govindghat for the Valley of Flowers or Hemkund Sahib trek. Covers 265 km in 8–9 hours. Trek-experienced drivers with Joshimath expertise.",
+    "distance": "265 km",
+    "duration": "8-9 hrs",
+    "basePrice": "9500",
+    "faq": [
+      {
+        "q": "What is the taxi fare from Rishikesh to Govindghat?",
+        "a": "The one-way fare from Rishikesh to Govindghat is ₹9,500 for a Sedan and ₹12,500 for an SUV. The 265 km journey takes approximately 8–9 hours."
+      }
+    ]
+  }
+]
