@@ -136,7 +136,7 @@ export default function TourPackages() {
           className="object-cover opacity-30"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1C3F]/95 via-[#0B1C3F]/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/95 via-[#0a0a0a]/80 to-transparent" />
         
         <div className="max-w-page mx-auto relative z-10">
           <div className="max-w-3xl">

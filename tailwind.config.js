@@ -13,7 +13,7 @@ module.exports = {
           bg:      '#0a0a0a',
           surface: '#111111',
           text:    '#FFFFFF',
-          navy:    '#0B1C3F',
+          navy:    '#0a0a0a',
           charcoal:'#1e1e1e',
         },
       },

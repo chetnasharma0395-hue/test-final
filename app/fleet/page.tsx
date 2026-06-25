@@ -51,7 +51,7 @@ export default function FleetPage() {
 
       {/* 1. HERO */}
       <section className="relative pt-40 pb-32 px-4 sm:px-6 lg:px-8 bg-[#121212] overflow-hidden text-left">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0B1C3F] via-[#0B1C3F] to-[#1E1F20] opacity-95" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0a0a0a] via-[#0a0a0a] to-[#1E1F20] opacity-95" />
         {/* Ambient aurora glow */}
         <AuroraGlow className="opacity-50" />
         <div className="max-w-page mx-auto relative z-10">
