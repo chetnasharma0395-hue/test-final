@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: #121212;
+    --foreground: #FFFFFF;
+    --surface: #1A1A1A;
+    --brand-orange: #F7941D;
+    --navy: #0B1C3F;
+  }
+
+  html.lenis { height: auto; }
+  .lenis.lenis-smooth { scroll-behavior: auto; }
+  .lenis.lenis-stopped { overflow: hidden; }
+
+  body {
+    @apply bg-[#121212] text-white antialiased selection:bg-[#F7941D]/30;
+    font-family: var(--font-inter), sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-montserrat), sans-serif;
+    @apply tracking-tighter uppercase;
+  }
+}
+
+@layer utilities {
+  .bg-navy { background-color: #0B1C3F; }
+  .bg-surface { background-color: #1A1A1A; }
+}
+
+@layer components {
+  main p a,
+  main li a,
+  main td a {
+    @apply text-[#F7941D] underline underline-offset-2 decoration-[#F7941D]/40
+           hover:text-[#D97E10] hover:decoration-[#D97E10] transition-colors;
+  }
+
+  .btn-primary {
+    @apply bg-[#F7941D] text-white px-8 py-4 font-black text-sm uppercase tracking-widest 
+           transition-all duration-300 inline-block text-center rounded-xl
+           hover:bg-[#D97E10] hover:shadow-[0_0_25px_-5px_#F7941D] hover:-translate-y-0.5;
+  }
+}
+
+/* Dark scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #121212; }
+::-webkit-scrollbar-thumb { 
+  background: #333333; 
+  border-radius: 20px; 
+  border: 2px solid #121212; 
+}
+::-webkit-scrollbar-thumb:hover { background: #F7941D; }
+
+/* Marquee */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 50s linear infinite;
+  will-change: transform;
+}
+.animate-marquee:hover { animation-play-state: paused; }
+
+/* Fade-up */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Shimmer */
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+/* Hero float */
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+.animate-hero-float { animation: heroFloat 6s ease-in-out infinite; }
+
+/* Route card underline */
+.route-card-link::after {
+  content: '';
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #F7941D;
+  transition: width 0.3s ease;
+}
+.route-card-link:hover::after { width: 100%; }
