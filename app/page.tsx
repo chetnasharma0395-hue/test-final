@@ -17,6 +17,7 @@ import { FleetGrid } from '@/components/FleetGrid';
 import { TiltCard } from '@/components/TiltCard';
 import { HomeTourPackagesCarousel } from '@/components/HomeTourPackagesCarousel';
 import { HomeBlogPreviewCarousel } from '@/components/HomeBlogPreviewCarousel';
+import { HeroHeading } from '@/components/HeroHeading';
 import { blogPosts } from '@/lib/blog-content';
 
 export const metadata: Metadata = {
@@ -141,61 +142,17 @@ export default function Home() {
       {/* ── 1. HERO ──────────────────────────────────────────────── */}
       <section className="relative min-h-screen w-full overflow-hidden flex items-center bg-[#0a0a0a]">
 
-        {/* Orange ambient glow — top right, matches screenshot */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#F7941D] opacity-[0.12] blur-[120px] pointer-events-none rounded-full" />
-        <div className="absolute top-[-100px] right-[-100px] w-[400px] h-[400px] bg-[#F7941D] opacity-[0.07] blur-[80px] pointer-events-none rounded-full" />
+        {/* Orange ambient glow — top right, gently pulsing */}
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#F7941D] opacity-[0.12] blur-[120px] pointer-events-none rounded-full animate-glow-pulse" />
+        <div className="absolute top-[-100px] right-[-100px] w-[400px] h-[400px] bg-[#F7941D] opacity-[0.07] blur-[80px] pointer-events-none rounded-full animate-glow-pulse" style={{ animationDelay: '1.5s' }} />
 
         {/* Subtle dot grid texture */}
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
 
         <div className="relative z-10 max-w-page mx-auto px-6 sm:px-8 lg:px-10 w-full flex flex-col xl:grid xl:grid-cols-[1fr_minmax(0,460px)] items-center gap-12 pt-28 pb-16 xl:pt-36 xl:pb-20">
 
-          {/* Left — Copy */}
-          <div className="min-w-0 text-left">
-
-            {/* Trust pill */}
-            <div className="inline-flex items-center gap-2 bg-white/8 border border-white/12 px-4 py-2 rounded-full mb-8">
-              <span className="text-[#F7941D] text-xs font-black">+</span>
-              <p className="text-[10px] font-black uppercase tracking-widest text-white/80">
-                Trusted Since 2011 · 20,000+ Rides
-              </p>
-            </div>
-
-            {/* Main heading — matches screenshot exactly */}
-            <h1 className="font-heading font-black uppercase leading-[0.92] tracking-tight mb-8 break-words">
-              <span className="block text-white text-[2.5rem] sm:text-6xl md:text-7xl xl:text-8xl">
-                Uttarakhand&apos;s
-              </span>
-              <span className="block text-[#F7941D] text-[2.5rem] sm:text-6xl md:text-7xl xl:text-8xl">
-                Most Trusted
-              </span>
-              <span className="block text-white text-[2.5rem] sm:text-6xl md:text-7xl xl:text-8xl">
-                Cab Service
-              </span>
-            </h1>
-
-            <p className="text-white/65 text-base md:text-lg max-w-lg mb-10 font-light leading-relaxed">
-              Fixed fares. Local drivers. 24/7 availability across
-              Uttarakhand — from Dehradun to Kedarnath, Char Dham,
-              Mussoorie &amp; beyond.
-            </p>
-
-            {/* Trust badges row — matches screenshot */}
-            <div className="flex flex-wrap gap-3">
-              <span className="flex items-center gap-2 bg-white/6 border border-white/10 text-white text-[11px] font-bold px-4 py-2.5 rounded-full">
-                <Star className="w-3.5 h-3.5 fill-[#FBBC05] text-[#FBBC05]" />
-                4.9 / 5 Rating
-              </span>
-              <span className="flex items-center gap-2 bg-white/6 border border-white/10 text-white text-[11px] font-bold px-4 py-2.5 rounded-full">
-                <Shield className="w-3.5 h-3.5 text-[#F7941D]" />
-                Zero Hidden Fees
-              </span>
-              <span className="flex items-center gap-2 bg-white/6 border border-white/10 text-white text-[11px] font-bold px-4 py-2.5 rounded-full">
-                <Zap className="w-3.5 h-3.5 text-[#F7941D]" />
-                15-Min Confirmation
-              </span>
-            </div>
-          </div>
+          {/* Left — Copy (premium animated) */}
+          <HeroHeading />
 
           {/* Right — Quote Widget */}
           <div className="w-full min-w-0 overflow-hidden">
