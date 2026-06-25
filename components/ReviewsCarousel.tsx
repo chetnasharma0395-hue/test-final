@@ -97,29 +97,45 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
       onTouchStart={(e) => { setPaused(true); onTouchStart(e); }}
       onTouchEnd={(e) => { onTouchEnd(e); setTimeout(() => setPaused(false), 600); }}
     >
-      {/* Stage */}
-      <div className="relative w-full max-w-[440px] h-[420px] sm:h-[400px] flex items-center justify-center [perspective:1200px]">
-        <AnimatePresence initial={false} custom={direction} mode="popLayout">
-          <motion.div
-            key={active}
-            custom={direction}
-            variants={reduce ? undefined : variants}
-            initial={reduce ? false : 'enter'}
-            animate={reduce ? undefined : 'center'}
-            exit={reduce ? undefined : 'exit'}
-            className="absolute inset-0"
-            style={{ willChange: 'transform, opacity' }}
-          >
-            {/* Breathe-zoom wrapper (only while resting in center) */}
+      {/* Stage — center active card + peek of prev/next */}
+      <div className="relative w-full h-[360px] sm:h-[340px] flex items-center justify-center [perspective:1400px]">
+
+        {/* Prev peek (desktop only) */}
+        {!reduce && (
+          <div className="hidden md:block absolute left-0 lg:left-8 top-1/2 -translate-y-1/2 w-[320px] opacity-35 scale-[0.82] blur-[1px] pointer-events-none select-none -rotate-2 origin-right">
+            <ReviewCard review={reviews[(active - 1 + reviews.length) % reviews.length]} reduce compact />
+          </div>
+        )}
+
+        {/* Next peek (desktop only) */}
+        {!reduce && (
+          <div className="hidden md:block absolute right-0 lg:right-8 top-1/2 -translate-y-1/2 w-[320px] opacity-35 scale-[0.82] blur-[1px] pointer-events-none select-none rotate-2 origin-left">
+            <ReviewCard review={reviews[(active + 1) % reviews.length]} reduce compact />
+          </div>
+        )}
+
+        {/* Active card (throw effect) */}
+        <div className="relative z-10 w-full max-w-[420px]">
+          <AnimatePresence initial={false} custom={direction} mode="popLayout">
             <motion.div
-              className="h-full"
-              animate={reduce ? undefined : { scale: [1, 1.035, 1] }}
-              transition={reduce ? undefined : { duration: AUTOPLAY_MS / 1000, ease: 'easeInOut', times: [0, 0.5, 1] }}
+              key={active}
+              custom={direction}
+              variants={reduce ? undefined : variants}
+              initial={reduce ? false : 'enter'}
+              animate={reduce ? undefined : 'center'}
+              exit={reduce ? undefined : 'exit'}
+              style={{ willChange: 'transform, opacity' }}
             >
-              <ReviewCard review={current} reduce={!!reduce} />
+              {/* Breathe-zoom wrapper (only while resting in center) */}
+              <motion.div
+                animate={reduce ? undefined : { scale: [1, 1.03, 1] }}
+                transition={reduce ? undefined : { duration: AUTOPLAY_MS / 1000, ease: 'easeInOut', times: [0, 0.5, 1] }}
+              >
+                <ReviewCard review={current} reduce={!!reduce} />
+              </motion.div>
             </motion.div>
-          </motion.div>
-        </AnimatePresence>
+          </AnimatePresence>
+        </div>
       </div>
 
       {/* Controls */}
@@ -161,11 +177,11 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
 }
 
 /* ── Single review card ──────────────────────────────────────────── */
-function ReviewCard({ review, reduce }: { review: Review; reduce: boolean }) {
+function ReviewCard({ review, reduce, compact = false }: { review: Review; reduce: boolean; compact?: boolean }) {
   return (
     <div
-      className="bg-[#1A1A1A] rounded-[2rem] p-7 sm:p-8 flex flex-col gap-5 h-full border border-[#F7941D]/25"
-      style={{ boxShadow: '0 32px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(247,148,29,0.10)' }}
+      className="bg-[#1A1A1A] rounded-[2rem] p-6 sm:p-7 flex flex-col gap-4 border border-[#F7941D]/25"
+      style={{ boxShadow: compact ? 'none' : '0 28px 70px rgba(0,0,0,0.5), 0 0 0 1px rgba(247,148,29,0.10)' }}
     >
       {/* Stars (draw in one-by-one) + Quote */}
       <div className="flex items-center justify-between">
@@ -191,7 +207,16 @@ function ReviewCard({ review, reduce }: { review: Review; reduce: boolean }) {
       </div>
 
       {/* Body */}
-      <p className="text-white/75 text-sm leading-relaxed flex-1">
+      <p
+        className="text-white/75 text-sm leading-relaxed"
+        style={{
+          display: '-webkit-box',
+          WebkitLineClamp: 5,
+          WebkitBoxOrient: 'vertical',
+          overflow: 'hidden',
+          minHeight: '6.5em',
+        }}
+      >
         &ldquo;{review.text}&rdquo;
       </p>
 
