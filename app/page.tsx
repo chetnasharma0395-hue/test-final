@@ -14,6 +14,8 @@ import { FAQSection } from '@/components/FAQ';
 import { GEOAnswerBox } from '@/components/GEOAnswerBox';
 import { AuroraGlow, AnimatedSection, MagneticCTA, Stagger, StaggerItem } from '@/components/motion';
 import { FleetGrid } from '@/components/FleetGrid';
+import { TiltCard } from '@/components/TiltCard';
+import { CardCarousel } from '@/components/CardCarousel';
 import { blogPosts } from '@/lib/blog-content';
 
 export const metadata: Metadata = {
@@ -229,37 +231,37 @@ export default function Home() {
             <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[280px]">
 
             {/* Large dark feature card */}
-            <div className="md:col-span-2 md:row-span-2 bg-[#121212] rounded-[2.5rem] p-10 flex flex-col justify-end relative overflow-hidden group">
+            <TiltCard wrapperClassName="md:col-span-2 md:row-span-2" className="bg-[#121212] rounded-[2.5rem] p-10 flex flex-col justify-end overflow-hidden group" intensityX={6} intensityY={8}>
               <div className="absolute -right-10 -top-10 w-48 h-48 bg-[#F7941D] rounded-full opacity-10 blur-3xl group-hover:opacity-20 transition-opacity" />
-              <MapPin className="w-14 h-14 text-[#F7941D] mb-6" />
-              <h3 className="text-xl md:text-2xl font-black uppercase text-white mb-4 tracking-tighter leading-tight">
+              <MapPin className="w-14 h-14 text-[#F7941D] mb-6" style={{ transform: 'translateZ(30px)' }} />
+              <h3 className="text-xl md:text-2xl font-black uppercase text-white mb-4 tracking-tighter leading-tight" style={{ transform: 'translateZ(25px)' }}>
                 Verified Local Mountain Experts
               </h3>
               <p className="text-white/60 font-light text-base leading-relaxed max-w-xs">
                 Our drivers have navigated Uttarakhand's mountain roads for 12+ years — from Kedarnath passes in monsoon to Auli snowfields in January.
               </p>
-            </div>
+            </TiltCard>
 
             {/* Zero fees card */}
-            <div className="md:col-span-2 bg-[#1A1A1A] rounded-[2.5rem] p-10 flex flex-col justify-center border border-white/8 hover:border-[#F7941D]/20 hover:shadow-sm transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-0.5">
-              <Shield className="w-10 h-10 text-[#F7941D] mb-4" />
-              <h3 className="text-2xl font-black uppercase text-white mb-3 tracking-tighter">Zero Hidden Fees</h3>
+            <TiltCard wrapperClassName="md:col-span-2" className="bg-[#1A1A1A] rounded-[2.5rem] p-10 flex flex-col justify-center border border-white/8" intensityX={6} intensityY={8}>
+              <Shield className="w-10 h-10 text-[#F7941D] mb-4" style={{ transform: 'translateZ(30px)' }} />
+              <h3 className="text-2xl font-black uppercase text-white mb-3 tracking-tighter" style={{ transform: 'translateZ(25px)' }}>Zero Hidden Fees</h3>
               <p className="text-white/70 font-light">Transparent fixed pricing — fuel, tolls, and driver charges included. No surprises at the end of your journey.</p>
-            </div>
+            </TiltCard>
 
             {/* Orange clock card */}
-            <div className="bg-[#F7941D] rounded-[2.5rem] p-8 text-white flex flex-col items-center justify-center text-center">
-              <Clock className="w-12 h-12 mb-4" />
-              <h3 className="font-black uppercase text-xl tracking-tighter">24 / 7 <br /> Support</h3>
+            <TiltCard className="bg-[#F7941D] rounded-[2.5rem] p-8 text-white flex flex-col items-center justify-center text-center" intensityX={8} intensityY={10} glowColor="rgba(255,255,255,0.15)">
+              <Clock className="w-12 h-12 mb-4" style={{ transform: 'translateZ(35px)' }} />
+              <h3 className="font-black uppercase text-xl tracking-tighter" style={{ transform: 'translateZ(25px)' }}>24 / 7 <br /> Support</h3>
               <p className="text-white/80 text-xs mt-2 font-light">Always here when you need us</p>
-            </div>
+            </TiltCard>
 
             {/* Rides card */}
-            <div className="bg-[#1A1A1A] border border-white/8 rounded-[2.5rem] p-8 flex flex-col items-center justify-center text-center transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:shadow-sm hover:border-[#F7941D]/20">
-              <ThumbsUp className="w-12 h-12 text-[#F7941D] mb-4" />
-              <h3 className="font-black text-white uppercase text-xl tracking-tighter">20k+ <br /> Rides</h3>
+            <TiltCard className="bg-[#1A1A1A] border border-white/8 rounded-[2.5rem] p-8 flex flex-col items-center justify-center text-center" intensityX={8} intensityY={10}>
+              <ThumbsUp className="w-12 h-12 text-[#F7941D] mb-4" style={{ transform: 'translateZ(35px)' }} />
+              <h3 className="font-black text-white uppercase text-xl tracking-tighter" style={{ transform: 'translateZ(25px)' }}>20k+ <br /> Rides</h3>
               <p className="text-white/70 text-xs mt-2 font-light">Happy travellers served</p>
-            </div>
+            </TiltCard>
           </div>
           </AnimatedSection>
         </div>
@@ -334,14 +336,28 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {tourPackages.map((pkg) => (
-              <Link key={pkg.name} href={pkg.link} className="group relative rounded-[2.5rem] overflow-hidden bg-[#1A1A1A] h-[480px] block">
+          <CardCarousel
+            items={tourPackages}
+            getKey={(pkg) => pkg.name}
+            cardWidth={360}
+            cardGap={20}
+            ariaLabel="Tour packages carousel — use arrow keys to navigate"
+            renderCard={(pkg, isActive) => (
+              <Link
+                href={pkg.link}
+                onClick={(e) => { if (!isActive) e.preventDefault(); }}
+                className="group relative rounded-[2.5rem] overflow-hidden bg-[#1A1A1A] h-[480px] block"
+                style={{
+                  boxShadow: isActive ? '0 32px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(247,148,29,0.10)' : 'none',
+                }}
+              >
                 <Image
                   src={pkg.image}
                   alt={pkg.name}
                   fill
+                  sizes="360px"
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  draggable={false}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/95 via-[#0a0a0a]/30 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-8">
@@ -352,8 +368,8 @@ export default function Home() {
                   </span>
                 </div>
               </Link>
-            ))}
-          </div>
+            )}
+          />
         </div>
       </section>
 
@@ -375,34 +391,44 @@ export default function Home() {
             </Link>
           </AnimatedSection>
 
-          <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {recentPosts.map((post) => (
-              <StaggerItem key={post.slug}>
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="group bg-[#1A1A1A] rounded-[2rem] overflow-hidden border border-white/8 hover:border-[#F7941D]/20 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:shadow-sm block h-full"
-                >
-                  <div className="relative h-48 overflow-hidden">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      className="object-cover transition-transform duration-500 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <p className="text-[#F7941D] text-[10px] font-black uppercase tracking-widest mb-2">
-                      {post.category}
-                    </p>
-                    <h3 className="text-white font-black text-base leading-snug tracking-tight line-clamp-2 mb-3 group-hover:text-[#F7941D] transition-colors">
-                      {post.title}
-                    </h3>
-                    <p className="text-white/70 text-xs font-light">{post.date}</p>
-                  </div>
-                </Link>
-              </StaggerItem>
-            ))}
-          </Stagger>
+          <CardCarousel
+            items={recentPosts}
+            getKey={(post) => post.slug}
+            cardWidth={360}
+            cardGap={20}
+            ariaLabel="Travel guides carousel — use arrow keys to navigate"
+            renderCard={(post, isActive) => (
+              <Link
+                href={`/blog/${post.slug}`}
+                onClick={(e) => { if (!isActive) e.preventDefault(); }}
+                className="group bg-[#1A1A1A] rounded-[2rem] overflow-hidden border border-white/8 block h-full"
+                style={{
+                  boxShadow: isActive ? '0 32px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(247,148,29,0.10)' : 'none',
+                  borderColor: isActive ? 'rgba(247,148,29,0.25)' : 'rgba(255,255,255,0.08)',
+                }}
+              >
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src={post.image}
+                    alt={post.title}
+                    fill
+                    sizes="360px"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    draggable={false}
+                  />
+                </div>
+                <div className="p-6">
+                  <p className="text-[#F7941D] text-[10px] font-black uppercase tracking-widest mb-2">
+                    {post.category}
+                  </p>
+                  <h3 className="text-white font-black text-base leading-snug tracking-tight line-clamp-2 mb-3 group-hover:text-[#F7941D] transition-colors">
+                    {post.title}
+                  </h3>
+                  <p className="text-white/70 text-xs font-light">{post.date}</p>
+                </div>
+              </Link>
+            )}
+          />
         </div>
       </section>
 

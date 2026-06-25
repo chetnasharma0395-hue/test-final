@@ -9,6 +9,7 @@ import { FAQSection } from '@/components/FAQ';
 import { FareCalculator } from '@/components/FareCalculator';
 import { getRoute, formatPrice } from '@/lib/priceData';
 import { faqPageSchema, breadcrumbSchema } from '@/lib/schema';
+import { TiltCard } from '@/components/TiltCard';
 
 export const metadata: Metadata = {
   title: 'Taxi Rates 2026 | Uttarakhand Cab Fixed Fares',
@@ -280,9 +281,9 @@ export default function TaxiRates() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* Per KM Rates Bento */}
-            <div className="bg-[#121212] p-10 rounded-[2.5rem] border border-[#333537] hover:border-[#F7941D]/50 transition-all duration-500 group hover:-translate-y-2">
-               <Car className="w-12 h-12 text-[#F7941D] mb-6 group-hover:scale-110 transition-transform" />
-               <h3 className="text-2xl font-black uppercase tracking-tighter mb-8">Outstation Per-Km</h3>
+            <TiltCard className="bg-[#121212] p-10 rounded-[2.5rem] border border-[#333537]" intensityX={6} intensityY={8}>
+               <Car className="w-12 h-12 text-[#F7941D] mb-6" style={{ transform: 'translateZ(35px)' }} />
+               <h3 className="text-2xl font-black uppercase tracking-tighter mb-8 text-white" style={{ transform: 'translateZ(25px)' }}>Outstation Per-Km</h3>
                <div className="space-y-6">
                  {[
                    { v: 'Sedan (Dzire/Etios)', rate: '₹15 - ₹18' },
@@ -297,12 +298,12 @@ export default function TaxiRates() {
                  ))}
                </div>
                <p className="mt-8 text-white/30 text-[10px] uppercase tracking-[0.2em] font-bold">* Min. 250 km / Day billing applies</p>
-            </div>
+            </TiltCard>
 
             {/* Local Packages Bento */}
-            <div className="bg-[#121212] p-10 rounded-[2.5rem] border border-[#333537] hover:border-[#F7941D]/50 transition-all duration-500 group hover:-translate-y-2">
-               <Clock className="w-12 h-12 text-[#F7941D] mb-6 group-hover:scale-110 transition-transform" />
-               <h3 className="text-2xl font-black uppercase tracking-tighter mb-8">Local Sightseeing</h3>
+            <TiltCard className="bg-[#121212] p-10 rounded-[2.5rem] border border-[#333537]" intensityX={6} intensityY={8}>
+               <Clock className="w-12 h-12 text-[#F7941D] mb-6" style={{ transform: 'translateZ(35px)' }} />
+               <h3 className="text-2xl font-black uppercase tracking-tighter mb-8 text-white" style={{ transform: 'translateZ(25px)' }}>Local Sightseeing</h3>
                <div className="space-y-6">
                  {[
                    { v: 'Sedan (Dzire/Etios)', rate: '₹2,500' },
@@ -317,7 +318,7 @@ export default function TaxiRates() {
                  ))}
                </div>
                <p className="mt-8 text-white/30 text-[10px] uppercase tracking-[0.2em] font-bold">* Based on 8 Hrs / 80 Km Package</p>
-            </div>
+            </TiltCard>
           </div>
         </div>
       </section>

@@ -8,6 +8,7 @@ import {
 import { StrategicCTA, TrustBanner } from '@/components/CTABoxes';
 import { GEOAnswerBox } from '@/components/GEOAnswerBox';
 import { FAQSection } from '@/components/FAQ';
+import { TiltCard } from '@/components/TiltCard';
 
 export const metadata: Metadata = {
   title: 'Uttarakhand Tour Packages 2026 | Char Dham, Nainital, Mussoorie',
@@ -177,32 +178,36 @@ export default function TourPackages() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[300px] md:auto-rows-[350px]">
             {packages.map((pkg) => (
-              <div 
+              <TiltCard
                 key={pkg.id}
-                className={`relative group overflow-hidden rounded-[2.5rem] bg-[#1A1A1A] border border-white/10 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(247,148,29,0.2)] ${pkg.featured ? 'md:col-span-2 md:row-span-2' : ''}`}
+                wrapperClassName={pkg.featured ? 'md:col-span-2 md:row-span-2' : ''}
+                className="overflow-hidden rounded-[2.5rem] bg-[#1A1A1A] border border-white/10 shadow-sm group"
+                intensityX={6} intensityY={8}
+                showGlow={false}
               >
-                <Image 
-                  src={pkg.image} 
-                  alt={pkg.title} 
-                  fill 
-                  className="object-cover transition-transform duration-700 group-hover:scale-110" 
+                <Image
+                  src={pkg.image}
+                  alt={pkg.title}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  draggable={false}
                 />
-                
+
                 {/* 2026 Dark Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1E1F20] via-[#1E1F20]/40 to-transparent" />
-                
-                <div className="absolute top-6 left-6 flex gap-2">
+
+                <div className="absolute top-6 left-6 flex gap-2" style={{ transform: 'translateZ(40px)' }}>
                    <span className="bg-[#F7941D] text-white px-4 py-1.5 text-[10px] font-black uppercase tracking-widest rounded-full shadow-lg">
                     {pkg.duration}
                   </span>
                 </div>
 
-                <div className="absolute bottom-0 left-0 p-8 md:p-10 w-full z-10">
+                <div className="absolute bottom-0 left-0 p-8 md:p-10 w-full z-10" style={{ transform: 'translateZ(30px)' }}>
                   <div className="flex items-center gap-2 mb-3">
                     <Star className="w-3.5 h-3.5 fill-[#F7941D] text-[#F7941D]" />
                     <p className="text-[#F7941D] text-[10px] font-black uppercase tracking-[0.2em]">{pkg.bestFor}</p>
                   </div>
-                  
+
                   <h3 className={`${pkg.featured ? 'text-3xl md:text-5xl' : 'text-2xl'} font-black text-white uppercase tracking-tighter leading-tight mb-4`}>
                     {pkg.title}
                   </h3>
@@ -214,7 +219,7 @@ export default function TourPackages() {
                     <p className="text-white font-black text-lg mt-1">{pkg.cost}</p>
                   </div>
 
-                  <a 
+                  <a
                     href={`https://wa.me/919258912169?text=${encodeURIComponent(`Hi, I'm interested in the ${pkg.title} package.`)}`}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -223,7 +228,7 @@ export default function TourPackages() {
                     Get Quote <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-2" />
                   </a>
                 </div>
-              </div>
+              </TiltCard>
             ))}
           </div>
         </div>

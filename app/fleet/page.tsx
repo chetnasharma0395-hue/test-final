@@ -10,6 +10,7 @@ import FleetImage from '@/components/FleetImage';
 import { innovaImages, ertigaImages, sedanImages, travellerImages, urbaniaImages } from '@/lib/fleet-images';
 import { getAllVehicles } from '@/lib/vehicleData';
 import { faqPageSchema, speakableSchema } from '@/lib/schema';
+import { TiltCard } from '@/components/TiltCard';
 
 const PAGE_URL = 'https://uttarakhand.cab/fleet';
 const vehicles = getAllVehicles();
@@ -100,43 +101,45 @@ export default function FleetPage() {
         <div className="max-w-page mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
             {vehicles.map((v) => (
-              <Link
+              <TiltCard
                 key={v.slug}
-                href={`/fleet/${v.slug}`}
-                className="bg-[#1A1A1A] rounded-[2.5rem] border border-white/8 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1 hover:shadow-sm hover:border-[#F7941D]/20 overflow-hidden group flex flex-col"
+                className="bg-[#1A1A1A] rounded-[2.5rem] border border-white/8 overflow-hidden flex flex-col"
+                intensityX={6} intensityY={8}
               >
-                <div className="aspect-[16/10] bg-[#1A1A1A] overflow-hidden">
-                  <FleetImage
-                    images={imageMap[v.slug]}
-                    fallbackAlt={`${v.name} - Uttarakhand Cab 24/7`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-8 flex flex-col flex-1">
-                  <p className="text-[#F7941D] text-[10px] font-black uppercase tracking-[0.2em] mb-2">{v.category}</p>
-                  <h2 className="font-heading font-extrabold text-2xl text-white uppercase tracking-tight leading-none mb-3 group-hover:text-[#F7941D] transition-colors duration-300">
-                    {v.shortName}
-                  </h2>
-                  <p className="text-white/70 font-light text-sm leading-relaxed mb-6 flex-1">{v.tagline}</p>
-                  <div className="flex items-center gap-4 text-xs font-black uppercase tracking-widest text-white/70 mb-6">
-                    <span className="flex items-center gap-1.5"><Users className="w-3.5 h-3.5 text-[#F7941D]" /> {v.seating}</span>
-                    <span className="text-gray-200">|</span>
-                    <span className="flex items-center gap-1.5"><Briefcase className="w-3.5 h-3.5 text-[#F7941D]" /> {v.luggage.split(' ').slice(0, 2).join(' ')}</span>
+                <Link href={`/fleet/${v.slug}`} className="contents group">
+                  <div className="aspect-[16/10] bg-[#1A1A1A] overflow-hidden">
+                    <FleetImage
+                      images={imageMap[v.slug]}
+                      fallbackAlt={`${v.name} - Uttarakhand Cab 24/7`}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
                   </div>
-                  <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/8">
-                    <span className="font-black text-sm text-white">
-                      {v.pricing.quoteOnRequest ? 'Quote on Request' : `From ${v.pricing.perKmRate}/km`}
-                    </span>
-                    <ArrowRight className="w-5 h-5 text-[#F7941D] group-hover:translate-x-1 transition-transform" />
+                  <div className="p-8 flex flex-col flex-1">
+                    <p className="text-[#F7941D] text-[10px] font-black uppercase tracking-[0.2em] mb-2" style={{ transform: 'translateZ(25px)' }}>{v.category}</p>
+                    <h2 className="font-heading font-extrabold text-2xl text-white uppercase tracking-tight leading-none mb-3 group-hover:text-[#F7941D] transition-colors duration-300" style={{ transform: 'translateZ(30px)' }}>
+                      {v.shortName}
+                    </h2>
+                    <p className="text-white/70 font-light text-sm leading-relaxed mb-6 flex-1">{v.tagline}</p>
+                    <div className="flex items-center gap-4 text-xs font-black uppercase tracking-widest text-white/70 mb-6">
+                      <span className="flex items-center gap-1.5"><Users className="w-3.5 h-3.5 text-[#F7941D]" /> {v.seating}</span>
+                      <span className="text-gray-200">|</span>
+                      <span className="flex items-center gap-1.5"><Briefcase className="w-3.5 h-3.5 text-[#F7941D]" /> {v.luggage.split(' ').slice(0, 2).join(' ')}</span>
+                    </div>
+                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-white/8">
+                      <span className="font-black text-sm text-white">
+                        {v.pricing.quoteOnRequest ? 'Quote on Request' : `From ${v.pricing.perKmRate}/km`}
+                      </span>
+                      <ArrowRight className="w-5 h-5 text-[#F7941D] group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
-                </div>
-              </Link>
+                </Link>
+              </TiltCard>
             ))}
 
             {/* Comparison / guide tile to fill the grid */}
-            <div className="bg-[#1A1A1A] rounded-[2.5rem] border border-[#333537] p-8 flex flex-col justify-center relative overflow-hidden">
+            <TiltCard className="bg-[#1A1A1A] rounded-[2.5rem] border border-[#333537] p-8 flex flex-col justify-center overflow-hidden" intensityX={6} intensityY={8}>
               <div className="absolute -right-10 -top-10 w-40 h-40 bg-[#F7941D] opacity-10 blur-3xl pointer-events-none" />
-              <h2 className="font-heading font-black text-2xl text-white uppercase tracking-tighter mb-3">Still Deciding?</h2>
+              <h2 className="font-heading font-black text-2xl text-white uppercase tracking-tighter mb-3" style={{ transform: 'translateZ(25px)' }}>Still Deciding?</h2>
               <p className="text-white/70 font-light text-sm leading-relaxed mb-6">Compare vehicles directly or get our recommendation for Char Dham Yatra.</p>
               <div className="space-y-3">
                 <Link href="/compare/innova-crysta-vs-ertiga" className="flex items-center justify-between bg-white/5 border border-white/10 p-4 rounded-xl hover:bg-[#F7941D]/10 hover:border-[#F7941D]/30 transition-colors group">
@@ -148,7 +151,7 @@ export default function FleetPage() {
                   <ArrowRight className="w-4 h-4 text-[#F7941D] group-hover:translate-x-1 transition-transform" />
                 </Link>
               </div>
-            </div>
+            </TiltCard>
           </div>
 
           <TrustBanner />
