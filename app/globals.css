@@ -26,6 +26,12 @@
     overflow-x: hidden;
   }
 
+  /* Belt-and-suspenders: clip any horizontal overflow at section level.
+     Works even with Lenis smooth-scroll which wraps the body. */
+  section {
+    overflow-x: clip;
+  }
+
   h1, h2, h3, h4 {
     font-family: var(--font-montserrat), sans-serif;
     @apply tracking-tighter;
@@ -225,6 +231,15 @@
   50%       { transform: translateY(-8px); }
 }
 .animate-hero-float { animation: heroFloat 6s ease-in-out infinite; }
+
+/* ── Hero ambient glow — slow breathing pulse ── */
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.10; transform: scale(1); }
+  50%      { opacity: 0.18; transform: scale(1.08); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .animate-glow-pulse { animation: glowPulse 7s ease-in-out infinite; will-change: opacity, transform; }
+}
 
 /* Ambient blobs */
 @keyframes blobFloat1 {
