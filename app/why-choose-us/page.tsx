@@ -26,6 +26,7 @@ import {
 import { StrategicCTA, TrustBanner } from '@/components/CTABoxes';
 import FleetImage from '@/components/FleetImage';
 import { sedanImages, ertigaImages, innovaImages, travellerImages, urbaniaImages } from '@/lib/fleet-images';
+import { TiltCard } from '@/components/TiltCard';
 
 export const metadata: Metadata = {
   title:
@@ -456,20 +457,21 @@ export default function WhyChooseUsPage() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature) => (
-                <div
+                <TiltCard
                   key={feature.title}
-                  className="bg-[#1A1A1A] p-10 rounded-[2.5rem] border border-white/10 shadow-sm hover:shadow-xl hover:border-[#F7941D]/20 transition-all duration-500 hover:-translate-y-2"
+                  className="bg-[#1A1A1A] p-10 rounded-[2.5rem] border border-white/10 shadow-sm"
+                  intensityX={8} intensityY={10}
                 >
-                  <div className="w-16 h-16 rounded-2xl bg-[#1A1A1A] flex items-center justify-center mb-8">
+                  <div className="w-16 h-16 rounded-2xl bg-[#1A1A1A] flex items-center justify-center mb-8" style={{ transform: 'translateZ(30px)' }}>
                     <feature.icon className="w-8 h-8 text-[#F7941D]" />
                   </div>
-                  <h3 className="font-heading font-black text-2xl text-white uppercase tracking-tighter mb-4">
+                  <h3 className="font-heading font-black text-2xl text-white uppercase tracking-tighter mb-4" style={{ transform: 'translateZ(25px)' }}>
                     {feature.title}
                   </h3>
                   <p className="text-white/70 font-light leading-relaxed">
                     {feature.text}
                   </p>
-                </div>
+                </TiltCard>
               ))}
             </div>
 
@@ -529,17 +531,18 @@ export default function WhyChooseUsPage() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {whoWeServe.map((item) => (
-                <div
+                <TiltCard
                   key={item.label}
-                  className="bg-[#1A1A1A] rounded-[2rem] p-8 text-center border border-white/10 hover:border-[#F7941D]/30 hover:shadow-lg transition-all duration-300 group"
+                  className="bg-[#1A1A1A] rounded-[2rem] p-8 text-center border border-white/10"
+                  intensityX={10} intensityY={12}
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-[#1A1A1A] flex items-center justify-center mx-auto mb-4 group-hover:bg-[#F7941D] transition-colors duration-300">
-                    <item.icon className="w-7 h-7 text-[#F7941D] group-hover:text-white transition-colors duration-300" />
+                  <div className="w-14 h-14 rounded-2xl bg-[#1A1A1A] flex items-center justify-center mx-auto mb-4" style={{ transform: 'translateZ(35px)' }}>
+                    <item.icon className="w-7 h-7 text-[#F7941D]" />
                   </div>
-                  <p className="font-black uppercase tracking-wide text-white text-sm">
+                  <p className="font-black uppercase tracking-wide text-white text-sm" style={{ transform: 'translateZ(20px)' }}>
                     {item.label}
                   </p>
-                </div>
+                </TiltCard>
               ))}
             </div>
 
@@ -803,20 +806,21 @@ export default function WhyChooseUsPage() {
                   text: 'Enjoy your journey with our team available throughout.',
                 },
               ].map((item) => (
-                <div
+                <TiltCard
                   key={item.step}
                   className="bg-[#1A1A1A] rounded-[2rem] p-8 border border-white/10 shadow-sm"
+                  intensityX={8} intensityY={10}
                 >
-                  <p className="text-5xl font-black text-[#F7941D] mb-6">
+                  <p className="text-5xl font-black text-[#F7941D] mb-6" style={{ transform: 'translateZ(40px)' }}>
                     {item.step}
                   </p>
-                  <h3 className="font-black text-xl uppercase tracking-tight text-white mb-4">
+                  <h3 className="font-black text-xl uppercase tracking-tight text-white mb-4" style={{ transform: 'translateZ(25px)' }}>
                     {item.title}
                   </h3>
                   <p className="text-white/70 font-light leading-relaxed">
                     {item.text}
                   </p>
-                </div>
+                </TiltCard>
               ))}
             </div>
 

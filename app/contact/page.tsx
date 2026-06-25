@@ -3,6 +3,7 @@ import Script from 'next/script';
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Clock, MessageCircle, Send, CheckCircle2 } from 'lucide-react';
 import { FAQSection } from '@/components/FAQ';
+import { TiltCard } from '@/components/TiltCard';
 
 export const metadata: Metadata = {
   title: 'Contact Us | Taxi Booking',
@@ -120,9 +121,9 @@ export default function Contact() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {/* Phone */}
-                <div className="bg-[#1A1A1A] p-8 rounded-[2rem] border border-white/10 shadow-sm hover:shadow-xl hover:border-[#F7941D]/30 transition-all group sm:col-span-2">
+                <TiltCard wrapperClassName="sm:col-span-2" className="bg-[#1A1A1A] p-8 rounded-[2rem] border border-white/10 shadow-sm" intensityX={6} intensityY={8}>
                   <div className="flex items-start gap-5">
-                    <div className="w-14 h-14 rounded-2xl bg-[#1A1A1A] flex items-center justify-center shrink-0 group-hover:bg-[#F7941D]/10 transition-colors">
+                    <div className="w-14 h-14 rounded-2xl bg-[#1A1A1A] flex items-center justify-center shrink-0" style={{ transform: 'translateZ(30px)' }}>
                       <Phone className="w-6 h-6 text-[#F7941D]" />
                     </div>
                     <div>
@@ -138,35 +139,35 @@ export default function Contact() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </TiltCard>
 
                 {/* WhatsApp */}
-                <div className="bg-[#1A1A1A] p-8 rounded-[2rem] border border-white/10 shadow-sm hover:shadow-xl hover:border-[#25D366]/30 transition-all group">
-                  <div className="w-12 h-12 rounded-xl bg-[#1A1A1A] flex items-center justify-center mb-6 group-hover:bg-[#25D366]/10 transition-colors">
+                <TiltCard className="bg-[#1A1A1A] p-8 rounded-[2rem] border border-white/10 shadow-sm" intensityX={8} intensityY={10} glowColor="rgba(37,211,102,0.10)">
+                  <div className="w-12 h-12 rounded-xl bg-[#1A1A1A] flex items-center justify-center mb-6" style={{ transform: 'translateZ(35px)' }}>
                     <MessageCircle className="w-6 h-6 text-[#25D366]" />
                   </div>
-                  <h3 className="font-black text-white uppercase tracking-tight text-lg mb-2">WhatsApp Fast Quote</h3>
+                  <h3 className="font-black text-white uppercase tracking-tight text-lg mb-2" style={{ transform: 'translateZ(20px)' }}>WhatsApp Fast Quote</h3>
                   <p className="text-white/70 font-light text-sm mb-6">Send your itinerary for an instant price.</p>
-                  <a href="https://wa.me/919258912169" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 w-full px-6 py-4 bg-[#25D366] text-white font-black text-[10px] uppercase tracking-widest rounded-xl hover:bg-[#128C7E] hover:shadow-[0_10px_20px_rgba(37,211,102,0.2)] transition-all">
+                  <a href="https://wa.me/919258912169" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 w-full px-6 py-4 bg-[#25D366] text-white font-black text-[10px] uppercase tracking-widest rounded-xl hover:bg-[#128C7E] hover:shadow-[0_10px_20px_rgba(37,211,102,0.2)] transition-all" style={{ transform: 'translateZ(40px)' }}>
                     <MessageCircle className="w-4 h-4" /> Message Us Now
                   </a>
-                </div>
+                </TiltCard>
 
                 {/* Email */}
-                <div className="bg-[#1A1A1A] p-8 rounded-[2rem] border border-white/10 shadow-sm hover:shadow-xl hover:border-[#F7941D]/30 transition-all group">
-                  <div className="w-12 h-12 rounded-xl bg-[#1A1A1A] flex items-center justify-center mb-6 group-hover:bg-[#F7941D]/10 transition-colors">
+                <TiltCard className="bg-[#1A1A1A] p-8 rounded-[2rem] border border-white/10 shadow-sm" intensityX={8} intensityY={10}>
+                  <div className="w-12 h-12 rounded-xl bg-[#1A1A1A] flex items-center justify-center mb-6" style={{ transform: 'translateZ(35px)' }}>
                     <Mail className="w-6 h-6 text-[#F7941D]" />
                   </div>
-                  <h3 className="font-black text-white uppercase tracking-tight text-lg mb-2">Email Support</h3>
+                  <h3 className="font-black text-white uppercase tracking-tight text-lg mb-2" style={{ transform: 'translateZ(20px)' }}>Email Support</h3>
                   <p className="text-white/70 font-light text-sm mb-6">For corporate ties or detailed itineraries.</p>
                   <a href="mailto:uttarakhandcab247@gmail.com" className="text-white font-bold text-sm hover:text-[#F7941D] transition-colors break-all">
                     uttarakhandcab247@gmail.com , info@uttarakhandcab
                   </a>
-                </div>
+                </TiltCard>
 
                 {/* Location & Hours */}
-                <div className="bg-[#1A1A1A] p-8 rounded-[2rem] border border-white/10 shadow-sm sm:col-span-2 flex flex-col sm:flex-row items-start gap-6 hover:shadow-md transition-shadow">
-                  <div className="w-12 h-12 rounded-xl bg-[#1A1A1A] flex items-center justify-center shrink-0">
+                <TiltCard wrapperClassName="sm:col-span-2" className="bg-[#1A1A1A] p-8 rounded-[2rem] border border-white/10 shadow-sm flex flex-col sm:flex-row items-start gap-6" intensityX={6} intensityY={8}>
+                  <div className="w-12 h-12 rounded-xl bg-[#1A1A1A] flex items-center justify-center shrink-0" style={{ transform: 'translateZ(30px)' }}>
                     <MapPin className="w-6 h-6 text-[#F7941D]" />
                   </div>
                   <div>
@@ -178,7 +179,7 @@ export default function Contact() {
                       <span className="font-bold text-[10px] uppercase tracking-widest text-white">Operating Hours: 24 Hours / 7 Days a Week</span>
                     </div>
                   </div>
-                </div>
+                </TiltCard>
               </div>
             </div>
 

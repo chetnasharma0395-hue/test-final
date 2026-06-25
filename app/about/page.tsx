@@ -6,6 +6,7 @@ import {
   Compass, XCircle, Phone, MessageCircle, Star,
 } from 'lucide-react';
 import { StrategicCTA, TrustBanner } from '@/components/CTABoxes';
+import { TiltCard } from '@/components/TiltCard';
 
 /* ─── Metadata ───────────────────────────────────────────────────── */
 
@@ -272,13 +273,13 @@ export default function AboutPage() {
                   text: 'Technology is helpful, but local experience, route knowledge, and human support still make the biggest difference.',
                 },
               ].map((value) => (
-                <div key={value.title} className="bg-[#1A1A1A] p-10 rounded-[2.5rem] border border-white/10 shadow-sm hover:shadow-xl hover:border-[#F7941D]/20 transition-all duration-500 group hover:-translate-y-2">
-                  <div className="w-16 h-16 rounded-2xl bg-[#1A1A1A] flex items-center justify-center mb-8 transition-transform duration-500 group-hover:scale-110 group-hover:bg-[#F7941D]/10">
+                <TiltCard key={value.title} className="bg-[#1A1A1A] p-10 rounded-[2.5rem] border border-white/10 shadow-sm" intensityX={8} intensityY={10}>
+                  <div className="w-16 h-16 rounded-2xl bg-[#1A1A1A] flex items-center justify-center mb-8" style={{ transform: 'translateZ(30px)' }}>
                     <value.icon className="w-8 h-8 text-[#F7941D]" />
                   </div>
-                  <h3 className="font-heading font-black text-2xl text-white uppercase tracking-tighter mb-4">{value.title}</h3>
+                  <h3 className="font-heading font-black text-2xl text-white uppercase tracking-tighter mb-4" style={{ transform: 'translateZ(25px)' }}>{value.title}</h3>
                   <p className="text-white/70 font-light leading-relaxed">{value.text}</p>
-                </div>
+                </TiltCard>
               ))}
             </div>
           </div>
