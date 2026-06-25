@@ -157,7 +157,7 @@ export default function Home() {
             <div className="inline-flex items-center gap-2 bg-white/8 border border-white/12 px-4 py-2 rounded-full mb-8">
               <span className="text-[#F7941D] text-xs font-black">+</span>
               <p className="text-[10px] font-black uppercase tracking-widest text-white/80">
-                Trusted Since 2012 · 20,000+ Rides
+                Trusted Since 2011 · 20,000+ Rides
               </p>
             </div>
 
