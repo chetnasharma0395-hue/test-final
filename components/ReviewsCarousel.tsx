@@ -1,20 +1,16 @@
 'use client';
 
 import { Star, Quote, ChevronLeft, ChevronRight } from 'lucide-react';
-import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useState, useEffect, useRef, useCallback } from 'react';
 
 /**
- * ReviewsCarousel — premium "card throw" testimonial carousel.
+ * ReviewsCarousel — slot-based "coverflow" testimonial carousel.
  *
- * Behaviour:
- *  - Active card sits center, full size, with a slow breathe-zoom.
- *  - Side cards are smaller, rotated, faded (a relaxed stack).
- *  - Auto-play every AUTOPLAY_MS: the outgoing card is "thrown" out with an
- *    arc + rotation + shrink + fade (like flicking a playing card); the next
- *    card springs into the center with a soft bounce.
- *  - Pauses on hover / touch. Manual arrows + swipe supported.
- *  - Respects prefers-reduced-motion (static, no auto-play).
+ * Every review is rendered once and positioned by its offset from the active
+ * index. When active changes, each card animates from its old slot to its new
+ * slot (center / side-peek / off-stage) — so the outgoing card smoothly
+ * becomes the previous-peek and the next-peek slides into center. No overlap.
  */
 
 export type Review = {
@@ -27,32 +23,26 @@ export type Review = {
 };
 
 const AUTOPLAY_MS = 4500;
-
-// Spring tuned for a premium, heavy-but-smooth settle.
-const ENTER_SPRING = { type: 'spring' as const, stiffness: 260, damping: 26, mass: 0.9 };
-const THROW_TRANS = { duration: 0.55, ease: [0.4, 0, 0.2, 1] as const };
+const SPRING = { type: 'spring' as const, stiffness: 220, damping: 28, mass: 0.9 };
 
 export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
   const reduce = useReducedMotion();
   const [active, setActive] = useState(0);
-  const [direction, setDirection] = useState(1); // 1 = forward, -1 = back
   const [paused, setPaused] = useState(false);
-  const activeRef = useRef(active);
-  useEffect(() => { activeRef.current = active; }, [active]);
+  const n = reviews.length;
 
   const go = useCallback((dir: number) => {
-    setDirection(dir);
-    setActive((prev) => (prev + dir + reviews.length) % reviews.length);
-  }, [reviews.length]);
+    setActive((prev) => (prev + dir + n) % n);
+  }, [n]);
 
-  // Auto-play
+  const jumpTo = (i: number) => setActive(i);
+
   useEffect(() => {
     if (reduce || paused) return;
     const id = setInterval(() => go(1), AUTOPLAY_MS);
     return () => clearInterval(id);
   }, [reduce, paused, go]);
 
-  // Swipe (touch)
   const touchX = useRef<number | null>(null);
   const onTouchStart = (e: React.TouchEvent) => { touchX.current = e.touches[0].clientX; };
   const onTouchEnd = (e: React.TouchEvent) => {
@@ -62,31 +52,24 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
     touchX.current = null;
   };
 
-  const current = reviews[active];
+  // Signed shortest offset of card i from active (wrap-around aware).
+  const offsetOf = (i: number) => {
+    let d = i - active;
+    if (d > n / 2) d -= n;
+    if (d < -n / 2) d += n;
+    return d;
+  };
 
-  // Throw variants — outgoing card flies out in an arc with rotation.
-  const variants = {
-    enter: (dir: number) => ({
-      x: dir > 0 ? 340 : -340,
-      rotate: dir > 0 ? 12 : -12,
-      scale: 0.8,
-      opacity: 0,
-    }),
-    center: {
-      x: 0,
-      rotate: 0,
-      scale: 1,
-      opacity: 1,
-      transition: ENTER_SPRING,
-    },
-    exit: (dir: number) => ({
-      x: dir > 0 ? -380 : 380,
-      y: -40,
-      rotate: dir > 0 ? -14 : 14,
-      scale: 0.7,
-      opacity: 0,
-      transition: THROW_TRANS,
-    }),
+  const slotStyle = (offset: number) => {
+    const sidePx = 300;
+    if (offset === 0)  return { x: 0,         y: 0,   scale: 1,    rotate: 0,  opacity: 1,   blur: 0, zIndex: 30 };
+    if (offset === -1) return { x: -sidePx,   y: 0,   scale: 0.82, rotate: -3, opacity: 0.4, blur: 2, zIndex: 20 };
+    if (offset === 1)  return { x: sidePx,    y: 0,   scale: 0.82, rotate: 3,  opacity: 0.4, blur: 2, zIndex: 20 };
+    // Beyond one step on the LEFT → the card is being "thrown" away:
+    // it flies further left, lifts up in an arc, rotates hard, and fades.
+    if (offset < 0)    return { x: -(sidePx + 260), y: -120, scale: 0.6, rotate: -22, opacity: 0, blur: 4, zIndex: 40 };
+    // Beyond one step on the RIGHT → waiting off-stage, ready to slide in.
+    return { x: sidePx + 160, y: 0, scale: 0.7, rotate: 8, opacity: 0, blur: 3, zIndex: 10 };
   };
 
   return (
@@ -97,45 +80,43 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
       onTouchStart={(e) => { setPaused(true); onTouchStart(e); }}
       onTouchEnd={(e) => { onTouchEnd(e); setTimeout(() => setPaused(false), 600); }}
     >
-      {/* Stage — center active card + peek of prev/next */}
-      <div className="relative w-full h-[360px] sm:h-[340px] flex items-center justify-center [perspective:1400px]">
+      {/* Stage */}
+      <div className="relative w-full h-[360px] sm:h-[340px] flex items-center justify-center [perspective:1400px] overflow-hidden">
+        {reviews.map((review, i) => {
+          const offset = offsetOf(i);
+          const s = slotStyle(offset);
+          const isCenter = offset === 0;
+          const hideOnMobile = offset !== 0;
+          // The card being thrown out (just past the left peek) uses a faster,
+          // sharper ease — like a flicked playing card. Others use the spring.
+          const isThrowing = offset < -1;
 
-        {/* Prev peek (desktop only) */}
-        {!reduce && (
-          <div className="hidden md:block absolute left-0 lg:left-8 top-1/2 -translate-y-1/2 w-[320px] opacity-35 scale-[0.82] blur-[1px] pointer-events-none select-none -rotate-2 origin-right">
-            <ReviewCard review={reviews[(active - 1 + reviews.length) % reviews.length]} reduce compact />
-          </div>
-        )}
-
-        {/* Next peek (desktop only) */}
-        {!reduce && (
-          <div className="hidden md:block absolute right-0 lg:right-8 top-1/2 -translate-y-1/2 w-[320px] opacity-35 scale-[0.82] blur-[1px] pointer-events-none select-none rotate-2 origin-left">
-            <ReviewCard review={reviews[(active + 1) % reviews.length]} reduce compact />
-          </div>
-        )}
-
-        {/* Active card (throw effect) */}
-        <div className="relative z-10 w-full max-w-[420px]">
-          <AnimatePresence initial={false} custom={direction} mode="popLayout">
+          return (
             <motion.div
-              key={active}
-              custom={direction}
-              variants={reduce ? undefined : variants}
-              initial={reduce ? false : 'enter'}
-              animate={reduce ? undefined : 'center'}
-              exit={reduce ? undefined : 'exit'}
-              style={{ willChange: 'transform, opacity' }}
+              key={i}
+              className={`absolute w-[88vw] max-w-[400px] ${hideOnMobile ? 'hidden md:block' : ''}`}
+              style={{ zIndex: s.zIndex, willChange: 'transform, opacity', filter: `blur(${s.blur}px)` }}
+              animate={reduce
+                ? { opacity: isCenter ? 1 : 0 }
+                : { x: s.x, y: s.y, scale: s.scale, rotate: s.rotate, opacity: s.opacity }}
+              transition={reduce
+                ? { duration: 0.2 }
+                : isThrowing
+                  ? { duration: 0.5, ease: [0.36, 0, 0.66, -0.2] }
+                  : SPRING}
+              aria-hidden={!isCenter}
             >
-              {/* Breathe-zoom wrapper (only while resting in center) */}
               <motion.div
-                animate={reduce ? undefined : { scale: [1, 1.03, 1] }}
-                transition={reduce ? undefined : { duration: AUTOPLAY_MS / 1000, ease: 'easeInOut', times: [0, 0.5, 1] }}
+                animate={!reduce && isCenter ? { scale: [1, 1.025, 1] } : { scale: 1 }}
+                transition={!reduce && isCenter
+                  ? { duration: AUTOPLAY_MS / 1000, ease: 'easeInOut', times: [0, 0.5, 1] }
+                  : { duration: 0.3 }}
               >
-                <ReviewCard review={current} reduce={!!reduce} />
+                <ReviewCard review={review} reduce={!!reduce} dim={!isCenter} animateStars={isCenter} />
               </motion.div>
             </motion.div>
-          </AnimatePresence>
-        </div>
+          );
+        })}
       </div>
 
       {/* Controls */}
@@ -148,12 +129,11 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
           <ChevronLeft className="w-5 h-5" />
         </button>
 
-        {/* Dots */}
         <div className="flex items-center gap-2">
           {reviews.map((_, i) => (
             <button
               key={i}
-              onClick={() => { setDirection(i > active ? 1 : -1); setActive(i); }}
+              onClick={() => jumpTo(i)}
               aria-label={`Go to review ${i + 1}`}
               className="h-2 rounded-full transition-all duration-300"
               style={{
@@ -177,36 +157,38 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
 }
 
 /* ── Single review card ──────────────────────────────────────────── */
-function ReviewCard({ review, reduce, compact = false }: { review: Review; reduce: boolean; compact?: boolean }) {
+function ReviewCard({
+  review,
+  reduce,
+  dim = false,
+  animateStars = true,
+}: {
+  review: Review;
+  reduce: boolean;
+  dim?: boolean;
+  animateStars?: boolean;
+}) {
   return (
     <div
       className="bg-[#1A1A1A] rounded-[2rem] p-6 sm:p-7 flex flex-col gap-4 border border-[#F7941D]/25"
-      style={{ boxShadow: compact ? 'none' : '0 28px 70px rgba(0,0,0,0.5), 0 0 0 1px rgba(247,148,29,0.10)' }}
+      style={{ boxShadow: dim ? 'none' : '0 28px 70px rgba(0,0,0,0.5), 0 0 0 1px rgba(247,148,29,0.10)' }}
     >
-      {/* Stars (draw in one-by-one) + Quote */}
       <div className="flex items-center justify-between">
         <div className="flex gap-0.5">
           {Array.from({ length: review.rating }).map((_, j) => (
             <motion.span
               key={j}
-              initial={reduce ? false : { opacity: 0, scale: 0.4, rotate: -30 }}
-              animate={reduce ? undefined : { opacity: 1, scale: 1, rotate: 0 }}
+              initial={reduce || !animateStars ? false : { opacity: 0, scale: 0.4, rotate: -30 }}
+              animate={reduce || !animateStars ? undefined : { opacity: 1, scale: 1, rotate: 0 }}
               transition={{ delay: 0.25 + j * 0.08, type: 'spring', stiffness: 400, damping: 18 }}
             >
               <Star className="w-4 h-4 fill-[#F7941D] text-[#F7941D]" />
             </motion.span>
           ))}
         </div>
-        <motion.div
-          initial={reduce ? false : { opacity: 0, scale: 0.6 }}
-          animate={reduce ? undefined : { opacity: 0.25, scale: 1 }}
-          transition={{ delay: 0.2, duration: 0.4 }}
-        >
-          <Quote className="w-6 h-6 text-[#F7941D]" />
-        </motion.div>
+        <Quote className="w-6 h-6 text-[#F7941D] opacity-25" />
       </div>
 
-      {/* Body */}
       <p
         className="text-white/75 text-sm leading-relaxed"
         style={{
@@ -220,12 +202,10 @@ function ReviewCard({ review, reduce, compact = false }: { review: Review; reduc
         &ldquo;{review.text}&rdquo;
       </p>
 
-      {/* Trip tag */}
       <span className="inline-flex w-fit items-center bg-[#1A1209] text-[#F7941D] text-[9px] font-semibold uppercase tracking-widest px-3 py-1.5 rounded-full">
         {review.trip}
       </span>
 
-      {/* Reviewer */}
       <div className="flex items-center justify-between pt-4 border-t border-white/10">
         <div>
           <p className="font-extrabold text-white text-sm tracking-tight">{review.name}</p>
