@@ -53,6 +53,7 @@ export function FleetTiltGrid({ fleet }: { fleet: FleetOptionData[] }) {
   useEffect(() => { activeRef.current = active; }, [active]);
 
   // ── Keyboard navigation ─────────────────────────────────────────────
+
   const containerRef = useRef<HTMLDivElement>(null);
 
   const snapTo = useCallback((index: number) => {
