@@ -352,7 +352,7 @@ export function Aurora({ className = '' }: { className?: string }) {
       />
       <div
         className="absolute top-1/4 right-1/4 h-[380px] w-[380px] rounded-full blur-[80px] motion-safe:animate-aurora-2"
-        style={{ background: 'rgba(37,99,235,0.14)', willChange: 'transform' }}
+        style={{ background: 'rgba(247,148,29,0.10)', willChange: 'transform' }}
       />
     </div>
   );
