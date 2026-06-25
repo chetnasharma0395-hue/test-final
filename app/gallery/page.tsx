@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
-import Image from 'next/image';
 import Link from 'next/link';
 import { Car, Users, Star, Phone, MessageCircle, ShieldCheck } from 'lucide-react';
 import { innovaImages, travellerImages, sedanImages, ertigaImages } from '@/lib/fleet-images';
+import { MasonryGrid } from '@/components/MasonryGrid';
 
 export const metadata: Metadata = {
   title: 'Fleet Gallery | Innova, Tempo Traveller & Sedans',
@@ -89,17 +89,7 @@ export default function GalleryPage() {
             <p className="text-white/70 font-light md:text-right max-w-xs text-sm">Perfect for Char Dham Yatra and family trips across the Himalayas.</p>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-            {innovaImages.map((image, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-[1.5rem] bg-[#1A1A1A] shadow-sm border border-white/10 aspect-[4/3] cursor-pointer">
-                <Image src={image.src} alt={image.alt} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 768px) 50vw, 25vw" />
-                {/* Glassmorphic Caption Overlay */}
-                <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-[#1E1F20]/90 via-[#1E1F20]/50 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
-                  <p className="text-white text-[10px] font-bold uppercase tracking-widest leading-tight">{image.alt}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <MasonryGrid images={innovaImages} />
         </section>
 
         {/* Tempo Traveller Section */}
@@ -116,16 +106,7 @@ export default function GalleryPage() {
             <p className="text-white/70 font-light md:text-right max-w-xs text-sm">Spacious 12 to 17-seater vehicles designed for ultimate group comfort.</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-            {travellerImages.map((image, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-[1.5rem] bg-[#1A1A1A] shadow-sm border border-white/10 aspect-[4/3] cursor-pointer">
-                <Image src={image.src} alt={image.alt} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 768px) 50vw, 25vw" />
-                <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-[#1E1F20]/90 via-[#1E1F20]/50 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
-                  <p className="text-white text-[10px] font-bold uppercase tracking-widest leading-tight">{image.alt}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <MasonryGrid images={travellerImages} />
         </section>
 
         {/* Sedan Section */}
@@ -142,16 +123,7 @@ export default function GalleryPage() {
             <p className="text-white/70 font-light md:text-right max-w-xs text-sm">Budget-friendly, highly comfortable rides for couples and small families.</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-            {sedanImages.map((image, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-[1.5rem] bg-[#1A1A1A] shadow-sm border border-white/10 aspect-[4/3] cursor-pointer">
-                <Image src={image.src} alt={image.alt} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 768px) 50vw, 25vw" />
-                <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-[#1E1F20]/90 via-[#1E1F20]/50 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
-                  <p className="text-white text-[10px] font-bold uppercase tracking-widest leading-tight">{image.alt}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <MasonryGrid images={sedanImages} />
         </section>
 
         {/* Ertiga Section */}
@@ -169,16 +141,7 @@ export default function GalleryPage() {
           </div>
 
           {ertigaImages.length > 0 ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-              {ertigaImages.map((image, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-[1.5rem] bg-[#1A1A1A] shadow-sm border border-white/10 aspect-[4/3] cursor-pointer">
-                  <Image src={image.src} alt={image.alt} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 768px) 50vw, 25vw" />
-                  <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-[#1E1F20]/90 via-[#1E1F20]/50 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
-                    <p className="text-white text-[10px] font-bold uppercase tracking-widest leading-tight">{image.alt}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <MasonryGrid images={ertigaImages} />
           ) : (
             <div className="flex flex-col items-center justify-center gap-3 rounded-[1.5rem] border-2 border-dashed border-white/15 bg-[#1A1A1A] py-16 text-gray-400">
               <Car className="w-10 h-10" />
@@ -201,16 +164,7 @@ export default function GalleryPage() {
             <p className="text-white/70 font-light md:text-right max-w-xs text-sm">Real smiles from our incredible 50,000+ happy customers.</p>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-            {guestTripImages.map((image, index) => (
-              <div key={index} className="group relative overflow-hidden rounded-[1.5rem] bg-[#1A1A1A] shadow-sm border border-white/10 aspect-[4/3] cursor-pointer">
-                <Image src={image.src} alt={image.alt} fill className="object-cover transition-transform duration-700 group-hover:scale-110" sizes="(max-width: 768px) 50vw, 25vw" />
-                <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-[#1E1F20]/90 via-[#1E1F20]/50 to-transparent translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out">
-                  <p className="text-white text-[10px] font-bold uppercase tracking-widest leading-tight">{image.alt}</p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <MasonryGrid images={guestTripImages} />
         </section>
 
         {/* CTA Banner (Deep Space Aesthetic) */}
