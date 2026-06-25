@@ -49,7 +49,6 @@ export function CardCarousel<T>({
   initialIndex?: number;
   ariaLabel?: string;
 }) {
-  const CARD_STRIDE = responsiveWidth + cardGap;
   const [active, setActive] = useState(initialIndex ?? Math.floor(items.length / 2));
   const [dragOffset, setDragOffset] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -73,6 +72,8 @@ export function CardCarousel<T>({
     window.addEventListener('resize', computeWidth);
     return () => window.removeEventListener('resize', computeWidth);
   }, [cardWidth]);
+
+  const CARD_STRIDE = responsiveWidth + cardGap;
 
   const activeRef = useRef(active);
   const touchStartX = useRef<number | null>(null);
