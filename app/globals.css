@@ -18,6 +18,12 @@
   body {
     @apply bg-[#0a0a0a] text-white antialiased selection:bg-[#F7941D]/30;
     font-family: var(--font-inter), sans-serif;
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  html {
+    overflow-x: hidden;
   }
 
   h1, h2, h3, h4 {
