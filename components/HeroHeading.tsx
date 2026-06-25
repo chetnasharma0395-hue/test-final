@@ -48,7 +48,7 @@ export function HeroHeading() {
       >
         <span className="text-[#F7941D] text-xs font-black">+</span>
         <p className="text-[10px] font-black uppercase tracking-widest text-white/80">
-          Trusted Since 2012 · 20,000+ Rides
+          Trusted Since 2011 · 20,000+ Rides
         </p>
       </motion.div>
 
