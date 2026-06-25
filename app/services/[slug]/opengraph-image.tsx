@@ -33,13 +33,30 @@ export default async function Image({
           flexDirection: 'column',
           justifyContent: 'center',
           alignItems: 'center',
-          background: 'linear-gradient(135deg, #0f172a, #020617)',
+          background: 'linear-gradient(135deg, #1A1A1A, #0a0a0a)',
           color: 'white',
           padding: '40px',
+          position: 'relative',
         }}
       >
+        {/* Orange ambient glow — top right */}
+        <div
+          style={{
+            position: 'absolute',
+            top: -150,
+            right: -150,
+            width: 500,
+            height: 500,
+            borderRadius: '50%',
+            background: '#F7941D',
+            opacity: 0.18,
+            filter: 'blur(120px)',
+            display: 'flex',
+          }}
+        />
+
         {/* Brand */}
-        <div style={{ fontSize: 28, color: '#fbbf24', marginBottom: 20 }}>
+        <div style={{ fontSize: 28, fontWeight: 'bold', color: '#F7941D', marginBottom: 20, letterSpacing: 2 }}>
           UTTARAKHAND CAB 24/7
         </div>
 
@@ -50,6 +67,7 @@ export default async function Image({
             fontWeight: 'bold',
             textAlign: 'center',
             lineHeight: 1.2,
+            color: 'white',
           }}
         >
           {formattedTitle}
@@ -60,14 +78,14 @@ export default async function Image({
           style={{
             fontSize: 26,
             marginTop: 30,
-            color: '#94a3b8',
+            color: 'rgba(255,255,255,0.7)',
           }}
         >
           24×7 Taxi Service • Safe • Reliable
         </div>
 
         {/* Locations */}
-        <div style={{ fontSize: 20, marginTop: 10, color: '#cbd5f5' }}>
+        <div style={{ fontSize: 20, marginTop: 10, color: '#F7941D' }}>
           Dehradun • Mussoorie • Rishikesh • Nainital
         </div>
       </div>
