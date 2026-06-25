@@ -30,6 +30,10 @@
   .bg-navy { background-color: #0a0a0a; }
   .bg-surface { background-color: #111111; }
 
+  /* text-navy overridden to be readable on the site's dark backgrounds */
+  .text-navy { color: #FFFFFF; }
+  .hover\:text-navy:hover { color: #F7941D; }
+
   .glass {
     background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
     backdrop-filter: blur(16px);
