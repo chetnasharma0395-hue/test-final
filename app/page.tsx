@@ -21,7 +21,7 @@ import { HeroHeading } from '@/components/HeroHeading';
 import { blogPosts } from '@/lib/blog-content';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Uttarakhand Cab 24/7 | Best Trusted Taxi Service in Uttarakhand' },
+  title: { absolute: 'Uttarakhand Cab 24/7 | Most Trusted Taxi Service in Uttarakhand' },
   description: 'Book reliable 24/7 taxi services in Uttarakhand. Affordable outstation cabs, airport transfers, and customized tour packages across Uttarakhand with experienced drivers.',
   alternates: { canonical: 'https://uttarakhand.cab' },
   openGraph: {
