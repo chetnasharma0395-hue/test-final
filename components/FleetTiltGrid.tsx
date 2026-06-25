@@ -55,6 +55,17 @@ export function FleetTiltGrid({ fleet }: { fleet: FleetOptionData[] }) {
   // ── Keyboard navigation ─────────────────────────────────────────────
   const containerRef = useRef<HTMLDivElement>(null);
 
+  const snapTo = useCallback((index: number) => {
+    const clamped = Math.max(0, Math.min(fleet.length - 1, index));
+    setIsSnapping(true);
+    setDragOffset(0);
+    setIsDragging(false);
+    setActive(clamped);
+    // Remove snapping flag after transition completes
+    const t = setTimeout(() => setIsSnapping(false), 500);
+    return () => clearTimeout(t);
+  }, [fleet.length]);
+
   useEffect(() => {
     const el = containerRef.current;
     if (!el) return;
@@ -67,17 +78,6 @@ export function FleetTiltGrid({ fleet }: { fleet: FleetOptionData[] }) {
     el.addEventListener('keydown', onKeyDown);
     return () => el.removeEventListener('keydown', onKeyDown);
   }, [snapTo, fleet.length]);
-
-  const snapTo = useCallback((index: number) => {
-    const clamped = Math.max(0, Math.min(fleet.length - 1, index));
-    setIsSnapping(true);
-    setDragOffset(0);
-    setIsDragging(false);
-    setActive(clamped);
-    // Remove snapping flag after transition completes
-    const t = setTimeout(() => setIsSnapping(false), 500);
-    return () => clearTimeout(t);
-  }, [fleet.length]);
 
   const prev = () => snapTo(activeRef.current - 1);
   const next = () => snapTo(activeRef.current + 1);
