@@ -6,7 +6,7 @@
  * converting the whole page to a client component.
  */
 
-import { Reveal, Stagger, StaggerItem, Aurora, TiltCard, MagneticButton, CountUp, Float } from './MotionKit';
+import { Reveal, Aurora, TiltCard, MagneticButton, CountUp } from './MotionKit';
 import type { ReactNode } from 'react';
 
 /** Wrap any block to fade + rise it on scroll into view. */
@@ -86,4 +86,4 @@ export function StatCounter({
   return <CountUp to={to} prefix={prefix} suffix={suffix} className={className} />;
 }
 
-export { Stagger, StaggerItem, Float };
+export { Stagger, StaggerItem, Float, WordReveal, Pressable } from './MotionKit';
