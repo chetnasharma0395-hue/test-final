@@ -252,7 +252,17 @@
 }
 .animate-hero-float { animation: heroFloat 6s ease-in-out infinite; }
 
-/* ── Hero ambient glow — slow breathing pulse ── */
+/* ── Reviews carousel — autoplay timer fill ── */
+@keyframes reviewTimerFill {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+.review-timer-fill {
+  animation-name: reviewTimerFill;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
 @keyframes glowPulse {
   0%, 100% { opacity: 0.10; transform: scale(1); }
   50%      { opacity: 0.18; transform: scale(1.08); }
