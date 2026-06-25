@@ -49,7 +49,7 @@ export default function RishikeshClient() {
         <div className="absolute inset-0 opacity-40">
           <Image src="/assets/images/dest-rishikesh.jpg" alt="Rishikesh Taxi Service" fill className="object-cover" sizes="100vw" priority />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1C3F] via-[#0B1C3F]/90 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent" />
 
         <div className="max-w-page mx-auto relative z-10">
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="max-w-4xl">

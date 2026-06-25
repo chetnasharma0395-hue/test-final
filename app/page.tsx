@@ -150,9 +150,9 @@ export default function Home() {
         {/* Ambient aurora depth glow */}
         <AuroraGlow className="z-[1] opacity-70" />
         {/* Layered gradient: strong left, fades to right */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1C3F]/98 via-[#0B1C3F]/80 to-[#0B1C3F]/10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/98 via-[#0a0a0a]/80 to-[#0a0a0a]/10" />
         {/* Top vignette */}
-        <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#0B1C3F]/40 to-transparent" />
+        <div className="absolute top-0 inset-x-0 h-32 bg-gradient-to-b from-[#0a0a0a]/40 to-transparent" />
 
         {/* Outer grid padding updated (xl:pt-36 xl:pb-20) to push both text & widget cleanly beneath the nav */}
         <div className="relative z-10 max-w-page mx-auto px-6 sm:px-8 lg:px-10 w-full flex flex-col xl:grid xl:grid-cols-[1fr_minmax(0,420px)] items-center gap-8 pt-28 pb-16 xl:pt-36 xl:pb-20">
@@ -343,7 +343,7 @@ export default function Home() {
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C3F]/95 via-[#0B1C3F]/30 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a]/95 via-[#0a0a0a]/30 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-8">
                   <p className="text-[#F7941D] text-[10px] font-black uppercase tracking-widest mb-2">{pkg.tagline}</p>
                   <h3 className="text-white text-xl font-black uppercase mb-4 leading-tight tracking-tighter">{pkg.name}</h3>

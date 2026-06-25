@@ -164,7 +164,7 @@ export default function TaxiRates() {
           className="object-cover opacity-20"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C3F] via-transparent to-[#0B1C3F]/50" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-[#0a0a0a]/50" />
 
         <div className="max-w-page mx-auto relative z-10">
           <div className="max-w-4xl">

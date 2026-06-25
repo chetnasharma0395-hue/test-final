@@ -82,7 +82,7 @@ export default function BookTaxiPage() {
         <div className="absolute inset-0 opacity-20">
           <Image src="/assets/images/hero-mountain-road.jpg" alt="Uttarakhand Mountain Road" fill className="object-cover" priority />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0B1C3F] via-[#0B1C3F]/80 to-[#F4F6F8]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#0a0a0a]/80 to-[#F4F6F8]" />
         
         <div className="max-w-page mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col xl:flex-row gap-12 xl:gap-20 items-center">

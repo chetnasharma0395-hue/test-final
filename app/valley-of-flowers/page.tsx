@@ -78,7 +78,7 @@ export default function ValleyOfFlowersPage() {
         <div className="absolute inset-0 opacity-40">
           <Image src="/assets/images/dest-high-himalayas.jpg" alt="Valley of Flowers Uttarakhand Taxi" fill className="object-cover" sizes="100vw" priority />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B1C3F] via-[#0B1C3F]/90 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a] via-[#0a0a0a]/90 to-transparent" />
         {/* Ambient aurora glow */}
         <AuroraGlow className="opacity-40 z-[1]" />
         <div className="max-w-page mx-auto relative z-10">

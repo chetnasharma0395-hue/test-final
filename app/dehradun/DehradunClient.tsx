@@ -56,7 +56,7 @@ export default function DehradunClient() {
         <div className="absolute inset-0 opacity-30">
           <Image src="/assets/images/dest-dehradun.jpg" alt="Dehradun Taxi Service" fill className="object-cover" sizes="100vw" priority />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C3F] via-[#0B1C3F]/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent" />
 
         <div className="max-w-page mx-auto relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="max-w-4xl">

@@ -256,7 +256,7 @@ export default function CharDham() {
         <div className="absolute inset-0 opacity-30">
           <Image src="/assets/images/dest-char-dham.jpg" alt="Char Dham Yatra taxi" fill className="object-cover" sizes="100vw" priority />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1C3F] via-[#0B1C3F]/80 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-[#0a0a0a]/80 to-transparent" />
         {/* Ambient aurora glow */}
         <AuroraGlow className="opacity-40 z-[1]" />
 
