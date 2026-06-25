@@ -13,7 +13,7 @@ import { TestimonialsSection } from '@/components/TestimonialsSection';
 import { FAQSection } from '@/components/FAQ';
 import { GEOAnswerBox } from '@/components/GEOAnswerBox';
 import { AuroraGlow, AnimatedSection, MagneticCTA, Stagger, StaggerItem } from '@/components/motion';
-import { FleetTiltGrid } from '@/components/FleetTiltGrid';
+import { FleetGrid } from '@/components/FleetGrid';
 import { blogPosts } from '@/lib/blog-content';
 
 export const metadata: Metadata = {
@@ -285,7 +285,7 @@ export default function Home() {
             </div>
           </AnimatedSection>
 
-          <FleetTiltGrid
+          <FleetGrid
             fleet={[
               {
                 name: 'Economy Sedans',
