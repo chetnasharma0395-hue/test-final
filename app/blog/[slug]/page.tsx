@@ -166,22 +166,22 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {/* Visual Breadcrumb */}
       <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-white/70 mb-8">
         <Link href="/" className="hover:text-[#F7941D] transition-colors">Home</Link>
-        <span className="text-gray-300">/</span>
+        <span className="text-white/30">/</span>
         <Link href="/blog" className="hover:text-[#F7941D] transition-colors">Blog</Link>
-        <span className="text-gray-300">/</span>
+        <span className="text-white/30">/</span>
         <span className="text-[#F7941D] truncate max-w-[200px]">{post.category}</span>
       </nav>
 
       {/* Blog Header */}
       <header className="mb-10">
-        <span className="text-orange-600 font-bold tracking-wider uppercase text-sm">
+        <span className="text-[#F7941D] font-bold tracking-wider uppercase text-sm">
           {post.category}
         </span>
-        <h1 className="text-4xl md:text-5xl font-extrabold mt-4 mb-6 text-gray-900 leading-tight">
+        <h1 className="text-4xl md:text-5xl font-extrabold mt-4 mb-6 text-white leading-tight">
           {post.title}
         </h1>
-        <div className="flex flex-wrap items-center gap-4 text-gray-600 text-sm border-b border-white/10 pb-6">
-          <span className="font-semibold text-gray-900">{post.author}</span>
+        <div className="flex flex-wrap items-center gap-4 text-white/60 text-sm border-b border-white/10 pb-6">
+          <span className="font-semibold text-white">{post.author}</span>
           <span className="hidden sm:inline">•</span>
           <span>{post.date}</span>
           <span className="hidden sm:inline">•</span>
@@ -202,16 +202,16 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       </div>
 
       {/* Blog Content */}
-      <div className="prose prose-lg max-w-none text-gray-800">
+      <div className="max-w-none text-white/80 blog-content">
         {post.sections.map((section, i) => (
           <section key={i} className="mb-10">
             {section.heading && (
-              <h2 className="text-2xl md:text-3xl font-bold mb-5 text-gray-900">
+              <h2 className="text-2xl md:text-3xl font-bold mb-5 text-white">
                 {section.heading}
               </h2>
             )}
             <div 
-              className="leading-relaxed space-y-4"
+              className="leading-relaxed space-y-4 text-white/75"
               dangerouslySetInnerHTML={{ __html: section.body }} 
             />
           </section>
@@ -221,7 +221,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {/* Related Blog Posts */}
       {relatedPosts.length > 0 && (
         <div className="mt-16 pt-10 border-t border-white/10">
-          <h2 className="text-2xl font-bold text-gray-900 mb-8">Related Guides</h2>
+          <h2 className="text-2xl font-bold text-white mb-8">Related Guides</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {relatedPosts.map((p) => (
               <a
@@ -233,7 +233,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <h3 className="text-sm font-bold text-white group-hover:text-[#F7941D] transition-colors leading-snug line-clamp-3">
                   {p.title}
                 </h3>
-                <span className="text-xs text-gray-400 mt-3 block">{p.readTime}</span>
+                <span className="text-xs text-white/50 mt-3 block">{p.readTime}</span>
               </a>
             ))}
           </div>
@@ -242,8 +242,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       {/* Dynamic WhatsApp Lead Generation CTA */}
       <div className="bg-orange-50 border-l-4 border-orange-500 p-8 rounded-r-2xl mt-16 text-left shadow-sm">
-        <h3 className="text-2xl font-bold text-gray-900">{post.cta.heading}</h3>
-        <p className="mt-3 text-gray-700 text-lg">{post.cta.body}</p>
+        <h3 className="text-2xl font-bold text-white">{post.cta.heading}</h3>
+        <p className="mt-3 text-white/70 text-lg">{post.cta.body}</p>
         
         <a 
           href={`https://wa.me/919258912169?text=Hi, I am reading the '${post.title}' article on uttarakhand.cab and want to book a cab.`}
