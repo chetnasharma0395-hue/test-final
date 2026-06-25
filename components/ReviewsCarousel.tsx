@@ -29,6 +29,7 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
   const reduce = useReducedMotion();
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
+  const [hovered, setHovered] = useState<number | null>(null);
   const n = reviews.length;
 
   const go = useCallback((dir: number) => {
@@ -42,6 +43,22 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
     const id = setInterval(() => go(1), AUTOPLAY_MS);
     return () => clearInterval(id);
   }, [reduce, paused, go]);
+
+  // Pause only when the cursor settles (user is reading). If the mouse keeps
+  // moving (just browsing past), auto-play stays running. After the pointer is
+  // still for IDLE_MS, we treat it as "reading" and pause; any movement resumes.
+  const idleTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const onPointerMove = useCallback(() => {
+    if (paused) setPaused(false);              // moving → resume
+    if (idleTimer.current) clearTimeout(idleTimer.current);
+    idleTimer.current = setTimeout(() => setPaused(true), 1000); // still 1s → pause
+  }, [paused]);
+  const onPointerLeave = () => {
+    if (idleTimer.current) clearTimeout(idleTimer.current);
+    setPaused(false);
+    setHovered(null);
+  };
+  useEffect(() => () => { if (idleTimer.current) clearTimeout(idleTimer.current); }, []);
 
   const touchX = useRef<number | null>(null);
   const onTouchStart = (e: React.TouchEvent) => { touchX.current = e.touches[0].clientX; };
@@ -75,30 +92,45 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
   return (
     <div
       className="relative w-full flex flex-col items-center"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
+      onPointerMove={onPointerMove}
+      onMouseLeave={onPointerLeave}
       onTouchStart={(e) => { setPaused(true); onTouchStart(e); }}
       onTouchEnd={(e) => { onTouchEnd(e); setTimeout(() => setPaused(false), 600); }}
     >
       {/* Stage */}
-      <div className="relative w-full h-[360px] sm:h-[340px] flex items-center justify-center [perspective:1400px] overflow-hidden">
+      <div className="relative w-full md:h-[300px] flex items-center justify-center [perspective:1400px] overflow-visible md:overflow-hidden">
         {reviews.map((review, i) => {
           const offset = offsetOf(i);
           const s = slotStyle(offset);
           const isCenter = offset === 0;
           const hideOnMobile = offset !== 0;
-          // The card being thrown out (just past the left peek) uses a faster,
-          // sharper ease — like a flicked playing card. Others use the spring.
           const isThrowing = offset < -1;
+          // When a peek card is hovered, bring it to full clarity (no fade/blur)
+          // and lift it slightly — without moving it to center.
+          const isHoveredPeek = hovered === i && !isCenter && Math.abs(offset) === 1;
 
           return (
             <motion.div
               key={i}
-              className={`absolute w-[88vw] max-w-[400px] ${hideOnMobile ? 'hidden md:block' : ''}`}
-              style={{ zIndex: s.zIndex, willChange: 'transform, opacity', filter: `blur(${s.blur}px)` }}
+              className={`w-[88vw] max-w-[400px] ${
+                isCenter ? 'relative md:absolute' : 'absolute'
+              } ${hideOnMobile ? 'hidden md:block' : ''} ${Math.abs(offset) === 1 ? 'cursor-pointer' : ''}`}
+              onMouseEnter={() => setHovered(i)}
+              onClick={() => { if (Math.abs(offset) === 1) jumpTo(i); }}
+              style={{
+                zIndex: isHoveredPeek ? 25 : s.zIndex,
+                willChange: 'transform, opacity',
+                filter: `blur(${isHoveredPeek ? 0 : s.blur}px)`,
+              }}
               animate={reduce
                 ? { opacity: isCenter ? 1 : 0 }
-                : { x: s.x, y: s.y, scale: s.scale, rotate: s.rotate, opacity: s.opacity }}
+                : {
+                    x: s.x,
+                    y: isHoveredPeek ? -10 : s.y,
+                    scale: isHoveredPeek ? 0.9 : s.scale,
+                    rotate: isHoveredPeek ? 0 : s.rotate,
+                    opacity: isHoveredPeek ? 0.95 : s.opacity,
+                  }}
               transition={reduce
                 ? { duration: 0.2 }
                 : isThrowing
@@ -130,18 +162,38 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
         </button>
 
         <div className="flex items-center gap-2">
-          {reviews.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => jumpTo(i)}
-              aria-label={`Go to review ${i + 1}`}
-              className="h-2 rounded-full transition-all duration-300"
-              style={{
-                width: i === active ? 26 : 8,
-                backgroundColor: i === active ? '#F7941D' : 'rgba(255,255,255,0.2)',
-              }}
-            />
-          ))}
+          {reviews.map((_, i) => {
+            const isActive = i === active;
+            return (
+              <button
+                key={i}
+                onClick={() => jumpTo(i)}
+                aria-label={`Go to review ${i + 1}`}
+                className="h-2 rounded-full overflow-hidden relative transition-all duration-300"
+                style={{
+                  width: isActive ? 32 : 8,
+                  backgroundColor: isActive ? 'rgba(247,148,29,0.25)' : 'rgba(255,255,255,0.2)',
+                }}
+              >
+                {/* Timer fill — CSS-driven so it genuinely pauses (freezes in
+                    place) when the user is reading, and resumes on movement. */}
+                {isActive && !reduce && (
+                  <span
+                    key={`fill-${active}`}
+                    className="review-timer-fill absolute inset-y-0 left-0 rounded-full bg-[#F7941D]"
+                    style={{
+                      animationDuration: `${AUTOPLAY_MS}ms`,
+                      animationPlayState: paused ? 'paused' : 'running',
+                    }}
+                  />
+                )}
+                {/* Static fill for reduced-motion */}
+                {isActive && reduce && (
+                  <span className="absolute inset-0 rounded-full bg-[#F7941D]" />
+                )}
+              </button>
+            );
+          })}
         </div>
 
         <button
