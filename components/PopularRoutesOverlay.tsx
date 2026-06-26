@@ -18,24 +18,32 @@ import { PRICING_DATA, formatPrice } from '@/lib/priceData';
  */
 
 /* ── Route definitions ─────────────────────────────────────────── */
-const ROUTES = [
+interface RouteConfig {
+  key: keyof typeof PRICING_DATA;
+  image: string;
+  tag: string;
+  tagOrange: boolean;
+  toLabelOverride?: string;
+}
+
+const ROUTES: RouteConfig[] = [
   { key: 'dehradun-mussoorie',      image: '/assets/images/dest-mussoorie.jpg',          tag: 'Most Popular',      tagOrange: true  },
   { key: 'dehradun-rishikesh',      image: '/assets/images/dest-rishikesh.jpg',           tag: 'Adventure Hub',     tagOrange: false },
-  { key: 'dehradun-kedarnath',      image: '/assets/images/dest-char-dham.jpg',           tag: 'Char Dham Yatra',   tagOrange: true, toLabelOverride: 'Kedarnath' },
+  { key: 'dehradun-kedarnath',      image: '/assets/images/dest-char-dham.jpg',           tag: 'Char Dham Yatra',   tagOrange: true,  toLabelOverride: 'Kedarnath' },
   { key: 'jolly-grant-mussoorie',   image: '/assets/images/dest-rishikesh-airport.jpg',   tag: 'Airport Pick-up',   tagOrange: false },
   { key: 'dehradun-haridwar',       image: '/assets/images/dest-haridwar-rishikesh.jpg',  tag: 'Ganga Ghat',        tagOrange: false },
   { key: 'dehradun-nainital',       image: '/assets/images/dest-corbett.jpg',             tag: 'Lakes & Wildlife',  tagOrange: true  },
   { key: 'haridwar-kedarnath',      image: '/assets/images/dest-char-dham.jpg',           tag: 'Pilgrim Route',     tagOrange: false, toLabelOverride: 'Kedarnath' },
   { key: 'haridwar-rishikesh',      image: '/assets/images/dest-haridwar-rishikesh.jpg',  tag: 'Temple Circuit',    tagOrange: false },
-  { key: 'rishikesh-kedarnath',     image: '/assets/images/dest-char-dham.jpg',           tag: 'Yatra Route',       tagOrange: true, toLabelOverride: 'Kedarnath' },
+  { key: 'rishikesh-kedarnath',     image: '/assets/images/dest-char-dham.jpg',           tag: 'Yatra Route',       tagOrange: true,  toLabelOverride: 'Kedarnath' },
   { key: 'delhi-dehradun',          image: '/assets/images/dest-mussoorie.jpg',           tag: 'Delhi Gate',        tagOrange: false },
-  { key: 'dehradun-badrinath',      image: '/assets/images/dest-char-dham.jpg',           tag: 'Badrinath Yatra',   tagOrange: true, toLabelOverride: 'Badrinath' },
+  { key: 'dehradun-badrinath',      image: '/assets/images/dest-char-dham.jpg',           tag: 'Badrinath Yatra',   tagOrange: true,  toLabelOverride: 'Badrinath' },
   { key: 'dehradun-govindghat',     image: '/assets/images/dest-corbett.jpg',             tag: 'Valley of Flowers', tagOrange: false, toLabelOverride: 'Govindghat (VoF)' },
   { key: 'jolly-grant-dehradun',    image: '/assets/images/dest-rishikesh-airport.jpg',   tag: 'Airport Transfer',  tagOrange: false },
   { key: 'kathgodam-nainital',      image: '/assets/images/dest-corbett.jpg',             tag: 'Station Pick-up',   tagOrange: false },
   { key: 'dehradun-jim-corbett',    image: '/assets/images/dest-corbett.jpg',             tag: 'Wildlife Safari',   tagOrange: false, toLabelOverride: 'Jim Corbett' },
   { key: 'rishikesh-govindghat',    image: '/assets/images/dest-char-dham.jpg',           tag: 'VoF Route',         tagOrange: false, toLabelOverride: 'Govindghat (VoF)' },
-] as const;
+];
 
 /* ── Scatter positions for each card on the canvas ─────────────── */
 /* Canvas is 1600px wide × ~2400px tall on desktop (user scrolls) */
@@ -89,8 +97,8 @@ export function PopularRoutesOverlay() {
   const close = useCallback(() => { setOpen(false); setExpanded(null); }, []);
 
   /* Resolve route data */
-  const routes = ROUTES.map((r) => {
-    const d = PRICING_DATA[r.key as keyof typeof PRICING_DATA];
+  const routes: ResolvedRoute[] = ROUTES.map((r) => {
+    const d = PRICING_DATA[r.key];
     const to = r.toLabelOverride ?? d.to;
     return {
       ...r,
@@ -258,8 +266,18 @@ export function PopularRoutesOverlay() {
 }
 
 /* ── Individual card inside the overlay ─────────────────────────── */
+interface ResolvedRoute extends RouteConfig {
+  from: string;
+  to: string;
+  distance: string;
+  duration: string;
+  sedanFare: string;
+  suvFare: string;
+  waText: string;
+}
+
 function OverlayCard({ route, expanded }: {
-  route: ReturnType<typeof buildRoute>;
+  route: ResolvedRoute;
   expanded: boolean;
 }) {
   return (
@@ -362,6 +380,3 @@ function OverlayCard({ route, expanded }: {
     </div>
   );
 }
-
-/* helper type */
-type buildRoute = ReturnType<typeof Array.prototype.map>[number];
