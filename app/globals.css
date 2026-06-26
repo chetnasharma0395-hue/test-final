@@ -263,6 +263,14 @@
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
 }
+
+/* ── CardCarousel — autoplay timer fill on active dot ── */
+.cardcarousel-timer-fill {
+  animation-name: reviewTimerFill;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
 @keyframes glowPulse {
   0%, 100% { opacity: 0.10; transform: scale(1); }
   50%      { opacity: 0.18; transform: scale(1.08); }
