@@ -3,12 +3,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import {
   ShieldCheck, HeartHandshake, CheckCircle2, Car,
-  Compass, XCircle, Phone, MessageCircle, Star,
+  Compass, XCircle, Phone, MessageCircle, Star, MapPin,
 } from 'lucide-react';
 import { StrategicCTA, TrustBanner } from '@/components/CTABoxes';
 import { TiltCard } from '@/components/TiltCard';
-
-/* ─── Metadata ───────────────────────────────────────────────────── */
 
 export const metadata: Metadata = {
   title: 'About Uttarakhand Cab 24/7 | Trusted Taxi Service In Uttarakhand',
@@ -17,25 +15,109 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://uttarakhand.cab/about' },
   openGraph: {
     title: 'About Uttarakhand Cab 24/7 | Trusted Taxi Service In Uttarakhand',
-    description:
-      'Trusted taxi service in Uttarakhand offering airport transfers, Char Dham Yatra taxis and outstation cab services.',
+    description: 'Trusted taxi service in Uttarakhand offering airport transfers, Char Dham Yatra taxis and outstation cab services.',
     url: 'https://uttarakhand.cab/about',
     siteName: 'Uttarakhand Cab 24/7',
     locale: 'en_IN',
     type: 'website',
     images: [{ url: 'https://uttarakhand.cab/images/og-main.jpg', width: 1200, height: 630, alt: 'Uttarakhand Cab 24/7' }],
   },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'About Uttarakhand Cab 24/7',
-    description: 'Trusted taxi service in Uttarakhand for airport transfers, Char Dham Yatra and hill station tours.',
-  },
 };
 
+/* ─── CSS-only device mockup sub-components ─────────────────────── */
+function LaptopMockup() {
+  return (
+    <div className="relative select-none" style={{ filter: 'drop-shadow(0 32px 64px rgba(0,0,0,0.7))' }}>
+      {/* Screen */}
+      <div
+        className="relative rounded-t-xl overflow-hidden border-2 border-white/15"
+        style={{ width: 340, height: 220, background: '#111' }}
+      >
+        {/* Browser bar */}
+        <div className="flex items-center gap-1.5 px-3 h-7 border-b border-white/8" style={{ background: '#0a0a0a' }}>
+          <div className="w-2.5 h-2.5 rounded-full bg-red-500/70" />
+          <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" />
+          <div className="w-2.5 h-2.5 rounded-full bg-green-500/70" />
+          <div className="flex-1 ml-2 h-3.5 rounded-full bg-white/8 flex items-center px-2">
+            <span className="text-[7px] text-white/40 font-mono">uttarakhand.cab</span>
+          </div>
+        </div>
+        {/* Page preview */}
+        <div className="relative w-full" style={{ height: 193 }}>
+          <Image
+            src="/assets/images/hero-mountain-road.jpg"
+            alt="Uttarakhand Cab website preview"
+            fill className="object-cover object-top"
+          />
+          {/* UI overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/60 via-transparent to-[#0a0a0a]/80" />
+          <div className="absolute top-4 left-4">
+            <div className="text-[8px] font-black text-white uppercase tracking-widest opacity-90">
+              Uttarakhand Cab <span style={{ color: '#F7941D' }}>24/7</span>
+            </div>
+          </div>
+          <div className="absolute bottom-4 left-4 right-4">
+            <div
+              className="rounded-lg px-2.5 py-1.5 text-[6px] font-black text-white uppercase tracking-widest"
+              style={{ background: '#F7941D' }}
+            >
+              Book Now — Fixed Fares
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* Hinge */}
+      <div className="h-1.5 rounded-none" style={{ width: 340, background: 'rgba(255,255,255,0.12)' }} />
+      {/* Base */}
+      <div
+        className="rounded-b-xl flex items-center justify-center"
+        style={{ width: 340, height: 12, background: 'rgba(255,255,255,0.08)' }}
+      />
+      <div
+        className="mx-auto rounded-b-xl"
+        style={{ width: 180, height: 6, background: 'rgba(255,255,255,0.06)' }}
+      />
+    </div>
+  );
+}
+
+function PhoneMockup() {
+  return (
+    <div
+      className="relative select-none"
+      style={{ filter: 'drop-shadow(0 24px 48px rgba(0,0,0,0.7))' }}
+    >
+      <div
+        className="relative rounded-[28px] overflow-hidden border-2 border-white/15"
+        style={{ width: 120, height: 240, background: '#111' }}
+      >
+        {/* Notch */}
+        <div
+          className="absolute top-0 left-1/2 -translate-x-1/2 rounded-b-xl z-10"
+          style={{ width: 40, height: 12, background: '#0a0a0a' }}
+        />
+        {/* Screen content */}
+        <Image
+          src="/assets/images/dest-mussoorie.jpg"
+          alt="Mobile preview"
+          fill className="object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/70 via-transparent to-[#0a0a0a]/80" />
+        <div className="absolute bottom-4 inset-x-2">
+          <div
+            className="rounded-xl p-2 text-center"
+            style={{ background: 'rgba(247,148,29,0.15)', border: '1px solid rgba(247,148,29,0.3)' }}
+          >
+            <p className="text-[5px] font-black uppercase tracking-widest text-white">WhatsApp Book</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /* ─── Page ───────────────────────────────────────────────────────── */
-
 export default function AboutPage() {
-
   const jsonLd = {
     '@context': 'https://schema.org',
     '@graph': [
@@ -43,55 +125,10 @@ export default function AboutPage() {
         '@type': 'AboutPage',
         '@id': 'https://uttarakhand.cab/about/#webpage',
         url: 'https://uttarakhand.cab/about',
-        name: 'About Uttarakhand Cab 24/7 | Trusted Taxi Service In Uttarakhand',
-        description: 'Learn about Uttarakhand Cab 24/7, a trusted Dehradun-based taxi service providing airport transfers, Char Dham Yatra taxis, hill station tours, and outstation cab services across Uttarakhand.',
+        name: 'About Uttarakhand Cab 24/7',
+        description: 'Uttarakhand Cab 24/7 is a trusted Dehradun-based taxi service providing airport transfers, Char Dham Yatra taxis, hill station tours, and outstation cab services.',
         inLanguage: 'en-IN',
         mainEntity: { '@id': 'https://uttarakhand.cab/#organization' },
-      },
-      {
-        '@type': 'ImageObject',
-        '@id': 'https://uttarakhand.cab/#logo',
-        url: 'https://uttarakhand.cab/logo.png',
-      },
-      {
-        '@type': 'TaxiService',
-        '@id': 'https://uttarakhand.cab/#organization',
-        name: 'Uttarakhand Cab 24/7',
-        url: 'https://uttarakhand.cab',
-        logo: { '@id': 'https://uttarakhand.cab/#logo' },
-        image: 'https://uttarakhand.cab/logo.png',
-        email: 'uttarakhandcab247@gmail.com',
-        telephone: ['+919258912169', '+919675212169'],
-        description: 'A trusted local taxi service based in Dehradun offering airport transfers, Char Dham Yatra tours, and outstation cabs across Uttarakhand.',
-        sameAs: ['https://uttarakhandcab.in'],
-        address: {
-          '@type': 'PostalAddress',
-          addressLocality: 'Dehradun',
-          addressRegion: 'Uttarakhand',
-          addressCountry: 'IN',
-        },
-        geo: { '@type': 'GeoCoordinates', latitude: '30.3165', longitude: '78.0322' },
-        areaServed: [
-          { '@type': 'State', name: 'Uttarakhand' },
-          { '@type': 'City', name: 'Dehradun' },
-          { '@type': 'City', name: 'Mussoorie' },
-          { '@type': 'City', name: 'Rishikesh' },
-          { '@type': 'City', name: 'Haridwar' },
-        ],
-        openingHoursSpecification: {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'],
-          opens: '00:00',
-          closes: '23:59',
-        },
-        priceRange: '₹₹',
-      },
-      {
-        '@type': 'BreadcrumbList',
-        itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://uttarakhand.cab' },
-          { '@type': 'ListItem', position: 2, name: 'About', item: 'https://uttarakhand.cab/about' },
-        ],
       },
     ],
   };
@@ -100,302 +137,318 @@ export default function AboutPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
 
-      <main className="bg-[#1A1A1A] selection:bg-[#F7941D]/30">
+      <main className="bg-[#0a0a0a] selection:bg-[#F7941D]/30">
 
-        {/* ── 1. HERO ──────────────────────────────────────────── */}
-        <section className="relative pt-40 pb-24 px-4 sm:px-6 lg:px-8 bg-[#121212] border-b border-white/10 overflow-hidden">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#F7941D] opacity-[0.03] rounded-full blur-[100px] pointer-events-none" />
-          <div className="max-w-page mx-auto relative z-10">
-            <div className="max-w-4xl">
-              {/* Breadcrumb */}
-              <nav className="inline-flex items-center gap-2 bg-[#1A1A1A] backdrop-blur-md border border-white/10 px-4 py-2 rounded-full mb-8 shadow-sm text-white/70 text-xs font-bold uppercase tracking-widest">
-                <Link href="/" className="hover:text-[#F7941D] transition-colors">Home</Link>
-                <span className="opacity-30">/</span>
-                <span className="text-[#F7941D]">About Us</span>
-              </nav>
+        {/* ══ 1. HERO — device mockup (Asia Tube style) ══════════════ */}
+        <section className="relative pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: '#0a0a0a' }}>
+          {/* Ambient glows */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] rounded-full pointer-events-none"
+            style={{ background: 'rgba(247,148,29,0.07)', filter: 'blur(120px)' }} />
+          <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] rounded-full pointer-events-none"
+            style={{ background: 'rgba(247,148,29,0.04)', filter: 'blur(80px)' }} />
 
-              <p className="text-[#F7941D] text-xs font-black uppercase tracking-[0.3em] mb-4 flex items-center gap-2">
-                <Compass className="w-4 h-4" /> Hey There — Glad You Found Us
-              </p>
-              <h1 className="font-heading font-black text-5xl md:text-7xl lg:text-8xl text-white uppercase leading-[0.9] tracking-tighter mb-8">
-                Born in the <br />
-                <span className="text-[#F7941D]">Mountains.</span>
-              </h1>
-              <p className="text-white/70 text-lg md:text-2xl max-w-2xl font-light leading-relaxed mb-10">
-                Uttarakhand Cab 24/7 is a trusted taxi service based in Dehradun, providing{' '}
-                <Link href="/dehradun-airport-taxi" className="text-[#F7941D] hover:underline font-medium">airport transfers</Link>,{' '}
-                <Link href="/char-dham" className="text-[#F7941D] hover:underline font-medium">Char Dham Yatra taxis</Link>,
-                hill station tours, and outstation cab services across Uttarakhand.
-              </p>
-              <p className="text-white/70 text-lg font-light leading-relaxed max-w-2xl">
-                Whether you&apos;re arriving for a family holiday, a spiritual journey, a mountain adventure, or simply a weekend escape — we&apos;re happy you&apos;re here.
-              </p>
-            </div>
-          </div>
-        </section>
+          <div className="relative max-w-page mx-auto">
+            {/* Breadcrumb */}
+            <nav className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-10 text-white/60 text-xs font-bold uppercase tracking-widest"
+              style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <Link href="/" className="hover:text-[#F7941D] transition-colors">Home</Link>
+              <span className="opacity-30">/</span>
+              <span className="text-[#F7941D]">About Us</span>
+            </nav>
 
-        {/* ── 2. TRUST NUMBERS ─────────────────────────────────── */}
-        <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#1A1A1A] border-b border-white/10">
-          <div className="max-w-page mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              {[
-                { stat: '10+', label: 'Years Experience' },
-                { stat: '24×7', label: 'Availability' },
-                { stat: '20,000+', label: 'Travellers Served' },
-                { stat: 'All', label: 'Major Destinations' },
-              ].map(({ stat, label }) => (
-                <div key={label}>
-                  <p className="text-4xl md:text-5xl font-black text-[#F7941D] tracking-tighter">{stat}</p>
-                  <p className="text-white/70 font-light mt-2">{label}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── 3. THE STORY ─────────────────────────────────────── */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#1A1A1A]">
-          <div className="max-w-page mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-
-              <div className="order-2 lg:order-1">
-                <p className="text-[#F7941D] text-xs font-black uppercase tracking-[0.3em] mb-4">More Than Just a Taxi Service</p>
-                <h2 className="font-heading font-black text-4xl md:text-5xl text-white uppercase tracking-tighter mb-8 leading-none">
-                  The Himalayan <br className="hidden md:block" /> Difference
-                </h2>
-                <div className="space-y-5 text-white/70 text-lg font-light leading-relaxed">
-                  <p>Every year, thousands of travellers arrive in Uttarakhand for different reasons.</p>
-                  <p>
-                    Some come to watch the sunrise from{' '}
-                    <Link href="/mussoorie" className="text-[#F7941D] hover:underline font-medium">Mussoorie</Link>.
-                    Some come seeking peace along the Ganga in{' '}
-                    <Link href="/rishikesh" className="text-[#F7941D] hover:underline font-medium">Rishikesh</Link>.
-                    Some arrive with a lifelong dream of visiting{' '}
-                    <Link href="/kedarnath" className="text-[#F7941D] hover:underline font-medium">Kedarnath</Link> and{' '}
-                    <Link href="/badrinath" className="text-[#F7941D] hover:underline font-medium">Badrinath</Link>.
-                    Others simply want time with family in the mountains.
-                  </p>
-                  <p>We consider it a privilege to be a small part of those journeys.</p>
-                  <p className="font-bold text-white border-l-4 border-[#F7941D] pl-6 py-3 bg-[#1A1A1A]/50 rounded-r-2xl pr-4">
-                    At Uttarakhand Cab 24/7, transportation is only one part of what we do. Our real responsibility is helping people travel with confidence, comfort, and peace of mind.
-                  </p>
-                </div>
+            {/* Device mockup cluster */}
+            <div className="relative flex items-end justify-center gap-6 mb-12 md:mb-16">
+              {/* Decorative ring */}
+              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                <div
+                  className="rounded-full"
+                  style={{
+                    width: 500, height: 500,
+                    border: '1px solid rgba(247,148,29,0.06)',
+                    background: 'radial-gradient(circle, rgba(247,148,29,0.03) 0%, transparent 70%)',
+                  }}
+                />
               </div>
+              {/* Phone — left, slightly lower */}
+              <div className="relative hidden sm:block" style={{ transform: 'translateY(20px) rotate(-3deg)' }}>
+                <PhoneMockup />
+              </div>
+              {/* Laptop — center hero */}
+              <div style={{ transform: 'rotate(0deg)' }}>
+                <LaptopMockup />
+              </div>
+              {/* Phone — right, slightly higher */}
+              <div className="relative hidden sm:block" style={{ transform: 'translateY(10px) rotate(4deg)' }}>
+                <PhoneMockup />
+              </div>
+            </div>
 
-              <div className="order-1 lg:order-2 relative">
-                <div className="relative aspect-square lg:aspect-[4/3] rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 group">
+            {/* Big orange heading — Asia Tube style */}
+            <div className="text-center">
+              <p className="text-[#F7941D] text-xs font-black uppercase tracking-[0.35em] mb-3">
+                Dehradun, Uttarakhand
+              </p>
+              <h1 className="font-heading font-black text-5xl md:text-7xl leading-none tracking-tighter" style={{ color: '#F7941D' }}>
+                About<br />
+                <span className="text-white">Uttarakhand Cab 24/7</span>
+              </h1>
+              <p className="mt-6 text-white/55 text-lg font-light max-w-xl mx-auto leading-relaxed">
+                Trusted mountain travel since 2011 — serving over 20,000 travellers across Uttarakhand.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* ══ 2. ABOUT — alternating image + text (Asia Tube style) ═══ */}
+        <section className="py-20 px-4 sm:px-6 lg:px-8" style={{ background: '#0f0f0f' }}>
+          <div className="max-w-page mx-auto space-y-24">
+
+            {/* Row 1 — image LEFT, text RIGHT */}
+            <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+              {/* Image */}
+              <div className="w-full lg:w-[42%] shrink-0">
+                <div className="relative rounded-[2rem] overflow-hidden aspect-[4/3]"
+                  style={{ boxShadow: '0 32px 80px rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.08)' }}>
                   <Image
-                    src="/assets/images/dest-mussoorie.jpg"
-                    alt="Safe mountain driving in Uttarakhand"
-                    fill
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    priority
+                    src="/assets/images/dest-kedarnath.jpg"
+                    alt="Kedarnath mountain route — Uttarakhand Cab 24/7"
+                    fill className="object-cover"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1E1F20]/80 via-[#1E1F20]/20 to-transparent" />
-                  <div className="absolute bottom-8 left-8 right-8">
-                    <div className="bg-[#121212]/90 backdrop-blur-md border border-white/20 p-4 rounded-2xl flex items-center gap-4 shadow-lg transform transition-transform group-hover:-translate-y-2">
-                      <div className="bg-[#1A1A1A] p-3 rounded-xl shrink-0">
-                        <ShieldCheck className="w-6 h-6 text-[#F7941D]" />
-                      </div>
-                      <p className="text-white text-xs font-black uppercase tracking-widest">Mountain Certified Drivers</p>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  {/* Floating badge */}
+                  <div className="absolute bottom-5 left-5">
+                    <div className="flex items-center gap-2 px-4 py-2 rounded-full text-white text-xs font-black uppercase tracking-widest"
+                      style={{ background: 'rgba(247,148,29,0.15)', backdropFilter: 'blur(8px)', border: '1px solid rgba(247,148,29,0.3)' }}>
+                      <MapPin className="w-3 h-3 text-[#F7941D]" />
+                      Kedarnath, Uttarakhand
                     </div>
                   </div>
                 </div>
               </div>
-
-            </div>
-          </div>
-        </section>
-
-        {/* ── 4. WHY WE STARTED ────────────────────────────────── */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#121212]">
-          <div className="max-w-page mx-auto">
-            <div className="max-w-3xl">
-              <p className="text-[#F7941D] text-xs font-black uppercase tracking-[0.3em] mb-4">Our Origin</p>
-              <h2 className="font-heading font-black text-4xl md:text-5xl text-white uppercase tracking-tighter mb-8 leading-none">
-                Why We Started
-              </h2>
-              <div className="space-y-5 text-white/70 text-lg font-light leading-relaxed mb-10">
-                <p>Finding transportation in the mountains isn&apos;t always easy.</p>
-                <p>Travellers often face changing prices, confusing information, unreliable vehicles, and drivers unfamiliar with Himalayan roads.</p>
-                <p>We created Uttarakhand Cab 24/7 with a simple goal:</p>
-                <p className="text-white font-bold text-xl">
-                  To provide dependable transportation backed by local knowledge, honest communication, and genuine hospitality.
-                </p>
-              </div>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                {[
-                  'No complicated booking process.',
-                  'No unnecessary surprises.',
-                  'Just reliable travel across Uttarakhand.',
-                ].map((item) => (
-                  <div key={item} className="flex items-start gap-3 bg-white/5 border border-white/10 rounded-2xl px-5 py-4">
-                    <CheckCircle2 className="w-5 h-5 text-[#F7941D] shrink-0 mt-0.5" />
-                    <p className="text-white font-light text-sm leading-relaxed">{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── 5. CORE VALUES ───────────────────────────────────── */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#1A1A1A]">
-          <div className="max-w-page mx-auto">
-            <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
-              <div>
-                <p className="text-[#F7941D] text-xs font-black uppercase tracking-[0.3em] mb-3">What We Believe</p>
-                <h2 className="text-white text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none">
-                  Why Choose <br className="hidden md:block" /> a Local Operator?
+              {/* Text */}
+              <div className="flex-1">
+                <p className="text-[#F7941D] text-[10px] font-black uppercase tracking-[0.3em] mb-4">Who We Are</p>
+                <h2 className="text-white font-black text-4xl md:text-5xl tracking-tighter leading-none mb-6">
+                  Born in the<br />
+                  <span className="text-[#F7941D]">Mountains</span>
                 </h2>
+                <div className="space-y-4 text-white/65 font-light leading-relaxed">
+                  <p>
+                    Uttarakhand Cab 24/7 is a professional taxi and tour operator based in Dehradun, Uttarakhand. We specialize in{' '}
+                    <Link href="/char-dham" className="text-[#F7941D] hover:underline font-medium">Char Dham Yatra circuits</Link>,{' '}
+                    <Link href="/services/jolly-grant-airport-taxi-service" className="text-[#F7941D] hover:underline font-medium">airport transfers</Link>,
+                    and mountain cab services across the Garhwal and Kumaon Himalayas.
+                  </p>
+                  <p>
+                    With verified local drivers and fixed transparent pricing, every journey with us is backed by genuine mountain expertise — not a call center.
+                  </p>
+                </div>
+                {/* Stats inline */}
+                <div className="mt-8 flex gap-8">
+                  {[['10+', 'Years'], ['20K+', 'Rides'], ['4.9★', 'Rating']].map(([val, label]) => (
+                    <div key={label}>
+                      <p className="text-2xl font-black text-[#F7941D]">{val}</p>
+                      <p className="text-white/45 text-xs uppercase tracking-widest">{label}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
-              <p className="text-white/70 text-lg font-light max-w-md">
-                We don&apos;t rely on call centers. We rely on ground-level expertise and a relentless focus on passenger safety.
-              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: Car,
-                  title: 'Travel Should Feel Easy',
-                  text: 'Planning a trip shouldn\'t be stressful. We aim to make every journey smooth from the first call to the final drop.',
-                },
-                {
-                  icon: HeartHandshake,
-                  title: 'People Matter',
-                  text: 'Behind every booking is a family, a traveller, a pilgrim, or a dream journey. We never forget that.',
-                },
-                {
-                  icon: Compass,
-                  title: 'Local Knowledge Matters',
-                  text: 'Technology is helpful, but local experience, route knowledge, and human support still make the biggest difference.',
-                },
-              ].map((value) => (
-                <TiltCard key={value.title} className="bg-[#1A1A1A] p-10 rounded-[2.5rem] border border-white/10 shadow-sm" intensityX={8} intensityY={10}>
-                  <div className="w-16 h-16 rounded-2xl bg-[#1A1A1A] flex items-center justify-center mb-8" style={{ transform: 'translateZ(30px)' }}>
-                    <value.icon className="w-8 h-8 text-[#F7941D]" />
+            {/* Row 2 — text LEFT, image RIGHT */}
+            <div className="flex flex-col lg:flex-row-reverse items-center gap-12 lg:gap-20">
+              {/* Image */}
+              <div className="w-full lg:w-[42%] shrink-0">
+                <div className="relative rounded-[2rem] overflow-hidden aspect-[4/3]"
+                  style={{ boxShadow: '0 32px 80px rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.08)' }}>
+                  <Image
+                    src="/assets/images/hero-mountain-road.jpg"
+                    alt="Mountain roads of Uttarakhand"
+                    fill className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+                  <div className="absolute bottom-5 left-5">
+                    <div className="flex items-center gap-2 px-4 py-2 rounded-full text-white text-xs font-black uppercase tracking-widest"
+                      style={{ background: 'rgba(247,148,29,0.15)', backdropFilter: 'blur(8px)', border: '1px solid rgba(247,148,29,0.3)' }}>
+                      <ShieldCheck className="w-3 h-3 text-[#F7941D]" />
+                      Mountain Certified Drivers
+                    </div>
                   </div>
-                  <h3 className="font-heading font-black text-2xl text-white uppercase tracking-tighter mb-4" style={{ transform: 'translateZ(25px)' }}>{value.title}</h3>
-                  <p className="text-white/70 font-light leading-relaxed">{value.text}</p>
+                </div>
+              </div>
+              {/* Text */}
+              <div className="flex-1">
+                <p className="text-[#F7941D] text-[10px] font-black uppercase tracking-[0.3em] mb-4">Why We Exist</p>
+                <h2 className="text-white font-black text-4xl md:text-5xl tracking-tighter leading-none mb-6">
+                  Simple goal.<br />
+                  <span className="text-[#F7941D]">Real service.</span>
+                </h2>
+                <div className="space-y-4 text-white/65 font-light leading-relaxed">
+                  <p>
+                    Travellers in Uttarakhand often face changing prices, unreliable vehicles, and drivers unfamiliar with Himalayan roads.
+                  </p>
+                  <p>
+                    We created Uttarakhand Cab 24/7 with one goal — to provide dependable transportation backed by local knowledge, honest communication, and genuine hospitality.
+                  </p>
+                </div>
+                {/* 3 pills */}
+                <div className="mt-8 flex flex-wrap gap-3">
+                  {['No hidden charges', 'Fixed fares guaranteed', '24/7 availability'].map((item) => (
+                    <div key={item} className="flex items-center gap-2 px-4 py-2 rounded-full text-white/80 text-xs font-bold"
+                      style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                      <CheckCircle2 className="w-3.5 h-3.5 text-[#F7941D] shrink-0" /> {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ══ 3. NUMBERS ════════════════════════════════════════════ */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
+          <div className="max-w-page mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
+            {[
+              { stat: '10+', label: 'Years Experience' },
+              { stat: '24×7', label: 'Availability' },
+              { stat: '20,000+', label: 'Travellers Served' },
+              { stat: '4.9★', label: 'Google Rating' },
+            ].map(({ stat, label }) => (
+              <div key={label} className="text-center md:text-left">
+                <p className="text-4xl md:text-5xl font-black tracking-tighter" style={{ color: '#F7941D' }}>{stat}</p>
+                <p className="text-white/50 font-light mt-1 text-sm uppercase tracking-wider">{label}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* ══ 4. VALUES ═════════════════════════════════════════════ */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ background: '#0f0f0f' }}>
+          <div className="max-w-page mx-auto">
+            <div className="mb-16 text-center">
+              <p className="text-[#F7941D] text-[10px] font-black uppercase tracking-[0.3em] mb-3">What We Believe</p>
+              <h2 className="text-white text-4xl md:text-5xl font-black tracking-tighter leading-none">
+                The Himalayan Difference
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {[
+                { icon: Car, title: 'Travel Should Feel Easy', text: "Planning a trip shouldn't be stressful. We make every journey smooth from the first call to the final drop." },
+                { icon: HeartHandshake, title: 'People Matter', text: 'Behind every booking is a family, a pilgrim, or a dream journey. We never forget that.' },
+                { icon: Compass, title: 'Local Knowledge Wins', text: 'Technology helps, but local experience and mountain route knowledge still make the biggest difference.' },
+              ].map((v) => (
+                <TiltCard key={v.title} className="p-8 rounded-[2rem]"
+                  style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}
+                  intensityX={8} intensityY={10}>
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
+                    style={{ background: 'rgba(247,148,29,0.1)', border: '1px solid rgba(247,148,29,0.2)' }}>
+                    <v.icon className="w-7 h-7" style={{ color: '#F7941D' }} />
+                  </div>
+                  <h3 className="text-white font-black text-xl tracking-tighter mb-3">{v.title}</h3>
+                  <p className="text-white/55 font-light leading-relaxed text-sm">{v.text}</p>
                 </TiltCard>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ── 6. WE CALL THESE MOUNTAINS HOME ─────────────────── */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#1A1A1A]">
-          <div className="max-w-page mx-auto">
-            <div className="max-w-3xl">
-              <p className="text-[#F7941D] text-xs font-black uppercase tracking-[0.3em] mb-4">Our Home</p>
-              <h2 className="font-heading font-black text-4xl md:text-5xl text-white uppercase tracking-tighter mb-8 leading-none">
-                We Call These<br />Mountains Home
-              </h2>
-              <div className="space-y-5 text-white/70 text-lg font-light leading-relaxed">
-                <p>Dehradun is where our journey began.</p>
-                <p>
-                  From here, we&apos;ve spent years helping travellers discover the places that make Uttarakhand special — from bustling pilgrimage towns and peaceful hill stations to remote Himalayan valleys and hidden gems.
-                </p>
-                <p>These roads are part of our everyday life. The weather, the seasons, the mountain routes, and the destinations that visitors travel hundreds of kilometres to experience — they&apos;re all part of the place we proudly call home.</p>
-                <p className="font-bold text-white">That local connection helps us serve every traveller with confidence.</p>
-                <p>
-                  Today we regularly serve travellers visiting{' '}
-                  <Link href="/mussoorie" className="text-[#F7941D] hover:underline font-medium">Mussoorie</Link>,{' '}
-                  <Link href="/rishikesh" className="text-[#F7941D] hover:underline font-medium">Rishikesh</Link>,{' '}
-                  <Link href="/haridwar" className="text-[#F7941D] hover:underline font-medium">Haridwar</Link>,{' '}
-                  <Link href="/nainital" className="text-[#F7941D] hover:underline font-medium">Nainital</Link>,{' '}
-                  Auli, Chopta,{' '}
-                  <Link href="/kedarnath" className="text-[#F7941D] hover:underline font-medium">Kedarnath</Link>,{' '}
-                  <Link href="/badrinath" className="text-[#F7941D] hover:underline font-medium">Badrinath</Link>,{' '}
-                  Gangotri, Yamunotri,{' '}
-                  <Link href="/jim-corbett" className="text-[#F7941D] hover:underline font-medium">Jim Corbett</Link>{' '}
-                  and destinations across Uttarakhand.
-                </p>
-              </div>
-            </div>
+        {/* ══ 5. FOUNDERS — Asia Tube style ══════════════════════════ */}
+        <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: '#0a0a0a' }}>
+          {/* Large decorative circle — Asia Tube style */}
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="rounded-full"
+              style={{ width: 600, height: 600, border: '1px solid rgba(247,148,29,0.07)', background: 'radial-gradient(circle, rgba(247,148,29,0.04) 0%, transparent 65%)' }} />
           </div>
-        </section>
+          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div className="rounded-full"
+              style={{ width: 420, height: 420, border: '1px solid rgba(247,148,29,0.05)' }} />
+          </div>
 
-        {/* ── 7. JOURNEYS WE NEVER FORGET ──────────────────────── */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#1A1A1A]">
-          <div className="max-w-page mx-auto">
-            <p className="text-[#F7941D] text-xs font-black uppercase tracking-[0.3em] mb-4">Real Moments</p>
-            <h2 className="font-heading font-black text-4xl md:text-5xl text-white uppercase tracking-tighter mb-12 leading-none">
-              The Journeys We<br />Never Forget
+          <div className="relative max-w-page mx-auto text-center">
+            {/* Heading */}
+            <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3" style={{ color: '#F7941D' }}>The Team Behind the Wheel</p>
+            <h2 className="font-black text-4xl md:text-5xl tracking-tighter leading-none mb-4">
+              <span style={{ color: '#F7941D' }}>Our</span>
+              <br />
+              <span className="text-white">Founders</span>
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            <p className="text-white/50 font-light text-sm max-w-sm mx-auto mb-16 leading-relaxed">
+              Local mountain experts who built this service from the ground up — one trusted ride at a time.
+            </p>
+
+            {/* Founder cards */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-20">
               {[
-                { emoji: '🙏', text: 'A family completing their first Char Dham Yatra together.', link: '/char-dham', linkText: 'Char Dham Yatra' },
-                { emoji: '❄️', text: 'A couple experiencing snowfall in Mussoorie for the first time.', link: '/mussoorie', linkText: 'Mussoorie' },
-                { emoji: '🏔️', text: 'Friends trekking to Tungnath and Chopta.', link: null, linkText: null },
-                { emoji: '✈️', text: 'Parents arriving safely at the airport after a long journey.', link: '/dehradun-airport-taxi', linkText: 'Airport Transfer' },
-                { emoji: '🏢', text: 'A group of colleagues exploring Uttarakhand on their annual retreat.', link: null, linkText: null },
-                { emoji: '⭐', text: 'Every traveller who trusted us with a journey that mattered to them.', link: null, linkText: null },
-              ].map(({ emoji, text, link }) => (
-                <div key={text} className="bg-[#1A1A1A] rounded-[1.5rem] p-7 border border-white/10 shadow-sm hover:border-[#F7941D]/20 hover:shadow-md transition-all">
-                  <span className="text-3xl mb-4 block">{emoji}</span>
-                  <p className="text-white/70 font-light leading-relaxed text-sm">
-                    {link ? (
-                      <>
-                        {text.split(' ').slice(0, -3).join(' ')}{' '}
-                        <Link href={link} className="text-[#F7941D] hover:underline font-medium">
-                          {text.split(' ').slice(-3).join(' ')}
-                        </Link>
-                      </>
-                    ) : text}
-                  </p>
+                { initials: 'DK', name: 'Founder', role: 'CEO', sub: 'Founder & Operations', bg: 'from-[#F7941D]/20 to-[#F7941D]/5' },
+                { initials: 'UC', name: 'Co-Founder', role: 'COO', sub: 'Co-Founder & Fleet', bg: 'from-white/10 to-white/3' },
+              ].map((person) => (
+                <div key={person.role} className="flex flex-col items-center gap-4">
+                  {/* Circular photo placeholder */}
+                  <div
+                    className={`relative w-32 h-32 rounded-full flex items-center justify-center bg-gradient-to-b ${person.bg}`}
+                    style={{ border: '2px solid rgba(247,148,29,0.3)', boxShadow: '0 0 40px rgba(247,148,29,0.12)' }}
+                  >
+                    <span className="text-white font-black text-2xl opacity-40">{person.initials}</span>
+                    {/* Outer ring */}
+                    <div className="absolute -inset-2 rounded-full"
+                      style={{ border: '1px solid rgba(247,148,29,0.1)' }} />
+                  </div>
+                  {/* Info */}
+                  <div>
+                    <p className="text-white font-black text-base">{person.name}</p>
+                    <p className="font-black text-2xl tracking-tight" style={{ color: '#F7941D' }}>{person.role}</p>
+                    <p className="text-white/40 text-xs uppercase tracking-widest mt-0.5">{person.sub}</p>
+                  </div>
                 </div>
               ))}
             </div>
-            <p className="font-bold text-white text-lg mt-10 max-w-2xl">
-              These moments remind us that every booking represents a real story, a real experience, and memories that last long after the journey ends.
+
+            <p className="mt-16 text-white/30 text-xs font-light max-w-xs mx-auto leading-relaxed">
+              Uttarakhand Cab 24/7 · Est. 2011 · Dehradun, Uttarakhand
             </p>
           </div>
         </section>
 
-        {/* ── 8. COMPARISON TABLE ──────────────────────────────── */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#1A1A1A]">
+        {/* ══ 6. COMPARISON TABLE ══════════════════════════════════ */}
+        <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ background: '#0f0f0f' }}>
           <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-16">
-              <p className="text-[#F7941D] text-xs font-black uppercase tracking-[0.3em] mb-4">Transparent Comparison</p>
-              <h2 className="font-heading font-black text-4xl md:text-5xl text-white uppercase tracking-tighter mb-4">
+            <div className="text-center mb-14">
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3" style={{ color: '#F7941D' }}>Transparent Comparison</p>
+              <h2 className="text-white font-black text-4xl md:text-5xl tracking-tighter">
                 Us vs. The Big Apps
               </h2>
-              <div className="w-20 h-1.5 bg-[#F7941D] mx-auto" />
+              <div className="w-16 h-1 mx-auto mt-4 rounded-full" style={{ background: '#F7941D' }} />
             </div>
-
-            <div className="overflow-hidden rounded-[2.5rem] border border-white/10 shadow-xl">
+            <div className="overflow-hidden rounded-[2rem]" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
               <div className="overflow-x-auto">
-                <table className="w-full text-sm text-left border-collapse bg-[#1A1A1A] whitespace-nowrap md:whitespace-normal">
+                <table className="w-full text-sm text-left">
                   <thead>
-                    <tr className="bg-[#1A1A1A] text-white uppercase tracking-[0.15em] text-[10px] font-black">
-                      <th className="p-6 md:p-8 border-r border-white/5 w-1/3">The Standard</th>
-                      <th className="p-6 md:p-8 border-r border-white/5 w-1/3 bg-[#F7941D] text-white">Uttarakhand Cab 24/7</th>
-                      <th className="p-6 md:p-8 w-1/3 text-white/50">Corporate Apps</th>
+                    <tr style={{ background: '#0a0a0a' }} className="text-white uppercase tracking-[0.15em] text-[10px] font-black">
+                      <th className="p-6 md:p-8 w-1/3" style={{ borderRight: '1px solid rgba(255,255,255,0.06)' }}>The Standard</th>
+                      <th className="p-6 md:p-8 w-1/3 text-white" style={{ background: '#F7941D', borderRight: '1px solid rgba(255,255,255,0.1)' }}>Uttarakhand Cab 24/7</th>
+                      <th className="p-6 md:p-8 w-1/3 text-white/40">Other Apps</th>
                     </tr>
                   </thead>
-                  <tbody className="text-white text-sm md:text-base">
+                  <tbody>
                     {[
                       { feature: 'Driver Expertise', us: 'Verified Local Hill Drivers', them: 'Randomly assigned drivers' },
                       { feature: 'Pricing', us: '100% Fixed & Transparent', them: 'Surge pricing & hidden taxes' },
-                      { feature: 'Customer Support', us: 'Direct WhatsApp to Dispatch', them: 'Automated chatbots' },
+                      { feature: 'Support', us: 'Direct WhatsApp to Dispatch', them: 'Automated chatbots' },
                       { feature: 'Vehicle Quality', us: 'Pre-Inspected & Deep Cleaned', them: 'No guarantee of condition' },
                       { feature: 'Char Dham Expertise', us: 'Specialised Yatra Drivers', them: 'Not available' },
                       { feature: 'Night Travel', us: '24×7 Including Emergencies', them: 'Limited & unpredictable' },
                     ].map((row, i) => (
-                      <tr key={i} className="border-b border-gray-50 last:border-0 hover:bg-[#1A1A1A]/30 transition-colors group">
-                        <td className="p-6 md:p-8 font-black uppercase tracking-tighter border-r border-gray-50 bg-[#1A1A1A]/50">{row.feature}</td>
-                        <td className="p-6 md:p-8 border-r border-gray-50 bg-[#F7941D]/5 font-bold text-white">
-                          <div className="flex items-center gap-3">
-                            <CheckCircle2 className="w-5 h-5 text-[#F7941D] shrink-0 transition-transform group-hover:scale-110" />
+                      <tr key={i} style={{ borderBottom: '1px solid rgba(255,255,255,0.05)', background: i % 2 === 0 ? '#0a0a0a' : '#0d0d0d' }} className="group hover:bg-[#111] transition-colors">
+                        <td className="p-6 md:p-8 text-white/80 font-black text-xs uppercase tracking-tighter" style={{ borderRight: '1px solid rgba(255,255,255,0.06)' }}>{row.feature}</td>
+                        <td className="p-6 md:p-8 font-bold text-white" style={{ background: 'rgba(247,148,29,0.05)', borderRight: '1px solid rgba(255,255,255,0.06)' }}>
+                          <div className="flex items-center gap-2">
+                            <CheckCircle2 className="w-4 h-4 shrink-0" style={{ color: '#F7941D' }} />
                             {row.us}
                           </div>
                         </td>
-                        <td className="p-6 md:p-8 text-white/70 font-light">
-                          <div className="flex items-center gap-3">
-                            <XCircle className="w-5 h-5 text-gray-300 shrink-0" />
+                        <td className="p-6 md:p-8 text-white/45 font-light">
+                          <div className="flex items-center gap-2">
+                            <XCircle className="w-4 h-4 text-white/20 shrink-0" />
                             {row.them}
                           </div>
                         </td>
@@ -408,67 +461,43 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ── 9. TRUST BANNER ──────────────────────────────────── */}
-        <section className="px-4 py-12 bg-[#1A1A1A]">
-          <div className="max-w-page mx-auto">
-            <TrustBanner />
-          </div>
+        {/* ══ 7. TRUST + FINAL CTA ══════════════════════════════════ */}
+        <section className="px-4 py-12" style={{ background: '#0a0a0a' }}>
+          <div className="max-w-page mx-auto"><TrustBanner /></div>
         </section>
 
-        {/* ── 10. THANK YOU + FINAL CTA ────────────────────────── */}
-        <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#121212] relative overflow-hidden">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#F7941D] opacity-[0.06] blur-[120px] pointer-events-none" />
+        <section className="py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden" style={{ background: '#0a0a0a' }}>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full pointer-events-none"
+            style={{ background: 'rgba(247,148,29,0.06)', filter: 'blur(120px)' }} />
           <div className="max-w-page mx-auto relative z-10">
-            <div className="max-w-2xl mb-16">
-              <p className="text-[#F7941D] text-xs font-black uppercase tracking-[0.3em] mb-4">Thank You</p>
-              <h2 className="font-heading font-black text-4xl md:text-5xl text-white uppercase tracking-tighter mb-6 leading-none">
-                Thank You for<br />Stopping By
+            <div className="rounded-[2.5rem] p-10 md:p-14 text-center"
+              style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-4" style={{ color: '#F7941D' }}>Ready to Explore?</p>
+              <h2 className="text-white font-black text-4xl md:text-5xl tracking-tighter mb-4 leading-none">
+                Your Next Journey<br />Starts Here
               </h2>
-              <p className="text-white/60 text-lg font-light leading-relaxed mb-4">
-                Whether you&apos;ve already travelled with us or you&apos;re discovering us for the first time, thank you for considering Uttarakhand Cab 24/7.
+              <p className="text-white/50 font-light mb-10 max-w-lg mx-auto leading-relaxed">
+                Airport transfers, Char Dham Yatra, hill stations — we're here 24/7, every day of the year.
               </p>
-              <p className="text-white font-bold text-lg">
-                We look forward to being part of your next journey through Devbhoomi Uttarakhand.
-              </p>
-            </div>
-
-            {/* Inline CTA */}
-            <div className="bg-white/5 border border-white/10 rounded-[2rem] p-10">
-              <p className="text-[#F7941D] text-xs font-black uppercase tracking-[0.3em] mb-4">Ready to Explore?</p>
-              <h3 className="font-heading font-black text-3xl md:text-4xl text-white uppercase tracking-tighter mb-4 leading-none">
-                Ready to Explore Uttarakhand?
-              </h3>
-              <p className="text-white/60 font-light mb-8 max-w-xl leading-relaxed">
-                Whether you need an airport transfer, a{' '}
-                <Link href="/char-dham" className="text-[#F7941D] hover:underline">Char Dham Yatra taxi</Link>,
-                a family tour vehicle, or an outstation cab — we&apos;re here 24 hours a day, 7 days a week.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="tel:+919258912169"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#F7941D] text-white font-black text-xs uppercase tracking-widest rounded-xl hover:bg-[#D97E10] transition-all">
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 text-white font-black text-xs uppercase tracking-widest rounded-xl transition-all"
+                  style={{ background: '#F7941D' }}>
                   <Phone className="w-4 h-4" /> +91 92589 12169
                 </a>
-                <a href="tel:+919675212169"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-white/10 border border-white/20 text-white font-black text-xs uppercase tracking-widest rounded-xl hover:bg-white/20 transition-all">
-                  <Phone className="w-4 h-4" /> +91 96752 12169
-                </a>
                 <a href="https://wa.me/919258912169" target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#25D366] text-white font-black text-xs uppercase tracking-widest rounded-xl hover:bg-[#128C7E] transition-all">
+                  className="inline-flex items-center justify-center gap-2 px-8 py-4 text-white font-black text-xs uppercase tracking-widest rounded-xl transition-all"
+                  style={{ background: '#25D366' }}>
                   <MessageCircle className="w-4 h-4" /> WhatsApp Us
                 </a>
               </div>
-              <p className="text-white/30 text-xs font-light mt-6">Available 24 hours · 7 days a week · All Uttarakhand destinations</p>
             </div>
           </div>
         </section>
 
-        {/* ── 11. STRATEGIC CTA ────────────────────────────────── */}
-        <section className="px-4 sm:px-6 lg:px-8 pb-32 bg-[#1A1A1A]">
+        <section className="px-4 sm:px-6 lg:px-8 pb-32" style={{ background: '#0a0a0a' }}>
           <div className="max-w-page mx-auto">
-            <StrategicCTA
-              heading="Ready to Travel Safely?"
-              subtext="Experience the difference of travelling with a dedicated local team. Get an instant quote for your trip today."
-            />
+            <StrategicCTA heading="Ready to Travel Safely?" subtext="Experience the difference of travelling with a dedicated local team. Get an instant quote for your trip today." />
           </div>
         </section>
 
