@@ -19,6 +19,8 @@ export function HomeTourPackagesCarousel({ packages }: { packages: TourPackageIt
       getKey={(pkg) => pkg.name}
       cardWidth={360}
       cardGap={20}
+      loop
+      autoPlayMs={6000}
       ariaLabel="Tour packages carousel — use arrow keys to navigate"
       renderCard={(pkg, isActive) => (
         <Link

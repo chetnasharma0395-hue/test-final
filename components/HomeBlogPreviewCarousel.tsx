@@ -16,6 +16,7 @@ export function HomeBlogPreviewCarousel({ posts }: { posts: BlogPostItem[] }) {
   return (
     <CardCarousel
       items={posts}
+      loop
       getKey={(post) => post.slug}
       cardWidth={360}
       cardGap={20}

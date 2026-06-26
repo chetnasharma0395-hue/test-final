@@ -39,6 +39,8 @@ export function CardCarousel<T>({
   edgeFadeBg = '#1A1A1A',
   initialIndex,
   ariaLabel = 'Carousel — use arrow keys to navigate',
+  loop = false,
+  autoPlayMs = 0,
 }: {
   items: T[];
   renderCard: (item: T, isActive: boolean, index: number) => ReactNode;
@@ -48,6 +50,8 @@ export function CardCarousel<T>({
   edgeFadeBg?: string;
   initialIndex?: number;
   ariaLabel?: string;
+  loop?: boolean;
+  autoPlayMs?: number;
 }) {
   const [active, setActive] = useState(initialIndex ?? Math.floor(items.length / 2));
   const [dragOffset, setDragOffset] = useState(0);
@@ -85,14 +89,17 @@ export function CardCarousel<T>({
   useEffect(() => { activeRef.current = active; }, [active]);
 
   const snapTo = useCallback((index: number) => {
-    const clamped = Math.max(0, Math.min(items.length - 1, index));
+    const len = items.length;
+    const target = loop
+      ? ((index % len) + len) % len            // wrap around both ends
+      : Math.max(0, Math.min(len - 1, index));  // clamp
     setIsSnapping(true);
     setDragOffset(0);
     setIsDragging(false);
-    setActive(clamped);
+    setActive(target);
     const t = setTimeout(() => setIsSnapping(false), 500);
     return () => clearTimeout(t);
-  }, [items.length]);
+  }, [items.length, loop]);
 
   useEffect(() => {
     const el = containerRef.current;
@@ -109,6 +116,15 @@ export function CardCarousel<T>({
 
   const prev = () => snapTo(activeRef.current - 1);
   const next = () => snapTo(activeRef.current + 1);
+
+  // Auto-play — advances every autoPlayMs, pauses while dragging or hovered.
+  const [autoPaused, setAutoPaused] = useState(false);
+  useEffect(() => {
+    if (!autoPlayMs || autoPlayMs <= 0) return;
+    if (autoPaused || isDragging) return;
+    const id = setInterval(() => snapTo(activeRef.current + 1), autoPlayMs);
+    return () => clearInterval(id);
+  }, [autoPlayMs, autoPaused, isDragging, snapTo]);
 
   const mouseStartX = useRef<number | null>(null);
   const mouseSamples = useRef<TouchSample[]>([]);
@@ -228,6 +244,8 @@ export function CardCarousel<T>({
       role="region"
       aria-label={ariaLabel}
       className="w-full select-none outline-none"
+      onMouseEnter={() => setAutoPaused(true)}
+      onMouseLeave={() => setAutoPaused(false)}
     >
       <div className="relative overflow-hidden w-full" style={{ paddingBottom: 8 }}>
         <div className="absolute left-0 top-0 bottom-0 pointer-events-none z-10 w-6 sm:w-[88px]"
