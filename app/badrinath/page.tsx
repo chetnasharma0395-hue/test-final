@@ -456,9 +456,9 @@ export default function Badrinath() {
               <div className="space-y-4 text-sm font-medium mb-10">
                 {[
                   { label: 'Dehradun → Badrinath', fare: '₹9,000' },
-                  { label: 'Haridwar → Badrinath', fare: '₹7,500' },
-                  { label: 'Rishikesh → Badrinath', fare: '₹7,000' },
-                  { label: 'Delhi → Badrinath', fare: '₹12,000' },
+                  { label: 'Haridwar → Badrinath', fare: '₹8,000' },
+                  { label: 'Rishikesh → Badrinath', fare: '₹7,500' },
+                  { label: 'Delhi → Badrinath', fare: '₹13,000' },
                   { label: 'SUV Upgrade', fare: '+₹2,000' },
                 ].map((item) => (
                   <div key={item.label} className="flex justify-between items-center border-b border-white/10 pb-4">
@@ -500,8 +500,8 @@ export default function Badrinath() {
                 {[
                   { name: 'Kedarnath', dist: '240 km', icon: Mountain, link: '/kedarnath', fare: '₹7,500' },
                   { name: 'Char Dham Yatra', dist: 'Full Circuit', icon: Map, link: '/char-dham', fare: 'Custom' },
-                  { name: 'Haridwar', dist: '315 km', icon: MapPin, link: '/haridwar', fare: '₹7,500' },
-                  { name: 'Rishikesh', dist: '295 km', icon: MapPin, link: '/rishikesh', fare: '₹7,000' },
+                  { name: 'Haridwar', dist: '315 km', icon: MapPin, link: '/haridwar', fare: '₹8,000' },
+                  { name: 'Rishikesh', dist: '295 km', icon: MapPin, link: '/rishikesh', fare: '₹7,500' },
                 ].map((d, i) => (
                   <li key={i} className="flex items-center justify-between bg-[#1A1A1A] p-4 rounded-xl border border-transparent hover:border-[#F7941D]/30 transition-colors group">
                     <Link href={d.link} className="flex flex-col w-full">
