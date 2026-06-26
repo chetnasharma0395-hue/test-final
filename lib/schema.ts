@@ -397,8 +397,8 @@ export function organizationSchema() {
     name: 'Uttarakhand Cab 24/7',
     alternateName: ['Uttarakhand Cab', 'UC247', 'उत्तराखंड कैब 24/7'],
     slogan: 'Sahi safar sahi service — aur vo safar hamari zimmedaari',
-    description: 'Uttarakhand Cab 24/7 is a professional taxi and tour operator based in Dehradun, Uttarakhand, India. Founded in 2012, we specialise in Char Dham Yatra circuits, airport transfers, and mountain cab services across the Garhwal and Kumaon Himalayas with verified local drivers and fixed transparent pricing.',
-    foundingDate: '2012',
+    description: 'Uttarakhand Cab 24/7 is a professional taxi and tour operator based in Dehradun, Uttarakhand, India. Founded in 2011, we specialise in Char Dham Yatra circuits, airport transfers, and mountain cab services across the Garhwal and Kumaon Himalayas with verified local drivers and fixed transparent pricing.',
+    foundingDate: '2011',
     url: BASE_URL,
     logo: {
       '@type': 'ImageObject',
