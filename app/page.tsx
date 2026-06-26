@@ -109,8 +109,8 @@ const homeFAQs = [
 /* ─── Page ──────────────────────────────────────────────────────── */
 
 export default function Home() {
-  // Top 3 most recent blog posts for the preview grid
-  const recentPosts = blogPosts.slice(-3).reverse();
+  // All blog & travel-guide posts for the Travel Guides carousel (newest first)
+  const recentPosts = [...blogPosts].reverse();
 
   return (
     <>
