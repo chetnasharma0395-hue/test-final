@@ -352,63 +352,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* ══ 5. FOUNDERS — Asia Tube style ══════════════════════════ */}
-        <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden" style={{ background: '#0a0a0a' }}>
-          {/* Large decorative circle — Asia Tube style */}
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="rounded-full"
-              style={{ width: 600, height: 600, border: '1px solid rgba(247,148,29,0.07)', background: 'radial-gradient(circle, rgba(247,148,29,0.04) 0%, transparent 65%)' }} />
-          </div>
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="rounded-full"
-              style={{ width: 420, height: 420, border: '1px solid rgba(247,148,29,0.05)' }} />
-          </div>
-
-          <div className="relative max-w-page mx-auto text-center">
-            {/* Heading */}
-            <p className="text-[10px] font-black uppercase tracking-[0.3em] mb-3" style={{ color: '#F7941D' }}>The Team Behind the Wheel</p>
-            <h2 className="font-black text-4xl md:text-5xl tracking-tighter leading-none mb-4">
-              <span style={{ color: '#F7941D' }}>Our</span>
-              <br />
-              <span className="text-white">Founders</span>
-            </h2>
-            <p className="text-white/50 font-light text-sm max-w-sm mx-auto mb-16 leading-relaxed">
-              Local mountain experts who built this service from the ground up — one trusted ride at a time.
-            </p>
-
-            {/* Founder cards */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-10 sm:gap-20">
-              {[
-                { initials: 'DK', name: 'Founder', role: 'CEO', sub: 'Founder & Operations', bg: 'from-[#F7941D]/20 to-[#F7941D]/5' },
-                { initials: 'UC', name: 'Co-Founder', role: 'COO', sub: 'Co-Founder & Fleet', bg: 'from-white/10 to-white/3' },
-              ].map((person) => (
-                <div key={person.role} className="flex flex-col items-center gap-4">
-                  {/* Circular photo placeholder */}
-                  <div
-                    className={`relative w-32 h-32 rounded-full flex items-center justify-center bg-gradient-to-b ${person.bg}`}
-                    style={{ border: '2px solid rgba(247,148,29,0.3)', boxShadow: '0 0 40px rgba(247,148,29,0.12)' }}
-                  >
-                    <span className="text-white font-black text-2xl opacity-40">{person.initials}</span>
-                    {/* Outer ring */}
-                    <div className="absolute -inset-2 rounded-full"
-                      style={{ border: '1px solid rgba(247,148,29,0.1)' }} />
-                  </div>
-                  {/* Info */}
-                  <div>
-                    <p className="text-white font-black text-base">{person.name}</p>
-                    <p className="font-black text-2xl tracking-tight" style={{ color: '#F7941D' }}>{person.role}</p>
-                    <p className="text-white/40 text-xs uppercase tracking-widest mt-0.5">{person.sub}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <p className="mt-16 text-white/30 text-xs font-light max-w-xs mx-auto leading-relaxed">
-              Uttarakhand Cab 24/7 · Est. 2011 · Dehradun, Uttarakhand
-            </p>
-          </div>
-        </section>
-
         {/* ══ 6. COMPARISON TABLE ══════════════════════════════════ */}
         <section className="py-24 px-4 sm:px-6 lg:px-8" style={{ background: '#0f0f0f' }}>
           <div className="max-w-5xl mx-auto">
