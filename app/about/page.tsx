@@ -6,7 +6,7 @@ import {
   Compass, XCircle, Phone, MessageCircle, Star, MapPin,
 } from 'lucide-react';
 import { StrategicCTA, TrustBanner } from '@/components/CTABoxes';
-import { TiltCard } from '@/components/TiltCard';
+
 
 export const metadata: Metadata = {
   title: 'About Uttarakhand Cab 24/7 | Trusted Taxi Service In Uttarakhand',
@@ -47,7 +47,7 @@ function LaptopMockup() {
           <Image
             src="/assets/images/hero-mountain-road.jpg"
             alt="Uttarakhand Cab website preview"
-            fill className="object-cover object-top"
+            fill priority className="object-cover object-top"
           />
           {/* UI overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/60 via-transparent to-[#0a0a0a]/80" />
@@ -212,7 +212,7 @@ export default function AboutPage() {
                   <Image
                     src="/assets/images/dest-kedarnath.jpg"
                     alt="Kedarnath mountain route — Uttarakhand Cab 24/7"
-                    fill className="object-cover"
+                    fill priority className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                   {/* Floating badge */}
@@ -245,7 +245,7 @@ export default function AboutPage() {
                 </div>
                 {/* Stats inline */}
                 <div className="mt-8 flex gap-8">
-                  {[['10+', 'Years'], ['10k+', 'Rides'], ['4.9★', 'Rating']].map(([val, label]) => (
+                  {[['12+', 'Years'], ['10K+', 'Rides'], ['4.9★', 'Rating']].map(([val, label]) => (
                     <div key={label}>
                       <p className="text-2xl font-black text-[#F7941D]">{val}</p>
                       <p className="text-white/45 text-xs uppercase tracking-widest">{label}</p>
@@ -309,7 +309,7 @@ export default function AboutPage() {
         <section className="py-16 px-4 sm:px-6 lg:px-8" style={{ background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.06)', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
           <div className="max-w-page mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { stat: '10+', label: 'Years Experience' },
+              { stat: '12+', label: 'Years Experience' },
               { stat: '24×7', label: 'Availability' },
               { stat: '10,000+', label: 'Travellers Served' },
               { stat: '4.9★', label: 'Google Rating' },
@@ -337,16 +337,15 @@ export default function AboutPage() {
                 { icon: HeartHandshake, title: 'People Matter', text: 'Behind every booking is a family, a pilgrim, or a dream journey. We never forget that.' },
                 { icon: Compass, title: 'Local Knowledge Wins', text: 'Technology helps, but local experience and mountain route knowledge still make the biggest difference.' },
               ].map((v) => (
-                <TiltCard key={v.title} className="p-8 rounded-[2rem]"
-                  style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}
-                  intensityX={8} intensityY={10}>
+                <div key={v.title} className="p-8 rounded-[2rem] hover:border-[#F7941D]/20 transition-all duration-300"
+                  style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
                   <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-6"
                     style={{ background: 'rgba(247,148,29,0.1)', border: '1px solid rgba(247,148,29,0.2)' }}>
                     <v.icon className="w-7 h-7" style={{ color: '#F7941D' }} />
                   </div>
                   <h3 className="text-white font-black text-xl tracking-tighter mb-3">{v.title}</h3>
                   <p className="text-white/55 font-light leading-relaxed text-sm">{v.text}</p>
-                </TiltCard>
+                </div>
               ))}
             </div>
           </div>
