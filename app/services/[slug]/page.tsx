@@ -243,7 +243,7 @@ export default async function ServicePage({ params }: RouteProps) {
               </section>
 
                 {route.description && (
-                  <p className="text-lg text-gray-700 leading-relaxed">
+                  <p className="text-lg text-white/70 leading-relaxed">
                     {route.description}
                   </p>
                 )}
@@ -301,21 +301,21 @@ export default async function ServicePage({ params }: RouteProps) {
             
             <ul className="space-y-4 mb-8">
               {route.distance && (
-                <li className="flex justify-between border-b pb-2">
-                  <span className="text-gray-500">Approx Distance:</span>
+                <li className="flex justify-between border-b border-white/8 pb-2">
+                  <span className="text-white/45">Approx Distance:</span>
                   <span className="font-medium">{route.distance}</span>
                 </li>
               )}
               {route.duration && (
-                <li className="flex justify-between border-b pb-2">
-                  <span className="text-gray-500">Est. Duration:</span>
+                <li className="flex justify-between border-b border-white/8 pb-2">
+                  <span className="text-white/45">Est. Duration:</span>
                   <span className="font-medium">{route.duration}</span>
                 </li>
               )}
               {(route.price || route.basePrice) && (
-                <li className="flex justify-between border-b pb-2">
-                  <span className="text-gray-500">Pricing:</span>
-                  <span className="font-medium text-green-600">
+                <li className="flex justify-between border-b border-white/8 pb-2">
+                  <span className="text-white/45">Pricing:</span>
+                  <span className="font-medium text-[#F7941D]">
                     {String(route.price || route.basePrice).startsWith('₹') ? (route.price || route.basePrice) : `₹${route.price || route.basePrice}`}
                   </span>
                 </li>
@@ -342,7 +342,7 @@ export default async function ServicePage({ params }: RouteProps) {
             {/* Related Pages — contextual internal links per route */}
             {relatedLinks.length > 0 && (
               <div className="mt-8 pt-6 border-t border-white/10">
-                <h4 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">Related Routes</h4>
+                <h4 className="text-sm font-bold text-white/40 uppercase tracking-widest mb-4">Related Routes</h4>
                 <ul className="space-y-2">
                   {relatedLinks.map((link, i) => (
                     <li key={i}>
@@ -357,7 +357,7 @@ export default async function ServicePage({ params }: RouteProps) {
 
             {blogCrossLink && (
               <div className="mt-6 pt-6 border-t border-white/10">
-                <h4 className="text-sm font-bold text-gray-500 uppercase tracking-widest mb-4">Travel Guide</h4>
+                <h4 className="text-sm font-bold text-white/40 uppercase tracking-widest mb-4">Travel Guide</h4>
                 <a
                   href={blogCrossLink.href}
                   className="flex items-start gap-3 group"
