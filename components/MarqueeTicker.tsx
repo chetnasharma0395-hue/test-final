@@ -4,7 +4,7 @@ import { Star } from 'lucide-react';
 
 const items = [
   { label: '4.9 / 5 on Google', accent: true },
-  { label: '50,000+ Happy Customers' },
+  { label: '10,000+ Happy Customers' },
   { label: 'Verified Local Drivers' },
   { label: '12+ Years of Mountain Experience', accent: true },
   { label: '24 / 7 Availability' },
