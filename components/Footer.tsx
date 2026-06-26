@@ -51,7 +51,7 @@ const destinationLinks = [
 
 const companyLinks = [
   { name: 'About Us',      href: '/about' },
-  { name: 'Why Choose Us', href: '/why-choose-us' },
+  { name: 'Why Trust Us', href: '/why-trust-us' },
   { name: 'Travel Guide',  href: '/travel-guide' },
   { name: 'Contact Us',    href: '/contact' },
 ];
