@@ -195,10 +195,8 @@ export default function WhyTrustUsPage() {
               { emoji: '🏥', label: 'Emergency', title: 'Urgent last-minute travel', text: 'Emergency at 4 AM. No time for reviews. We pick up in 15 minutes — because we are genuinely local.' },
               { emoji: '👴', label: 'Senior Citizens', title: 'Elderly passengers', text: 'Patient, courteous drivers. Comfortable vehicles. Stop whenever needed. We go at your pace.' },
             ].map((s) => (
-              <div key={s.title} className="group rounded-2xl p-7 transition-all duration-300 cursor-default"
-                style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)' }}
-                onMouseEnter={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(247,148,29,0.3)'; }}
-                onMouseLeave={(e) => { (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(255,255,255,0.07)'; }}>
+              <div key={s.title} className="rounded-2xl p-7 transition-all duration-300 cursor-default border border-white/[0.07] hover:border-[#F7941D]/30"
+                style={{ background: 'rgba(255,255,255,0.03)' }}>
                 <span className="text-3xl block mb-3">{s.emoji}</span>
                 <span className="text-[8px] font-black uppercase tracking-widest px-2 py-1 rounded-full mb-3 inline-block"
                   style={{ background: 'rgba(247,148,29,0.1)', color: '#F7941D' }}>{s.label}</span>
