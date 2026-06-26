@@ -123,6 +123,12 @@ const nextConfig = {
         destination: '/destinations',
         permanent: true,
       },
+      // ── why-choose-us merged into why-trust-us ────────────
+      {
+        source: '/why-choose-us',
+        destination: '/why-trust-us',
+        permanent: true,
+      },
     ];
   },
 };
