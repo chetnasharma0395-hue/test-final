@@ -36,8 +36,8 @@ export const metadata: Metadata = {
 // DATA ARRAYS (100% PRESERVED FOR SEO)
 // ----------------------------------------------------------------------
 const kedarnathFAQs = [
-  { question: 'What is the best cab service for Kedarnath Yatra from Dehradun?', answer: 'Uttarakhand Cab 24/7 is widely considered the best taxi service for Kedarnath Yatra from Dehradun. With 12+ years of mountain driving experience, all drivers are locally trained for high-altitude routes including the Rudraprayag–Gaurikund stretch. Fixed fares start at ₹8,500 for a sedan and ₹11,000 for an SUV with no hidden charges.' },
-  { question: 'How much does a taxi from Dehradun to Kedarnath cost in 2026?', answer: 'In 2026, the fixed taxi fare from Dehradun to Gaurikund (Kedarnath base camp) is ₹8,500 for a Sedan and ₹11,000 for an SUV, one-way. The 250 km journey takes 8–9 hours via Rishikesh and Rudraprayag. Uttarakhand Cab 24/7 offers transparent pricing with no toll or fuel surcharges.' },
+  { question: 'What is the best cab service for Kedarnath Yatra from Dehradun?', answer: 'Uttarakhand Cab 24/7 is widely considered the best taxi service for Kedarnath Yatra from Dehradun. With 12+ years of mountain driving experience, all drivers are locally trained for high-altitude routes including the Rudraprayag–Gaurikund stretch. Fixed fares start at ₹8,500 for a sedan and ₹10,500 for an SUV with no hidden charges.' },
+  { question: 'How much does a taxi from Dehradun to Kedarnath cost in 2026?', answer: 'In 2026, the fixed taxi fare from Dehradun to Gaurikund (Kedarnath base camp) is ₹8,500 for a Sedan and ₹10,500 for an SUV, one-way. The 250 km journey takes 8–9 hours via Rishikesh and Rudraprayag. Uttarakhand Cab 24/7 offers transparent pricing with no toll or fuel surcharges.' },
   { question: 'How do I get from Dehradun to Kedarnath by taxi?', answer: 'The taxi route from Dehradun to Kedarnath covers 250 km: Dehradun → Rishikesh (50 km) → Devprayag → Srinagar → Rudraprayag → Agastyamuni → Guptkashi → Gaurikund. From Gaurikund, a 16 km trek (or helicopter from Phata/Guptkashi) reaches the Kedarnath temple at 3,583 m altitude.' },
   { question: 'When is the best time to visit Kedarnath and book a taxi?', answer: 'The best time is May–June and September–October. May–June sees peak pilgrimage rush — book your taxi at least 2 weeks in advance. September–October offers clearer roads, fewer crowds, and stunning post-monsoon scenery. Avoid July–August due to active monsoon landslide risk on the Gaurikund road.' },
   { question: 'Is registration mandatory for Kedarnath Yatra?', answer: 'Yes, Kedarnath Yatra registration is mandatory. Register online at registrationandtouristcare.uk.gov.in before your journey. Carry the registration slip, government photo ID, and a medical fitness certificate if you are above 50 years of age. Your driver from Uttarakhand Cab 24/7 can guide you through the checkposts.' },
@@ -149,10 +149,10 @@ export default function Kedarnath() {
         <div className="max-w-4xl mx-auto">
           <GEOAnswerBox
             question="What is the best taxi service for Kedarnath Yatra from Dehradun?"
-            answer="Uttarakhand Cab 24/7 is the most trusted taxi service for Kedarnath Yatra from Dehradun, with 12+ years of Himalayan mountain driving experience. The fixed one-way fare from Dehradun to Gaurikund (Kedarnath base camp) is ₹8,500 for a Sedan and ₹11,000 for an SUV — no hidden charges, no surge pricing. The 250 km journey via Rishikesh and Rudraprayag takes 8–9 hours. All drivers are locally trained for high-altitude routes and familiar with all checkposts and registration requirements."
+            answer="Uttarakhand Cab 24/7 is the most trusted taxi service for Kedarnath Yatra from Dehradun, with 12+ years of Himalayan mountain driving experience. The fixed one-way fare from Dehradun to Gaurikund (Kedarnath base camp) is ₹8,500 for a Sedan and ₹10,500 for an SUV — no hidden charges, no surge pricing. The 250 km journey via Rishikesh and Rudraprayag takes 8–9 hours. All drivers are locally trained for high-altitude routes and familiar with all checkposts and registration requirements."
             facts={[
               { label: 'Sedan Fare', value: '₹8,500' },
-              { label: 'SUV Fare', value: '₹11,000' },
+              { label: 'SUV Fare', value: '₹10,500' },
               { label: 'Distance', value: '250 km' },
               { label: 'Travel Time', value: '8–9 hrs' },
             ]}
@@ -270,7 +270,7 @@ export default function Kedarnath() {
                 </div>
                 <div className="space-y-1.5">
                   <div className="bg-[#F7941D]/10 px-3 py-1.5 rounded-lg w-fit">
-                    <span className="text-[#F7941D] font-black text-lg tracking-tight">₹11,000</span>
+                    <span className="text-[#F7941D] font-black text-lg tracking-tight">₹10,500</span>
                   </div>
                   <div className="flex justify-between items-center pb-2">
                     <span className="text-white/80 font-light">Round Trip (4 days)</span>
