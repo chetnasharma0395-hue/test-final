@@ -193,7 +193,7 @@ export default function AboutPage() {
                 <span className="text-white">Uttarakhand Cab 24/7</span>
               </h1>
               <p className="mt-6 text-white/55 text-lg font-light max-w-xl mx-auto leading-relaxed">
-                Trusted mountain travel since 2011 — serving over 20,000 travellers across Uttarakhand.
+                Trusted mountain travel since 2011 — serving over 10,000 travellers across Uttarakhand.
               </p>
             </div>
           </div>
