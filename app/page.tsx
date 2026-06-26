@@ -244,6 +244,7 @@ export default function Home() {
                 iconName: 'car',
                 best: 'Point-to-point city transfers, solo & couple travel',
                 accent: false,
+                link: '/fleet/sedan',
               },
               {
                 name: 'Premium SUVs',
@@ -252,6 +253,7 @@ export default function Home() {
                 iconName: 'car',
                 best: 'Himalayan routes, family pilgrimages, mountain roads',
                 accent: true,
+                link: '/fleet/innova-crysta',
               },
               {
                 name: 'Tempo Travellers',
@@ -260,6 +262,7 @@ export default function Home() {
                 iconName: 'users',
                 best: 'Group tours, corporate travel, large pilgrimages',
                 accent: false,
+                link: '/fleet/tempo-traveller',
               },
             ]}
           />
