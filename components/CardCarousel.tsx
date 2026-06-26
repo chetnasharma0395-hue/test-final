@@ -311,30 +311,55 @@ export function CardCarousel<T>({
 
       {/* Navigation row */}
       <div className="flex items-center justify-center gap-6 mt-2">
-        <NavArrow direction="prev" disabled={active === 0} onClick={prev} label="Previous" />
+        <NavArrow direction="prev" disabled={!loop && active === 0} onClick={prev} label="Previous" />
         <div className="flex items-center gap-2" role="tablist">
-          {items.map((item, i) => (
-            <button
-              key={getKey(item, i)}
-              role="tab"
-              aria-selected={i === active}
-              onClick={() => snapTo(i)}
-              aria-label={`Go to slide ${i + 1}`}
-              style={{
-                height: 6,
-                width: i === active ? 22 : 6,
-                borderRadius: 999,
-                background: i === active ? '#F7941D' : 'rgba(255,255,255,0.2)',
-                boxShadow: i === active ? '0 0 10px rgba(247,148,29,0.45)' : 'none',
-                border: 'none',
-                padding: 0,
-                cursor: 'pointer',
-                transition: 'all 0.3s cubic-bezier(0.34,1.56,0.64,1)',
-              }}
-            />
-          ))}
+          {items.map((item, i) => {
+            const isActive = i === active;
+            // Windowed dots: keep the active dot + a few neighbours full-size;
+            // dots further away shrink, so long lists stay compact.
+            const dist = Math.abs(i - active);
+            const tiny = dist > 3;
+            const dotW = isActive ? 28 : tiny ? 3 : 6;
+            return (
+              <button
+                key={getKey(item, i)}
+                role="tab"
+                aria-selected={isActive}
+                onClick={() => snapTo(i)}
+                aria-label={`Go to slide ${i + 1}`}
+                className="relative overflow-hidden"
+                style={{
+                  height: 6,
+                  width: dotW,
+                  borderRadius: 999,
+                  background: isActive ? 'rgba(247,148,29,0.25)' : 'rgba(255,255,255,0.2)',
+                  boxShadow: isActive ? '0 0 10px rgba(247,148,29,0.35)' : 'none',
+                  border: 'none',
+                  padding: 0,
+                  cursor: 'pointer',
+                  transition: 'width 0.35s cubic-bezier(0.34,1.56,0.64,1), background 0.3s',
+                }}
+              >
+                {/* Timer fill on the active dot (only when autoplay is on) */}
+                {isActive && autoPlayMs > 0 && (
+                  <span
+                    key={`fill-${active}`}
+                    className="cardcarousel-timer-fill absolute inset-y-0 left-0 rounded-full bg-[#F7941D]"
+                    style={{
+                      animationDuration: `${autoPlayMs}ms`,
+                      animationPlayState: autoPaused || isDragging ? 'paused' : 'running',
+                    }}
+                  />
+                )}
+                {/* Static fill when no autoplay */}
+                {isActive && autoPlayMs === 0 && (
+                  <span className="absolute inset-0 rounded-full bg-[#F7941D]" />
+                )}
+              </button>
+            );
+          })}
         </div>
-        <NavArrow direction="next" disabled={active === items.length - 1} onClick={next} label="Next" />
+        <NavArrow direction="next" disabled={!loop && active === items.length - 1} onClick={next} label="Next" />
       </div>
 
       <p className="text-center mt-4 text-[10px] font-medium uppercase tracking-widest" style={{ color: 'rgba(255,255,255,0.18)' }}>
