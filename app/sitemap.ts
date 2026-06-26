@@ -32,7 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/about',                        priority: 0.6, freq: 'yearly'  },
     { path: '/contact',                      priority: 0.7, freq: 'yearly'  },
     { path: '/gallery',                      priority: 0.6, freq: 'monthly' },
-    { path: '/why-choose-us',                priority: 0.7, freq: 'monthly' },
+    { path: '/why-trust-us',                priority: 0.7, freq: 'monthly' },
     { path: '/info',                         priority: 0.6, freq: 'monthly' },
     { path: '/distance-guide',               priority: 0.7, freq: 'monthly' },
     { path: '/travel-guide',                 priority: 0.7, freq: 'monthly' },
