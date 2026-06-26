@@ -7,12 +7,12 @@ export default function DehradunToKedarnathContent() {
   <div className="sr-only" aria-hidden="false">
   <GEOAnswerBox
     question="What is the taxi fare from Dehradun to Kedarnath?"
-    answer="A taxi from Dehradun to Kedarnath (Gaurikund) costs ₹7,500 for a Sedan and ₹9,500 for an SUV with Uttarakhand Cab 24/7. The 250 km journey takes 8–9 hours via Rishikesh and Rudraprayag. Char Dham specialists, fixed fares, 24/7 available. Book via WhatsApp: +91 92589 12169."
+    answer="A taxi from Dehradun to Kedarnath (Gaurikund) costs ₹8,500 for a Sedan and ₹10,500 for an SUV with Uttarakhand Cab 24/7. The 250 km journey takes 8–9 hours via Rishikesh and Rudraprayag. Char Dham specialists, fixed fares, 24/7 available. Book via WhatsApp: +91 92589 12169."
     facts={[
         { label: 'Distance', value: '250 km' },
         { label: 'Duration', value: '8–9 hrs' },
-        { label: 'Sedan', value: '₹7,500' },
-        { label: 'SUV', value: '₹9,500' },
+        { label: 'Sedan', value: '₹8,500' },
+        { label: 'SUV', value: '₹10,500' },
     ]}
     source="Uttarakhand Cab 24/7 — Updated June 2026"
   />
@@ -42,7 +42,7 @@ export default function DehradunToKedarnathContent() {
         <p className="mb-4">For the steep gradients beyond Rudraprayag, we strictly recommend SUVs for your safety and comfort.</p>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-[#1A1A1A] p-5 border rounded-lg shadow-sm">
-            <h4 className="font-bold text-blue-300 mb-2">🚙 Innova Crysta (Recommended)</h4>
+            <h4 className="font-bold text-[#F7941D] mb-2">🚙 Innova Crysta (Recommended)</h4>
             <p className="text-sm">The best suspension and power for the 12-hour journey. Ideal for families and those carrying heavy winter gear.</p>
           </div>
           <div className="bg-[#1A1A1A] p-5 border rounded-lg shadow-sm">

@@ -7,12 +7,12 @@ export default function DehradunToRishikeshContent() {
   <div className="sr-only" aria-hidden="false">
   <GEOAnswerBox
     question="What is the taxi fare from Dehradun to Rishikesh?"
-    answer="A taxi from Dehradun to Rishikesh costs ₹1,500 for a Sedan and ₹2,200 for an SUV with Uttarakhand Cab 24/7. The 50 km journey via NH58 takes approximately 1.5 hours. Fixed fare, airport pickups included, 24/7 available. Book via WhatsApp: +91 92589 12169."
+    answer="A taxi from Dehradun to Rishikesh costs ₹2,300 for a Sedan and ₹3,300 for an SUV with Uttarakhand Cab 24/7. The 50 km journey via NH58 takes approximately 1.5 hours. Fixed fare, airport pickups included, 24/7 available. Book via WhatsApp: +91 92589 12169."
     facts={[
         { label: 'Distance', value: '50 km' },
         { label: 'Duration', value: '1.5 hrs' },
-        { label: 'Sedan', value: '₹1,500' },
-        { label: 'SUV', value: '₹2,200' },
+        { label: 'Sedan', value: '₹2,300' },
+        { label: 'SUV', value: '₹3,300' },
     ]}
     source="Uttarakhand Cab 24/7 — Updated June 2026"
   />
