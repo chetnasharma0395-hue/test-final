@@ -16,6 +16,7 @@ export interface FleetOptionData {
   iconName: string;
   best: string;
   accent: boolean;
+  link?: string;
 }
 
 /**
@@ -148,7 +149,7 @@ function TiltCard({ v }: { v: FleetOptionData }) {
         </p>
 
         <Link
-          href="/fleet"
+          href={v.link ?? '/fleet'}
           className="inline-flex items-center gap-2 text-xs font-black uppercase tracking-widest group/link w-fit text-white/60 hover:text-[#F7941D] transition-colors"
           style={{ transform: 'translateZ(35px)' }}
         >
