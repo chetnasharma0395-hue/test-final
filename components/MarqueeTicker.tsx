@@ -9,7 +9,7 @@ const items = [
   { label: '12+ Years of Mountain Experience', accent: true },
   { label: '24 / 7 Availability' },
   { label: 'Fixed Transparent Fares' },
-  { label: 'Char Dham Specialists Since 2012' },
+  { label: 'Char Dham Specialists Since 2011' },
   { label: 'Airport Transfers Available', accent: true },
   { label: 'Premium AC Vehicles' },
   { label: 'No Hidden Charges' },
