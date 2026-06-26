@@ -315,11 +315,11 @@ export function CardCarousel<T>({
         <div className="flex items-center gap-2" role="tablist">
           {items.map((item, i) => {
             const isActive = i === active;
-            // Windowed dots: keep the active dot + a few neighbours full-size;
-            // dots further away shrink, so long lists stay compact.
+            // Windowed dots: active + near neighbours visible; far dots shrink,
+            // very far dots hide entirely — keeps the row compact for long lists.
             const dist = Math.abs(i - active);
-            const tiny = dist > 3;
-            const dotW = isActive ? 28 : tiny ? 3 : 6;
+            if (dist > 4) return null;            // hide far dots
+            const dotW = isActive ? 28 : dist >= 3 ? 4 : dist === 2 ? 6 : 8;
             return (
               <button
                 key={getKey(item, i)}
@@ -327,12 +327,12 @@ export function CardCarousel<T>({
                 aria-selected={isActive}
                 onClick={() => snapTo(i)}
                 aria-label={`Go to slide ${i + 1}`}
-                className="relative overflow-hidden"
+                className="relative overflow-hidden shrink-0"
                 style={{
                   height: 6,
                   width: dotW,
                   borderRadius: 999,
-                  background: isActive ? 'rgba(247,148,29,0.25)' : 'rgba(255,255,255,0.2)',
+                  background: isActive ? 'rgba(247,148,29,0.25)' : 'rgba(255,255,255,0.25)',
                   boxShadow: isActive ? '0 0 10px rgba(247,148,29,0.35)' : 'none',
                   border: 'none',
                   padding: 0,
