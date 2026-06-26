@@ -219,7 +219,7 @@ export function TrustBanner() {
   return (
     <div className="w-full bg-[#1A1A1A] text-white py-5 px-6 rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl border border-[#F7941D]/15 my-8">
       <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 md:gap-8 text-[10px] sm:text-xs font-black uppercase tracking-widest text-white/70">
-        <span className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#F7941D]" /> 50k+ Happy Customers</span>
+        <span className="flex items-center gap-2"><CheckCircle2 className="w-3.5 h-3.5 text-[#F7941D]" /> 10k+ Happy Customers</span>
         <span className="flex items-center gap-2"><Shield className="w-3.5 h-3.5 text-[#F7941D]" /> Verified Local Drivers</span>
         <span className="flex items-center gap-2 hidden lg:flex"><Banknote className="w-3.5 h-3.5 text-[#F7941D]" /> Zero Hidden Fees</span>
       </div>
