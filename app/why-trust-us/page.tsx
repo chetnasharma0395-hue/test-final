@@ -105,7 +105,7 @@ export default function WhyTrustUsPage() {
           <div className="inline-grid grid-cols-2 sm:grid-cols-4 gap-px overflow-hidden rounded-2xl"
             style={{ border: '1px solid rgba(255,255,255,0.08)', background: 'rgba(255,255,255,0.04)' }}>
             {[
-              { n: '20,000+', l: 'Rides Completed' },
+              { n: '10,000+', l: 'Rides Completed' },
               { n: '4.9 ★', l: 'Google Rating' },
               { n: 'Since 2011', l: 'In Business' },
               { n: '24 × 7', l: 'Available' },

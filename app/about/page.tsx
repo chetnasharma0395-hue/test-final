@@ -311,7 +311,7 @@ export default function AboutPage() {
             {[
               { stat: '10+', label: 'Years Experience' },
               { stat: '24×7', label: 'Availability' },
-              { stat: '20,000+', label: 'Travellers Served' },
+              { stat: '10,000+', label: 'Travellers Served' },
               { stat: '4.9★', label: 'Google Rating' },
             ].map(({ stat, label }) => (
               <div key={label} className="text-center md:text-left">

@@ -112,7 +112,7 @@ export function TestimonialsSection() {
               ))}
             </div>
             <span className="font-extrabold text-white text-lg tracking-tight">4.9 out of 5</span>
-            <span className="text-white/70 text-xs font-light">Based on 2,000+ Google reviews</span>
+            <span className="text-white/70 text-xs font-light">Based on Most Genuine Google reviews</span>
           </div>
 
           <div className="hidden sm:block w-px h-12 bg-[#121212]/10" />

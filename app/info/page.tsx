@@ -201,7 +201,7 @@ export default function InfoPage() {
             <div className="max-w-4xl">
               <div className="inline-flex items-center gap-2 bg-white/10 border border-white/15 px-4 py-2 rounded-full mb-8">
                 <Star className="w-3.5 h-3.5 fill-[#FBBC05] text-[#FBBC05]" />
-                <span className="text-white/80 text-[10px] font-black uppercase tracking-widest">Trusted by 20,000+ Travellers Across Uttarakhand</span>
+                <span className="text-white/80 text-[10px] font-black uppercase tracking-widest">Trusted by 10,000+ Travellers Across Uttarakhand</span>
               </div>
 
               <h1 className="font-heading font-black text-4xl md:text-7xl uppercase text-white leading-[0.88] tracking-tighter mb-8">

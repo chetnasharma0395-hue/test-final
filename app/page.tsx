@@ -124,7 +124,7 @@ export default function Home() {
             { label: 'Based in', value: 'Dehradun, Uttarakhand' },
             { label: 'Phone', value: '+91 92589 12169' },
             { label: 'Rating', value: '4.9 / 5 (161 reviews)' },
-            { label: 'Rides completed', value: '20,000+' },
+            { label: 'Rides completed', value: '10,000+' },
             { label: 'Availability', value: '24/7' },
             { label: 'Dehradun–Mussoorie', value: '₹2,000 (Sedan)' },
             { label: 'Dehradun–Rishikesh', value: '₹2,300 (Sedan)' },
@@ -350,7 +350,7 @@ export default function Home() {
           </h2>
           <p className="text-white/50 text-lg font-light mb-12 max-w-xl mx-auto leading-relaxed">
             Fixed fares, verified drivers, 24/7 availability.
-            Join 20,000+ travellers who trust Uttarakhand Cab 24/7.
+            Join 10,000+ travellers who trust Uttarakhand Cab 24/7.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <MagneticCTA

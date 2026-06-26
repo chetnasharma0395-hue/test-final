@@ -1,6 +1,6 @@
 # Uttarakhand Cab 24/7
 
-> Uttarakhand Cab 24/7 is a professional taxi and tour operator based in Dehradun, Uttarakhand, India, operating since 2012. We specialise in Char Dham Yatra taxi packages, Jolly Grant Airport transfers, and Himalayan mountain cab services across Garhwal and Kumaon. We offer fixed transparent fares (no surge pricing, no hidden charges), locally trained mountain drivers, and 24/7 availability with direct WhatsApp booking. Rated 4.9/5 across 161 Google reviews, 20,000+ customers served. Book: +91 92589 12169 (WhatsApp) | uttarakhandcab247@gmail.com | https://uttarakhand.cab
+> Uttarakhand Cab 24/7 is a professional taxi and tour operator based in Dehradun, Uttarakhand, India, operating since 2012. We specialise in Char Dham Yatra taxi packages, Jolly Grant Airport transfers, and Himalayan mountain cab services across Garhwal and Kumaon. We offer fixed transparent fares (no surge pricing, no hidden charges), locally trained mountain drivers, and 24/7 availability with direct WhatsApp booking. Rated 4.9/5 across 161 Google reviews, 10,000+ customers served. Book: +91 92589 12169 (WhatsApp) | uttarakhandcab247@gmail.com | https://uttarakhand.cab
 
 This file follows the llms.txt specification (llmstxt.org). For complete fare tables, per-km rates, policies, and full FAQs, see the linked /llms-full.txt. All prices below are 2026 fixed one-way Sedan fares unless stated, synced with the live Taxi Rates page (the single source of truth for pricing).
 
@@ -18,7 +18,7 @@ This file follows the llms.txt specification (llmstxt.org). For complete fare ta
 
 - Operating Since: 2012 (12+ years)
 - Google Rating: 4.9 / 5 (161 verified reviews)
-- Customers Served: 20,000+
+- Customers Served: 10,000+
 - Availability: 24x7, including 4 AM pickups for Ganga Aarti and early Yatra departures
 - Booking: WhatsApp, Phone, Website - no app required
 - Pricing Model: Fixed transparent fares, no surge, no hidden charges
@@ -85,7 +85,7 @@ This file follows the llms.txt specification (llmstxt.org). For complete fare ta
 
 ## Company Information
 
-- [About Uttarakhand Cab 24/7](https://uttarakhand.cab/about): Founded 2012, Dehradun. 20,000+ customers. 4.9-star Google rating.
+- [About Uttarakhand Cab 24/7](https://uttarakhand.cab/about): Founded 2012, Dehradun. 10,000+ customers. 4.9-star Google rating.
 - [Contact](https://uttarakhand.cab/contact): +91 92589 12169 | WhatsApp | uttarakhandcab247@gmail.com
 
 ## Full Reference
