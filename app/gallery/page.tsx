@@ -161,7 +161,7 @@ export default function GalleryPage() {
                 Verified <span className="text-[#F7941D]">Guest Experiences</span>
               </h2>
             </div>
-            <p className="text-white/70 font-light md:text-right max-w-xs text-sm">Real smiles from our incredible 50,000+ happy customers.</p>
+            <p className="text-white/70 font-light md:text-right max-w-xs text-sm">Real smiles from our incredible 10,000+ happy customers.</p>
           </div>
 
           <MasonryGrid images={guestTripImages} />

@@ -207,7 +207,7 @@ export default function Home() {
             {/* Rides card */}
             <TiltCard className="bg-[#1A1A1A] border border-white/8 rounded-[2.5rem] p-8 flex flex-col items-center justify-center text-center" intensityX={8} intensityY={10}>
               <ThumbsUp className="w-12 h-12 text-[#F7941D] mb-4" style={{ transform: 'translateZ(35px)' }} />
-              <h3 className="font-black text-white uppercase text-xl tracking-tighter" style={{ transform: 'translateZ(25px)' }}>20k+ <br /> Rides</h3>
+              <h3 className="font-black text-white uppercase text-xl tracking-tighter" style={{ transform: 'translateZ(25px)' }}>10k+ <br /> Rides</h3>
               <p className="text-white/70 text-xs mt-2 font-light">Happy travellers served</p>
             </TiltCard>
           </div>

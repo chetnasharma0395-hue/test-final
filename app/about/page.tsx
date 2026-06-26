@@ -245,7 +245,7 @@ export default function AboutPage() {
                 </div>
                 {/* Stats inline */}
                 <div className="mt-8 flex gap-8">
-                  {[['10+', 'Years'], ['20K+', 'Rides'], ['4.9★', 'Rating']].map(([val, label]) => (
+                  {[['10+', 'Years'], ['10k+', 'Rides'], ['4.9★', 'Rating']].map(([val, label]) => (
                     <div key={label}>
                       <p className="text-2xl font-black text-[#F7941D]">{val}</p>
                       <p className="text-white/45 text-xs uppercase tracking-widest">{label}</p>
