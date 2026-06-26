@@ -157,10 +157,10 @@ export default function AirportToMussoorie() {
               <section className="sr-only">
                 <GEOAnswerBox
                 question="What is the taxi fare from Jolly Grant Airport to Mussoorie?"
-                answer="The taxi fare from Jolly Grant Airport (Dehradun) to Mussoorie is ₹2,500 for a Sedan and ₹3,500 for an SUV with Uttarakhand Cab 24/7. The 60 km journey takes approximately 2 hours via Rajpur Road. Our drivers wait at the arrival gate with a name board — no prepaid booth queues. Available 24/7 with flight-tracked pickups. Book via WhatsApp: +91 92589 12169."
+                answer="The taxi fare from Jolly Grant Airport (Dehradun) to Mussoorie is ₹3,000 for a Sedan and ₹4,000 for an SUV with Uttarakhand Cab 24/7. The 60 km journey takes approximately 2 hours via Rajpur Road. Our drivers wait at the arrival gate with a name board — no prepaid booth queues. Available 24/7 with flight-tracked pickups. Book via WhatsApp: +91 92589 12169."
                 facts={[
-                  { label: 'Sedan Fare', value: '₹2,500' },
-                  { label: 'SUV Fare', value: '₹3,500' },
+                  { label: 'Sedan Fare', value: '₹3,000' },
+                  { label: 'SUV Fare', value: '₹4,000' },
                   { label: 'Distance', value: '~60 km' },
                   { label: 'Travel Time', value: '~2 hrs' },
                   { label: 'Pickup', value: 'Meet & Greet at Arrival Gate' },
