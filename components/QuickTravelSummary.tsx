@@ -68,7 +68,7 @@ export function QuickTravelSummary({
             <span className="text-sm font-black uppercase tracking-widest">Why Book With Us?</span>
           </div>
           <p className="text-white/60 text-[10px] font-bold uppercase tracking-widest">
-            50k+ Happy Customers &bull; Local Drivers &bull; No Hidden Fees
+            10k+ Happy Customers &bull; Local Drivers &bull; No Hidden Fees
           </p>
         </div>
         <a 
