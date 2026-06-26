@@ -1,24 +1,10 @@
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { PRICING_DATA, formatPrice } from '@/lib/priceData';
-import { PopularRoutesCarousel } from './PopularRoutesCarousel';
-
-/**
- * PopularRoutesSection
- * ────────────────────
- * Fare, distance, and duration are pulled from PRICING_DATA (the single source
- * of truth in lib/priceData.ts) via the `priceKey` reference below. Updating a
- * fare in priceData.ts automatically updates this homepage section — no manual
- * edits here. Only presentational metadata (image, marketing tag, landing link,
- * WhatsApp text) lives locally.
- *
- * To feature a different route: change the `priceKey` to any key in PRICING_DATA
- * and supply its display image + tag.
- */
+import { PopularRoutesScattered } from './PopularRoutesScattered';
 
 interface FeaturedRoute {
   priceKey: keyof typeof PRICING_DATA;
-  /** Optional label override (e.g. group a destination cluster) */
   toLabelOverride?: string;
   image: string;
   link: string;
@@ -73,7 +59,6 @@ const FEATURED: FeaturedRoute[] = [
 ];
 
 export function PopularRoutesSection() {
-  // Resolve each featured card from the canonical pricing table at render time.
   const routes = FEATURED.map((f) => {
     const r = PRICING_DATA[f.priceKey];
     const to = f.toLabelOverride ?? r.to;
@@ -93,9 +78,18 @@ export function PopularRoutesSection() {
   });
 
   return (
-    <section className="py-24 md:py-32 bg-[#1A1A1A]">
-      <div className="max-w-page mx-auto px-6 sm:px-8 lg:px-10">
-        {/* Heading */}
+    <section className="relative py-24 md:py-32 overflow-hidden" style={{ background: '#0a0a0a' }}>
+
+      {/* Ambient orange glow — top left */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[400px] rounded-full pointer-events-none"
+        style={{ background: 'rgba(247,148,29,0.06)', filter: 'blur(100px)' }} />
+      {/* Ambient glow — bottom right */}
+      <div className="absolute bottom-0 right-1/4 w-[400px] h-[300px] rounded-full pointer-events-none"
+        style={{ background: 'rgba(247,148,29,0.04)', filter: 'blur(80px)' }} />
+
+      <div className="relative max-w-page mx-auto px-6 sm:px-8 lg:px-10">
+
+        {/* ── Heading ─────────────────────────────────────────── */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-16">
           <div>
             <p className="text-[#F7941D] text-xs font-semibold uppercase tracking-widest mb-4">
@@ -106,22 +100,20 @@ export function PopularRoutesSection() {
               &amp; Fares
             </h2>
           </div>
-          <div className="shrink-0">
-            <p className="text-white/70 text-sm font-light max-w-xs leading-relaxed">
-              All fares are fixed and inclusive of fuel, toll, and driver charges.
-              No surprises at the end of the journey.
-            </p>
-          </div>
+          <p className="text-white/50 text-sm font-light max-w-xs leading-relaxed">
+            All fares include fuel, toll &amp; driver charges.
+            No surprises at the end of your journey.
+          </p>
         </div>
 
-        {/* Route Carousel */}
-        <PopularRoutesCarousel routes={routes} />
+        {/* ── Scattered route cards ────────────────────────────── */}
+        <PopularRoutesScattered routes={routes} />
 
-        {/* View All */}
-        <div className="mt-12 text-center">
+        {/* ── View all ─────────────────────────────────────────── */}
+        <div className="mt-16 md:mt-24 text-center">
           <Link
             href="/taxi-rates"
-            className="inline-flex items-center gap-2 px-8 py-4 border-2 border-[#333333] text-white font-black text-xs uppercase tracking-widest rounded-xl hover:bg-[#2A2A2A] hover:text-white transition-all"
+            className="inline-flex items-center gap-2 px-8 py-4 border border-white/15 text-white font-black text-xs uppercase tracking-widest rounded-xl hover:bg-white/5 hover:border-white/30 transition-all"
           >
             View All Routes &amp; Rates 2026 <ArrowRight className="w-4 h-4" />
           </Link>
