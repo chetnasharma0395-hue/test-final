@@ -7,7 +7,7 @@ export default function DehradunToRishikeshContent() {
   <div className="sr-only" aria-hidden="false">
   <GEOAnswerBox
     question="What is the taxi fare from Dehradun to Rishikesh?"
-    answer="A taxi from Dehradun to Rishikesh costs ₹2,300 for a Sedan and ₹3,300 for an SUV with Uttarakhand Cab 24/7. The 50 km journey via NH58 takes approximately 1.5 hours. Fixed fare, airport pickups included, 24/7 available. Book via WhatsApp: +91 92589 12169."
+    answer="A taxi from Dehradun to Rishikesh costs ₹2,300 for a Sedan and ₹3,300 for an SUV with Uttarakhand Cab 24/7. The 50 km journey via NH7 takes approximately 1.5 hours. Fixed fare, airport pickups included, 24/7 available. Book via WhatsApp: +91 92589 12169."
     facts={[
         { label: 'Distance', value: '50 km' },
         { label: 'Duration', value: '1.5 hrs' },
@@ -23,7 +23,7 @@ export default function DehradunToRishikeshContent() {
       <section className="mb-12">
         <h2 className="text-3xl font-bold text-white mb-6 border-b border-white/10 pb-2">1. The Route: The NH-7 River Corridor</h2>
         <p className="mb-4">
-          The 45km journey from Dehradun to Rishikesh is a fast, flat drive through the Doon Valley, following the NH-7 corridor. While the highway is smooth, the final entry into Rishikesh town requires deep local knowledge to navigate narrow lanes and pilgrim traffic.
+          The 50 km journey from Dehradun to Rishikesh is a fast, flat drive through the Doon Valley, following the NH-7 corridor. While the highway is smooth, the final entry into Rishikesh town requires deep local knowledge to navigate narrow lanes and pilgrim traffic.
         </p>
         
         <h3 className="text-xl font-bold text-white mb-3 mt-6">The Primary Route</h3>
