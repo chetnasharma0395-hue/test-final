@@ -48,13 +48,13 @@ const routeStops = [
   { name: 'Srinagar (Garhwal)', desc: 'The largest town in the Garhwal hills. A common stop for lunch and refueling.', dist: '130 km from Haridwar' },
   { name: 'Rudraprayag', desc: 'The confluence of the Alaknanda and Mandakini rivers. Here, the road splits toward Kedarnath.', dist: '165 km from Haridwar' },
   { name: 'Guptkashi', desc: 'A major hub where many pilgrims stay overnight or catch helicopter flights to Kedarnath.', dist: '205 km from Haridwar' },
-  { name: 'Sonprayag / Gaurikund', desc: 'The final motorable points. All private taxis drop passengers here to begin the 16 km trek.', dist: '250 km from Haridwar' },
+  { name: 'Sonprayag / Gaurikund', desc: 'The final motorable points. All private taxis drop passengers here to begin the 16 km trek.', dist: '240 km from Haridwar' },
 ];
 
 const driverTips = [
   'Start your drive from Haridwar by 5:00 AM. This helps you avoid the massive traffic bottlenecks that form near Rishikesh and Devprayag later in the day.',
   'Mandatory Registration: Ensure you have your Yatra Registration printed before leaving Haridwar. You will be checked at multiple police barricades along the route.',
-  'Carry motion sickness medication. The 250 km route is almost entirely comprised of sharp, winding mountain roads.',
+  'Carry motion sickness medication. The 240 km route is almost entirely comprised of sharp, winding mountain roads.',
   'ATMs become scarce after Rudraprayag. Withdraw sufficient cash in Haridwar or Srinagar to pay for your pony, palki, or food on the trek.',
 ];
 
@@ -141,7 +141,7 @@ export default function HaridwarToKedarnath() {
         <div className="max-w-page mx-auto">
           <QuickTravelSummary
             destination="Gaurikund (Kedarnath Base)"
-            distance="250 km from Haridwar"
+            distance="240 km from Haridwar"
             travelTime="8 - 9 hours"
             taxiFareRange="₹8,000 - ₹10,000 (One Way)"
             bestTime="May-June & September-October"
@@ -155,7 +155,7 @@ export default function HaridwarToKedarnath() {
         <div className="max-w-page mx-auto">
           
           <div className="mb-12">
-             <RouteInfoBox from="Haridwar" to="Gaurikund" distance="250 km" time="8.5 hrs" fare="₹8,000" />
+             <RouteInfoBox from="Haridwar" to="Gaurikund" distance="240 km" time="8.5 hrs" fare="₹8,000" />
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
@@ -167,11 +167,11 @@ export default function HaridwarToKedarnath() {
               <section className="sr-only">
                 <GEOAnswerBox
                 question="What is the taxi fare from Haridwar to Kedarnath in 2026?"
-                answer="The one-way taxi fare from Haridwar to Kedarnath (Gaurikund) in 2026 starts at ₹8,000 for a Sedan and ₹10,000 for an SUV with Uttarakhand Cab 24/7. The 250 km journey via Rishikesh and Rudraprayag takes approximately 9–10 hours. Our Yatra drivers assist with biometric registration at Sonprayag. Book 24/7 via WhatsApp: +91 92589 12169."
+                answer="The one-way taxi fare from Haridwar to Kedarnath (Gaurikund) in 2026 starts at ₹8,000 for a Sedan and ₹10,000 for an SUV with Uttarakhand Cab 24/7. The 240 km journey via Rishikesh and Rudraprayag takes approximately 8–9 hours. Our Yatra drivers assist with biometric registration at Sonprayag. Book 24/7 via WhatsApp: +91 92589 12169."
                 facts={[
                   { label: 'Sedan Fare', value: '₹8,000' },
                   { label: 'SUV Fare', value: '₹10,000' },
-                  { label: 'Distance', value: '~250 km' },
+                  { label: 'Distance', value: '~240 km' },
                   { label: 'Travel Time', value: '9–10 hrs' },
                   { label: 'Route', value: 'Via Rishikesh & Rudraprayag' },
                   { label: 'Key Stop', value: 'Sonprayag (vehicle restriction point)' },
