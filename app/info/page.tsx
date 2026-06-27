@@ -115,7 +115,7 @@ const popularFAQs = [
   { question: 'Is biometric registration mandatory for Char Dham Yatra?', answer: 'Yes. Since 2023, biometric registration is mandatory for all pilgrims undertaking Char Dham Yatra in Uttarakhand. Registration centres are at Haridwar and Rishikesh. Our drivers guide you through the process. Pilgrims without registration may be turned back at checkpoints.' },
   { question: 'Do you provide 24-hour taxi service?', answer: 'Yes. Uttarakhand Cab 24/7 operates 24 hours a day, 7 days a week, 365 days a year including public holidays. A small night surcharge applies for trips between 11 PM and 6 AM, disclosed at the time of booking.' },
   { question: 'What is the cancellation policy?', answer: 'For local transfers, cancellations with 4+ hours notice are generally free. For outstation bookings, a partial advance may be forfeited for cancellations within 24 hours of departure. Multi-day Char Dham packages require 48 hours notice to avoid advance forfeiture. Full terms are shared at booking confirmation.' },
-  { question: 'Can I book a one-way cab from Delhi to Dehradun?', answer: 'Yes. Delhi to Dehradun one-way bookings are available starting from ₹3,500 (sedan) and ₹5,500 (SUV). Our vehicles carry all required inter-state permits. The journey covers approximately 300 km via NH58 and takes 5–6 hours.' },
+  { question: 'Can I book a one-way cab from Delhi to Dehradun?', answer: 'Yes. Delhi to Dehradun one-way bookings are available starting from ₹4,000 (sedan) and ₹5,000 (SUV). Our vehicles carry all required inter-state permits. The journey covers approximately 300 km via the Delhi-Dehradun Expressway (NH334B) and takes 4–5 hours.' },
 ];
 
 const monthlyGuide = [
@@ -392,7 +392,7 @@ export default function InfoPage() {
                 { q: 'Dehradun to Mussoorie taxi fare?', a: 'Starting from ₹2,000 (sedan) · ₹3,000 (SUV). Distance 35 km · 1.5–2 hrs. Local barrier tax extra.', link: '/mussoorie' },
                 { q: 'Jolly Grant Airport to Rishikesh cab fare?', a: 'Starting from ₹2,000 (sedan) · ₹2,500 (SUV). Distance 20 km · 40–45 min. Flight tracking included.', link: '/dehradun-airport-taxi' },
                 { q: 'Haridwar to Nainital taxi fare?', a: 'Starting from ₹5,000 (sedan) · ₹7,000 (SUV). Distance ~275 km · 6–7 hrs. SUV strongly recommended.', link: '/nainital' },
-                { q: 'Delhi to Dehradun cab fare?', a: 'Starting from ₹3,500 (sedan) · ₹5,500 (SUV). Distance ~300 km · 5–6 hrs. Inter-state permits included.', link: '/delhi-to-dehradun' },
+                { q: 'Delhi to Dehradun cab fare?', a: 'Starting from ₹4,000 (sedan) · ₹5,000 (SUV). Distance ~300 km · 4–5 hrs. Inter-state permits included.', link: '/delhi-to-dehradun' },
                 { q: 'Rishikesh to Kedarnath (Gaurikund) fare?', a: 'Starting from ₹7,000, SUV ₹9,500 (SUV). Distance 215 km · 7–9 hrs. Sonprayag permit included.', link: '/kedarnath' },
                 { q: 'Haridwar to Badrinath taxi fare?', a: 'Starting from ₹9,000 (sedan) · ₹12,000 (SUV). Distance ~320 km · 9–10 hrs. Innova Crysta recommended.', link: '/badrinath' },
               ].map((item) => (
