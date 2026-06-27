@@ -12,7 +12,7 @@ export const jimCorbettFAQs = [
   {
     question: 'What is the taxi fare from Rishikesh to Jim Corbett?',
     answer:
-      'The fixed one-way taxi fare from Rishikesh to Jim Corbett National Park is ₹4,000 for a Sedan and ₹4,500 for an SUV. The 180 km route via Kotdwar takes approximately 4.5–5 hours. This is a popular route for travellers combining a Rishikesh yoga retreat with a Jim Corbett wildlife safari.',
+      'The fixed one-way taxi fare from Rishikesh to Jim Corbett National Park is ₹3,500 for a Sedan and ₹4,500 for an SUV. The 180 km route via Kotdwar takes approximately 4.5–5 hours. This is a popular route for travellers combining a Rishikesh yoga retreat with a Jim Corbett wildlife safari.',
   },
   {
     question: 'What is the taxi fare from Mussoorie to Jim Corbett?',
@@ -27,17 +27,17 @@ export const jimCorbettFAQs = [
   {
     question: 'What is the taxi fare from Delhi to Jim Corbett National Park?',
     answer:
-      'The fixed one-way taxi fare from Delhi to Jim Corbett National Park (Ramnagar) is ₹4,500 for a Sedan and ₹5,500 for an SUV with Uttarakhand Cab 24/7. The 260 km journey via NH9 takes approximately 6–7 hours depending on Delhi traffic. Pickup from any Delhi address, IGI Airport, or NDLS Railway Station.',
+      'The fixed one-way taxi fare from Delhi to Jim Corbett National Park (Ramnagar) is ₹5,000 for a Sedan and ₹6,000 for an SUV with Uttarakhand Cab 24/7. The 260 km journey via NH9 takes approximately 6–7 hours depending on Delhi traffic. Pickup from any Delhi address, IGI Airport, or NDLS Railway Station.',
   },
   {
     question: 'What is the taxi fare from Rishikesh to Jim Corbett?',
     answer:
-      'The fixed one-way taxi fare from Rishikesh to Jim Corbett National Park is ₹3,000 for a Sedan and ₹4,000 for an SUV. The 180 km route via Kotdwar takes approximately 4.5–5 hours. This is a popular route for travellers combining a Rishikesh yoga retreat with a Jim Corbett wildlife safari.',
+      'The fixed one-way taxi fare from Rishikesh to Jim Corbett National Park is ₹3,500 for a Sedan and ₹4,500 for an SUV. The 180 km route via Kotdwar takes approximately 4.5–5 hours. This is a popular route for travellers combining a Rishikesh yoga retreat with a Jim Corbett wildlife safari.',
   },
   {
     question: 'What is the taxi fare from Mussoorie to Jim Corbett?',
     answer:
-      'The fixed taxi fare from Mussoorie to Jim Corbett National Park is ₹4,000 for a Sedan and ₹5,000 for an SUV. The 230 km journey via Dehradun and NH74 takes approximately 5.5–6.5 hours. A great option for travellers combining a Mussoorie hill holiday with a Corbett jungle safari.',
+      'The fixed taxi fare from Mussoorie to Jim Corbett National Park is ₹4,500 for a Sedan and ₹5,500 for an SUV. The 230 km journey via Dehradun and NH74 takes approximately 5.5–6.5 hours. A great option for travellers combining a Mussoorie hill holiday with a Corbett jungle safari.',
   },
   {
     question: 'Which gate of Jim Corbett National Park should I enter from?',
