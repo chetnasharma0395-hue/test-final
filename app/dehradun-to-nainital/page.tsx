@@ -229,14 +229,14 @@ export default function DehradunToNainital() {
                         </tr>
                       </thead>
                       <tbody className="text-white">
-                        <tr className="border-b border-gray-50 bg-[#1A1A1A]/50 hover:bg-[#1A1A1A] transition-colors">
-                          <td className="p-6 font-black border-r border-gray-50">Sedan (Dzire/Etios)</td>
-                          <td className="p-6 font-black text-[#F7941D] text-xl border-r border-gray-50">₹7,000</td>
+                        <tr className="border-b border-white/10 bg-[#1A1A1A]/50 hover:bg-[#1A1A1A] transition-colors">
+                          <td className="p-6 font-black border-r border-white/10">Sedan (Dzire/Etios)</td>
+                          <td className="p-6 font-black text-[#F7941D] text-xl border-r border-white/10">₹7,000</td>
                           <td className="p-6 font-light text-white/70">Couples or Small Families (2-3 Pax)</td>
                         </tr>
                         <tr className="bg-[#1A1A1A] hover:bg-[#1A1A1A]/50 transition-colors">
-                          <td className="p-6 font-black border-r border-gray-50">SUV (Ertiga/Innova)</td>
-                          <td className="p-6 font-black text-[#F7941D] text-xl border-r border-gray-50">₹9,000</td>
+                          <td className="p-6 font-black border-r border-white/10">SUV (Ertiga/Innova)</td>
+                          <td className="p-6 font-black text-[#F7941D] text-xl border-r border-white/10">₹9,000</td>
                           <td className="p-6 font-light text-white/70">Larger Groups & Heavy Luggage (5-6 Pax)</td>
                         </tr>
                       </tbody>
