@@ -11,7 +11,6 @@ import { taxiServiceSchema, breadcrumbSchema, faqPageSchema, extractFromTo, spea
 
 // Import your custom Pillar Pages here!
 import DehradunToDelhiContent from '@/components/DehradunToDelhiContent';
-import JollyGrantToMussoorieContent from '@/components/JollyGrantToMussoorieContent';
 import DehradunToChandigarhContent from '@/components/DehradunToChandigarhContent';
 import DehradunToDhanaultiContent from '@/components/DehradunToDhanaultiContent';
 import DehradunToRishikeshContent from '@/components/DehradunToRishikeshContent';
@@ -207,8 +206,6 @@ export default async function ServicePage({ params }: RouteProps) {
                                            {/* The Magic Switch: Inject the massive articles based on the URL slug */}
             {route.slug === 'dehradun-to-delhi-taxi-service' ? (
               <DehradunToDelhiContent />
-            ) : route.slug === 'jolly-grant-airport-taxi-service' ? (
-              <JollyGrantToMussoorieContent />
             ) : route.slug === 'chandigarh-taxi-service' ? (
               <DehradunToChandigarhContent />
             ) : route.slug === 'dhanaulti-taxi-service' ? (
@@ -219,6 +216,8 @@ export default async function ServicePage({ params }: RouteProps) {
               <DehradunToNainitalCorbettContent />
             ) : route.slug === 'badrinath-taxi-service' ? (
               <DehradunToBadrinathContent />
+            ) : route.slug === 'kedarnath-taxi-service' ? (
+              <DehradunToKedarnathContent />
             ) : route.slug === 'delhi-to-kedarnath-taxi-service' ? (
               <DelhiToKedarnathContent />
             ) : route.slug === 'delhi-to-kumaon-circuit-taxi' ? (
@@ -251,22 +250,22 @@ export default async function ServicePage({ params }: RouteProps) {
 
                 
                 {route.localSecrets && route.localSecrets.length > 0 && (
-                  <section className="bg-yellow-50 p-6 rounded-xl border-l-4 border-yellow-500">
-                    <h2 className="text-xl font-bold mb-3">Local Insights for this Route</h2>
+                  <section className="bg-[#F7941D]/10 p-6 rounded-xl border-l-4 border-[#F7941D]">
+                    <h2 className="text-xl font-bold text-white mb-3">Local Insights for this Route</h2>
                     <ul className="list-disc pl-5 space-y-2">
                       {route.localSecrets.map((tip: string, index: number) => (
-                        <li key={index} className="text-gray-800">{tip}</li>
+                        <li key={index} className="text-white/80">{tip}</li>
                       ))}
                     </ul>
                   </section>
                 )}
 
                 {route.uniquePoint && (
-                  <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
-                    <h3 className="font-bold text-blue-800 mb-2">💡 Why choose us for this route?</h3>
-                    <p className="text-blue-900 italic">
+                  <div className="bg-white/5 border-l-4 border-[#F7941D] p-6 rounded-r-lg">
+                    <h3 className="font-bold text-[#F7941D] mb-2">💡 Why choose us for this route?</h3>
+                    <p className="text-white/80 italic">
                       &quot;{route.uniquePoint}&quot; <br />
-                      <span className="block mt-2 font-semibold not-italic text-sm">Sahi safar sahi service aur vo safar hamari zimmedaari.</span>
+                      <span className="block mt-2 font-semibold not-italic text-sm text-white/60">Sahi safar sahi service aur vo safar hamari zimmedaari.</span>
                     </p>
                   </div>
                 )}
