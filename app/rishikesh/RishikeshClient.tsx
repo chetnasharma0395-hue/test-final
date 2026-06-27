@@ -284,7 +284,7 @@ export default function RishikeshClient() {
                     { name: 'Haridwar', dist: '25 km', icon: MapPin, link: '/haridwar', fare: '₹1,700' },
                     { name: 'Dehradun City', dist: '50 km', icon: MapPin, link: '/dehradun', fare: '₹2,300' },
                     { name: 'Shivpuri Rafting Base', dist: '16 km', icon: Waves, link: '/dehradun-to-rishikesh', fare: 'Local' },
-                    { name: 'Jolly Grant Airport', dist: '20 km', icon: Plane, link: '/services/jolly-grant-airport-taxi-service', fare: '₹1,700' },
+                    { name: 'Jolly Grant Airport', dist: '20 km', icon: Plane, link: '/services/jolly-grant-airport-taxi-service', fare: '₹2,000' },
                   ].map((d, i) => (
                     <li key={i} className="flex items-center justify-between bg-[#1A1A1A] p-4 rounded-xl border border-transparent hover:border-[#F7941D]/30 transition-colors group">
                       <Link href={d.link} className="flex flex-col w-full">
