@@ -87,11 +87,11 @@ export default function DehradunToRishikeshContent() {
         
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-[#1A1A1A] p-5 border rounded-lg shadow-sm">
-            <h4 className="font-bold text-blue-300 mb-2">📍 Punj Di Lassi (Doiwala)</h4>
+            <h4 className="font-bold text-[#F7941D] mb-2">📍 Punj Di Lassi (Doiwala)</h4>
             <p className="text-sm">About 30 minutes into the journey. Famous for thick, authentic lassi and fresh paranthas. A perfect, quick refreshment stop before entering the spiritual zone.</p>
           </div>
           <div className="bg-[#1A1A1A] p-5 border rounded-lg shadow-sm">
-            <h4 className="font-bold text-blue-300 mb-2">📍 Song River Bank Viewpoint</h4>
+            <h4 className="font-bold text-[#F7941D] mb-2">📍 Song River Bank Viewpoint</h4>
             <p className="text-sm">A brief, natural 5-minute stop near Raiwala where the road meets the river. Step out, feel the cool river breeze, and realize you have officially entered the Himalayan foothills.</p>
           </div>
         </div>

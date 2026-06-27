@@ -87,11 +87,11 @@ export default function DehradunToDhanaultiContent() {
         
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-[#1A1A1A] p-5 border rounded-lg shadow-sm">
-            <h4 className="font-bold text-blue-300 mb-2">📍 First Gear Café (Rajpur Road)</h4>
+            <h4 className="font-bold text-[#F7941D] mb-2">📍 First Gear Café (Rajpur Road)</h4>
             <p className="text-sm">The last flat-road stop before the climb. Perfect for a quick coffee and a washroom break before the winding hairpins begin.</p>
           </div>
           <div className="bg-[#1A1A1A] p-5 border rounded-lg shadow-sm">
-            <h4 className="font-bold text-blue-300 mb-2">📍 Bhatta Falls Viewpoint</h4>
+            <h4 className="font-bold text-[#F7941D] mb-2">📍 Bhatta Falls Viewpoint</h4>
             <p className="text-sm">About an hour into the journey. Step out, feel the sudden temperature drop, grab some roasted corn, and take your first Himalayan photos safely.</p>
           </div>
         </div>

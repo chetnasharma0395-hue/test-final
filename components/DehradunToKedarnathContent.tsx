@@ -46,7 +46,7 @@ export default function DehradunToKedarnathContent() {
             <p className="text-sm">The best suspension and power for the 12-hour journey. Ideal for families and those carrying heavy winter gear.</p>
           </div>
           <div className="bg-[#1A1A1A] p-5 border rounded-lg shadow-sm">
-            <h4 className="font-bold text-blue-300 mb-2">🏔️ Hill-Certified Drivers</h4>
+            <h4 className="font-bold text-[#F7941D] mb-2">🏔️ Hill-Certified Drivers</h4>
             <p className="text-sm">Our drivers have 10+ years of experience on the Kedarnath route. They know every landslide-prone zone and safe stopover point.</p>
           </div>
         </div>

@@ -54,11 +54,11 @@ export default function DehradunToBadrinathContent() {
         <h2 className="text-3xl font-bold text-white mb-6 border-b border-white/10 pb-2">3. Strategic Pause Points</h2>
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-[#1A1A1A] p-5 border rounded-lg shadow-sm">
-            <h4 className="font-bold text-blue-300 mb-2">📍 Devprayag (The Sangam)</h4>
+            <h4 className="font-bold text-[#F7941D] mb-2">📍 Devprayag (The Sangam)</h4>
             <p className="text-sm">The holy confluence of the Alaknanda and Bhagirathi rivers. A perfect morning stop for photography and breakfast.</p>
           </div>
           <div className="bg-[#1A1A1A] p-5 border rounded-lg shadow-sm">
-            <h4 className="font-bold text-blue-300 mb-2">📍 Karnaprayag</h4>
+            <h4 className="font-bold text-[#F7941D] mb-2">📍 Karnaprayag</h4>
             <p className="text-sm">A major junction town in the hills, ideal for lunch and stretching your legs before the final ascent towards Joshimath.</p>
           </div>
         </div>

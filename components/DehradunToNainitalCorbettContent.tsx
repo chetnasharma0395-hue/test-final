@@ -123,7 +123,7 @@ export default function DehradunToNainitalCorbettContent() {
           </div>
           
           <div className="bg-[#0A1220] p-6 rounded-lg border border-blue-400/25">
-            <h3 className="text-xl font-bold text-blue-400 mb-2">🏔️ Nainital (The Lake City)</h3>
+            <h3 className="text-xl font-bold text-[#F7941D] mb-2">🏔️ Nainital (The Lake City)</h3>
             <ul className="list-disc pl-5 space-y-2 text-white/75 text-sm">
               <li><strong>The Vehicle Ban:</strong> Private vehicles are restricted on Mall Road. We will drop you at the Tallital checkpoint, where you can easily walk or take a shared vehicle to your hotel.</li>
               <li><strong>Hidden Gem:</strong> Skip the crowded lake at noon. Ask our driver to take you to <strong>Khurpatal Lake</strong> (12km away) for absolute silence and pine forests.</li>

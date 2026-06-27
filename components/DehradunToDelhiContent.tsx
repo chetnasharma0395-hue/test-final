@@ -7,12 +7,12 @@ export default function DehradunToDelhiContent() {
   <div className="sr-only" aria-hidden="false">
   <GEOAnswerBox
     question="What is the taxi fare from Dehradun to Delhi?"
-    answer="A taxi from Dehradun to Delhi costs ₹3,500 for a Sedan and ₹4,500 for an SUV with Uttarakhand Cab 24/7. The 300 km journey via the Expressway takes approximately 6–7 hours. Fixed fare, airport drops included, 24/7 available. Book via WhatsApp: +91 92589 12169."
+    answer="A taxi from Dehradun to Delhi costs ₹4,000 for a Sedan and ₹5,000 for an SUV with Uttarakhand Cab 24/7. The 300 km journey via the Delhi-Dehradun Expressway takes approximately 4–5 hours. Fixed fare, airport drops included, 24/7 available. Book via WhatsApp: +91 92589 12169."
     facts={[
         { label: 'Distance', value: '300 km' },
-        { label: 'Duration', value: '6–7 hrs' },
-        { label: 'Sedan', value: '₹3,500' },
-        { label: 'SUV', value: '₹4,500' },
+        { label: 'Duration', value: '4–5 hrs' },
+        { label: 'Sedan', value: '₹4,000' },
+        { label: 'SUV', value: '₹5,000' },
     ]}
     source="Uttarakhand Cab 24/7 — Updated June 2026"
   />
@@ -88,11 +88,11 @@ export default function DehradunToDelhiContent() {
         
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-[#1A1A1A] p-5 border rounded-lg shadow-sm">
-            <h4 className="font-bold text-blue-300 mb-2">📍 Stop 1: Roorkee Bypass</h4>
+            <h4 className="font-bold text-[#F7941D] mb-2">📍 Stop 1: Roorkee Bypass</h4>
             <p className="text-sm">Roughly 1.5 hours from Dehradun. Once we clear the Haridwar traffic, this is the perfect spot for your first morning Chai and a quick stretch.</p>
           </div>
           <div className="bg-[#1A1A1A] p-5 border rounded-lg shadow-sm">
-            <h4 className="font-bold text-blue-300 mb-2">📍 Stop 2: Muzaffarnagar Toll Area</h4>
+            <h4 className="font-bold text-[#F7941D] mb-2">📍 Stop 2: Muzaffarnagar Toll Area</h4>
             <p className="text-sm">About 3 hours into the journey. Excellent dhabas known for fresh Parathas and Dal. We pick places with high truck volume because high turnover means fresh food.</p>
           </div>
         </div>

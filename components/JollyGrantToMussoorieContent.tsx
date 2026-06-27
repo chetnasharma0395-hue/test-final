@@ -84,11 +84,11 @@ export default function JollyGrantToMussoorieContent() {
         
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-[#1A1A1A] p-5 border rounded-lg shadow-sm">
-            <h4 className="font-bold text-blue-300 mb-2">📍 Rajpur Village (Base of the Hill)</h4>
+            <h4 className="font-bold text-[#F7941D] mb-2">📍 Rajpur Village (Base of the Hill)</h4>
             <p className="text-sm">The last chance to stretch your legs and grab a quick juice before the 45-minute winding ascent begins.</p>
           </div>
           <div className="bg-[#1A1A1A] p-5 border rounded-lg shadow-sm">
-            <h4 className="font-bold text-blue-300 mb-2">📍 Jharipani / Midway Viewpoints</h4>
+            <h4 className="font-bold text-[#F7941D] mb-2">📍 Jharipani / Midway Viewpoints</h4>
             <p className="text-sm">If you need fresh air during the climb, our drivers know the exact safe spots to pull over for a stunning view of the Doon valley below.</p>
           </div>
         </div>
@@ -122,7 +122,7 @@ export default function JollyGrantToMussoorieContent() {
         <p className="mb-4">Mussoorie is not a single location; it is a 15km ridge. Where you go matters.</p>
         
         <div className="bg-[#0A1220] p-6 rounded-lg border border-blue-400/25 mb-6">
-          <h3 className="font-bold text-blue-400 mb-3">Local Tips from Our Drivers:</h3>
+          <h3 className="font-bold text-[#F7941D] mb-3">Local Tips from Our Drivers:</h3>
           <ul className="list-disc pl-5 space-y-2 text-white/80 text-sm">
             <li><strong>The One-Way Trap:</strong> Mall Road has strict one-way timings. Our drivers know exactly which entry gate (Library or Picture Palace) to use to get you to your hotel without doing a frustrating 30-minute loop.</li>
             <li><strong>Beyond Mall Road:</strong> Most tourists stop at the crowded Kempty Falls. Ask your driver about the quiet, historic charm of the <strong>Landour / Char Dukan</strong> area for the "real" Mussoorie experience.</li>

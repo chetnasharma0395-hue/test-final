@@ -83,11 +83,11 @@ export default function DehradunToChandigarhContent() {
         
         <div className="grid md:grid-cols-2 gap-6">
           <div className="bg-[#1A1A1A] p-5 border rounded-lg shadow-sm">
-            <h4 className="font-bold text-blue-300 mb-2">📍 Paonta Sahib (HP)</h4>
+            <h4 className="font-bold text-[#F7941D] mb-2">📍 Paonta Sahib (HP)</h4>
             <p className="text-sm">About 1.5 hours in. This is a historic Sikh pilgrimage town. Excellent dhabas on the bypass road. If time permits, the Gurudwara on the banks of the Yamuna is a beautiful, peaceful 15-minute stop.</p>
           </div>
           <div className="bg-[#1A1A1A] p-5 border rounded-lg shadow-sm">
-            <h4 className="font-bold text-blue-300 mb-2">📍 Kala Amb / Nahan Bypass</h4>
+            <h4 className="font-bold text-[#F7941D] mb-2">📍 Kala Amb / Nahan Bypass</h4>
             <p className="text-sm">Roughly halfway through the journey. A major junction town with good, clean, truck-friendly dhabas perfect for a quick tea and leg-stretch before the winding Nahan section.</p>
           </div>
         </div>
@@ -121,7 +121,7 @@ export default function DehradunToChandigarhContent() {
         <p className="mb-4">Chandigarh is India's premier planned city, serving as a hub for business, transit, and medical care.</p>
         
         <div className="bg-[#0A1220] p-6 rounded-lg border border-blue-400/25 mb-6">
-          <h3 className="font-bold text-blue-400 mb-3">Specialized Service: PGI Medical Travel</h3>
+          <h3 className="font-bold text-[#F7941D] mb-3">Specialized Service: PGI Medical Travel</h3>
           <p className="text-white/80 text-sm">
             A large portion of our Dehradun-Chandigarh trips are for families visiting the <strong>PGIMER Hospital</strong>. We understand this is an essential, often stressful journey. Our drivers are trained to be punctual, respectful, and can be booked on a "waiting" basis while you attend appointments, ensuring a stress-free return home.
           </p>
