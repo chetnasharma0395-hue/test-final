@@ -9,6 +9,7 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { SmoothScroll } from '@/components/SmoothScroll';
 import { FloatingWhatsApp } from '@/components/FloatingWhatsApp';
+import { AnalyticsTracker } from '@/components/AnalyticsTracker';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -137,6 +138,7 @@ export default function RootLayout({
             gtag('config', 'G-LCV4JP5NLJ');
           `}
         </Script>
+        <AnalyticsTracker />
         {/* JSON-LD — placed at end of body; non-blocking, fully readable by Googlebot */}
         <script
           type="application/ld+json"
