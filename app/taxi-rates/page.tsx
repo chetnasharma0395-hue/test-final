@@ -229,7 +229,7 @@ export default function TaxiRates() {
                 </thead>
                 <tbody className="text-white">
                   {routes.map((route, index) => (
-                    <tr key={index} className="group border-b border-gray-50 hover:bg-[#1A1A1A]/50 transition-colors">
+                    <tr key={index} className="group border-b border-white/10 hover:bg-[#1A1A1A]/50 transition-colors">
                       <td className="p-6 bg-[#1A1A1A]/30 group-hover:bg-transparent transition-colors">
                         <div className="flex items-start gap-4">
                           <MapPin className="w-5 h-5 text-[#F7941D] shrink-0 mt-1" />
