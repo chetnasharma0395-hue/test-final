@@ -6,7 +6,7 @@
     "h1": "Dehradun Airport (Jolly Grant) Taxi Service",
     "description": "Pre-book your taxi from Jolly Grant Airport to Dehradun, Rishikesh, or Mussoorie. Professional drivers with 'Meet & Greet' service.",
     "distance": "25-30 km",
-    "price": "Starting from ₹900",
+    "price": "Starting from ₹1,500",
     "uniquePoint": "Our drivers wait at the arrival gate with your name-board. No more searching for cabs in the parking lot."
   },
   {
@@ -315,12 +315,12 @@
     "description": "Book a safe SUV taxi from Haridwar to Badrinath. Yatra-experienced drivers, Joshimath gate-timing management, and transparent 1-day or package rates.",
     "distance": "320 km",
     "duration": "10-11 hrs",
-    "basePrice": "10000",
+    "basePrice": "8000",
     "uniquePoint": "Haridwar to Badrinath in one day is a 10+ hour mountain drive. Our experienced Yatra drivers plan mandatory rest stops and manage the Joshimath barrier timings for a safe, timely arrival.",
     "faq": [
       {
         "q": "What is the taxi fare from Haridwar to Badrinath?",
-        "a": "The one-way fare from Haridwar to Badrinath is approximately ₹10,000 for a Sedan and ₹12,000 for an SUV. The 320 km journey takes 10–11 hours via Rishikesh and Joshimath."
+        "a": "The one-way fare from Haridwar to Badrinath is approximately ₹8,000 for a Sedan and ₹10,000 for an SUV. The 320 km journey takes 10–11 hours via Rishikesh and Joshimath."
       }
     ]
   },

@@ -29,7 +29,7 @@ const FROM_LABEL: Record<string, string> = {
 // and clearly separated so they are easy to migrate into priceData later.
 const EXTRA_FARES: Record<string, Record<string, FareRate>> = {
   'Haridwar': {
-    'Badrinath': { sedan: 9500, suv: 12500 },
+    'Badrinath': { sedan: 8000, suv: 10000 },
   },
   'Rishikesh': {
     'Govindghat': { sedan: 9500, suv: 12500 },
