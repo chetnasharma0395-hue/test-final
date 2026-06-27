@@ -220,19 +220,19 @@ export default async function TaxiRoutePage({ params }: RouteProps) {
                         </tr>
                       </thead>
                       <tbody className="text-white">
-                        <tr className="border-b border-gray-50 bg-[#1A1A1A]/50">
-                          <td className="p-6 font-black border-r border-gray-50">Sedan (Dzire / Amaze)</td>
-                          <td className="p-6 font-black text-[#F7941D] text-lg border-r border-gray-50">{fareDisplay(route.fare.sedan)}</td>
+                        <tr className="border-b border-white/10 bg-[#1A1A1A]/50">
+                          <td className="p-6 font-black border-r border-white/10">Sedan (Dzire / Amaze)</td>
+                          <td className="p-6 font-black text-[#F7941D] text-lg border-r border-white/10">{fareDisplay(route.fare.sedan)}</td>
                           <td className="p-6 font-light text-white/70">Couples & small families (2\u20133 pax)</td>
                         </tr>
-                        <tr className="border-b border-gray-50">
-                          <td className="p-6 font-black border-r border-gray-50">SUV (Ertiga / Innova)</td>
-                          <td className="p-6 font-black text-[#F7941D] text-lg border-r border-gray-50">{fareDisplay(route.fare.suv)}</td>
+                        <tr className="border-b border-white/10">
+                          <td className="p-6 font-black border-r border-white/10">SUV (Ertiga / Innova)</td>
+                          <td className="p-6 font-black text-[#F7941D] text-lg border-r border-white/10">{fareDisplay(route.fare.suv)}</td>
                           <td className="p-6 font-light text-white/70">Families & hill comfort (5\u20137 pax)</td>
                         </tr>
                         <tr className="bg-[#1A1A1A]/50">
-                          <td className="p-6 font-black border-r border-gray-50">Tempo Traveller</td>
-                          <td className="p-6 font-black text-[#F7941D] text-lg border-r border-gray-50">{fareDisplay(route.fare.tempo)}</td>
+                          <td className="p-6 font-black border-r border-white/10">Tempo Traveller</td>
+                          <td className="p-6 font-black text-[#F7941D] text-lg border-r border-white/10">{fareDisplay(route.fare.tempo)}</td>
                           <td className="p-6 font-light text-white/70">Groups & large families (10+ pax)</td>
                         </tr>
                       </tbody>
