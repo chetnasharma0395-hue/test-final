@@ -161,7 +161,7 @@ export default function Contact() {
                   <h3 className="font-black text-white uppercase tracking-tight text-lg mb-2" style={{ transform: 'translateZ(20px)' }}>Email Support</h3>
                   <p className="text-white/70 font-light text-sm mb-6">For corporate ties or detailed itineraries.</p>
                   <a href="mailto:uttarakhandcab247@gmail.com" className="text-white font-bold text-sm hover:text-[#F7941D] transition-colors break-all">
-                    uttarakhandcab247@gmail.com , info@uttarakhandcab
+                    uttarakhandcab247@gmail.com
                   </a>
                 </TiltCard>
 
