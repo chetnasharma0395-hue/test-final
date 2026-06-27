@@ -158,15 +158,15 @@ export default function BookTaxiPage() {
                 </thead>
                 <tbody className="text-white">
                   {popularFares.map((fare, index) => (
-                    <tr key={index} className="border-b border-gray-50 hover:bg-[#1A1A1A]/50 transition-colors group">
-                      <td className="p-6 md:p-8 font-black uppercase tracking-tighter border-r border-gray-50 bg-[#1A1A1A]/30">
+                    <tr key={index} className="border-b border-white/10 hover:bg-[#1A1A1A]/50 transition-colors group">
+                      <td className="p-6 md:p-8 font-black uppercase tracking-tighter border-r border-white/10 bg-[#1A1A1A]/30">
                         <div className="flex items-center gap-3">
                           <MapPin className="w-5 h-5 text-[#F7941D]" />
                           {fare.route}
                         </div>
                       </td>
-                      <td className="p-6 md:p-8 border-r border-gray-50 font-medium text-white/70">{fare.time}</td>
-                      <td className="p-6 md:p-8 border-r border-gray-50 font-black text-xl text-[#F7941D] transition-transform group-hover:scale-105">{fare.sedan}</td>
+                      <td className="p-6 md:p-8 border-r border-white/10 font-medium text-white/70">{fare.time}</td>
+                      <td className="p-6 md:p-8 border-r border-white/10 font-black text-xl text-[#F7941D] transition-transform group-hover:scale-105">{fare.sedan}</td>
                       <td className="p-6 md:p-8 font-black text-xl text-white transition-transform group-hover:scale-105">{fare.suv}</td>
                     </tr>
                   ))}
@@ -182,7 +182,7 @@ export default function BookTaxiPage() {
       </section>
 
       {/* 3. BOOKING PROCESS: Bento Grid */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#1A1A1A] border-y border-gray-50">
+      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-[#1A1A1A] border-y border-white/10">
         <div className="max-w-page mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
