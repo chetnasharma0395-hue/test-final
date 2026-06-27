@@ -32,7 +32,7 @@ export const badrinathFAQs = [
   {
     question: 'What is the taxi fare from Rishikesh to Badrinath?',
     answer:
-      'The fixed taxi fare from Rishikesh to Badrinath is ₹8,000 for a Sedan and ₹9,500 for an SUV. The 295 km journey via Devprayag and Joshimath takes approximately 9–10 hours. Rishikesh is a popular base for Char Dham Yatra pilgrims who combine rafting or yoga with their pilgrimage.',
+      'The fixed taxi fare from Rishikesh to Badrinath is ₹7,500 for a Sedan and ₹9,500 for an SUV. The 295 km journey via Devprayag and Joshimath takes approximately 9–10 hours. Rishikesh is a popular base for Char Dham Yatra pilgrims who combine rafting or yoga with their pilgrimage.',
   },
   {
     question: 'Is Yatra registration required for Badrinath?',
