@@ -54,7 +54,7 @@ export default function DehradunToNainitalCorbettContent() {
                 <td className="py-3 px-4 border-b font-medium text-emerald-400">5.0 – 5.5 Hours</td>
                 <td className="py-3 px-4 border-b font-medium text-emerald-400">6.5 – 7.0 Hours</td>
               </tr>
-              <tr className="bg-white/3">
+              <tr className="bg-white/[0.03]">
                 <td className="py-3 px-4 border-b">Weekend / Peak Season</td>
                 <td className="py-3 px-4 border-b text-[#F7941D]">6.5 – 7.5 Hours</td>
                 <td className="py-3 px-4 border-b text-[#F7941D]">8.0 – 9.0 Hours</td>

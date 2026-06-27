@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 const stats = [
   { value: 10000, suffix: '+', label: 'Happy Customers', description: 'Served across Uttarakhand' },
   { value: 12, suffix: '+', label: 'Years of Excellence', description: 'Trusted since 2011' },
-  { value: 4.9, suffix: '★', label: 'Google Rating', description: 'Based on Most Genuine reviews', isDecimal: true },
+  { value: 4.9, suffix: '★', label: 'Google Rating', description: 'Based on 161 verified reviews', isDecimal: true },
   { value: 24, suffix: '/7', label: 'Availability', description: 'Always here when you need us' },
 ];
 
