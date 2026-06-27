@@ -83,7 +83,7 @@ export default function PrivacyPolicy() {
                 'Travel dates and expected pickup times',
                 'Number of passengers and luggage requirements'
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-3 bg-[#1A1A1A]/50 p-4 rounded-xl border border-gray-50">
+                <li key={i} className="flex items-start gap-3 bg-[#1A1A1A]/50 p-4 rounded-xl border border-white/10">
                   <CheckCircle2 className="w-5 h-5 text-[#F7941D] shrink-0 mt-0.5" />
                   <span className="text-sm text-white/70 font-light leading-relaxed">{item}</span>
                 </li>
@@ -152,7 +152,7 @@ export default function PrivacyPolicy() {
               </p>
             </div>
 
-            <div className="border-t border-gray-50 pt-12">
+            <div className="border-t border-white/10 pt-12">
               <h2 className="font-heading font-black text-xl text-white uppercase tracking-tighter mb-4 flex items-center justify-start gap-4">
                 <Cookie className="w-6 h-6 text-[#F7941D] shrink-0" />
                 Cookies & Tracking
@@ -162,7 +162,7 @@ export default function PrivacyPolicy() {
               </p>
             </div>
 
-            <div className="border-t border-gray-50 pt-12">
+            <div className="border-t border-white/10 pt-12">
               <h2 className="font-heading font-black text-xl text-white uppercase tracking-tighter mb-4 flex items-center justify-start gap-4">
                 <ExternalLink className="w-6 h-6 text-[#F7941D] shrink-0" />
                 Third-Party Links
