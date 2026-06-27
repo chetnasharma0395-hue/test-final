@@ -446,19 +446,19 @@ export default function CharDham() {
                     </tr>
                   </thead>
                   <tbody className="text-white font-bold">
-                    <tr className="border-b border-gray-50 bg-[#1A1A1A]/50">
+                    <tr className="border-b border-white/10 bg-[#1A1A1A]/50">
                       <td className="p-6 font-black uppercase tracking-tight">Char Dham Yatra (All 4 Dhams)</td>
                       <td className="p-6 text-center text-white/70">10 days</td>
                       <td className="p-6 text-center text-[#F7941D] text-lg font-black">₹40,000</td>
                       <td className="p-6 text-center text-lg font-black">₹55,000</td>
                     </tr>
-                    <tr className="border-b border-gray-50 bg-[#1A1A1A]">
+                    <tr className="border-b border-white/10 bg-[#1A1A1A]">
                       <td className="p-6 font-black uppercase tracking-tight">Do Dham (Kedarnath + Badrinath)</td>
                       <td className="p-6 text-center text-white/70">5-6 days</td>
                       <td className="p-6 text-center text-base">₹15,000</td>
                       <td className="p-6 text-center text-base">₹20,000</td>
                     </tr>
-                    <tr className="border-b border-gray-50 bg-[#1A1A1A]/50">
+                    <tr className="border-b border-white/10 bg-[#1A1A1A]/50">
                       <td className="p-6 font-black uppercase tracking-tight">Do Dham (Yamunotri + Gangotri)</td>
                       <td className="p-6 text-center text-white/70">4-5 days</td>
                       <td className="p-6 text-center text-base">₹12,000</td>
@@ -835,15 +835,15 @@ export default function CharDham() {
                 Package Details
               </h4>
               <ul className="space-y-4 text-sm font-light text-white/70">
-                <li className="flex justify-between items-center border-b border-gray-50 pb-2">
+                <li className="flex justify-between items-center border-b border-white/10 pb-2">
                   <span>Duration:</span>
                   <span className="font-black text-white">10 days</span>
                 </li>
-                <li className="flex justify-between items-center border-b border-gray-50 pb-2">
+                <li className="flex justify-between items-center border-b border-white/10 pb-2">
                   <span>Distance:</span>
                   <span className="font-black text-white">~1,200 km</span>
                 </li>
-                <li className="flex justify-between items-center border-b border-gray-50 pb-2">
+                <li className="flex justify-between items-center border-b border-white/10 pb-2">
                   <span>Dhams Covered:</span>
                   <span className="font-black text-white">All 4</span>
                 </li>
