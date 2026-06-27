@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 
 const pageFAQs = [
   { question: 'What is the taxi fare from Dehradun to Rishikesh?', answer: 'The fixed one-way taxi fare from Dehradun to Rishikesh is ₹2,300 for a Sedan and ₹3,300 for an SUV with Uttarakhand Cab 24/7. The 50 km journey via NH7 takes approximately 1.5 hours. No hidden charges, no surge pricing.' },
-  { question: 'How far is Jolly Grant Airport from Rishikesh?', answer: 'Jolly Grant Airport (Dehradun) is just 20 km from Rishikesh — the closest major destination to the airport. Direct airport-to-Rishikesh taxi costs ₹1,700 for a Sedan and takes approximately 40 minutes. Uttarakhand Cab 24/7 provides flight-tracked airport pickups with no waiting charge.' },
+  { question: 'How far is Jolly Grant Airport from Rishikesh?', answer: 'Jolly Grant Airport (Dehradun) is just 20 km from Rishikesh — the closest major destination to the airport. Direct airport-to-Rishikesh taxi costs ₹2,000 for a Sedan and takes approximately 40 minutes. Uttarakhand Cab 24/7 provides flight-tracked airport pickups with no waiting charge.' },
   { question: 'Can I do river rafting in Rishikesh and return to Dehradun the same day?', answer: 'Yes. A same-day Rishikesh rafting trip from Dehradun is very popular. Leave Dehradun by 6:30 AM, reach Shivpuri by 8:00 AM for the 16 km rafting stretch, finish rafting by noon, visit Laxman Jhula, and return to Dehradun by 7:00 PM. Uttarakhand Cab 24/7 offers 8-hour round-trip packages from ₹2,500.' },
   { question: 'What is the route from Dehradun to Rishikesh?', answer: 'The route follows NH7: Dehradun → Raipur → Doiwala → Jolly Grant Airport junction → Rishikesh (Yog Nagari / Laxman Jhula). The road is a well-maintained 4-lane highway for most of the distance, making it a smooth, fast drive.' },
   { question: 'What is the best time to visit Rishikesh for yoga and adventure?', answer: 'March–April and September–November are the best months. White-water rafting is open from September to June (closed July–August during monsoon). International Yoga Festival is held every March. Rishikesh is pleasant year-round but avoid July–August for outdoor activities.' },
@@ -40,7 +40,7 @@ const routeStops = [
 ];
 
 const driverTips = [
-  'If your flight arrives at Jolly Grant Airport and you are heading to Rishikesh, book a direct airport-to-Rishikesh taxi (₹1,700) — it is only 20 km and takes 40 minutes.',
+  'If your flight arrives at Jolly Grant Airport and you are heading to Rishikesh, book a direct airport-to-Rishikesh taxi (₹2,000) — it is only 20 km and takes 40 minutes.',
   'For river rafting, the main launch point is Shivpuri — 16 km upstream from Rishikesh. Ask your driver to take you directly to Shivpuri Beach for the 16 km rafting stretch.',
   'Rishikesh is split into two areas — downtown (Rishikesh ISBT, Haridwar Road) and the ashram area (Laxman Jhula, Ram Jhula). Confirm your exact destination before booking.',
   'Parking near Laxman Jhula is restricted. Our drivers know all designated taxi waiting areas for return pickups near the ghats.',
@@ -118,7 +118,7 @@ export default function Page() {
         <div className="max-w-4xl mx-auto">
           <GEOAnswerBox
             question="What is the taxi fare from Dehradun to Rishikesh in 2026?"
-            answer="The fixed one-way taxi fare from Dehradun to Rishikesh in 2026 is ₹2,300 for a Sedan and ₹3,300 for an SUV with Uttarakhand Cab 24/7. The 50 km journey via NH7 takes approximately 1.5 hours. From Jolly Grant Airport, Rishikesh is just 20 km — ₹1,700 for a Sedan in 40 minutes. All fares are fixed with no surge pricing. Book 24/7 via WhatsApp: +91 92589 12169."
+            answer="The fixed one-way taxi fare from Dehradun to Rishikesh in 2026 is ₹2,300 for a Sedan and ₹3,300 for an SUV with Uttarakhand Cab 24/7. The 50 km journey via NH7 takes approximately 1.5 hours. From Jolly Grant Airport, Rishikesh is just 20 km — ₹2,000 for a Sedan in 40 minutes. All fares are fixed with no surge pricing. Book 24/7 via WhatsApp: +91 92589 12169."
             facts={[
               { label: 'Sedan Fare', value: '₹2,300' },
               { label: 'SUV Fare', value: '₹3,300' },
