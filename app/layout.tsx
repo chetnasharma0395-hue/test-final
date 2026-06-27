@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 
+import Script from 'next/script';
 import { Inter, Montserrat } from 'next/font/google';
 import './globals.css';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -121,6 +122,21 @@ export default function RootLayout({
         <FloatingWhatsApp />
         <SpeedInsights />
         <Analytics />
+
+        {/* Google Analytics 4 — loaded after interactive so it never blocks
+            paint/LCP. Measurement ID: G-LCV4JP5NLJ */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-LCV4JP5NLJ"
+          strategy="afterInteractive"
+        />
+        <Script id="ga4-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-LCV4JP5NLJ');
+          `}
+        </Script>
         {/* JSON-LD — placed at end of body; non-blocking, fully readable by Googlebot */}
         <script
           type="application/ld+json"
