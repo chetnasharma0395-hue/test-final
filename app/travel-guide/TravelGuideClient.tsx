@@ -166,7 +166,7 @@ export default function TravelGuideClient() {
                       { route: 'Rishikesh → Kedarnath (Gaurikund)', cond: 'Fair to Good', bends: '50+', risk: 'High (known landslide areas)' },
                       { route: 'Joshimath → Badrinath', cond: 'Fair', bends: '30+', risk: 'High (BRO managed)' },
                     ].map((r, i) => (
-                      <tr key={r.route} className={`border-b border-gray-50 hover:bg-[#1A1A1A]/50 transition-colors ${i % 2 === 0 ? 'bg-[#1A1A1A]' : 'bg-[#121212]'}`}>
+                      <tr key={r.route} className={`border-b border-white/10 hover:bg-[#1A1A1A]/50 transition-colors ${i % 2 === 0 ? 'bg-[#1A1A1A]' : 'bg-[#121212]'}`}>
                         <td className="p-6 md:p-8 font-black uppercase tracking-tighter border-r border-white/10">{r.route}</td>
                         <td className="p-6 md:p-8 border-r border-white/10 text-center">
                           <span className={`text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm ${
