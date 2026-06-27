@@ -21,12 +21,12 @@ const HEAD_LINES = [
 ];
 
 const lineVariants = {
-  hidden: { opacity: 0, y: '0.45em', filter: 'blur(8px)' },
+  hidden: { opacity: 0.6, y: '0.18em', filter: 'blur(3px)' },
   show: {
     opacity: 1,
     y: '0em',
     filter: 'blur(0px)',
-    transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] as const },
+    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const },
   },
 };
 
@@ -52,14 +52,16 @@ export function HeroHeading() {
         </p>
       </motion.div>
 
-      {/* Main heading — staggered line reveal */}
+      {/* Main heading — always painted instantly (LCP-critical). A light
+          per-line reveal plays only as a non-blocking enhancement, starting
+          from a near-visible state so first paint shows the text immediately. */}
       <motion.h1
         className="font-heading font-black uppercase leading-[0.92] tracking-tight mb-8 break-words"
-        initial={animate ? 'hidden' : false}
+        initial={false}
         animate={animate ? 'show' : undefined}
         variants={{
           hidden: {},
-          show: { transition: { staggerChildren: 0.13, delayChildren: 0.15 } },
+          show: { transition: { staggerChildren: 0.13, delayChildren: 0.05 } },
         }}
       >
         {HEAD_LINES.map((line) => (
@@ -67,24 +69,19 @@ export function HeroHeading() {
             key={line.text}
             className={`block text-[2.5rem] sm:text-6xl md:text-7xl xl:text-8xl ${line.className}`}
             variants={animate ? lineVariants : undefined}
-            style={{ willChange: 'transform, filter' }}
           >
             {line.text}
           </motion.span>
         ))}
       </motion.h1>
 
-      {/* Subtitle */}
-      <motion.p
-        className="text-white/65 text-base md:text-lg max-w-lg mb-10 font-light leading-relaxed"
-        initial={animate ? { opacity: 0, y: 16 } : false}
-        animate={animate ? { opacity: 1, y: 0 } : undefined}
-        transition={{ duration: 0.6, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
-      >
+      {/* Subtitle — LCP element. Painted immediately (no opacity:0 start) so
+          first contentful/largest paint is not gated on JS hydration. */}
+      <p className="text-white/65 text-base md:text-lg max-w-lg mb-10 font-light leading-relaxed">
         Fixed fares. Local drivers. 24/7 availability across
         Uttarakhand — from Dehradun to Kedarnath, Char Dham,
         Mussoorie &amp; beyond.
-      </motion.p>
+      </p>
 
       {/* Trust badges — stagger in, then hover-lift */}
       <motion.div
