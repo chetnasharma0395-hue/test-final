@@ -153,8 +153,8 @@ export default function DistanceGuide() {
       <section className="content-section bg-[#1A1A1A] pb-8">
         <div className="container-wide">
           <div className="bg-[#1A1A1A] p-6 md:p-8 border-l-4 border-gold shadow-sm">
-            <h2 className="font-heading font-bold text-xl text-navy mb-3">Understanding Mountain Travel Times</h2>
-            <p className="text-gray-700 leading-relaxed">
+            <h2 className="font-heading font-bold text-xl text-white mb-3">Understanding Mountain Travel Times</h2>
+            <p className="text-white/70 leading-relaxed">
               Distance in kilometres does not translate directly to travel time on Uttarakhand&apos;s mountain roads.
               Winding routes, elevation changes, and traffic through hill towns mean average speeds of 25–35 km/h.
               All estimates below are based on our drivers&apos; real-world experience in normal weather conditions.
@@ -183,17 +183,17 @@ export default function DistanceGuide() {
               <div className="overflow-x-auto">
                 <table className="w-full border-collapse text-left text-sm">
                   <thead>
-                    <tr className="bg-gray-50 border-b border-white/10 text-gray-600">
+                    <tr className="bg-white/5 border-b border-white/10 text-white/50">
                       <th className="p-4 font-bold uppercase tracking-wider text-xs">Destination</th>
                       <th className="p-4 font-bold uppercase tracking-wider text-xs">Distance</th>
                       <th className="p-4 font-bold uppercase tracking-wider text-xs">Est. Time</th>
                       <th className="p-4 font-bold uppercase tracking-wider text-xs">Preferred Route</th>
                     </tr>
                   </thead>
-                  <tbody className="text-gray-700">
+                  <tbody className="text-white/70">
                     {section.destinations.map((d, i) => (
                       <tr key={d.to} className={`border-b border-white/10 hover:bg-gold/5 transition-colors ${i % 2 === 0 ? 'bg-[#1A1A1A]' : 'bg-[#1A1A1A]/30'}`}>
-                        <td className="p-4 font-semibold text-navy">
+                        <td className="p-4 font-semibold text-white">
                           {d.slug ? (
                             <Link href={d.slug} className="hover:text-gold transition-colors underline-offset-2 hover:underline">
                               {d.to}
@@ -201,12 +201,12 @@ export default function DistanceGuide() {
                           ) : d.to}
                         </td>
                         <td className="p-4 font-bold text-gold">{d.km} km</td>
-                        <td className="p-4 text-gray-700">
+                        <td className="p-4 text-white/70">
                           <span className="flex items-center gap-1.5">
                             <Clock className="w-4 h-4 text-gray-400 shrink-0" /> {d.hrs}{(d as any).noUnit ? '' : ' hrs'}
                           </span>
                         </td>
-                        <td className="p-4 text-gray-600 text-xs">{d.road}</td>
+                        <td className="p-4 text-white/50 text-xs">{d.road}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -222,20 +222,20 @@ export default function DistanceGuide() {
         <div className="container-wide max-w-4xl">
           <div className="mb-10">
             <HelpCircle className="w-10 h-10 text-gold mb-3" />
-            <h2 className="font-heading font-bold text-3xl md:text-4xl text-navy uppercase mb-4">
+            <h2 className="font-heading font-bold text-3xl md:text-4xl text-white uppercase mb-4">
               Distance & Route FAQs
             </h2>
-            <p className="text-gray-700">Common questions about road distances and travel times in Uttarakhand.</p>
+            <p className="text-white/70">Common questions about road distances and travel times in Uttarakhand.</p>
           </div>
 
           <FAQSection faqs={roadFAQs} />
 
           <div className="mt-10 p-6 bg-[#1A1A1A] border border-white/10 rounded-sm">
-            <h3 className="font-bold text-navy mb-2">Need a custom route calculation?</h3>
-            <p className="text-gray-700 text-sm mb-4">
+            <h3 className="font-bold text-white mb-2">Need a custom route calculation?</h3>
+            <p className="text-white/70 text-sm mb-4">
               If your destination isn&apos;t listed above, our team can provide an exact distance, travel time, and fixed fare quote.
             </p>
-            <a href="tel:+919258912169" className="inline-flex items-center gap-2 text-navy font-bold hover:text-gold transition-colors">
+            <a href="tel:+919258912169" className="inline-flex items-center gap-2 text-gold font-bold hover:text-white transition-colors">
               <Phone className="w-4 h-4" /> Call +91 92589 12169
             </a>
           </div>
