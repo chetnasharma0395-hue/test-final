@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import { 
+import {
   AlertCircle, MapPin, Clock, HelpCircle, 
   Shield, Car, CheckCircle2, TrendingUp 
 } from 'lucide-react';
