@@ -746,7 +746,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: '2026 Fixed Taxi Fares from Jolly Grant Airport',
-        body: '<p>Here are the verified fixed fares from Jolly Grant Airport in 2026 with Uttarakhand Cab 24/7. All fares are one-way, all-inclusive of fuel, driver allowance, and tolls.</p><ul><li><strong>Jolly Grant Airport to Dehradun city:</strong> ₹1,500 (Sedan) | ₹2,300 (SUV)</li><li><strong>Jolly Grant Airport to Rishikesh:</strong> ₹1,700 (Sedan) | ₹2,500 (SUV)</li><li><strong>Jolly Grant Airport to Haridwar:</strong> ₹1,700 (Sedan) | ₹2,300 (SUV)</li><li><strong>Jolly Grant Airport to Mussoorie:</strong> ₹2,500 (Sedan) | ₹3,500 (SUV)</li><li><strong>Jolly Grant Airport to Kedarnath (Gaurikund):</strong> ₹9,500 (SUV only)</li></ul><p>Compare these to the prepaid counter which often prices 20–25% higher at peak times and does not offer flight-delay tracking.</p>',
+        body: '<p>Here are the verified fixed fares from Jolly Grant Airport in 2026 with Uttarakhand Cab 24/7. All fares are one-way, all-inclusive of fuel, driver allowance, and tolls.</p><ul><li><strong>Jolly Grant Airport to Dehradun city:</strong> ₹1,500 (Sedan) | ₹2,300 (SUV)</li><li><strong>Jolly Grant Airport to Rishikesh:</strong> ₹2,000 (Sedan) | ₹2,500 (SUV)</li><li><strong>Jolly Grant Airport to Haridwar:</strong> ₹1,700 (Sedan) | ₹2,300 (SUV)</li><li><strong>Jolly Grant Airport to Mussoorie:</strong> ₹3,000 (Sedan) | ₹4,000 (SUV)</li><li><strong>Jolly Grant Airport to Kedarnath (Gaurikund):</strong> ₹10,500 (SUV only)</li></ul><p>Compare these to the prepaid counter which often prices 20–25% higher at peak times and does not offer flight-delay tracking.</p>',
       },
       {
         heading: 'How the Meet-and-Greet System Works',
