@@ -61,7 +61,7 @@ const RATE_ROWS: { key: string; from?: string; to?: string }[] = [
 
 // Routes shown in the table but not (yet) in priceData. Keep explicit.
 const EXTRA_ROUTES: RateRow[] = [
-  { from: 'Haridwar', to: 'Badrinath', distance: '315 km', time: '9-10 hrs', sedan: '₹9,500', suv: '₹12,500' },
+  { from: 'Haridwar', to: 'Badrinath', distance: '315 km', time: '10 hrs', sedan: '₹8,000', suv: '₹10,000' },
   { from: 'Jolly Grant Airport', to: 'Rishikesh', distance: '20 km', time: '45 min', sedan: '₹2,000', suv: '₹2,500' },
 ];
 
