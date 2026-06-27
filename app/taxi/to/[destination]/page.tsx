@@ -166,11 +166,11 @@ export default async function DestinationHubPage({ params }: DestProps) {
                   </thead>
                   <tbody className="text-white">
                     {routes.map((r) => (
-                      <tr key={r.slug} className="border-b border-gray-50 hover:bg-[#1A1A1A]/60 transition-colors">
-                        <td className="p-6 font-black border-r border-gray-50">{r.origin}</td>
-                        <td className="p-6 font-light border-r border-gray-50">{r.distanceKm} km</td>
-                        <td className="p-6 font-light border-r border-gray-50">{r.travelTime}</td>
-                        <td className="p-6 font-black text-[#F7941D] border-r border-gray-50">{r.fare.sedan !== null ? formatPrice(r.fare.sedan) : 'On request'}</td>
+                      <tr key={r.slug} className="border-b border-white/10 hover:bg-[#1A1A1A]/60 transition-colors">
+                        <td className="p-6 font-black border-r border-white/10">{r.origin}</td>
+                        <td className="p-6 font-light border-r border-white/10">{r.distanceKm} km</td>
+                        <td className="p-6 font-light border-r border-white/10">{r.travelTime}</td>
+                        <td className="p-6 font-black text-[#F7941D] border-r border-white/10">{r.fare.sedan !== null ? formatPrice(r.fare.sedan) : 'On request'}</td>
                         <td className="p-6">
                           <Link href={`/taxi/${r.slug}`} className="inline-flex items-center gap-2 text-white font-bold hover:text-[#F7941D] transition-colors">
                             View <ArrowRight className="w-3.5 h-3.5" />
