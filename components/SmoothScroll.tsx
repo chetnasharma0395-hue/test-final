@@ -5,25 +5,52 @@ import Lenis from 'lenis';
 
 export function SmoothScroll({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    // Initialize Lenis as a side-effect only — no DOM wrapper.
-    // ReactLenis root added a physical <div> that caused Google's renderer
-    // to capture the page during Lenis initialization (overflow:hidden applied
-    // to the wrapper, clipping hero content in the screenshot).
-    const lenis = new Lenis({
-      lerp: 0.1,
-      duration: 1.5,
-      smoothWheel: true,
-      touchMultiplier: 2,
-    });
-
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+    // Respect users who prefer reduced motion — skip smooth scroll entirely.
+    if (
+      typeof window !== 'undefined' &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ) {
+      return;
     }
-    requestAnimationFrame(raf);
+
+    let lenis: Lenis | null = null;
+    let rafId = 0;
+
+    // Defer Lenis init until the browser is idle. On a fresh load the main
+    // thread is busy hydrating ~9 client components; starting Lenis' rAF loop
+    // immediately competes with that work and makes the first moments feel
+    // janky / "stuck". Waiting for idle lets first interaction stay snappy.
+    const start = () => {
+      lenis = new Lenis({
+        lerp: 0.1,
+        duration: 1.5,
+        smoothWheel: true,
+        touchMultiplier: 2,
+      });
+
+      const raf = (time: number) => {
+        lenis?.raf(time);
+        rafId = requestAnimationFrame(raf);
+      };
+      rafId = requestAnimationFrame(raf);
+    };
+
+    const w = window as typeof window & {
+      requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => number;
+    };
+    const idle =
+      typeof w.requestIdleCallback === 'function'
+        ? w.requestIdleCallback(start, { timeout: 1500 })
+        : window.setTimeout(start, 600);
 
     return () => {
-      lenis.destroy();
+      if (typeof w.requestIdleCallback === 'function') {
+        (w as unknown as { cancelIdleCallback: (id: number) => void }).cancelIdleCallback?.(idle as number);
+      } else {
+        clearTimeout(idle as number);
+      }
+      cancelAnimationFrame(rafId);
+      lenis?.destroy();
     };
   }, []);
 
