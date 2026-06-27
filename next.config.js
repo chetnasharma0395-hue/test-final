@@ -57,6 +57,12 @@ const nextConfig = {
         permanent: true,
       },
 
+      // ── /services root (no index page exists) → /taxi hub ────────────────
+      {
+        source: '/services',
+        destination: '/taxi',
+        permanent: false,
+      },
       // ── Old site URL redirects (indexed on uttarakhandcab.in) ─────────────
       // These pass SEO value through the chain:
       // old URL on uttarakhandcab.in → uttarakhand.cab/new-url
