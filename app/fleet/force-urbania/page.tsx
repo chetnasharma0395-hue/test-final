@@ -138,7 +138,7 @@ export default function ForceUrbaniaPage() {
                     { label: 'AC', value: vehicle.acType },
                     { label: 'Models', value: vehicle.models.join(', ') },
                   ].map((s, i) => (
-                    <div key={i} className="bg-[#1A1A1A] p-5 rounded-2xl shadow-sm text-center border border-gray-50">
+                    <div key={i} className="bg-[#1A1A1A] p-5 rounded-2xl shadow-sm text-center border border-white/10">
                       <p className="text-[10px] text-white/70 font-bold uppercase tracking-widest mb-1">{s.label}</p>
                       <p className="font-black text-sm text-white leading-tight">{s.value}</p>
                     </div>
