@@ -68,7 +68,7 @@ export default function RishikeshPage() {
         <div className="max-w-4xl mx-auto">
           <GEOAnswerBox
             question="What is the taxi fare from Dehradun to Rishikesh in 2026?"
-            answer="The fixed one-way taxi fare from Dehradun to Rishikesh in 2026 is ₹2,300 for a Sedan and ₹3,300 for an SUV with Uttarakhand Cab 24/7. The 50 km journey via NH7 takes approximately 1.5 hours. From Jolly Grant Airport, Rishikesh is just 20 km — ₹1,700 for a Sedan in 40–45 minutes. All fares are fixed with no surge pricing or hidden charges. Book 24/7 via WhatsApp: +91 92589 12169."
+            answer="The fixed one-way taxi fare from Dehradun to Rishikesh in 2026 is ₹2,300 for a Sedan and ₹3,300 for an SUV with Uttarakhand Cab 24/7. The 50 km journey via NH7 takes approximately 1.5 hours. From Jolly Grant Airport, Rishikesh is just 20 km — ₹2,000 for a Sedan in 40–45 minutes. All fares are fixed with no surge pricing or hidden charges. Book 24/7 via WhatsApp: +91 92589 12169."
             facts={[
               { label: 'Sedan Fare', value: '₹2,300' },
               { label: 'SUV Fare', value: '₹3,300' },
