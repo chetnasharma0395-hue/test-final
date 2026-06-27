@@ -65,7 +65,7 @@ const commonMistakes = [
   },
   {
     mistake: 'Trying to complete Char Dham in less than 10 days',
-    why: 'Char Dham Yatra covers 900 km of mountain roads and includes treks. Rushing means no time for proper darshan, acclimatization, or rest. You will be exhausted and may face altitude sickness.',
+    why: 'Char Dham Yatra covers approximately 1,200 km of mountain roads and includes treks. Rushing means no time for proper darshan, acclimatization, or rest. You will be exhausted and may face altitude sickness.',
     solution: 'Plan for minimum 10 days. Keep 2 buffer days for weather delays. A rushed Yatra is not a fulfilling Yatra.'
   },
   {
@@ -210,7 +210,7 @@ const routeDetails = {
   from: 'Dehradun',
   to: 'Char Dham Circuit',
   via: 'Yamunotri → Gangotri → Kedarnath → Badrinath',
-  distance: '900 km total',
+  distance: '~1,200 km total',
   time: '10 days (12 days with buffer)',
   fare: '₹40,000 – ₹55,000 (depending on vehicle)',
   roadCondition: 'Good to moderate, some landslide-prone sections',
@@ -286,7 +286,7 @@ export default function CharDham() {
             <div className="w-12 h-12 rounded-full bg-[#1A1A1A] flex items-center justify-center shrink-0">
                <MapPin className="w-5 h-5 text-[#F7941D]" />
             </div>
-            <span className="font-black text-lg md:text-xl tracking-tighter">900 km total</span>
+            <span className="font-black text-lg md:text-xl tracking-tighter">~1,200 km total</span>
           </div>
           <div className="flex items-center gap-4">
             <div className="w-12 h-12 rounded-full bg-[#1A1A1A] flex items-center justify-center shrink-0">
@@ -841,7 +841,7 @@ export default function CharDham() {
                 </li>
                 <li className="flex justify-between items-center border-b border-gray-50 pb-2">
                   <span>Distance:</span>
-                  <span className="font-black text-white">900 km</span>
+                  <span className="font-black text-white">~1,200 km</span>
                 </li>
                 <li className="flex justify-between items-center border-b border-gray-50 pb-2">
                   <span>Dhams Covered:</span>
