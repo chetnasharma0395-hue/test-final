@@ -48,6 +48,7 @@ function LaptopMockup() {
             src="/assets/images/hero-mountain-road.jpg"
             alt="Uttarakhand Cab website preview"
             fill priority className="object-cover object-top"
+            sizes="340px"
           />
           {/* UI overlay */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/60 via-transparent to-[#0a0a0a]/80" />
@@ -101,6 +102,7 @@ function PhoneMockup() {
           src="/assets/images/dest-mussoorie.jpg"
           alt="Mobile preview"
           fill className="object-cover"
+          sizes="120px"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/70 via-transparent to-[#0a0a0a]/80" />
         <div className="absolute bottom-4 inset-x-2">
@@ -213,6 +215,7 @@ export default function AboutPage() {
                     src="/assets/images/dest-kedarnath.jpg"
                     alt="Kedarnath mountain route — Uttarakhand Cab 24/7"
                     fill priority className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 42vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                   {/* Floating badge */}
@@ -265,6 +268,7 @@ export default function AboutPage() {
                     src="/assets/images/hero-mountain-road.jpg"
                     alt="Mountain roads of Uttarakhand"
                     fill className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 42vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
                   <div className="absolute bottom-5 left-5">
