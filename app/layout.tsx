@@ -124,18 +124,18 @@ export default function RootLayout({
         <SpeedInsights />
         <Analytics />
 
-        {/* Google Analytics 4 — loaded after interactive so it never blocks
-            paint/LCP. Measurement ID: G-LCV4JP5NLJ */}
+        {/* Google Analytics 4 — lazyOnload so it never competes with
+            paint/LCP/hydration. Measurement ID: G-LCV4JP5NLJ */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-LCV4JP5NLJ"
-          strategy="afterInteractive"
+          strategy="lazyOnload"
         />
-        <Script id="ga4-init" strategy="afterInteractive">
+        <Script id="ga4-init" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-LCV4JP5NLJ');
+            gtag('config', 'G-LCV4JP5NLJ', { send_page_view: true });
           `}
         </Script>
         <AnalyticsTracker />
