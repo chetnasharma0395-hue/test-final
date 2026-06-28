@@ -80,7 +80,7 @@ export default function BlogPage() {
 
       {/* Blog Grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {blogPosts.map((post) => (
+        {blogPosts.map((post, index) => (
           <Link key={post.slug} href={`/blog/${post.slug}`} className="group block h-full">
             
             <div className="border border-white/10 rounded-2xl overflow-hidden bg-[#1A1A1A] h-full flex flex-col transition-all duration-300 hover:shadow-xl">
@@ -93,6 +93,7 @@ export default function BlogPage() {
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  priority={index < 3}
                 />
               </div>
               
