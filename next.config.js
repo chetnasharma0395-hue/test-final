@@ -63,6 +63,32 @@ const nextConfig = {
         destination: '/taxi',
         permanent: false,
       },
+
+      // ── Old static site .html URLs → Next.js clean URLs ───────────────────
+      // Google has indexed these from the old site. 301 passes SEO equity.
+      { source: '/index.html',                    destination: '/',                       permanent: true },
+      { source: '/about.html',                    destination: '/about',                  permanent: true },
+      { source: '/contact.html',                  destination: '/contact',                permanent: true },
+      { source: '/mussoorie.html',                destination: '/mussoorie',              permanent: true },
+      { source: '/rishikesh.html',                destination: '/rishikesh',              permanent: true },
+      { source: '/haridwar.html',                 destination: '/haridwar',               permanent: true },
+      { source: '/nainital.html',                 destination: '/nainital',               permanent: true },
+      { source: '/kedarnath.html',                destination: '/kedarnath',              permanent: true },
+      { source: '/badrinath.html',                destination: '/badrinath',              permanent: true },
+      { source: '/char-dham.html',                destination: '/char-dham',              permanent: true },
+      { source: '/taxi-rates.html',               destination: '/taxi-rates',             permanent: true },
+      { source: '/tour-packages.html',            destination: '/tour-packages',          permanent: true },
+      { source: '/gallery.html',                  destination: '/gallery',                permanent: true },
+      { source: '/terms-of-service.html',         destination: '/terms-of-service',       permanent: true },
+      { source: '/privacy-policy.html',           destination: '/privacy-policy',         permanent: true },
+      { source: '/cancellation-policy.html',      destination: '/cancellation-policy',    permanent: true },
+      { source: '/destinations.html',             destination: '/destinations',           permanent: true },
+      { source: '/jim-corbett.html',              destination: '/jim-corbett',            permanent: true },
+      { source: '/valley-of-flowers.html',        destination: '/valley-of-flowers',      permanent: true },
+      { source: '/dehradun-airport-taxi.html',    destination: '/dehradun-airport-taxi',  permanent: true },
+      { source: '/delhi-to-dehradun.html',        destination: '/delhi-to-dehradun',      permanent: true },
+      // Wildcard catch-all for any other .html URL not listed above
+      { source: '/:slug.html',                    destination: '/:slug',                  permanent: true },
       // ── Old site URL redirects (indexed on uttarakhandcab.in) ─────────────
       // These pass SEO value through the chain:
       // old URL on uttarakhandcab.in → uttarakhand.cab/new-url
