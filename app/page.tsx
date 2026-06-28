@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import {
   Clock, Car, Users, Shield, Star,
   ArrowRight, CheckCircle2, Phone, MessageCircle,
@@ -8,16 +9,20 @@ import {
 } from 'lucide-react';
 import { QuoteWidget } from '@/components/QuoteWidget';
 import { AnimatedStats } from '@/components/AnimatedStats';
-import { PopularRoutesSection } from '@/components/PopularRoutesSection';
-import { TestimonialsSection } from '@/components/TestimonialsSection';
-import { FAQSection } from '@/components/FAQ';
 import { GEOAnswerBox } from '@/components/GEOAnswerBox';
 import { AuroraGlow, AnimatedSection, MagneticCTA } from '@/components/motion';
 import { FleetGrid } from '@/components/FleetGrid';
 import { TiltCard } from '@/components/TiltCard';
-import { HomeTourPackagesCarousel } from '@/components/HomeTourPackagesCarousel';
-import { HomeBlogPreviewCarousel } from '@/components/HomeBlogPreviewCarousel';
 import { HeroHeading } from '@/components/HeroHeading';
+
+// Below-fold components — code-split so they don't add to initial hydration.
+// SSR stays ON (ssr: true is default) so content is in HTML for SEO.
+// Their JS bundles only download/execute when needed (after main hydration).
+const PopularRoutesSection  = dynamic(() => import('@/components/PopularRoutesSection').then(m => ({ default: m.PopularRoutesSection })));
+const TestimonialsSection   = dynamic(() => import('@/components/TestimonialsSection').then(m => ({ default: m.TestimonialsSection })));
+const FAQSection            = dynamic(() => import('@/components/FAQ').then(m => ({ default: m.FAQSection })));
+const HomeTourPackagesCarousel = dynamic(() => import('@/components/HomeTourPackagesCarousel').then(m => ({ default: m.HomeTourPackagesCarousel })));
+const HomeBlogPreviewCarousel  = dynamic(() => import('@/components/HomeBlogPreviewCarousel').then(m => ({ default: m.HomeBlogPreviewCarousel })));
 import { blogPosts } from '@/lib/blog-content';
 
 export const metadata: Metadata = {
