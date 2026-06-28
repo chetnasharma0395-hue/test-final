@@ -235,14 +235,24 @@
 }
 
 /* Shimmer stat bar */
-@keyframes shimmerStat {
-  0%   { background-position: -400px 0; }
-  100% { background-position: 400px 0; }
-}
+/* Shimmer using pseudo-element + translateX (GPU-composited, no layout/paint) */
 .animate-shimmer {
-  background: linear-gradient(90deg, transparent, rgba(247,148,29,0.06), transparent);
-  background-size: 400px 100%;
+  position: relative;
+  overflow: hidden;
+}
+.animate-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(247,148,29,0.08) 50%, transparent 100%);
+  transform: translateX(-100%);
   animation: shimmerStat 3.5s ease-in-out infinite;
+  pointer-events: none;
+  will-change: transform;
+}
+@keyframes shimmerStat {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
 
 /* Hero float */
@@ -253,15 +263,19 @@
 .animate-hero-float { animation: heroFloat 6s ease-in-out infinite; }
 
 /* ── Reviews carousel — autoplay timer fill ── */
+/* scaleX is GPU-composited (no layout/paint). transform-origin:left keeps
+   the bar growing left-to-right visually. */
 @keyframes reviewTimerFill {
-  from { width: 0%; }
-  to   { width: 100%; }
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
 }
 .review-timer-fill {
+  transform-origin: left center;
   animation-name: reviewTimerFill;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
+  will-change: transform;
 }
 
 /* ── CardCarousel — autoplay timer fill on active dot ── */
