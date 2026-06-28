@@ -2,16 +2,14 @@
 
 import { motion, useReducedMotion } from 'framer-motion';
 import { Star, Shield, Zap } from 'lucide-react';
-import { useState, useEffect } from 'react';
 
 /**
- * HeroHeading — premium animated hero copy block.
+ * HeroHeading — animated hero copy block.
  *
- * SSR-safe: renders full static markup until mounted, so the H1 text is
- * always present for crawlers and no-JS users. Once mounted, lines reveal
- * with a staggered blur-up entrance.
- *
- * Pure motion layer — no layout/structure change vs the static version.
+ * LCP-SAFE: Every element starts at opacity:1 / y:0 (fully visible on first
+ * paint). Animations play as enhancement overlays, never hiding content.
+ * No useState/useEffect mount gate — eliminates the hydration flash that was
+ * causing the 2,530ms "element render delay" in PageSpeed.
  */
 
 const HEAD_LINES = [
@@ -20,31 +18,17 @@ const HEAD_LINES = [
   { text: 'Cab Service', className: 'text-white' },
 ];
 
-const lineVariants = {
-  hidden: { opacity: 0.6, y: '0.18em', filter: 'blur(3px)' },
-  show: {
-    opacity: 1,
-    y: '0em',
-    filter: 'blur(0px)',
-    transition: { duration: 0.55, ease: [0.22, 1, 0.36, 1] as const },
-  },
-};
-
 export function HeroHeading() {
   const reduce = useReducedMotion();
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-
-  const animate = mounted && !reduce;
 
   return (
     <div className="min-w-0 text-left">
-      {/* Trust pill */}
+      {/* Trust pill — starts visible, subtle lift-in on load */}
       <motion.div
         className="inline-flex items-center gap-2 bg-white/8 border border-white/12 px-4 py-2 rounded-full mb-8"
-        initial={animate ? { opacity: 0, y: 12 } : false}
-        animate={animate ? { opacity: 1, y: 0 } : undefined}
-        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        initial={{ opacity: 1, y: reduce ? 0 : 6 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.4, ease: 'easeOut', delay: 0.1 }}
       >
         <span className="text-[#F7941D] text-xs font-black">+</span>
         <p className="text-[10px] font-black uppercase tracking-widest text-white/80">
@@ -52,64 +36,48 @@ export function HeroHeading() {
         </p>
       </motion.div>
 
-      {/* Main heading — always painted instantly (LCP-critical). A light
-          per-line reveal plays only as a non-blocking enhancement, starting
-          from a near-visible state so first paint shows the text immediately. */}
-      <motion.h1
-        className="font-heading font-black uppercase leading-[0.92] tracking-tight mb-8 break-words"
-        initial={false}
-        animate={animate ? 'show' : undefined}
-        variants={{
-          hidden: {},
-          show: { transition: { staggerChildren: 0.13, delayChildren: 0.05 } },
-        }}
-      >
-        {HEAD_LINES.map((line) => (
+      {/* H1 — starts fully visible. Stagger is a gentle enhancement only. */}
+      <h1 className="font-heading font-black uppercase leading-[0.92] tracking-tight mb-8 break-words">
+        {HEAD_LINES.map((line, i) => (
           <motion.span
             key={line.text}
             className={`block text-[2.5rem] sm:text-6xl md:text-7xl xl:text-8xl ${line.className}`}
-            variants={animate ? lineVariants : undefined}
+            initial={{ opacity: 1, y: reduce ? 0 : 4 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, ease: 'easeOut', delay: 0.05 + i * 0.08 }}
           >
             {line.text}
           </motion.span>
         ))}
-      </motion.h1>
+      </h1>
 
-      {/* Subtitle — LCP element. Painted immediately (no opacity:0 start) so
-          first contentful/largest paint is not gated on JS hydration. */}
+      {/* Subtitle — LCP element. Plain HTML, always painted immediately. */}
       <p className="text-white/65 text-base md:text-lg max-w-lg mb-10 font-light leading-relaxed">
         Fixed fares. Local drivers. 24/7 availability across
         Uttarakhand — from Dehradun to Kedarnath, Char Dham,
         Mussoorie &amp; beyond.
       </p>
 
-      {/* Trust badges — stagger in, then hover-lift */}
-      <motion.div
-        className="flex flex-wrap gap-3"
-        initial={animate ? 'hidden' : false}
-        animate={animate ? 'show' : undefined}
-        variants={{
-          hidden: {},
-          show: { transition: { staggerChildren: 0.1, delayChildren: 0.75 } },
-        }}
-      >
+      {/* Trust badges */}
+      <div className="flex flex-wrap gap-3">
         {[
           { icon: <Star className="w-3.5 h-3.5 fill-[#FBBC05] text-[#FBBC05]" />, label: '4.9 / 5 Rating' },
           { icon: <Shield className="w-3.5 h-3.5 text-[#F7941D]" />, label: 'Zero Hidden Fees' },
           { icon: <Zap className="w-3.5 h-3.5 text-[#F7941D]" />, label: '15-Min Confirmation' },
-        ].map((badge) => (
+        ].map((badge, i) => (
           <motion.span
             key={badge.label}
             className="flex items-center gap-2 bg-white/6 border border-white/10 text-white text-[11px] font-bold px-4 py-2.5 rounded-full cursor-default"
-            variants={animate ? { hidden: { opacity: 0, y: 10 }, show: { opacity: 1, y: 0 } } : undefined}
+            initial={{ opacity: 1, y: reduce ? 0 : 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.35, ease: 'easeOut', delay: 0.3 + i * 0.07 }}
             whileHover={reduce ? undefined : { y: -3, backgroundColor: 'rgba(247,148,29,0.12)', borderColor: 'rgba(247,148,29,0.35)' }}
-            transition={{ type: 'spring', stiffness: 350, damping: 22 }}
           >
             {badge.icon}
             {badge.label}
           </motion.span>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 }
