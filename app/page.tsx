@@ -142,9 +142,9 @@ export default function Home() {
       {/* ── 1. HERO ──────────────────────────────────────────────── */}
       <section className="relative min-h-screen w-full overflow-hidden flex items-center bg-[#0a0a0a]">
 
-        {/* Orange ambient glow — top right, gently pulsing */}
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#F7941D] opacity-[0.12] blur-[120px] pointer-events-none rounded-full animate-glow-pulse" />
-        <div className="absolute top-[-100px] right-[-100px] w-[400px] h-[400px] bg-[#F7941D] opacity-[0.07] blur-[80px] pointer-events-none rounded-full animate-glow-pulse" style={{ animationDelay: '1.5s' }} />
+        {/* Orange ambient glow — reduced on mobile for performance */}
+        <div className="absolute top-0 right-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] bg-[#F7941D] opacity-[0.12] blur-[60px] md:blur-[120px] pointer-events-none rounded-full animate-glow-pulse" />
+        <div className="hidden md:block absolute top-[-100px] right-[-100px] w-[400px] h-[400px] bg-[#F7941D] opacity-[0.07] blur-[80px] pointer-events-none rounded-full animate-glow-pulse" style={{ animationDelay: '1.5s' }} />
 
         {/* Subtle dot grid texture */}
         <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(rgba(255,255,255,0.8) 1px, transparent 1px)', backgroundSize: '28px 28px' }} />
