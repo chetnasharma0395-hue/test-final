@@ -56,7 +56,7 @@ const fareTable = [
   { route: 'Airport → Dehradun City', sedan: '₹1,500', suv: '₹2,300', time: '45–60 min', km: '35 km' },
   { route: 'Airport → Mussoorie', sedan: '₹3,000', suv: '₹4,000', time: '2 hrs', km: '60 km' },
   { route: 'Airport → Rishikesh', sedan: '₹2,000', suv: '₹2,500', time: '45 min', km: '20 km' },
-  { route: 'Airport → Haridwar', sedan: '₹2,700', suv: '₹3,500', time: '1.5 hrs', km: '58 km' },
+  { route: 'Airport → Haridwar', sedan: '₹1,700', suv: '₹2,300', time: '45-60 min', km: '35 km' },
   { route: 'Airport → Kedarnath Base', sedan: '₹6,000', suv: '₹8,000', time: '7 hrs', km: '220 km' },
   { route: 'Airport → Nainital', sedan: '₹5,000', suv: '₹6,500', time: '5 hrs', km: '170 km' },
 ];
@@ -80,7 +80,7 @@ const driverTips = [
 const popularRoutes = [
   { dest: 'Mussoorie', desc: 'Direct mountain transfer from airport to your Mussoorie hotel.', fare: '₹3,000', time: '2 hrs', link: '/mussoorie', icon: Mountain },
   { dest: 'Rishikesh', desc: 'Yoga capital transfer — arrive relaxed and ready for your retreat.', fare: '₹2,000', time: '45 min', link: '/rishikesh', icon: Map },
-  { dest: 'Haridwar', desc: 'Gateway to Char Dham — direct airport to Haridwar ghats.', fare: '₹2,700', time: '1.5 hrs', link: '/haridwar', icon: MapPin },
+  { dest: 'Haridwar', desc: 'Gateway to Char Dham — direct airport to Haridwar ghats.', fare: '₹1,700', time: '45-60 min', link: '/haridwar', icon: MapPin },
   { dest: 'Dehradun City', desc: 'Clock Tower, ISBT, Railway Station, or any city address.', fare: '₹2,000', time: '45 min', link: '/dehradun', icon: Car },
 ];
 
@@ -171,7 +171,7 @@ export default function DehradunAirportTaxi() {
                 { label: 'City Centre', fare: '₹1,500' },
                 { label: 'Mussoorie', fare: '₹3,000' },
                 { label: 'Rishikesh', fare: '₹2,000' },
-                { label: 'Haridwar', fare: '₹2,700' },
+                { label: 'Haridwar', fare: '₹1,700' },
               ].map((f) => (
                 <div key={f.label} className="bg-white/5 border border-white/10 px-5 py-3 rounded-xl">
                   <p className="text-white/50 text-[10px] font-bold uppercase tracking-widest">{f.label}</p>
@@ -386,7 +386,7 @@ export default function DehradunAirportTaxi() {
                   { label: 'Airport → City Centre', fare: '₹1,500' },
                   { label: 'Airport → Mussoorie', fare: '₹3,000' },
                   { label: 'Airport → Rishikesh', fare: '₹2,000' },
-                  { label: 'Airport → Haridwar', fare: '₹2,700' },
+                  { label: 'Airport → Haridwar', fare: '₹1,700' },
                   { label: 'SUV Upgrade Available', fare: '+₹1,000' },
                 ].map((item) => (
                   <div key={item.label} className="flex justify-between items-center border-b border-white/10 pb-4">
