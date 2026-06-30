@@ -30,16 +30,6 @@ export const airportTaxiFAQs = [
       'Jolly Grant Airport (Dehradun) is approximately 35 km from Dehradun city centre via NH72A. Travel time is 45–60 minutes under normal conditions. During peak tourist season (May–June) or after evening flights, traffic on the highway can extend travel time to 75–90 minutes.',
   },
   {
-    question: 'What is the taxi fare from Jolly Grant Airport to Mussoorie?',
-    answer:
-      'The fixed taxi fare from Jolly Grant Airport to Mussoorie is ₹3,000 for a Sedan and ₹4,000 for an SUV. The 60 km mountain drive takes approximately 2 hours. Our drivers are trained on the steep Rajpur Road hairpin bends and will manage your luggage at your Mussoorie hotel.',
-  },
-  {
-    question: 'What is the taxi fare from Jolly Grant Airport to Rishikesh?',
-    answer:
-      'The fixed taxi fare from Jolly Grant Airport to Rishikesh is ₹2,000 for a Sedan and ₹2,500 for an SUV. The 20 km journey via NH7 takes approximately 45 minutes. Uttarakhand Cab 24/7 also covers Haridwar, Char Dham routes, and all major Uttarakhand hill destinations from the airport.',
-  },
-  {
     question: 'Is there a prepaid taxi counter at Jolly Grant Airport Dehradun?',
     answer:
       'Yes, there is a prepaid taxi counter at Jolly Grant Airport. However, pre-booking with Uttarakhand Cab 24/7 is recommended as fares are fixed and transparent, drivers know your route in advance, and you avoid queuing at the counter after a long flight. WhatsApp +91 92589 12169 to pre-book your airport cab.',
@@ -52,6 +42,6 @@ export const airportTaxiFAQs = [
   {
     question: 'Can I book a one-way taxi from Jolly Grant Airport to Kedarnath or Char Dham?',
     answer:
-      'Yes. Uttarakhand Cab 24/7 specialises in Char Dham Yatra airport transfers. We can pick you up directly from Jolly Grant Airport and take you to Haridwar (₹2,700), Rishikesh (₹2,000), or the Char Dham base camps. Multi-day packages for the complete Char Dham Yatra circuit are also available.',
+      'Yes. Uttarakhand Cab 24/7 specialises in Char Dham Yatra airport transfers. We can pick you up directly from Jolly Grant Airport and take you to Haridwar (₹1,700), Rishikesh (₹2,000), or the Char Dham base camps. Multi-day packages for the complete Char Dham Yatra circuit are also available.',
   },
 ];
