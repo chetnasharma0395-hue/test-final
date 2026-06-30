@@ -165,10 +165,10 @@ export default function Haridwar() {
         <div className="max-w-4xl mx-auto">
           <GEOAnswerBox
             question="What is the taxi fare from Dehradun to Haridwar in 2026?"
-            answer="The fixed one-way taxi fare from Dehradun to Haridwar in 2026 is ₹2,000 for a Sedan and ₹2,700 for an SUV with Uttarakhand Cab 24/7. The 55 km route via NH334 takes 1.5 hours. From Jolly Grant Airport, the fare is ₹1,700 for a Sedan covering 35 km in 45–60 minutes. Available 24/7 — including 4 AM pickups for sunrise Ganga Aarti."
+            answer="The fixed one-way taxi fare from Dehradun to Haridwar in 2026 is ₹2,000 for a Sedan and ₹3,000 for an SUV with Uttarakhand Cab 24/7. The 55 km route via NH334 takes 1.5 hours. From Jolly Grant Airport, the fare is ₹1,700 for a Sedan covering 35 km in 45–60 minutes. Available 24/7 — including 4 AM pickups for sunrise Ganga Aarti."
             facts={[
               { label: 'Sedan Fare', value: '₹2,000' },
-              { label: 'SUV Fare', value: '₹2,700' },
+              { label: 'SUV Fare', value: '₹3,000' },
               { label: 'Distance', value: '55 km' },
               { label: 'Airport Fare', value: '₹1,700' },
             ]}
