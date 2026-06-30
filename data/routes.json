@@ -16,7 +16,7 @@
     "h1": "Safe Taxi Service from Dehradun to Mussoorie",
     "description": "Enjoy a scenic drive to Mussoorie. We provide reliable hatchbacks, sedans, and SUVs for the uphill climb.",
     "distance": "35 km",
-    "price": "Starting from ₹1500",
+    "price": "Starting from ₹2,000",
     "uniquePoint": "We stay updated on the Mall Road entry timings and barriers to ensure a smooth drop-off at your hotel."
   },
   {
@@ -34,7 +34,7 @@
     "title": "Dehradun to Rishikesh Taxi | Safe Cabs & Airport Pickups",
     "h1": "Dehradun to Rishikesh Cab Service",
     "description": "Book a premium taxi from Dehradun or Jolly Grant Airport to Rishikesh. We specialize in safe navigation of the spiritual capital, ashram drops, and rafting base camps.",
-    "distance": "45 km",
+    "distance": "50 km",
     "basePrice": "2300",
     "uniquePoint": "We track the Char Dham yatra traffic and know the exact lanes for smooth drops near Ram Jhula and Triveni Ghat. Let us handle the congestion while you relax."
   },
@@ -154,9 +154,9 @@
   {
     "slug": "jolly-grant-airport-to-rishikesh-taxi",
     "title": "Jolly Grant Airport to Rishikesh Cab",
-    "distance": "21 km",
+    "distance": "20 km",
     "duration": "45 mins",
-    "basePrice": "1200",
+    "basePrice": "2000",
     "localSecrets": [
       "Avoid the bridge traffic by timing your arrival before the evening Ganga Aarti (6 PM).",
       "We offer specialized 'Adventure Drop' for rafters with extra space for gear."
@@ -375,7 +375,7 @@
       },
       {
         "q": "Can I get a taxi from Rishikesh to Jolly Grant Airport?",
-        "a": "Yes. We specialise in Rishikesh to Jolly Grant Airport transfers. The 21 km airport-specific route takes approximately 45 minutes and is priced at ₹1,200 for a Sedan."
+        "a": "Yes. We specialise in Rishikesh to Jolly Grant Airport transfers. The 20 km airport-specific route takes approximately 45 minutes and is priced at ₹2,000 for a Sedan."
       }
     ]
   },
