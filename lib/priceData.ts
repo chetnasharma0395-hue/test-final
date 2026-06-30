@@ -93,6 +93,16 @@ export const PRICING_DATA: Record<string, Route> = {
     sedan: 1500,
     suv: 2300,
   },
+  'jolly-grant-haridwar': {
+    key: 'jolly-grant-haridwar',
+    name: 'Jolly Grant Airport to Haridwar',
+    from: 'Jolly Grant Airport',
+    to: 'Haridwar',
+    distance: 35,
+    duration: '45-60 minutes',
+    sedan: 1700,
+    suv: 2300,
+  },
 
   // Major Destinations
   'dehradun-jim-corbett': {
