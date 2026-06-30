@@ -298,7 +298,7 @@ export default function CharDham() {
             <div className="w-12 h-12 rounded-full bg-[#1A1A1A] flex items-center justify-center shrink-0">
                <Car className="w-5 h-5 text-[#F7941D]" />
             </div>
-            <span className="font-black text-lg md:text-xl tracking-tighter text-[#F7941D]">Starting ₹25,000</span>
+            <span className="font-black text-lg md:text-xl tracking-tighter text-[#F7941D]">Starting ₹40,000</span>
           </div>
         </div>
       </section>
