@@ -128,7 +128,7 @@ export default function InnovaCrystaPage() {
             <div className="lg:col-span-2 space-y-12">
 
               {/* Photo */}
-              <div className="rounded-[2.5rem] overflow-hidden border border-white/10 shadow-xl aspect-[3/2] bg-gray-100">
+              <div className="rounded-[2.5rem] overflow-hidden border border-white/10 shadow-xl aspect-[3/2] bg-[#1A1A1A]">
                 <FleetImage images={innovaImages} fallbackAlt="Toyota Innova Crysta Taxi Uttarakhand Cab 24/7" className="w-full h-full object-cover" />
               </div>
 
