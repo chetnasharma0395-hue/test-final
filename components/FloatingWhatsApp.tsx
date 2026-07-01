@@ -136,7 +136,8 @@ export function FloatingWhatsApp() {
             </div>
             <button
               onClick={() => { setExpanded(false); setHintDismissed(true); }}
-              className="text-gray-400 hover:text-white transition-colors"
+              aria-label="Close"
+              className="text-gray-400 hover:text-white transition-colors p-2.5 -m-2.5"
             >
               <X className="w-4 h-4" />
             </button>
