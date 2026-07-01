@@ -3,18 +3,12 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useFadeInUp } from '@/components/motion/MotionKit';
 import { Phone, MapPin, Clock, MessageCircle, CheckCircle2, Plane, Mountain, Car, Waves, Info, Compass, Star } from 'lucide-react';
 import { BookingCTA, DriverIntelligenceBox, RouteInfoBox, TransportComparison, TrustBanner } from '@/components/CTABoxes';
 import { FAQSection } from '@/components/FAQ';
 import { QuickTravelSummary } from '@/components/QuickTravelSummary';
 import { rishikeshFAQs } from './data';
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.7, ease: "easeOut" }
-} as const;
 
 // ----------------------------------------------------------------------
 // DATA ARRAYS (100% PRESERVED FOR SEO)
@@ -42,6 +36,7 @@ const driverTips = [
 ];
 
 export default function RishikeshClient() {
+  const fadeInUp = useFadeInUp();
   return (
     <div className="bg-[#1A1A1A] min-h-screen selection:bg-[#F7941D]/30">
       {/* 1. HERO SECTION */}
