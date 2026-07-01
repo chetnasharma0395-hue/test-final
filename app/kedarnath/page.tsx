@@ -176,14 +176,14 @@ export default function Kedarnath() {
                 </p>
                 
                 <div className="bg-[#2D1515] border border-[#FCA5A5] p-8 rounded-[2rem] shadow-sm my-8">
-                  <h3 className="font-black text-red-800 uppercase tracking-tight text-xl mb-4 flex items-center justify-start gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center shrink-0">
-                      <AlertTriangle className="w-5 h-5 text-red-600" />
+                  <h3 className="font-black text-red-400 uppercase tracking-tight text-xl mb-4 flex items-center justify-start gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-red-500/20 flex items-center justify-center shrink-0">
+                      <AlertTriangle className="w-5 h-5 text-red-400" />
                     </div>
                     Important: Mandatory Registration
                   </h3>
-                  <p className="text-red-900/80 font-light leading-relaxed">
-                    Online registration required at <strong className="font-bold text-red-900">registrationandtouristcare.uk.gov.in</strong>. Medical certificate needed for pilgrims above 50 years. Always carry your ID and registration slip.
+                  <p className="text-white/70 font-light leading-relaxed">
+                    Online registration required at <strong className="font-bold text-red-400">registrationandtouristcare.uk.gov.in</strong>. Medical certificate needed for pilgrims above 50 years. Always carry your ID and registration slip.
                   </p>
                 </div>
 
