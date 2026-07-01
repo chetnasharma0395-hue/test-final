@@ -286,16 +286,17 @@ export default function ValleyOfFlowersPage() {
                     <span className="text-white/80 font-light">Sedan (One Way)</span>
                     <span className="text-[#F7941D] font-black text-xl">₹10,500</span>
                   </div>
-                  <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">Dehradun to Govindghat Sedan</p>
-                </div>
-                <div className="space-y-1.5">
-                  <div className="bg-[#F7941D]/10 px-3 py-1.5 rounded-lg w-fit">
+                  <div className="flex justify-between items-center pb-3">
+                    <span className="text-white/80 font-light">SUV (One Way)</span>
                     <span className="text-[#F7941D] font-black text-xl">₹14,000</span>
                   </div>
+                  <p className="text-xs sm:text-sm text-white/70 font-light leading-relaxed">Dehradun to Govindghat</p>
+                </div>
+                <div className="space-y-1.5">
                   <p className="text-white/60 text-[10px] uppercase tracking-widest font-black pt-2">From Rishikesh</p>
                   <div className="flex justify-between items-center border-b border-white/10 pb-3">
                     <span className="text-white/80 font-light">Sedan (One Way)</span>
-                    <span className="text-[#F7941D] font-black text-xl">₹8,500</span>
+                    <span className="text-[#F7941D] font-black text-xl">₹9,500</span>
                   </div>
                   <div className="flex justify-between items-center pb-2">
                     <span className="text-white/80 font-light">SUV (One Way)</span>
