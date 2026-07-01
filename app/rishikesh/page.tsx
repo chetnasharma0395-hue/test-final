@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { getRoute, formatPrice, getRouteDisplay } from '@/lib/priceData';
-import Script from 'next/script';
 import { GEOAnswerBox } from '@/components/GEOAnswerBox';
 import { speakableSchema } from '@/lib/schema';
 import RishikeshClient from './RishikeshClient';
@@ -55,12 +54,7 @@ export default function RishikeshPage() {
     <>
       <HubSchema hubId="rishikesh" />
       {/* Speakable schema — GEO */}
-      <Script
-        id="speakable-schema-rishikesh"
-        type="application/ld+json"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema('https://uttarakhand.cab/rishikesh')) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema('https://uttarakhand.cab/rishikesh')) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       {/* GEO — Direct Answer Block (AI-crawlable, visually hidden) */}
