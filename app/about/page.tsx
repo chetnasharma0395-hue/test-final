@@ -214,7 +214,7 @@ export default function AboutPage() {
                   <Image
                     src="/assets/images/dest-kedarnath.jpg"
                     alt="Kedarnath mountain route — Uttarakhand Cab 24/7"
-                    fill priority className="object-cover"
+                    fill className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 42vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
