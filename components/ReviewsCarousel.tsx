@@ -91,6 +91,7 @@ export function ReviewsCarousel({ reviews }: { reviews: Review[] }) {
 
   return (
     <div
+      data-lenis-prevent
       className="relative w-full flex flex-col items-center"
       onPointerMove={onPointerMove}
       onMouseLeave={onPointerLeave}
