@@ -50,10 +50,10 @@ const driverTips = [
 ];
 
 const bloomCalendar = [
-  { month: 'Jun 1 – Jul 15', status: 'Early Season (Open Now)', desc: 'Park open since June 1. Trail gradually clears, first blooms appear, very few crowds. Some snow patches on upper trail in early June.', color: 'bg-yellow-50 border-yellow-200' },
-  { month: 'July 15 – Aug 15', status: 'Peak Bloom ★', desc: 'Maximum flower diversity. Blue Poppies, Brahmakamal, Cobra Lily all in bloom simultaneously.', color: 'bg-green-50 border-green-200' },
-  { month: 'Aug 15 – Sep 15', status: 'Late Bloom', desc: 'Slightly fewer flowers but clearer skies, less rain, and far fewer trekkers.', color: 'bg-blue-50 border-blue-200' },
-  { month: 'Sep 15 – Oct', status: 'Closing Season', desc: 'Autumn colours begin. Many flowers gone but peaceful atmosphere. Park closes mid-October.', color: 'bg-orange-50 border-orange-200' },
+  { month: 'Jun 1 – Jul 15', status: 'Early Season (Open Now)', desc: 'Park open since June 1. Trail gradually clears, first blooms appear, very few crowds. Some snow patches on upper trail in early June.', color: 'bg-yellow-500/10 border-yellow-500/30' },
+  { month: 'July 15 – Aug 15', status: 'Peak Bloom ★', desc: 'Maximum flower diversity. Blue Poppies, Brahmakamal, Cobra Lily all in bloom simultaneously.', color: 'bg-green-500/10 border-green-500/30' },
+  { month: 'Aug 15 – Sep 15', status: 'Late Bloom', desc: 'Slightly fewer flowers but clearer skies, less rain, and far fewer trekkers.', color: 'bg-blue-500/10 border-blue-500/30' },
+  { month: 'Sep 15 – Oct', status: 'Closing Season', desc: 'Autumn colours begin. Many flowers gone but peaceful atmosphere. Park closes mid-October.', color: 'bg-orange-500/10 border-orange-500/30' },
 ];
 
 export default function ValleyOfFlowersPage() {
@@ -183,7 +183,7 @@ export default function ValleyOfFlowersPage() {
                         <p className="font-black text-white text-sm uppercase tracking-tight">{period.month}</p>
                         <p className="text-[#F7941D] font-black text-[10px] uppercase tracking-widest">{period.status}</p>
                       </div>
-                      <div className="hidden sm:block w-px h-10 bg-gray-200 shrink-0" />
+                      <div className="hidden sm:block w-px h-10 bg-white/10 shrink-0" />
                       <p className="text-white/70 font-light text-sm leading-relaxed">{period.desc}</p>
                     </div>
                   ))}
@@ -230,7 +230,7 @@ export default function ValleyOfFlowersPage() {
                       { label: 'Ghangaria → Valley of Flowers', value: '3 km, 1.5 hrs' },
                       { label: 'Ghangaria → Hemkund Sahib', value: '6 km, 3-4 hrs' },
                     ].map((item) => (
-                      <div key={item.label} className="bg-[#1A1A1A] rounded-xl p-4 border border-blue-50">
+                      <div key={item.label} className="bg-[#1A1A1A] rounded-xl p-4 border border-white/10">
                         <p className="text-[#F7941D] font-black text-sm mb-1">{item.value}</p>
                         <p className="text-white/70 text-xs font-light">{item.label}</p>
                       </div>
@@ -240,9 +240,9 @@ export default function ValleyOfFlowersPage() {
                 <div className="bg-[#2D1515] border border-[#FCA5A5] p-6 rounded-2xl">
                   <div className="flex items-center gap-3 mb-3">
                     <AlertTriangle className="w-5 h-5 text-red-600 shrink-0" />
-                    <h3 className="font-black text-red-800 uppercase tracking-tight text-sm">Important Information</h3>
+                    <h3 className="font-black text-red-400 uppercase tracking-tight text-sm">Important Information</h3>
                   </div>
-                  <p className="text-red-900/80 font-light text-sm leading-relaxed">
+                  <p className="text-white/70 font-light text-sm leading-relaxed">
                     A forest entry permit is mandatory at Govindghat. Fee: ₹150/day (Indian nationals), ₹600/day (foreigners). Carry Aadhaar card or passport. No vehicles are allowed beyond Govindghat — horses and porters are available for hire. Plastic bags are banned inside the national park.
                   </p>
                 </div>
