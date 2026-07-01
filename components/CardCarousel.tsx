@@ -254,6 +254,7 @@ export function CardCarousel<T>({
           style={{ background: `linear-gradient(to left, ${edgeFadeBg}, transparent)` }} />
 
         <div
+          data-lenis-prevent
           style={{ cursor: isDragging ? 'grabbing' : 'grab', touchAction: 'pan-y' }}
           onMouseDown={onMouseDown}
           onMouseMove={onMouseMove}
