@@ -229,6 +229,7 @@ export function PopularRoutesCarousel({ routes }: { routes: RouteCardData[] }) {
           style={{ background: 'linear-gradient(to left, #1A1A1A, transparent)' }} />
 
         <div
+          data-lenis-prevent
           style={{ cursor: isDragging ? 'grabbing' : 'grab', touchAction: 'pan-y' }}
           onMouseDown={onMouseDown}
           onMouseMove={onMouseMove}
