@@ -21,6 +21,7 @@ export function DestinationsCarouselSection({ destinations }: { destinations: De
     <CardCarousel
       items={destinations}
       loop
+      autoPlayMs={4500}
       getKey={(dest) => dest.name}
       cardWidth={340}
       cardGap={20}
