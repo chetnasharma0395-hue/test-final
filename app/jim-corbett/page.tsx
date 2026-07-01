@@ -366,9 +366,9 @@ export default function JimCorbett() {
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                  { season: 'Nov – Feb', label: 'Peak Wildlife Season', desc: 'Dry grasslands, animals near water, excellent tiger sightings. Cool and comfortable weather.', color: 'bg-green-50 border-green-200', badge: 'Best Season' },
-                  { season: 'Mar – Jun', label: 'Hot but Rewarding', desc: 'Vegetation thins, animals visible near waterholes. April–May is best for tiger sightings. Hot days, cool mornings.', color: 'bg-yellow-50 border-yellow-200', badge: 'Good Season' },
-                  { season: 'Jul – Oct', label: 'Monsoon Season', desc: 'Most zones close. Only Jhirna and Dhela zones open year-round. Dense greenery, fewer tourists.', color: 'bg-blue-50 border-blue-200', badge: 'Limited Access' },
+                  { season: 'Nov – Feb', label: 'Peak Wildlife Season', desc: 'Dry grasslands, animals near water, excellent tiger sightings. Cool and comfortable weather.', color: 'bg-green-500/10 border-green-500/30', badge: 'Best Season' },
+                  { season: 'Mar – Jun', label: 'Hot but Rewarding', desc: 'Vegetation thins, animals visible near waterholes. April–May is best for tiger sightings. Hot days, cool mornings.', color: 'bg-yellow-500/10 border-yellow-500/30', badge: 'Good Season' },
+                  { season: 'Jul – Oct', label: 'Monsoon Season', desc: 'Most zones close. Only Jhirna and Dhela zones open year-round. Dense greenery, fewer tourists.', color: 'bg-blue-500/10 border-blue-500/30', badge: 'Limited Access' },
                 ].map((s) => (
                   <div key={s.season} className={`p-6 rounded-[2rem] border ${s.color} flex flex-col`}>
                     <span className="text-[10px] font-black uppercase tracking-widest text-[#F7941D] mb-2">{s.badge}</span>
