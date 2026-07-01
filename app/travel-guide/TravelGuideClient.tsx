@@ -138,12 +138,12 @@ export default function TravelGuideClient() {
             <h2 className="font-heading font-black text-4xl md:text-5xl text-white uppercase tracking-tighter mb-8">Road Conditions Guide</h2>
 
             <div className="bg-[#2D1515] border border-[#FCA5A5] p-8 rounded-[2rem] flex flex-col md:flex-row items-start gap-6 hover:shadow-md transition-shadow mb-12">
-              <div className="w-12 h-12 rounded-xl bg-red-100 flex items-center justify-center shrink-0">
-                <AlertTriangle className="w-6 h-6 text-red-600" />
+              <div className="w-12 h-12 rounded-xl bg-red-500/20 flex items-center justify-center shrink-0">
+                <AlertTriangle className="w-6 h-6 text-red-400" />
               </div>
               <div>
-                <p className="font-black text-red-800 uppercase tracking-widest text-sm mb-2">Monsoon Warning (July-August)</p>
-                <p className="text-red-900/70 font-light leading-relaxed">Mountain roads can close due to landslides during monsoon. Always check road status before starting. Our drivers monitor BRO (Border Roads Organisation) updates and will route around closures.</p>
+                <p className="font-black text-red-400 uppercase tracking-widest text-sm mb-2">Monsoon Warning (July-August)</p>
+                <p className="text-white/70 font-light leading-relaxed">Mountain roads can close due to landslides during monsoon. Always check road status before starting. Our drivers monitor BRO (Border Roads Organisation) updates and will route around closures.</p>
               </div>
             </div>
 
@@ -170,9 +170,9 @@ export default function TravelGuideClient() {
                         <td className="p-6 md:p-8 font-black uppercase tracking-tighter border-r border-white/10">{r.route}</td>
                         <td className="p-6 md:p-8 border-r border-white/10 text-center">
                           <span className={`text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full shadow-sm ${
-                            r.cond === 'Excellent' ? 'bg-green-100 text-green-800' :
-                            r.cond === 'Good' ? 'bg-blue-100 text-blue-800' :
-                            'bg-amber-100 text-amber-800'
+                            r.cond === 'Excellent' ? 'bg-green-500/15 text-green-400' :
+                            r.cond === 'Good' ? 'bg-blue-500/15 text-blue-400' :
+                            'bg-amber-500/15 text-amber-400'
                           }`}>
                             {r.cond}
                           </span>
