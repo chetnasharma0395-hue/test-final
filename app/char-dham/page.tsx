@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { Phone, Check, MessageCircle, AlertTriangle, MapPin, Clock, Car, Calendar, Landmark, Star } from 'lucide-react';
 import { BookingCTA, DriverIntelligenceBox, TrustBanner, RouteInfoBox } from '@/components/CTABoxes';
 import { FAQSection } from '@/components/FAQ';
-import Script from 'next/script';
 import { speakableSchema } from '@/lib/schema';
 import { GEOAnswerBox } from '@/components/GEOAnswerBox';
 
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
 // ----------------------------------------------------------------------
 const charDhamFAQs = [
   { question: 'What is the best taxi package for Char Dham Yatra in 2026?', answer: 'Uttarakhand Cab 24/7 offers the most reliable Char Dham taxi package starting at ₹40,000 for a 10-day complete circuit covering Yamunotri, Gangotri, Kedarnath, and Badrinath. All packages include an experienced local driver, AC vehicle, and flexible itinerary. The package covers approximately 1,200 km across some of the most challenging Himalayan roads in India.' },
-  { question: 'How much does a Char Dham Yatra taxi package cost in 2026?', answer: 'A complete Char Dham Yatra taxi package from Dehradun costs ₹40,000 to ₹55,000 depending on vehicle type and itinerary duration. Sedan packages start at ₹40,000 and SUV (Innova Crysta) packages start at ₹55,000 for a 10-day tour. This covers driver charges, fuel, and vehicle costs — pilgrim expenses like accommodation and helicopter are separate.' },
+  { question: 'How much does a Char Dham Yatra taxi package cost in 2026?', answer: 'A complete Char Dham Yatra taxi package from Dehradun costs ₹40,000 to ₹80,000 depending on vehicle type and itinerary duration. Sedan packages start at ₹40,000 and SUV (Innova Crysta) packages range from ₹75,000 to ₹80,000 for a 10-day tour. This covers driver charges, fuel, and vehicle costs — pilgrim expenses like accommodation and helicopter are separate.' },
   { question: 'How many days does the Char Dham Yatra take by taxi?', answer: 'The standard Char Dham Yatra takes 10–12 days by taxi from Dehradun. The circuit covers Yamunotri (Day 1–2), Gangotri (Day 3–4), Kedarnath (Day 5–7 including trek), and Badrinath (Day 8–10), returning to Dehradun on Day 11–12. Duration can be extended for senior pilgrims or reduced if using helicopters for Kedarnath.' },
   { question: 'Which vehicle is best for Char Dham Yatra?', answer: 'An SUV — specifically the Toyota Innova Crysta — is the best vehicle for Char Dham Yatra. The high ground clearance handles mountain roads, the spacious interior is comfortable for passengers over long distances, and the powerful engine manages steep inclines. Uttarakhand Cab 24/7 recommends SUVs for all Char Dham circuits, especially for groups of 4 or more, and operates Tempo Traveller and Force Urbania vehicles for larger pilgrimage groups. See our full vehicle guide at uttarakhand.cab/best-vehicle-for-char-dham-yatra.' },
   { question: 'Is registration required for all four Char Dhams in 2026?', answer: 'Yes, mandatory biometric registration is required for all four dhams. Register at registrationandtouristcare.uk.gov.in before departure. Each shrine has a daily visitor cap, so early registration (especially for Kedarnath) is essential. Your Uttarakhand Cab 24/7 driver will guide you through each checkpost and registration verification point.' },
@@ -212,7 +211,7 @@ const routeDetails = {
   via: 'Yamunotri → Gangotri → Kedarnath → Badrinath',
   distance: '~1,200 km total',
   time: '10 days (12 days with buffer)',
-  fare: '₹40,000 – ₹55,000 (depending on vehicle)',
+  fare: '₹40,000 – ₹80,000 (depending on vehicle)',
   roadCondition: 'Good to moderate, some landslide-prone sections',
   bestStartTime: 'May-June or September-October',
   landmarks: 'All four dhams, five prayags, Himalayan peaks'
@@ -246,12 +245,7 @@ export default function CharDham() {
       
       {/* 1. HERO SECTION */}
             {/* Speakable schema — GEO: marks citable sections for AI models */}
-      <Script
-        id="speakable-schema-char-dham"
-        type="application/ld+json"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema('https://uttarakhand.cab/char-dham')) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema('https://uttarakhand.cab/char-dham')) }} />
       <section className="relative pt-40 pb-32 px-4 sm:px-6 lg:px-8 bg-[#121212] overflow-hidden text-center">
         <div className="absolute inset-0 opacity-30">
           <Image src="/assets/images/dest-char-dham.jpg" alt="Char Dham Yatra taxi" fill className="object-cover" sizes="100vw" priority />
@@ -450,13 +444,13 @@ export default function CharDham() {
                       <td className="p-6 font-black uppercase tracking-tight">Char Dham Yatra (All 4 Dhams)</td>
                       <td className="p-6 text-center text-white/70">10 days</td>
                       <td className="p-6 text-center text-[#F7941D] text-lg font-black">₹40,000</td>
-                      <td className="p-6 text-center text-lg font-black">₹55,000</td>
+                      <td className="p-6 text-center text-lg font-black">₹75,000–80,000</td>
                     </tr>
                     <tr className="border-b border-white/10 bg-[#1A1A1A]">
                       <td className="p-6 font-black uppercase tracking-tight">Do Dham (Kedarnath + Badrinath)</td>
                       <td className="p-6 text-center text-white/70">5-6 days</td>
-                      <td className="p-6 text-center text-base">₹15,000</td>
-                      <td className="p-6 text-center text-base">₹20,000</td>
+                      <td className="p-6 text-center text-base">₹28,000</td>
+                      <td className="p-6 text-center text-base">₹45,000</td>
                     </tr>
                     <tr className="border-b border-white/10 bg-[#1A1A1A]/50">
                       <td className="p-6 font-black uppercase tracking-tight">Do Dham (Yamunotri + Gangotri)</td>
@@ -483,7 +477,7 @@ export default function CharDham() {
               </div>
               <div className="p-8 rounded-[1.5rem] bg-[#1A1A1A] text-center border border-white/10 hover:border-[#F7941D]/30 transition-colors">
                 <p className="font-black uppercase tracking-widest text-white text-xs mb-2">SUV</p>
-                <p className="font-black text-[#F7941D] text-3xl">₹55,000</p>
+                <p className="font-black text-[#F7941D] text-3xl">₹75,000</p>
               </div>
               <div className="p-8 rounded-[1.5rem] bg-[#1A1A1A] text-center border border-[#333537] shadow-xl">
                 <p className="font-black uppercase tracking-widest text-white/70 text-xs mb-2">Tempo Traveller</p>
