@@ -22,12 +22,13 @@ export function FloatingWhatsApp() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Auto-expand hint after 4s
+  // Auto-expand hint after 4s (only once, and never again after the user dismisses it)
+  const [hintDismissed, setHintDismissed] = useState(false);
   useEffect(() => {
-    if (!visible) return;
+    if (!visible || hintDismissed) return;
     const t = setTimeout(() => setExpanded(true), 4000);
     return () => clearTimeout(t);
-  }, [visible]);
+  }, [visible, hintDismissed]);
 
   // Set initial position (bottom-right corner)
   useEffect(() => {
@@ -90,6 +91,7 @@ export function FloatingWhatsApp() {
     // If barely moved → treat as a tap → toggle expanded
     if (!hasDragged) {
       setExpanded(prev => !prev);
+      setHintDismissed(true);
     }
     setHasDragged(false);
   }, [hasDragged]);
@@ -133,8 +135,8 @@ export function FloatingWhatsApp() {
               <p className="text-[10px] font-black uppercase tracking-widest text-white">Available Now</p>
             </div>
             <button
-              onClick={() => setExpanded(false)}
-              className="text-gray-400 hover:text-gray-600 transition-colors"
+              onClick={() => { setExpanded(false); setHintDismissed(true); }}
+              className="text-gray-400 hover:text-white transition-colors"
             >
               <X className="w-4 h-4" />
             </button>
@@ -154,7 +156,7 @@ export function FloatingWhatsApp() {
             </a>
             <a
               href="tel:+919258912169"
-              className="flex items-center justify-center gap-2 py-3 bg-[#1A1A1A] text-white font-black text-[10px] uppercase tracking-widest rounded-xl hover:bg-gray-200 transition-colors"
+              className="flex items-center justify-center gap-2 py-3 bg-[#1A1A1A] text-white font-black text-[10px] uppercase tracking-widest rounded-xl border border-white/10 hover:bg-[#2a2a2a] transition-colors"
             >
               <Phone className="w-4 h-4" /> Call Now
             </a>
