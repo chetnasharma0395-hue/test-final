@@ -44,7 +44,7 @@ const driverTips = [
 const services = [
   { service: 'Airport Transfer', desc: 'Jolly Grant pickup/drop. Flight tracking.', price: '₹1,300 - ₹2,000', icon: Plane },
   { service: 'Railway Station', desc: 'Dehradun station to hotel or Mussoorie transfers.', price: 'From ₹500', icon: Train },
-  { service: 'Local Sightseeing', desc: "8-hour packages for Robber's Cave, FRI, etc.", price: '₹1,700/day', icon: Mountain },
+  { service: 'Local Sightseeing', desc: "8-hour packages for Robber's Cave, FRI, etc.", price: '₹3,000/day', icon: Mountain },
 ];
 
 export default function DehradunClient() {
@@ -164,7 +164,7 @@ export default function DehradunClient() {
               <motion.div {...fadeInUp}>
                 <h2 className="font-heading font-black text-3xl text-white uppercase tracking-tighter mb-6">Top Attractions for Local Sightseeing</h2>
                 <p className="mb-8">
-                  Book our full-day (8 hours / 80 km) local sightseeing taxi package starting at just ₹1,200 to comfortably explore Dehradun&apos;s famous landmarks:
+                  Book our full-day (8 hours / 80 km) local sightseeing taxi package starting at just ₹3,000 to comfortably explore Dehradun&apos;s famous landmarks:
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -205,7 +205,7 @@ export default function DehradunClient() {
 
               <DriverIntelligenceBox tips={driverTips} />
 
-              <BookingCTA destination="Dehradun" fare="₹1,200/day" />
+              <BookingCTA destination="Dehradun" fare="₹3,000/day" />
 
               <FAQSection faqs={dehradunFAQs} title="Dehradun Taxi FAQs" />
             </div>
@@ -229,7 +229,7 @@ export default function DehradunClient() {
                     <span className="text-white/70">Airport to Mussoorie</span><span className="text-[#F7941D] font-black text-lg">₹3,000</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-white/10 pb-4">
-                    <span className="text-white/70">Full Day Sightseeing</span><span className="text-[#F7941D] font-black text-lg">₹1,700</span>
+                    <span className="text-white/70">Full Day Sightseeing</span><span className="text-[#F7941D] font-black text-lg">₹3,000</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-white/10 pb-4">
                     <span className="text-white/70">City to Mussoorie</span><span className="text-[#F7941D] font-black text-lg">₹2,000</span>
