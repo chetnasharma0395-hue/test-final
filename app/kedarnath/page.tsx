@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { Phone, AlertTriangle, MapPin, Clock, Car, Mountain, ShieldCheck, CheckCircle2, MessageCircle } from 'lucide-react';
 import { BookingCTA, DriverIntelligenceBox, RouteInfoBox, TrustBanner } from '@/components/CTABoxes';
 import { FAQSection } from '@/components/FAQ';
-import Script from 'next/script';
 import { speakableSchema } from '@/lib/schema';
 import { GEOAnswerBox } from '@/components/GEOAnswerBox';
 import { QuickTravelSummary } from '@/components/QuickTravelSummary';
@@ -79,12 +78,7 @@ export default function Kedarnath() {
 
       {/* 1. HERO SECTION */}
             {/* Speakable schema — GEO: marks citable sections for AI models */}
-      <Script
-        id="speakable-schema-kedarnath"
-        type="application/ld+json"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema('https://uttarakhand.cab/kedarnath')) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema('https://uttarakhand.cab/kedarnath')) }} />
       <section className="relative pt-40 pb-32 px-4 sm:px-6 lg:px-8 bg-[#121212] overflow-hidden text-left">
         <div className="absolute inset-0 opacity-40">
           <Image src="/assets/images/dest-kedarnath.jpg" alt="Kedarnath taxi service" fill className="object-cover" sizes="100vw" priority />
