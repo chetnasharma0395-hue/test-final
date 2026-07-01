@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import Image from 'next/image';
-import Script from 'next/script';
 import { MapPin, Shield, Check, Car, HelpCircle, Phone, Clock } from 'lucide-react';
 import { StrategicCTA } from '@/components/CTABoxes';
 import { FAQSection } from '@/components/FAQ';
@@ -108,12 +107,7 @@ export default function DistanceGuide() {
         />
       </section>
     <>
-      <Script
-        id="distance-guide-faq-schema"
-        type="application/ld+json"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Hero Header */}
       <section className="relative bg-navy text-white pt-32 pb-16 px-4 sm:px-6 lg:px-8 overflow-hidden">
