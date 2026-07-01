@@ -135,11 +135,11 @@ const nextConfig = {
       // NOTE: '/services/jolly-grant-airport-taxi-service' is intentionally NOT
       // redirected. lib/schema.ts (organizationSchema OfferCatalog) lists it as a
       // live canonical URL, so redirecting it would create a contradictory SEO signal.
-      {
-        source: '/services/badrinath-taxi-service',
-        destination: '/badrinath',
-        permanent: true,
-      },
+      //
+      // NOTE: '/services/badrinath-taxi-service' is also intentionally NOT redirected
+      // (removed 2026) — it has a live, fully-built entry in data/routes.json and is
+      // submitted in sitemap.ts. Redirecting it made a real built page permanently
+      // unreachable while still being submitted to Google as a URL that just 301s.
       {
         source: '/uttarakhand-taxi-service/jim-corbett-taxi-service',
         destination: '/jim-corbett',
