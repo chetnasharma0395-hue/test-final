@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import Image from 'next/image';
 import Link from 'next/link';
 import { QuoteWidget } from '@/components/QuoteWidget';
@@ -75,7 +74,7 @@ export default function BookTaxiPage() {
 
   return (
     <main className="bg-[#1A1A1A] selection:bg-[#F7941D]/30">
-      <Script id="taxi-faq-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       
       {/* 1. HERO SECTION: 100% SSR */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 bg-[#121212] overflow-hidden">
