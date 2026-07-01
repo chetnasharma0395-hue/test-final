@@ -5,7 +5,6 @@ import Image from 'next/image';
 import { Phone, MapPin, Clock, MessageCircle, CheckCircle2, Plane, Train, Mountain, Car, Info, Map } from 'lucide-react';
 import { BookingCTA, DriverIntelligenceBox, RouteInfoBox, TransportComparison, TrustBanner } from '@/components/CTABoxes';
 import { FAQSection } from '@/components/FAQ';
-import Script from 'next/script';
 import { speakableSchema } from '@/lib/schema';
 import { GEOAnswerBox } from '@/components/GEOAnswerBox';
 import { QuickTravelSummary } from '@/components/QuickTravelSummary';
@@ -89,12 +88,7 @@ export default function Mussoorie() {
 
       {/* 1. HERO SECTION */}
             {/* Speakable schema — GEO: marks citable sections for AI models */}
-      <Script
-        id="speakable-schema-mussoorie"
-        type="application/ld+json"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema('https://uttarakhand.cab/mussoorie')) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema('https://uttarakhand.cab/mussoorie')) }} />
       <section className="relative pt-40 pb-32 px-4 sm:px-6 lg:px-8 bg-[#121212] overflow-hidden text-left">
         <div className="absolute inset-0 opacity-40">
           <Image src="/assets/images/dest-mussoorie.jpg" alt="Mussoorie Taxi Service" fill className="object-cover" sizes="100vw" priority />
