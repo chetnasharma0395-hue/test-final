@@ -27,7 +27,7 @@ export default function FleetImage({ images, fallbackAlt, className }: FleetImag
   if (!image) {
     // No real photos yet for this vehicle — friendly placeholder instead of a broken image
     return (
-      <div className={`flex flex-col items-center justify-center gap-2 bg-gray-100 text-gray-400 ${className ?? ''}`}>
+      <div className={`flex flex-col items-center justify-center gap-2 bg-[#1A1A1A] text-white/30 ${className ?? ''}`}>
         <Car className="w-10 h-10" />
         <span className="text-xs font-bold uppercase tracking-widest">Photos coming soon</span>
       </div>
