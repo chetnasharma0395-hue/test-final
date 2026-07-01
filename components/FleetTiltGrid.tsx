@@ -244,6 +244,7 @@ export function FleetTiltGrid({ fleet }: { fleet: FleetOptionData[] }) {
 
         {/* Gesture capture layer */}
         <div
+          data-lenis-prevent
           style={{ cursor: isDragging ? 'grabbing' : 'grab', touchAction: 'pan-y' }}
           onMouseDown={onMouseDown}
           onMouseMove={onMouseMove}
