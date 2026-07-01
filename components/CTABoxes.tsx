@@ -97,7 +97,7 @@ export function RouteInfoBox({ from, to, distance, time, fare }: RouteInfoProps)
           { icon: Clock, label: 'Est. Time', value: time },
           { icon: Banknote, label: 'Taxi Fare', value: fare, highlight: true }
         ].map((stat, i) => (
-          <div key={i} className="bg-[#1A1A1A] p-5 rounded-2xl shadow-sm text-center border border-gray-50 flex flex-col items-center justify-center">
+          <div key={i} className="bg-[#1A1A1A] p-5 rounded-2xl shadow-sm text-center border border-white/10 flex flex-col items-center justify-center">
             <div className={`w-10 h-10 rounded-full flex items-center justify-center mb-3 ${stat.highlight ? 'bg-[#F7941D]/10' : 'bg-[#1A1A1A]'}`}>
               <stat.icon className={`w-5 h-5 ${stat.highlight ? 'text-[#F7941D]' : 'text-white'}`} />
             </div>
@@ -144,7 +144,7 @@ export function TransportComparison({ route, busFare, busTime, taxiFare, taxiTim
             </thead>
             <tbody>
               {/* Bus Option (De-emphasized) */}
-              <tr className="border-b border-gray-50 text-white/70">
+              <tr className="border-b border-white/10 text-white/70">
                 <td className="p-6 font-bold flex items-center gap-3">
                   <div className="w-2 h-2 rounded-full bg-gray-300" /> Shared Bus
                 </td>
