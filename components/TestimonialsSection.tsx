@@ -1,7 +1,7 @@
 'use client';
 
 import { Star } from 'lucide-react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { ReviewsCarousel, type Review } from './ReviewsCarousel';
 
 const reviews: Review[] = [
@@ -56,6 +56,7 @@ const reviews: Review[] = [
 ];
 
 export function TestimonialsSection() {
+  const reduce = useReducedMotion();
   return (
     <section className="py-24 md:py-32 bg-[#1A1A1A] overflow-hidden">
       <div className="max-w-page mx-auto px-6 sm:px-8 lg:px-10">
@@ -63,10 +64,10 @@ export function TestimonialsSection() {
         {/* ── Heading (reveal on scroll) ───────────────────────────── */}
         <motion.div
           className="text-center mb-16"
-          initial={{ opacity: 0 }}
+          initial={{ opacity: reduce ? 1 : 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true, amount: 0.4 }}
-          transition={{ staggerChildren: 0.12 }}
+          transition={{ staggerChildren: reduce ? 0 : 0.12 }}
         >
           <motion.p
             className="text-[#F7941D] text-xs font-semibold uppercase tracking-widest mb-4"
