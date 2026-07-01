@@ -11,7 +11,6 @@
  */
 
 import Link from 'next/link';
-import Script from 'next/script';
 import { ChevronRight } from 'lucide-react';
 import { breadcrumbSchema, type BreadcrumbSchemaItem } from '@/lib/schema';
 
@@ -42,10 +41,8 @@ export function BreadcrumbNav({ items, dark = true }: BreadcrumbNavProps) {
   return (
     <>
       {/* ── Machine-readable BreadcrumbList — injected into <head> ── */}
-      <Script
-        id={`breadcrumb-schema-${items[items.length - 1]?.url ?? 'home'}`}
+      <script
         type="application/ld+json"
-        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
       />
 
