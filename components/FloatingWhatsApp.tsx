@@ -166,6 +166,7 @@ export function FloatingWhatsApp() {
 
       {/* Main FAB — draggable */}
       <div
+        data-lenis-prevent
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={onPointerUp}
