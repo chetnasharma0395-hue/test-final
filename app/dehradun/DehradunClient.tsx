@@ -226,7 +226,7 @@ export default function DehradunClient() {
                     <span className="text-white/70">Airport to City</span><span className="text-[#F7941D] font-black text-lg">₹1,300</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-white/10 pb-4">
-                    <span className="text-white/70">Airport to Mussoorie</span><span className="text-[#F7941D] font-black text-lg">₹2,500</span>
+                    <span className="text-white/70">Airport to Mussoorie</span><span className="text-[#F7941D] font-black text-lg">₹3,000</span>
                   </div>
                   <div className="flex justify-between items-center border-b border-white/10 pb-4">
                     <span className="text-white/70">Full Day Sightseeing</span><span className="text-[#F7941D] font-black text-lg">₹1,700</span>
