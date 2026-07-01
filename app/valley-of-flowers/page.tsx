@@ -219,7 +219,7 @@ export default function ValleyOfFlowersPage() {
                 <h2 className="font-heading font-black text-3xl md:text-4xl text-white uppercase tracking-tighter mb-6">
                   After Govindghat — The Trek
                 </h2>
-                <div className="bg-[#111827] border border-blue-100 rounded-2xl p-6 md:p-8 mb-6">
+                <div className="bg-[#111827] border border-white/10 rounded-2xl p-6 md:p-8 mb-6">
                   <div className="flex items-start gap-3 mb-4">
                     <Flower2 className="w-5 h-5 text-white shrink-0 mt-0.5" />
                     <p className="text-white font-black uppercase text-xs tracking-widest">Trek from Govindghat</p>
