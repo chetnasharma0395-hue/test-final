@@ -22,7 +22,7 @@ const exploreLinks = [
 const serviceLinks = [
   { name: 'Jolly Grant Airport Taxi',    href: '/services/jolly-grant-airport-taxi-service' },
   { name: 'Dehradun → Delhi',            href: '/services/dehradun-to-delhi-taxi-service' },
-  { name: 'Haridwar → Kedarnath',        href: '/services/kedarnath-taxi-service' },
+  { name: 'Haridwar → Kedarnath',        href: '/haridwar-to-kedarnath' },
   { name: 'Dehradun → Mussoorie',        href: '/services/dehradun-to-mussoorie-taxi' },
   { name: 'Dehradun → Nainital',         href: '/services/nainital-taxi-service' },
   { name: 'Char Dham Yatra',             href: '/services/kedarnath-chardham-yatra' },
