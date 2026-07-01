@@ -1,8 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Phone, Mail, MapPin, Clock, MessageCircle, Send, CheckCircle2 } from 'lucide-react';
+import { Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
 import { FAQSection } from '@/components/FAQ';
 import { TiltCard } from '@/components/TiltCard';
+import { ContactWhatsAppForm } from '@/components/ContactWhatsAppForm';
 
 export const metadata: Metadata = {
   title: 'Contact Us | Taxi Booking',
@@ -193,76 +194,7 @@ export default function Contact() {
                     Prefer not to call? Fill out the details below and our team will get back to you with a transparent, fixed-price quote.
                   </p>
 
-                  {/* NOTE: Formspree Action Preserved */}
-                  <form className="space-y-6" action="https://formspree.io/f/xreonpak" method="POST">
-                    
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-[10px] font-black uppercase tracking-widest text-white/80 ml-1">Full Name</label>
-                      <input 
-                        type="text" 
-                        id="name" 
-                        name="name" 
-                        required 
-                        className="w-full bg-[#121212] border border-[#333537] rounded-xl px-5 py-4 text-white placeholder:text-white/30 focus:outline-none focus:border-[#F7941D] focus:ring-4 focus:ring-[#F7941D]/10 transition-all text-sm font-medium"
-                        placeholder="Enter your name"
-                      />
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                      <div className="space-y-2">
-                        <label htmlFor="phone" className="text-[10px] font-black uppercase tracking-widest text-white/80 ml-1">Phone / WhatsApp Number</label>
-                        <input 
-                          type="tel" 
-                          id="phone" 
-                          name="phone" 
-                          required 
-                          className="w-full bg-[#121212] border border-[#333537] rounded-xl px-5 py-4 text-white placeholder:text-white/30 focus:outline-none focus:border-[#F7941D] focus:ring-4 focus:ring-[#F7941D]/10 transition-all text-sm font-medium"
-                          placeholder="+91 XXXXX XXXXX"
-                        />
-                      </div>
-                      <div className="space-y-2">
-                        <label htmlFor="date" className="text-[10px] font-black uppercase tracking-widest text-white/80 ml-1">Travel Date</label>
-                        <input 
-                          type="date" 
-                          id="date" 
-                          name="date" 
-                          className="w-full bg-[#121212] border border-[#333537] rounded-xl px-5 py-4 text-white placeholder:text-white/30 focus:outline-none focus:border-[#F7941D] focus:ring-4 focus:ring-[#F7941D]/10 transition-all text-sm font-medium [color-scheme:dark]"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <label htmlFor="route" className="text-[10px] font-black uppercase tracking-widest text-white/80 ml-1">Route / Destinations Needed</label>
-                      <input 
-                        type="text" 
-                        id="route" 
-                        name="route" 
-                        required 
-                        className="w-full bg-[#121212] border border-[#333537] rounded-xl px-5 py-4 text-white placeholder:text-white/30 focus:outline-none focus:border-[#F7941D] focus:ring-4 focus:ring-[#F7941D]/10 transition-all text-sm font-medium"
-                        placeholder="e.g. Dehradun Airport to Mussoorie"
-                      />
-                    </div>
-
-                    <div className="space-y-2">
-                      <label htmlFor="message" className="text-[10px] font-black uppercase tracking-widest text-white/80 ml-1">Additional Details (Optional)</label>
-                      <textarea 
-                        id="message" 
-                        name="message" 
-                        rows={4}
-                        className="w-full bg-[#121212] border border-[#333537] rounded-xl px-5 py-4 text-white placeholder:text-white/30 focus:outline-none focus:border-[#F7941D] focus:ring-4 focus:ring-[#F7941D]/10 transition-all text-sm font-medium resize-none"
-                        placeholder="Number of passengers, vehicle preference, specific pickup time..."
-                      ></textarea>
-                    </div>
-
-                    <button type="submit" className="w-full bg-[#F7941D] hover:bg-[#D97E10] hover:shadow-[0_0_25px_-5px_#F7941D] text-white font-black text-sm uppercase tracking-widest py-5 rounded-xl transition-all flex items-center justify-center gap-3 mt-4">
-                      <Send className="w-5 h-5" /> Request Quote
-                    </button>
-
-                    <div className="flex items-center justify-start gap-3 mt-6 pt-6 border-t border-white/10 text-white/50 text-xs font-light">
-                      <CheckCircle2 className="w-5 h-5 text-[#25D366] shrink-0" />
-                      <span>Your information is secure and never shared with third parties.</span>
-                    </div>
-                  </form>
+                  <ContactWhatsAppForm />
                 </div>
               </div>
             </div>
