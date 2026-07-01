@@ -36,9 +36,6 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
         // Lower = each swipe moves less distance, i.e. a slower, more
         // deliberate scroll feel (default 2).
         touchMultiplier: 1.2,
-        // Lower = momentum settles faster after you lift your finger, so it
-        // reads as controlled rather than "flingy" (default 35).
-        touchInertiaMultiplier: 24,
       });
 
       const raf = (time: number) => {
