@@ -3,19 +3,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { useFadeInUp } from '@/components/motion/MotionKit';
 import { Phone, MapPin, Plane, Mountain, Car, MessageCircle, CheckCircle2, Train, Clock, ArrowRight } from 'lucide-react';
 
 import { BookingCTA, DriverIntelligenceBox, TrustBanner } from '@/components/CTABoxes';
 import { GEOAnswerBox } from '@/components/GEOAnswerBox';
 import { FAQSection } from '@/components/FAQ';
 import { dehradunFAQs } from './data';
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.7, ease: "easeOut" }
-} as const;
 
 // ----------------------------------------------------------------------
 // DATA ARRAYS (100% PRESERVED FOR SEO)
@@ -48,6 +42,7 @@ const services = [
 ];
 
 export default function DehradunClient() {
+  const fadeInUp = useFadeInUp();
   return (
     <div className="bg-[#1A1A1A] selection:bg-[#F7941D]/30">
 
