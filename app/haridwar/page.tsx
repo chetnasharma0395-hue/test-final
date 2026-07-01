@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { AuroraGlow } from '@/components/motion';
 import { getRoute, formatPrice, getRouteDisplay } from '@/lib/priceData';
-import Script from 'next/script';
 import { GEOAnswerBox } from '@/components/GEOAnswerBox';
 import { speakableSchema } from '@/lib/schema';
 import Link from 'next/link';
@@ -95,12 +94,7 @@ export default function Haridwar() {
       
       {/* 1. HERO SECTION */}
             {/* Speakable schema — GEO */}
-      <Script
-        id="speakable-schema-haridwar"
-        type="application/ld+json"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema('https://uttarakhand.cab/haridwar')) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema('https://uttarakhand.cab/haridwar')) }} />
       <section className="relative pt-40 pb-32 px-4 sm:px-6 lg:px-8 bg-[#121212] overflow-hidden text-left">
         <div className="absolute inset-0 opacity-40">
           <Image src="/assets/images/dest-rishikesh.jpg" alt="Haridwar Taxi Service" fill className="object-cover" sizes="100vw" priority />
