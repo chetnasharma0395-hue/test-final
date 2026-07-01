@@ -39,6 +39,21 @@ const offset: Record<Direction, { x: number; y: number }> = {
   none: { x: 0, y: 0 },
 };
 
+/* ─────────────────────────────────────────────
+   FADE-IN-UP — reduced-motion-aware replacement for the
+   `const fadeInUp = {...}` pattern duplicated across several page files.
+   Usage: const fadeInUp = useFadeInUp(); <motion.div {...fadeInUp}>
+   ───────────────────────────────────────────── */
+export function useFadeInUp() {
+  const reduce = useReducedMotion();
+  return {
+    initial: { opacity: 0, y: reduce ? 0 : 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: reduce ? 0 : 0.7, ease: 'easeOut' as const },
+  };
+}
+
 export function Reveal({
   children,
   direction = 'up',
