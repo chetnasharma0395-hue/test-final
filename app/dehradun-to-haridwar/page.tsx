@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { AuroraGlow } from '@/components/motion';
 import Link from 'next/link';
 import Image from 'next/image';
-import Script from 'next/script';
 import { Phone, MapPin, Clock, MessageCircle, CheckCircle2, ShieldCheck, Car, Mountain, Info } from 'lucide-react';
 import { BookingCTA, DriverIntelligenceBox, RouteInfoBox, TrustBanner, StrategicCTA } from '@/components/CTABoxes';
 import { FAQSection } from '@/components/FAQ';
@@ -59,8 +58,8 @@ export default function Page() {
 
   return (
     <div className="bg-[#1A1A1A] min-h-screen selection:bg-[#F7941D]/30">
-      <Script id="faq-schema-dehradun-to-haridwar" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <Script id="speakable-schema-dehradun-to-haridwar" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema('https://uttarakhand.cab/dehradun-to-haridwar')) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema('https://uttarakhand.cab/dehradun-to-haridwar')) }} />
 
       {/* 1. HERO */}
       <section className="relative pt-40 pb-32 px-4 sm:px-6 lg:px-8 bg-[#121212] overflow-hidden text-left">
