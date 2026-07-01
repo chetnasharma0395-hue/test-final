@@ -398,7 +398,7 @@ export default function Badrinath() {
             <DriverIntelligenceBox tips={driverTips} />
 
             {/* Yatra Registration Alert */}
-            <div className="bg-amber-50 border border-amber-200 p-8 rounded-[2rem] flex gap-5 items-start">
+            <div className="bg-amber-500/10 border border-amber-500/30 p-8 rounded-[2rem] flex gap-5 items-start">
               <AlertTriangle className="w-6 h-6 text-amber-500 shrink-0 mt-1" />
               <div>
                 <h3 className="font-black text-white text-lg mb-2">Yatra Registration is Mandatory</h3>
@@ -409,7 +409,7 @@ export default function Badrinath() {
                   href="https://registrationandtouristcare.uk.gov.in"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-amber-700 hover:text-amber-900 transition-colors"
+                  className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-amber-400 hover:text-amber-300 transition-colors"
                 >
                   Register for Yatra →
                 </a>
