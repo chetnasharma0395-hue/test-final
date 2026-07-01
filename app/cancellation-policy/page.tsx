@@ -82,12 +82,12 @@ export default function CancellationPolicy() {
 
           {/* Important Notice */}
           <div className="bg-[#2D1515] border border-[#FCA5A5] p-6 md:p-8 rounded-[2rem] shadow-sm flex flex-col sm:flex-row items-start gap-4 hover:shadow-md transition-shadow">
-            <div className="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center shrink-0">
-              <AlertCircle className="w-6 h-6 text-red-600" />
+            <div className="w-12 h-12 rounded-full bg-red-500/20 flex items-center justify-center shrink-0">
+              <AlertCircle className="w-6 h-6 text-red-400" />
             </div>
             <div>
-              <h3 className="font-black text-red-800 uppercase tracking-widest text-sm mb-2">Strict No-Refund Policy</h3>
-              <p className="text-red-900/80 text-sm md:text-base font-light leading-relaxed">
+              <h3 className="font-black text-red-400 uppercase tracking-widest text-sm mb-2">Strict No-Refund Policy</h3>
+              <p className="text-white/70 text-sm md:text-base font-light leading-relaxed">
                 No cash refunds will be provided under any circumstances. Cancellations are only eligible to receive Credit Notes as outlined in the specific timelines below.
               </p>
             </div>
@@ -104,10 +104,10 @@ export default function CancellationPolicy() {
               {policies.map((p) => (
                 <div key={p.timing} className={`p-6 rounded-[1.5rem] border transition-colors duration-300 group ${
                   p.color === 'green'
-                    ? 'border-green-100 bg-green-50/30 hover:border-green-300 hover:bg-green-50/50'
+                    ? 'border-green-500/20 bg-green-500/5 hover:border-green-500/40 hover:bg-green-500/10'
                     : p.color === 'amber'
-                    ? 'border-amber-100 bg-amber-50/30 hover:border-amber-300 hover:bg-amber-50/50'
-                    : 'border-red-100 bg-red-50/30 hover:border-red-300 hover:bg-red-50/50'
+                    ? 'border-amber-500/20 bg-amber-500/5 hover:border-amber-500/40 hover:bg-amber-500/10'
+                    : 'border-red-500/20 bg-red-500/5 hover:border-red-500/40 hover:bg-red-500/10'
                 }`}>
                   <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                     <div>
@@ -116,10 +116,10 @@ export default function CancellationPolicy() {
                     </div>
                     <span className={`font-black px-4 py-2 rounded-xl text-[10px] uppercase tracking-widest shrink-0 shadow-sm ${
                       p.color === 'green'
-                        ? 'bg-green-100 text-green-800'
+                        ? 'bg-green-500/15 text-green-400'
                         : p.color === 'amber'
-                        ? 'bg-amber-100 text-amber-800'
-                        : 'bg-red-100 text-red-800'
+                        ? 'bg-amber-500/15 text-amber-400'
+                        : 'bg-red-500/15 text-red-400'
                     }`}>
                       {p.charge}
                     </span>
