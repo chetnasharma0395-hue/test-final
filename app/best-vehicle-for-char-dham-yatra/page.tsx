@@ -119,7 +119,7 @@ export default function BestVehicleForCharDhamPage() {
             {/* Innova */}
             <div className="bg-[#1A1A1A] rounded-[2.5rem] border border-white/10 shadow-sm overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-3">
-                <div className="aspect-[4/3] md:aspect-auto bg-gray-100">
+                <div className="aspect-[4/3] md:aspect-auto bg-[#1A1A1A]">
                   <FleetImage images={innovaImages} fallbackAlt="Innova Crysta for Char Dham Yatra" className="w-full h-full object-cover" />
                 </div>
                 <div className="md:col-span-2 p-8">
@@ -136,7 +136,7 @@ export default function BestVehicleForCharDhamPage() {
             {/* Ertiga */}
             <div className="bg-[#1A1A1A] rounded-[2.5rem] border border-white/10 shadow-sm overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-3">
-                <div className="aspect-[4/3] md:aspect-auto bg-gray-100">
+                <div className="aspect-[4/3] md:aspect-auto bg-[#1A1A1A]">
                   <FleetImage images={ertigaImages} fallbackAlt="Ertiga for Char Dham Yatra" className="w-full h-full object-cover" />
                 </div>
                 <div className="md:col-span-2 p-8">
@@ -153,7 +153,7 @@ export default function BestVehicleForCharDhamPage() {
             {/* Tempo Traveller */}
             <div className="bg-[#1A1A1A] rounded-[2.5rem] border border-white/10 shadow-sm overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-3">
-                <div className="aspect-[4/3] md:aspect-auto bg-gray-100">
+                <div className="aspect-[4/3] md:aspect-auto bg-[#1A1A1A]">
                   <FleetImage images={travellerImages} fallbackAlt="Tempo Traveller for Char Dham Yatra Groups" className="w-full h-full object-cover" />
                 </div>
                 <div className="md:col-span-2 p-8">
@@ -170,7 +170,7 @@ export default function BestVehicleForCharDhamPage() {
             {/* Force Urbania */}
             <div className="bg-[#1A1A1A] rounded-[2.5rem] border border-white/10 shadow-sm overflow-hidden">
               <div className="grid grid-cols-1 md:grid-cols-3">
-                <div className="aspect-[4/3] md:aspect-auto bg-gray-100">
+                <div className="aspect-[4/3] md:aspect-auto bg-[#1A1A1A]">
                   <FleetImage images={urbaniaImages} fallbackAlt="Force Urbania for Premium Char Dham Yatra Groups" className="w-full h-full object-cover" />
                 </div>
                 <div className="md:col-span-2 p-8">
