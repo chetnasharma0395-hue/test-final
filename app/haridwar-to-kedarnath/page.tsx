@@ -195,14 +195,14 @@ export default function HaridwarToKedarnath() {
                 </h2>
                 
                 <div className="bg-[#2D1515] border border-[#FCA5A5] p-8 rounded-[2rem] shadow-sm my-8">
-                  <h3 className="font-black text-red-800 uppercase tracking-tight text-xl mb-4 flex items-center justify-start gap-3">
-                    <div className="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center shrink-0">
+                  <h3 className="font-black text-red-400 uppercase tracking-tight text-xl mb-4 flex items-center justify-start gap-3">
+                    <div className="w-10 h-10 rounded-xl bg-red-500/20 flex items-center justify-center shrink-0">
                       <AlertTriangle className="w-5 h-5 text-red-600" />
                     </div>
                     Important Yatra Information
                   </h3>
-                  <p className="text-red-900/80 font-light leading-relaxed">
-                    No private taxis or commercial vehicles are permitted to drive directly to the Kedarnath Temple. Our taxi will securely drop you at the designated motorable end-points: <strong className="font-bold text-red-900">Sonprayag or Gaurikund</strong>. From Gaurikund, all pilgrims must complete the final 16 km ascent to the temple on foot, by hiring a pony/palki, or by taking a pre-booked helicopter flight.
+                  <p className="text-white/70 font-light leading-relaxed">
+                    No private taxis or commercial vehicles are permitted to drive directly to the Kedarnath Temple. Our taxi will securely drop you at the designated motorable end-points: <strong className="font-bold text-red-400">Sonprayag or Gaurikund</strong>. From Gaurikund, all pilgrims must complete the final 16 km ascent to the temple on foot, by hiring a pony/palki, or by taking a pre-booked helicopter flight.
                   </p>
                 </div>
               </div>
