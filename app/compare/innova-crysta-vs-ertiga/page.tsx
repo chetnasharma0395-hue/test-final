@@ -89,7 +89,7 @@ export default function InnovaVsErtigaPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
             {[vehicleA, vehicleB].map((v) => (
               <Link key={v.slug} href={`/fleet/${v.slug}`} className="bg-[#1A1A1A] rounded-[2.5rem] border border-white/10 shadow-sm hover:shadow-xl transition-all overflow-hidden group">
-                <div className="aspect-[16/10] bg-gray-100 overflow-hidden">
+                <div className="aspect-[16/10] bg-[#1A1A1A] overflow-hidden">
                   <FleetImage images={imageMap[v.slug as 'innova-crysta' | 'ertiga']} fallbackAlt={`${v.name} - Uttarakhand Cab 24/7`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
                 <div className="p-6 flex items-center justify-between">
