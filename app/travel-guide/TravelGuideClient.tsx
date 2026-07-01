@@ -2,15 +2,9 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { useFadeInUp } from '@/components/motion/MotionKit';
 import { MapPin, Calendar, AlertTriangle, Check, Compass, ShieldCheck, Info, ThermometerSun, Users, Gauge } from 'lucide-react';
 import { StrategicCTA } from '@/components/CTABoxes';
-
-const fadeInUp = {
-  initial: { opacity: 0, y: 30 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true },
-  transition: { duration: 0.7, ease: "easeOut" }
-} as const;
 
 // ----------------------------------------------------------------------
 // DATA ARRAYS (100% PRESERVED FOR SEO)
@@ -31,6 +25,7 @@ const tips = [
 ];
 
 export default function TravelGuideClient() {
+  const fadeInUp = useFadeInUp();
   return (
     <div className="bg-[#1A1A1A] selection:bg-[#F7941D]/30">
 
