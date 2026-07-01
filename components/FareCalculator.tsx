@@ -105,14 +105,14 @@ export function FareCalculator() {
             <div className="flex bg-[#1A1A1A] p-1.5 rounded-xl">
               <button
                 onClick={() => setVehicle('sedan')}
-                className={`flex-1 flex flex-col items-center justify-center p-3 rounded-lg transition-all duration-300 ${vehicle === 'sedan' ? 'bg-[#1A1A1A] shadow-md border border-white/10' : 'text-white/70 hover:bg-gray-200/50'}`}
+                className={`flex-1 flex flex-col items-center justify-center p-3 rounded-lg transition-all duration-300 ${vehicle === 'sedan' ? 'bg-[#1A1A1A] shadow-md border border-white/10' : 'text-white/70 hover:bg-white/5'}`}
               >
                 <span className={`text-xs font-black uppercase tracking-widest ${vehicle === 'sedan' ? 'text-white' : 'text-white/70'}`}>Sedan</span>
                 <span className={`text-[10px] font-bold mt-1 ${vehicle === 'sedan' ? 'text-[#F7941D]' : 'opacity-60'}`}>Dzire (4 Pax)</span>
               </button>
               <button
                 onClick={() => setVehicle('suv')}
-                className={`flex-1 flex flex-col items-center justify-center p-3 rounded-lg transition-all duration-300 ${vehicle === 'suv' ? 'bg-[#1A1A1A] shadow-md border border-white/10' : 'text-white/70 hover:bg-gray-200/50'}`}
+                className={`flex-1 flex flex-col items-center justify-center p-3 rounded-lg transition-all duration-300 ${vehicle === 'suv' ? 'bg-[#1A1A1A] shadow-md border border-white/10' : 'text-white/70 hover:bg-white/5'}`}
               >
                 <span className={`text-xs font-black uppercase tracking-widest ${vehicle === 'suv' ? 'text-white' : 'text-white/70'}`}>Premium SUV</span>
                 <span className={`text-[10px] font-bold mt-1 ${vehicle === 'suv' ? 'text-[#F7941D]' : 'opacity-60'}`}>Ertiga (7 Pax)</span>
