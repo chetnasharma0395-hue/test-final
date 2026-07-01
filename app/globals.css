@@ -13,7 +13,15 @@
 
   html.lenis { height: auto; }
   .lenis.lenis-smooth { scroll-behavior: auto; }
+  .lenis.lenis-smooth [data-lenis-prevent] { overscroll-behavior: contain; }
   .lenis.lenis-stopped { overflow: hidden; }
+
+  /* Browsers default <button> to cursor:default, not cursor:pointer (only
+     <a href> gets pointer by default). Without this, every plain <button>
+     site-wide shows the wrong cursor on hover unless it opts into .btn-*. */
+  button:not(:disabled), [role="button"]:not([aria-disabled="true"]) {
+    cursor: pointer;
+  }
 
   body {
     @apply bg-[#0a0a0a] text-white antialiased selection:bg-[#F7941D]/30;
