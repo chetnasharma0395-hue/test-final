@@ -33,6 +33,10 @@ const KEYWORD_MAP: Record<string, BlogCrossLink> = {
   'jolly-grant-airport':           { slug: 'dehradun-airport-to-rishikesh-taxi-fare',        title: 'Dehradun Airport Taxi Fare Guide',             href: '/blog/dehradun-airport-to-rishikesh-taxi-fare' },
   'delhi-to-dehradun':             { slug: 'delhi-to-dehradun-taxi-route-toll-guide',        title: 'Delhi to Dehradun: Route & Toll Guide',       href: '/blog/delhi-to-dehradun-taxi-route-toll-guide' },
   'delhi-to-jim-corbett':          { slug: 'delhi-to-jim-corbett-taxi-trip-guide',           title: 'Delhi to Jim Corbett: Trip Guide',             href: '/blog/delhi-to-jim-corbett-taxi-trip-guide' },
+  'haridwar-to-badrinath':         { slug: 'haridwar-to-badrinath-taxi-guide-2026',          title: 'Haridwar to Badrinath Taxi Guide 2026',       href: '/blog/haridwar-to-badrinath-taxi-guide-2026' },
+  'rishikesh-to-badrinath':        { slug: 'rishikesh-to-badrinath-taxi-guide-2026',         title: 'Rishikesh to Badrinath Taxi Guide 2026',      href: '/blog/rishikesh-to-badrinath-taxi-guide-2026' },
+  'kathgodam-to-nainital':         { slug: 'kathgodam-to-nainital-taxi-guide-2026',          title: 'Kathgodam to Nainital Taxi Guide 2026',       href: '/blog/kathgodam-to-nainital-taxi-guide-2026' },
+  'rishikesh-to-chopta':           { slug: 'rishikesh-to-chopta-tungnath-trek-guide-2026',   title: 'Rishikesh to Chopta-Tungnath Trek Guide 2026', href: '/blog/rishikesh-to-chopta-tungnath-trek-guide-2026' },
 
   // Destination keywords (partial slug matches)
   'mussoorie':      { slug: 'best-time-to-visit-mussoorie',                  title: 'Best Time to Visit Mussoorie',                href: '/blog/best-time-to-visit-mussoorie' },
