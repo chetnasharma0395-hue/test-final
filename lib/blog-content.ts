@@ -771,7 +771,7 @@ export const blogPosts: BlogPost[] = [
     slug: 'haridwar-to-badrinath-taxi-guide-2026',
     title: 'Haridwar to Badrinath Taxi Guide 2026 — Fare, Route, Distance & Char Dham Tips',
     metaTitle: 'Haridwar to Badrinath Taxi 2026 | Fare, Route & Char Dham Yatra Guide',
-    metaDescription: 'Complete guide to the Haridwar to Badrinath taxi in 2026. Fixed fares (₹10,000 Sedan), 320 km route via Joshimath, Char Dham timing tips, and why Haridwar is the best Yatra starting point.',
+    metaDescription: 'Complete guide to the Haridwar to Badrinath taxi in 2026. Fixed fares (₹8,000 Sedan), 320 km route via Joshimath, Char Dham timing tips, and why Haridwar is the best Yatra starting point.',
     excerpt: 'Haridwar to Badrinath is a 320 km, 10–11 hour mountain journey and the most popular starting leg of the Char Dham Yatra. This guide covers 2026 fares, the full route, best departure times, and what to expect on the road to the Himalayas.',
     image: '/assets/images/dest-badrinath.jpeg',
     date: 'June 12, 2026',
@@ -790,7 +790,7 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: '2026 Taxi Fares: Haridwar to Badrinath',
-        body: '<p>Fixed one-way fares with Uttarakhand Cab 24/7 for 2026:</p><ul><li><strong>Sedan (Swift Dzire / Etios):</strong> ₹10,000 one-way</li><li><strong>SUV (Innova Crysta):</strong> ₹13,000 one-way</li></ul><p>All fares include fuel, driver allowance, tolls, and checkpost fees. No extra charges at BRO barriers or NHAI toll plazas. The Innova Crysta is strongly recommended for the Joshimath–Badrinath segment, which involves narrow switchbacks at altitude.</p><p>For Do Dham packages (Kedarnath + Badrinath), the combined package from Haridwar starts at ₹18,000 for a 4-day itinerary with the same dedicated vehicle.</p>',
+        body: '<p>Fixed one-way fares with Uttarakhand Cab 24/7 for 2026:</p><ul><li><strong>Sedan (Swift Dzire / Etios):</strong> ₹8,000 one-way</li><li><strong>SUV (Innova Crysta):</strong> ₹10,000 one-way</li></ul><p>All fares include fuel, driver allowance, tolls, and checkpost fees. No extra charges at BRO barriers or NHAI toll plazas. The Innova Crysta is strongly recommended for the Joshimath–Badrinath segment, which involves narrow switchbacks at altitude.</p><p>For Do Dham packages (Kedarnath + Badrinath), the combined package from Haridwar starts at ₹18,000 for a 4-day itinerary with the same dedicated vehicle.</p>',
       },
       {
         heading: 'The Joshimath Segment: What to Know',
@@ -798,12 +798,12 @@ export const blogPosts: BlogPost[] = [
       },
       {
         heading: 'Frequently Asked Questions (FAQs)',
-        body: '<h3>1. What is the taxi fare from Haridwar to Badrinath in 2026?</h3><p>The fixed one-way fare is ₹10,000 for a Sedan and ₹13,000 for an Innova Crysta SUV. Fares include all tolls, fuel, and driver allowance for the 320 km journey.</p><h3>2. How long does Haridwar to Badrinath take by taxi?</h3><p>Approximately 10 to 11 hours via Rishikesh, Devprayag, Srinagar Garhwal, and Joshimath. A 3–4 AM departure from Haridwar is recommended for same-day Badrinath darshan.</p><h3>3. Is the road to Badrinath safe in monsoon (July–August)?</h3><p>The Badrinath highway is generally open during monsoon but subject to hourly closures due to blasting and landslides between Srinagar Garhwal and Joshimath. Our drivers check NDRF and BRO status before departure and en route. Flexibility in timing is essential.</p><h3>4. Can I start my Char Dham from Badrinath first?</h3><p>The traditional Char Dham sequence goes Yamunotri–Gangotri–Kedarnath–Badrinath (west to east). Starting at Badrinath is possible but logistically uncommon. Most pilgrims finish at Badrinath as the high-altitude culmination of the circuit.</p>',
+        body: '<h3>1. What is the taxi fare from Haridwar to Badrinath in 2026?</h3><p>The fixed one-way fare is ₹8,000 for a Sedan and ₹10,000 for an Innova Crysta SUV. Fares include all tolls, fuel, and driver allowance for the 320 km journey.</p><h3>2. How long does Haridwar to Badrinath take by taxi?</h3><p>Approximately 10 to 11 hours via Rishikesh, Devprayag, Srinagar Garhwal, and Joshimath. A 3–4 AM departure from Haridwar is recommended for same-day Badrinath darshan.</p><h3>3. Is the road to Badrinath safe in monsoon (July–August)?</h3><p>The Badrinath highway is generally open during monsoon but subject to hourly closures due to blasting and landslides between Srinagar Garhwal and Joshimath. Our drivers check NDRF and BRO status before departure and en route. Flexibility in timing is essential.</p><h3>4. Can I start my Char Dham from Badrinath first?</h3><p>The traditional Char Dham sequence goes Yamunotri–Gangotri–Kedarnath–Badrinath (west to east). Starting at Badrinath is possible but logistically uncommon. Most pilgrims finish at Badrinath as the high-altitude culmination of the circuit.</p>',
       },
     ],
     cta: {
       heading: 'Book Your Haridwar to Badrinath Taxi',
-      body: 'Char Dham certified drivers, fixed ₹10,000 fare, 3 AM departures. The most trusted Yatra service from Haridwar.',
+      body: 'Char Dham certified drivers, fixed ₹8,000 fare, 3 AM departures. The most trusted Yatra service from Haridwar.',
     },
   },
 
