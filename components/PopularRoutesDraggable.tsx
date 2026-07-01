@@ -175,6 +175,7 @@ function DraggableCard({ route, id, zIndex, onBringToFront, expanded, onToggle }
       dragMomentum
       dragElastic={0.08}
       dragTransition={{ power: 0.18, timeConstant: 360 }}
+      data-lenis-prevent
       /* ── Initial scatter entrance ── */
       initial={{ opacity: 0, scale: 0.82, rotate: route.rot }}
       animate={{ opacity: 1, scale: 1, rotate: reduce ? 0 : route.rot,
