@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Script from 'next/script';
 import Link from 'next/link';
 import { Phone, Mail, MapPin, Clock, MessageCircle, Send, CheckCircle2 } from 'lucide-react';
 import { FAQSection } from '@/components/FAQ';
@@ -78,8 +77,8 @@ export default function Contact() {
 
   return (
     <>
-      <Script id="contact-page-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }} />
-      <Script id="contact-faq-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(contactPageSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
     <div className="bg-[#1A1A1A] min-h-screen selection:bg-[#F7941D]/30">
       
       {/* 1. HERO SECTION: Clean & Modern */}
