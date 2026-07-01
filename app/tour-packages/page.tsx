@@ -42,7 +42,7 @@ const packages = [
     duration: '10–12 Days',
     route: 'Delhi → Yamunotri → Gangotri → Kedarnath → Badrinath → Rishikesh',
     vehicle: 'Innova Crysta Premium',
-    cost: '₹75,000 – ₹80,000',
+    cost: 'Sedan ₹40,000 · SUV ₹75,000–80,000',
     bestFor: 'Pilgrimage Groups',
     image: '/assets/images/dest-char-dham.jpg',
     featured: true,
@@ -53,7 +53,7 @@ const packages = [
     duration: '6–7 Days',
     route: 'Guptkashi → Kedarnath → Badrinath → Rishikesh',
     vehicle: 'SUV / Sedan',
-    cost: '₹28,000 – ₹45,000',
+    cost: 'Sedan ₹28,000 · SUV ₹45,000',
     bestFor: 'Religious Trips',
     image: '/assets/images/dest-kedarnath.jpg',
   },
@@ -115,10 +115,10 @@ export default function TourPackages() {
       <section className="sr-only">
         <GEOAnswerBox
           question="What taxi tour packages does Uttarakhand Cab 24/7 offer?"
-          answer="Uttarakhand Cab 24/7 offers private multi-day taxi tour packages including: Char Dham Yatra (10–12 days, from ₹40,000), Do Dham Kedarnath-Badrinath (5–6 days, from ₹15,000), Do Dham Yamunotri-Gangotri (4–5 days, from ₹12,000), Ek Dham single pilgrimage (2–3 days, from ₹7,500), Nainital-Kumaon circuit (3–4 days, from ₹14,000), and Mussoorie-Dhanaulti (1–2 days, from ₹3,500). All packages include a private vehicle, experienced hill driver, and flexible itineraries."
+          answer="Uttarakhand Cab 24/7 offers private multi-day taxi tour packages including: Char Dham Yatra (10–12 days, Sedan from ₹40,000 / SUV ₹75,000–80,000), Do Dham Kedarnath-Badrinath (5–6 days, Sedan from ₹28,000 / SUV ₹45,000), Do Dham Yamunotri-Gangotri (4–5 days, from ₹12,000), Ek Dham single pilgrimage (2–3 days, from ₹7,500), Nainital-Kumaon circuit (3–4 days, from ₹14,000), and Mussoorie-Dhanaulti (1–2 days, from ₹3,500). All packages include a private vehicle, experienced hill driver, and flexible itineraries."
           facts={[
-            { label: 'Char Dham Yatra', value: '10–12 days · From ₹40,000' },
-            { label: 'Do Dham (Kedarnath+Badrinath)', value: '5–6 days · From ₹15,000' },
+            { label: 'Char Dham Yatra', value: '10–12 days · Sedan ₹40,000 · SUV ₹75,000–80,000' },
+            { label: 'Do Dham (Kedarnath+Badrinath)', value: '5–6 days · Sedan ₹28,000 · SUV ₹45,000' },
             { label: 'Do Dham (Yamunotri+Gangotri)', value: '4–5 days · From ₹12,000' },
             { label: 'Ek Dham (Single Pilgrimage)', value: '2–3 days · From ₹7,500' },
             { label: 'Nainital–Kumaon Circuit', value: '3–4 days · From ₹14,000' },
