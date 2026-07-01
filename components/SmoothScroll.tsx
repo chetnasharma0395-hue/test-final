@@ -25,17 +25,14 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
         lerp: 0.1,
         duration: 1.5,
         smoothWheel: true,
-        // Mobile/touch scrolling was previously raw native scroll — Lenis'
-        // smoothing only ever applied to desktop mouse wheel. syncTouch turns
-        // touch input into the same lerp/momentum system as wheel scroll,
-        // which is what actually gives the "app-style" glide feel on mobile.
-        // (Lenis 1.x renamed the old `smoothTouch` option to `syncTouch`.)
-        syncTouch: true,
-        // Lower = smoother/slower catch-up as your finger drags (default 0.1).
-        syncTouchLerp: 0.075,
-        // Lower = each swipe moves less distance, i.e. a slower, more
-        // deliberate scroll feel (default 2).
-        touchMultiplier: 1.2,
+        // NOTE: syncTouch (touch-driven smooth scroll) was tried here to give
+        // mobile the same "app-style" glide as desktop wheel scroll, but it
+        // caused two real regressions: (1) fighting custom touch-drag
+        // components — like carousels — for control of the same gesture, and
+        // (2) breaking native "pull to refresh", which happens at the very
+        // top of the page and can't be selectively excluded the way the
+        // carousel conflict was (via data-lenis-prevent). Reverted — mobile
+        // touch scroll is intentionally left 100% native/unmodified here.
       });
 
       const raf = (time: number) => {
