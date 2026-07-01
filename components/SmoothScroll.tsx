@@ -25,7 +25,20 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
         lerp: 0.1,
         duration: 1.5,
         smoothWheel: true,
-        touchMultiplier: 2,
+        // Mobile/touch scrolling was previously raw native scroll — Lenis'
+        // smoothing only ever applied to desktop mouse wheel. syncTouch turns
+        // touch input into the same lerp/momentum system as wheel scroll,
+        // which is what actually gives the "app-style" glide feel on mobile.
+        // (Lenis 1.x renamed the old `smoothTouch` option to `syncTouch`.)
+        syncTouch: true,
+        // Lower = smoother/slower catch-up as your finger drags (default 0.1).
+        syncTouchLerp: 0.075,
+        // Lower = each swipe moves less distance, i.e. a slower, more
+        // deliberate scroll feel (default 2).
+        touchMultiplier: 1.2,
+        // Lower = momentum settles faster after you lift your finger, so it
+        // reads as controlled rather than "flingy" (default 35).
+        touchInertiaMultiplier: 24,
       });
 
       const raf = (time: number) => {
