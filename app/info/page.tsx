@@ -391,10 +391,10 @@ export default function InfoPage() {
               {[
                 { q: 'Dehradun to Mussoorie taxi fare?', a: 'Starting from ₹2,000 (sedan) · ₹3,000 (SUV). Distance 35 km · 1.5–2 hrs. Local barrier tax extra.', link: '/mussoorie' },
                 { q: 'Jolly Grant Airport to Rishikesh cab fare?', a: 'Starting from ₹2,000 (sedan) · ₹2,500 (SUV). Distance 20 km · 40–45 min. Flight tracking included.', link: '/dehradun-airport-taxi' },
-                { q: 'Haridwar to Nainital taxi fare?', a: 'Starting from ₹5,000 (sedan) · ₹7,000 (SUV). Distance ~275 km · 6–7 hrs. SUV strongly recommended.', link: '/nainital' },
+                { q: 'Haridwar to Nainital taxi fare?', a: 'Starting from ₹7,000 (sedan) · ₹9,000 (SUV). Distance ~260 km · 6.5–7.5 hrs. SUV strongly recommended.', link: '/nainital' },
                 { q: 'Delhi to Dehradun cab fare?', a: 'Starting from ₹4,000 (sedan) · ₹5,000 (SUV). Distance ~300 km · 4–5 hrs. Inter-state permits included.', link: '/delhi-to-dehradun' },
                 { q: 'Rishikesh to Kedarnath (Gaurikund) fare?', a: 'Starting from ₹7,000, SUV ₹9,500 (SUV). Distance 215 km · 7–9 hrs. Sonprayag permit included.', link: '/kedarnath' },
-                { q: 'Haridwar to Badrinath taxi fare?', a: 'Starting from ₹9,000 (sedan) · ₹12,000 (SUV). Distance ~320 km · 9–10 hrs. Innova Crysta recommended.', link: '/badrinath' },
+                { q: 'Haridwar to Badrinath taxi fare?', a: 'Starting from ₹8,000 (sedan) · ₹10,000 (SUV). Distance ~320 km · 10–11 hrs. Innova Crysta recommended.', link: '/badrinath' },
               ].map((item) => (
                 <div key={item.q} className="bg-[#1A1A1A] rounded-[1.5rem] p-7 border border-white/10">
                   <p className="font-black text-white text-base mb-3 uppercase tracking-tighter">{item.q}</p>
