@@ -123,7 +123,7 @@ export const PRICING_DATA: Record<string, Route> = {
     distance: 260,
     duration: '6-7 hours',
     sedan: 5000,
-    suv: 6000,
+    suv: 6500,
   },
   'rishikesh-jim-corbett': {
     key: 'rishikesh-jim-corbett',
