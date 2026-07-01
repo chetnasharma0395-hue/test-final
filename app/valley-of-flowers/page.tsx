@@ -3,7 +3,6 @@ import { AuroraGlow } from '@/components/motion';
 import { getRoute, formatPrice, getRouteDisplay } from '@/lib/priceData';
 import Link from 'next/link';
 import Image from 'next/image';
-import Script from 'next/script';
 import { Phone, MapPin, Clock, MessageCircle, CheckCircle2, ShieldCheck, Car, Mountain, Info, Flower2, AlertTriangle } from 'lucide-react';
 import { BookingCTA, DriverIntelligenceBox, RouteInfoBox, TrustBanner, StrategicCTA } from '@/components/CTABoxes';
 import { FAQSection } from '@/components/FAQ';
@@ -70,8 +69,8 @@ export default function ValleyOfFlowersPage() {
 
   return (
     <div className="bg-[#1A1A1A] min-h-screen selection:bg-[#F7941D]/30">
-      <Script id="vof-faq-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <Script id="vof-speakable-schema" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema('https://uttarakhand.cab/valley-of-flowers')) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableSchema('https://uttarakhand.cab/valley-of-flowers')) }} />
 
       {/* 1. HERO */}
       <section className="relative pt-40 pb-32 px-4 sm:px-6 lg:px-8 bg-[#121212] overflow-hidden text-left">
