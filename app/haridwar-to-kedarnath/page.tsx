@@ -6,7 +6,6 @@ import { Phone, MapPin, Clock, MessageCircle, CheckCircle2, ShieldCheck, Car, Mo
 import { BookingCTA, DriverIntelligenceBox, RouteInfoBox, TrustBanner, StrategicCTA } from '@/components/CTABoxes';
 import { FAQSection } from '@/components/FAQ';
 import { QuickTravelSummary } from '@/components/QuickTravelSummary';
-import Script from 'next/script';
 import { taxiServiceSchema, breadcrumbSchema, speakableSchema } from '@/lib/schema';
 import { GEOAnswerBox } from '@/components/GEOAnswerBox';
 
@@ -87,9 +86,9 @@ export default function HaridwarToKedarnath() {
   return (
     <div className="bg-[#1A1A1A] min-h-screen selection:bg-[#F7941D]/30">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      <Script id="taxi-schema-htk" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(taxiSchema) }} />
-      <Script id="breadcrumb-schema-htk" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
-      <Script id="speakable-schema-htk" type="application/ld+json" strategy="beforeInteractive" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(taxiSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }} />
 
       {/* 1. HERO SECTION */}
       <section className="relative pt-40 pb-32 px-4 sm:px-6 lg:px-8 bg-[#121212] overflow-hidden text-left">
