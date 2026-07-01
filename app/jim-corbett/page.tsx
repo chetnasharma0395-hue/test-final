@@ -208,8 +208,8 @@ export default function JimCorbett() {
               {[
                 { label: 'From Dehradun', fare: '₹4,000' },
                 { label: 'From Delhi', fare: '₹5,000' },
-                { label: 'From Rishikesh', fare: '₹3,000' },
-                { label: 'From Mussoorie', fare: '₹4,000' },
+                { label: 'From Rishikesh', fare: '₹3,500' },
+                { label: 'From Mussoorie', fare: '₹4,500' },
               ].map((f) => (
                 <div key={f.label} className="bg-white/5 border border-white/10 px-5 py-3 rounded-xl">
                   <p className="text-white/50 text-[10px] font-bold uppercase tracking-widest">{f.label}</p>
@@ -404,8 +404,8 @@ export default function JimCorbett() {
                 {[
                   { label: 'Dehradun → Corbett', fare: '₹4,000' },
                   { label: 'Delhi → Corbett', fare: '₹5,000' },
-                  { label: 'Rishikesh → Corbett', fare: '₹3,000' },
-                  { label: 'Mussoorie → Corbett', fare: '₹4,000' },
+                  { label: 'Rishikesh → Corbett', fare: '₹3,500' },
+                  { label: 'Mussoorie → Corbett', fare: '₹4,500' },
                   { label: 'SUV Upgrade', fare: '+₹1,000' },
                 ].map((item) => (
                   <div key={item.label} className="flex justify-between items-center border-b border-white/10 pb-4">
@@ -446,9 +446,9 @@ export default function JimCorbett() {
               <ul className="space-y-4">
                 {[
                   { name: 'Nainital', dist: '65 km', icon: Mountain, link: '/nainital', fare: '₹2,000' },
-                  { name: 'Rishikesh', dist: '180 km', icon: Map, link: '/rishikesh', fare: '₹3,000' },
+                  { name: 'Rishikesh', dist: '180 km', icon: Map, link: '/rishikesh', fare: '₹3,500' },
                   { name: 'Dehradun Airport', dist: '200 km', icon: MapPin, link: '/dehradun-airport-taxi', fare: '₹3,500' },
-                  { name: 'Mussoorie', dist: '230 km', icon: Mountain, link: '/mussoorie', fare: '₹4,000' },
+                  { name: 'Mussoorie', dist: '230 km', icon: Mountain, link: '/mussoorie', fare: '₹4,500' },
                 ].map((d, i) => (
                   <li key={i} className="flex items-center justify-between bg-[#1A1A1A] p-4 rounded-xl border border-transparent hover:border-[#F7941D]/30 transition-colors group">
                     <Link href={d.link} className="flex flex-col w-full">
