@@ -42,11 +42,11 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
       {
-        userAgent: 'Claude-Web',
+        userAgent: 'Claude-User',
         allow: '/',
       },
       {
-        userAgent: 'anthropic-ai',
+        userAgent: 'Claude-SearchBot',
         allow: '/',
       },
       {
