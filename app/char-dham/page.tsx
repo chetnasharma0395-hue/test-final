@@ -500,8 +500,8 @@ export default function CharDham() {
             </div>
             
             <div className="bg-[#2D1515] p-8 rounded-[2rem] border border-[#FCA5A5]/50">
-              <h4 className="font-black text-xl text-red-900 mb-6 uppercase tracking-tight">What is NOT Included</h4>
-              <ul className="text-sm text-red-900/80 space-y-4 font-light">
+              <h4 className="font-black text-xl text-red-400 mb-6 uppercase tracking-tight">What is NOT Included</h4>
+              <ul className="text-sm text-white/70 space-y-4 font-light">
                 <li className="flex items-start gap-3"><AlertTriangle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /> <span>Your accommodation (we can suggest hotels)</span></li>
                 <li className="flex items-start gap-3"><AlertTriangle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /> <span>Meals and personal expenses</span></li>
                 <li className="flex items-start gap-3"><AlertTriangle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" /> <span>Helicopter charges for Kedarnath (₹7,500-10,000)</span></li>
@@ -550,67 +550,67 @@ export default function CharDham() {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-green-50/50 p-8 border border-green-200 rounded-[2rem] hover:shadow-md transition-shadow">
-                <h4 className="font-black text-xl text-green-800 uppercase tracking-tight mb-4 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-green-100 flex items-center justify-center shrink-0">
-                    <Calendar className="w-5 h-5 text-green-700" />
+              <div className="bg-green-500/10 p-8 border border-green-500/30 rounded-[2rem] hover:shadow-md transition-shadow">
+                <h4 className="font-black text-xl text-green-400 uppercase tracking-tight mb-4 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-green-500/20 flex items-center justify-center shrink-0">
+                    <Calendar className="w-5 h-5 text-green-400" />
                   </div>
                   May – June
                 </h4>
-                <div className="text-sm text-green-900/80 font-light space-y-2 leading-relaxed">
-                  <p><strong className="font-bold text-green-800">Weather:</strong> Pleasant, clear skies</p>
-                  <p><strong className="font-bold text-green-800">Temperature:</strong> 10°C – 25°C</p>
-                  <p><strong className="font-bold text-green-800">Crowd:</strong> Very High (peak season)</p>
-                  <p><strong className="font-bold text-green-800">Best for:</strong> Families, groups</p>
-                  <p className="pt-2 border-t border-green-200/50 mt-2"><strong className="font-bold text-green-800 uppercase text-[10px] tracking-widest">Note:</strong> Book everything 3-4 weeks in advance</p>
+                <div className="text-sm text-white/70 font-light space-y-2 leading-relaxed">
+                  <p><strong className="font-bold text-green-400">Weather:</strong> Pleasant, clear skies</p>
+                  <p><strong className="font-bold text-green-400">Temperature:</strong> 10°C – 25°C</p>
+                  <p><strong className="font-bold text-green-400">Crowd:</strong> Very High (peak season)</p>
+                  <p><strong className="font-bold text-green-400">Best for:</strong> Families, groups</p>
+                  <p className="pt-2 border-t border-green-500/20 mt-2"><strong className="font-bold text-green-400 uppercase text-[10px] tracking-widest">Note:</strong> Book everything 3-4 weeks in advance</p>
                 </div>
               </div>
 
-              <div className="bg-red-50/50 p-8 border border-red-200 rounded-[2rem] hover:shadow-md transition-shadow">
-                <h4 className="font-black text-xl text-red-800 uppercase tracking-tight mb-4 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center shrink-0">
-                    <Calendar className="w-5 h-5 text-red-700" />
+              <div className="bg-red-500/10 p-8 border border-red-500/30 rounded-[2rem] hover:shadow-md transition-shadow">
+                <h4 className="font-black text-xl text-red-400 uppercase tracking-tight mb-4 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-red-500/20 flex items-center justify-center shrink-0">
+                    <Calendar className="w-5 h-5 text-red-400" />
                   </div>
                   July – August
                 </h4>
-                <div className="text-sm text-red-900/80 font-light space-y-2 leading-relaxed">
-                  <p><strong className="font-bold text-red-800">Weather:</strong> Heavy rainfall</p>
-                  <p><strong className="font-bold text-red-800">Risk:</strong> Landslides, road closures</p>
-                  <p><strong className="font-bold text-red-800">Crowd:</strong> Low</p>
-                  <p><strong className="font-bold text-red-800">Recommendation:</strong> Avoid this period</p>
-                  <p className="pt-2 border-t border-red-200/50 mt-2"><strong className="font-bold text-red-800 uppercase text-[10px] tracking-widest">Note:</strong> Temples may be inaccessible</p>
+                <div className="text-sm text-white/70 font-light space-y-2 leading-relaxed">
+                  <p><strong className="font-bold text-red-400">Weather:</strong> Heavy rainfall</p>
+                  <p><strong className="font-bold text-red-400">Risk:</strong> Landslides, road closures</p>
+                  <p><strong className="font-bold text-red-400">Crowd:</strong> Low</p>
+                  <p><strong className="font-bold text-red-400">Recommendation:</strong> Avoid this period</p>
+                  <p className="pt-2 border-t border-red-500/20 mt-2"><strong className="font-bold text-red-400 uppercase text-[10px] tracking-widest">Note:</strong> Temples may be inaccessible</p>
                 </div>
               </div>
 
-              <div className="bg-orange-50/50 p-8 border border-orange-200 rounded-[2rem] hover:shadow-md transition-shadow">
-                <h4 className="font-black text-xl text-orange-800 uppercase tracking-tight mb-4 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-orange-100 flex items-center justify-center shrink-0">
-                    <Calendar className="w-5 h-5 text-orange-700" />
+              <div className="bg-orange-500/10 p-8 border border-orange-500/30 rounded-[2rem] hover:shadow-md transition-shadow">
+                <h4 className="font-black text-xl text-orange-400 uppercase tracking-tight mb-4 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-orange-500/20 flex items-center justify-center shrink-0">
+                    <Calendar className="w-5 h-5 text-orange-400" />
                   </div>
                   September – October
                 </h4>
-                <div className="text-sm text-orange-900/80 font-light space-y-2 leading-relaxed">
-                  <p><strong className="font-bold text-orange-800">Weather:</strong> Clear, post-monsoon greenery</p>
-                  <p><strong className="font-bold text-orange-800">Temperature:</strong> 5°C – 20°C</p>
-                  <p><strong className="font-bold text-orange-800">Crowd:</strong> Moderate</p>
-                  <p><strong className="font-bold text-orange-800">Best for:</strong> Photographers, nature lovers</p>
-                  <p className="pt-2 border-t border-orange-200/50 mt-2"><strong className="font-bold text-orange-800 uppercase text-[10px] tracking-widest">Note:</strong> Best value season</p>
+                <div className="text-sm text-white/70 font-light space-y-2 leading-relaxed">
+                  <p><strong className="font-bold text-orange-400">Weather:</strong> Clear, post-monsoon greenery</p>
+                  <p><strong className="font-bold text-orange-400">Temperature:</strong> 5°C – 20°C</p>
+                  <p><strong className="font-bold text-orange-400">Crowd:</strong> Moderate</p>
+                  <p><strong className="font-bold text-orange-400">Best for:</strong> Photographers, nature lovers</p>
+                  <p className="pt-2 border-t border-orange-500/20 mt-2"><strong className="font-bold text-orange-400 uppercase text-[10px] tracking-widest">Note:</strong> Best value season</p>
                 </div>
               </div>
 
-              <div className="bg-blue-50/50 p-8 border border-blue-200 rounded-[2rem] hover:shadow-md transition-shadow">
-                <h4 className="font-black text-xl text-blue-800 uppercase tracking-tight mb-4 flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-blue-100 flex items-center justify-center shrink-0">
-                    <Calendar className="w-5 h-5 text-blue-700" />
+              <div className="bg-blue-500/10 p-8 border border-blue-500/30 rounded-[2rem] hover:shadow-md transition-shadow">
+                <h4 className="font-black text-xl text-blue-400 uppercase tracking-tight mb-4 flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-blue-500/20 flex items-center justify-center shrink-0">
+                    <Calendar className="w-5 h-5 text-blue-400" />
                   </div>
                   November
                 </h4>
-                <div className="text-sm text-blue-900/80 font-light space-y-2 leading-relaxed">
-                  <p><strong className="font-bold text-blue-800">Weather:</strong> Cold, possible snowfall</p>
-                  <p><strong className="font-bold text-blue-800">Temperature:</strong> 0°C – 15°C</p>
-                  <p><strong className="font-bold text-blue-800">Crowd:</strong> Low</p>
-                  <p><strong className="font-bold text-blue-800">Note:</strong> Temples close by mid-November</p>
-                  <p className="pt-2 border-t border-blue-200/50 mt-2"><strong className="font-bold text-blue-800 uppercase text-[10px] tracking-widest">Best for:</strong> Last-minute pilgrims</p>
+                <div className="text-sm text-white/70 font-light space-y-2 leading-relaxed">
+                  <p><strong className="font-bold text-blue-400">Weather:</strong> Cold, possible snowfall</p>
+                  <p><strong className="font-bold text-blue-400">Temperature:</strong> 0°C – 15°C</p>
+                  <p><strong className="font-bold text-blue-400">Crowd:</strong> Low</p>
+                  <p><strong className="font-bold text-blue-400">Note:</strong> Temples close by mid-November</p>
+                  <p className="pt-2 border-t border-blue-500/20 mt-2"><strong className="font-bold text-blue-400 uppercase text-[10px] tracking-widest">Best for:</strong> Last-minute pilgrims</p>
                 </div>
               </div>
             </div>
@@ -628,16 +628,16 @@ export default function CharDham() {
             <div className="space-y-6">
               {commonMistakes.map((item, index) => (
                 <div key={index} className="bg-[#2D1515] border border-[#FCA5A5] p-8 rounded-[2rem]">
-                  <h4 className="font-black text-red-900 text-lg md:text-xl uppercase tracking-tight mb-4 flex items-start gap-3">
-                    <AlertTriangle className="w-6 h-6 text-red-600 shrink-0 mt-0.5" />
+                  <h4 className="font-black text-red-400 text-lg md:text-xl uppercase tracking-tight mb-4 flex items-start gap-3">
+                    <AlertTriangle className="w-6 h-6 text-red-400 shrink-0 mt-0.5" />
                     Mistake #{index + 1}: {item.mistake}
                   </h4>
                   <div className="space-y-4 text-sm md:text-base font-light">
-                    <p className="text-red-900/80 leading-relaxed">
-                      <strong className="font-bold text-red-900">Why it is a problem:</strong> {item.why}
+                    <p className="text-white/70 leading-relaxed">
+                      <strong className="font-bold text-red-400">Why it is a problem:</strong> {item.why}
                     </p>
-                    <p className="text-green-800 leading-relaxed bg-green-50 p-4 rounded-xl border border-green-200">
-                      <strong className="font-bold text-green-900 uppercase text-[10px] tracking-widest">Our solution:</strong><br/> {item.solution}
+                    <p className="text-green-100/90 leading-relaxed bg-green-500/10 p-4 rounded-xl border border-green-500/30">
+                      <strong className="font-bold text-green-400 uppercase text-[10px] tracking-widest">Our solution:</strong><br/> {item.solution}
                     </p>
                   </div>
                 </div>
@@ -804,13 +804,13 @@ export default function CharDham() {
 
             {/* Important Info */}
             <div className="bg-[#2D1515] p-8 border border-[#FCA5A5]/50 rounded-[2.5rem] shadow-sm">
-              <h4 className="font-black text-xl text-red-900 uppercase tracking-tight mb-6 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center shrink-0">
-                  <AlertTriangle className="w-5 h-5 text-red-600" />
+              <h4 className="font-black text-xl text-red-400 uppercase tracking-tight mb-6 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-red-500/20 flex items-center justify-center shrink-0">
+                  <AlertTriangle className="w-5 h-5 text-red-400" />
                 </div>
                 Important
               </h4>
-              <ul className="text-sm text-red-900/80 font-light space-y-3">
+              <ul className="text-sm text-white/70 font-light space-y-3">
                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" /> Registration is mandatory</li>
                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" /> Carry valid ID proof</li>
                 <li className="flex items-center gap-2"><span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" /> Medical checkup recommended</li>
