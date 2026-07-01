@@ -181,6 +181,8 @@ export function Navbar() {
           </a>
           <a
             href="https://wa.me/919258912169"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary px-5 py-2.5 text-[11px]"
           >
             <MessageCircle className="w-3.5 h-3.5" />
@@ -223,6 +225,7 @@ export function Navbar() {
                 <span key={link.href} className="contents">
                   <Link
                     href={link.href}
+                    onClick={() => setMobileMenuOpen(false)}
                     className={`text-2xl font-black uppercase tracking-tighter transition-colors ${
                       pathname === link.href ? 'text-[#F7941D]' : 'text-white/90'
                     }`}
@@ -257,6 +260,7 @@ export function Navbar() {
                                 <Link
                                   key={v.href}
                                   href={v.href}
+                                  onClick={() => setMobileMenuOpen(false)}
                                   className={`text-sm font-bold uppercase tracking-widest transition-colors ${
                                     pathname === v.href ? 'text-[#F7941D]' : 'text-white/55'
                                   }`}
@@ -276,6 +280,7 @@ export function Navbar() {
               <div className="pt-6 flex flex-col gap-3 border-t border-white/[0.07] mt-2">
                 <a
                   href="tel:+919258912169"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="w-full text-center py-4 text-white font-black rounded-2xl uppercase tracking-widest text-xs flex items-center justify-center gap-3 transition-all"
                   style={{
                     background: 'rgba(255,255,255,0.04)',
@@ -286,6 +291,9 @@ export function Navbar() {
                 </a>
                 <a
                   href="https://wa.me/919258912169"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setMobileMenuOpen(false)}
                   className="w-full text-center py-4 text-white font-black rounded-2xl uppercase tracking-widest text-xs flex items-center justify-center gap-3"
                   style={{
                     background: 'linear-gradient(135deg, #F7941D, #D97E10)',
