@@ -23,11 +23,14 @@ export function ContactWhatsAppForm() {
 
   const isValid = form.name.trim() && form.phone.trim() && form.route.trim();
 
+  const [showError, setShowError] = useState(false);
+
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     if (submitted) setSubmitted(false);
+    if (showError) setShowError(false);
   }
 
   function buildWhatsAppMessage() {
@@ -46,7 +49,11 @@ export function ContactWhatsAppForm() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!isValid) return;
+    if (!isValid) {
+      setShowError(true);
+      return;
+    }
+    setShowError(false);
     setSubmitted(true);
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${buildWhatsAppMessage()}`, '_blank');
   }
@@ -124,8 +131,7 @@ export function ContactWhatsAppForm() {
 
       <button
         type="submit"
-        disabled={!isValid}
-        className="w-full bg-[#25D366] hover:bg-[#128C7E] hover:shadow-[0_0_25px_-5px_#25D366] disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:shadow-none text-white font-black text-sm uppercase tracking-widest py-5 rounded-xl transition-all flex items-center justify-center gap-3 mt-4"
+        className="w-full bg-[#25D366] hover:bg-[#128C7E] hover:shadow-[0_0_25px_-5px_#25D366] text-white font-black text-sm uppercase tracking-widest py-5 rounded-xl transition-all flex items-center justify-center gap-3 mt-4"
       >
         {submitted ? (
           <>
@@ -137,6 +143,12 @@ export function ContactWhatsAppForm() {
           </>
         )}
       </button>
+
+      {showError && (
+        <p role="alert" className="text-red-400 text-xs font-medium text-center -mt-3">
+          Please fill in your name, phone number, and route before sending.
+        </p>
+      )}
 
       <div className="flex items-center justify-start gap-3 mt-6 pt-6 border-t border-white/10 text-white/50 text-xs font-light">
         <Send className="w-4 h-4 text-[#F7941D] shrink-0" />
